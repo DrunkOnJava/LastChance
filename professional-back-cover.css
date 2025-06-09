@@ -1,0 +1,300 @@
+/**
+ * Professional Back Cover Styles for BMPOA Document
+ * Essential contacts and quick reference
+ */
+
+/* Back Cover Container */
+.back-cover {
+    width: 8.5in;
+    height: 11in;
+    padding: 1.5in;
+    box-sizing: border-box;
+    background: linear-gradient(
+        to bottom,
+        #1e3a5f 0%,
+        #1e3a5f 60%,
+        #4a90e2 100%
+    );
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+    overflow: hidden;
+    page-break-before: always;
+    page-break-after: avoid;
+}
+
+/* Background Pattern */
+.back-cover::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -30%;
+    width: 150%;
+    height: 150%;
+    background: url('images/bmpoa-emblem.png') no-repeat center;
+    background-size: 80%;
+    opacity: 0.05;
+    transform: rotate(-15deg);
+}
+
+/* Essential Contacts Section */
+.essential-contacts {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 16px;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    position: relative;
+    z-index: 1;
+}
+
+.essential-contacts-title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2rem;
+    font-weight: 800;
+    text-align: center;
+    margin-bottom: 2rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+/* Contact Grid */
+.contacts-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+}
+
+.contact-block {
+    background: rgba(255, 255, 255, 0.15);
+    padding: 1.5rem;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    transition: all 0.3s ease;
+}
+
+.contact-block:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: translateY(-2px);
+}
+
+.contact-category {
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    opacity: 0.8;
+    margin-bottom: 0.5rem;
+}
+
+.contact-primary {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+
+.contact-secondary {
+    font-size: 1.1rem;
+    opacity: 0.9;
+    line-height: 1.5;
+}
+
+/* Emergency Highlight */
+.emergency-highlight {
+    background: #e74c3c;
+    grid-column: span 2;
+    text-align: center;
+    padding: 2rem;
+    border-radius: 12px;
+    margin-bottom: 1rem;
+}
+
+.emergency-highlight .contact-primary {
+    font-size: 3rem;
+    margin: 0;
+}
+
+/* Quick Reference Section */
+.quick-reference {
+    background: rgba(255, 255, 255, 0.95);
+    color: #1e3a5f;
+    padding: 1.5rem;
+    border-radius: 12px;
+    margin-bottom: 2rem;
+    position: relative;
+    z-index: 1;
+}
+
+.quick-reference-title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.3rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    color: #1e3a5f;
+}
+
+.reference-items {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+}
+
+.reference-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.reference-icon {
+    font-size: 1.2rem;
+}
+
+.reference-text {
+    font-size: 0.9rem;
+    color: #2c3e50;
+}
+
+/* Website Banner */
+.website-banner {
+    background: white;
+    color: #1e3a5f;
+    padding: 1.5rem;
+    border-radius: 12px;
+    text-align: center;
+    margin-bottom: 2rem;
+    position: relative;
+    z-index: 1;
+}
+
+.website-url {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2rem;
+    font-weight: 800;
+    margin: 0;
+    letter-spacing: 1px;
+}
+
+.website-tagline {
+    font-size: 1.1rem;
+    color: #5d6d7e;
+    margin-top: 0.5rem;
+}
+
+/* Footer Info */
+.back-cover-footer {
+    text-align: center;
+    position: relative;
+    z-index: 1;
+}
+
+.organization-name {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+
+.organization-tagline {
+    font-size: 1.1rem;
+    opacity: 0.9;
+    margin-bottom: 1rem;
+}
+
+.organization-motto {
+    font-style: italic;
+    font-size: 1rem;
+    opacity: 0.8;
+    letter-spacing: 2px;
+}
+
+/* Emblem Display */
+.back-emblem {
+    width: 100px;
+    height: auto;
+    margin: 0 auto 1rem;
+    display: block;
+    opacity: 0.9;
+}
+
+/* Service Hours */
+.service-hours {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 1rem;
+    border-radius: 8px;
+    margin: 1rem 0;
+    font-size: 0.9rem;
+}
+
+.hours-title {
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+
+/* Document Info */
+.document-info {
+    position: absolute;
+    bottom: 0.5in;
+    left: 0.5in;
+    right: 0.5in;
+    text-align: center;
+    font-size: 0.8rem;
+    opacity: 0.7;
+}
+
+/* Print Optimization */
+@media print {
+    .back-cover {
+        background: #f8f9fa !important;
+        color: #1e3a5f !important;
+        border: 3px solid #1e3a5f;
+    }
+    
+    .essential-contacts {
+        background: white !important;
+        color: #1e3a5f !important;
+        border: 2px solid #1e3a5f;
+    }
+    
+    .contact-block {
+        background: #f8f9fa !important;
+        border: 1px solid #dfe6e9 !important;
+    }
+    
+    .emergency-highlight {
+        background: white !important;
+        border: 3px solid #e74c3c !important;
+        color: #e74c3c !important;
+    }
+    
+    .quick-reference {
+        background: white !important;
+        color: #1e3a5f !important;
+        border: 2px solid #1e3a5f;
+    }
+    
+    .website-banner {
+        background: #1e3a5f !important;
+        color: white !important;
+    }
+    
+    .back-cover::before {
+        display: none;
+    }
+}
+
+/* Responsive Layout */
+@media (max-width: 768px) {
+    .contacts-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .reference-items {
+        grid-template-columns: 1fr;
+    }
+    
+    .emergency-highlight {
+        grid-column: span 1;
+    }
+}

@@ -1,0 +1,381 @@
+/**
+ * Professional Photo Treatment Styles for BMPOA Document
+ * Enhancing verified images from the images directory
+ */
+
+/* Image Container Styles */
+.photo-container {
+    margin: 2rem 0;
+    position: relative;
+    page-break-inside: avoid;
+}
+
+.photo-wrapper {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+}
+
+/* Image Treatments */
+.photo-professional {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+.photo-wrapper:hover .photo-professional {
+    transform: scale(1.02);
+}
+
+/* Photo Frame Styles */
+.photo-frame-classic {
+    border: 8px solid white;
+    box-shadow: 
+        0 0 0 1px #ddd,
+        0 4px 20px rgba(0,0,0,0.15);
+}
+
+.photo-frame-modern {
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.12);
+}
+
+.photo-frame-elegant {
+    border: 1px solid #e0e0e0;
+    padding: 1rem;
+    background: white;
+    box-shadow: 0 6px 24px rgba(0,0,0,0.1);
+}
+
+/* Photo Filters */
+.photo-enhance {
+    filter: contrast(1.05) brightness(1.02);
+}
+
+.photo-dramatic {
+    filter: contrast(1.1) brightness(0.98) saturate(1.1);
+}
+
+.photo-soft {
+    filter: brightness(1.05) saturate(0.95);
+}
+
+/* Photo Captions */
+.photo-caption {
+    background: linear-gradient(to bottom, rgba(30,58,95,0.9), rgba(30,58,95,0.95));
+    color: white;
+    padding: 1rem 1.5rem;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    transform: translateY(100%);
+    transition: transform 0.3s ease;
+}
+
+.photo-container:hover .photo-caption {
+    transform: translateY(0);
+}
+
+.caption-title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin: 0 0 0.25rem 0;
+}
+
+.caption-description {
+    font-size: 0.9rem;
+    opacity: 0.9;
+    line-height: 1.4;
+}
+
+/* Static Caption Style */
+.photo-caption-static {
+    background: #f8f9fa;
+    border-left: 4px solid #1e3a5f;
+    padding: 1rem;
+    margin-top: 0.5rem;
+    font-style: italic;
+    color: #5d6d7e;
+}
+
+.photo-caption-static .caption-number {
+    font-weight: 700;
+    color: #1e3a5f;
+    margin-right: 0.5rem;
+}
+
+/* Photo Grid Layouts */
+.photo-grid {
+    display: grid;
+    gap: 1.5rem;
+    margin: 2rem 0;
+}
+
+.photo-grid-2 {
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.photo-grid-3 {
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.photo-grid-featured {
+    grid-template-columns: 2fr 1fr;
+}
+
+/* Hero Photo Treatment */
+.photo-hero {
+    position: relative;
+    width: 100%;
+    height: 400px;
+    overflow: hidden;
+    border-radius: 12px;
+    margin: 2rem 0;
+}
+
+.photo-hero img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(0.8);
+}
+
+.photo-hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(
+        to bottom,
+        rgba(30,58,95,0.3) 0%,
+        rgba(30,58,95,0.7) 100%
+    );
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 2rem;
+}
+
+.photo-hero-title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: white;
+    margin: 0 0 0.5rem 0;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+
+.photo-hero-subtitle {
+    font-size: 1.2rem;
+    color: white;
+    opacity: 0.95;
+}
+
+/* Facility Photos */
+.facility-photo {
+    position: relative;
+}
+
+.facility-label {
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    background: #1e3a5f;
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-weight: 600;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* Nature Photos */
+.nature-photo-card {
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+}
+
+.nature-photo-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 32px rgba(0,0,0,0.15);
+}
+
+.nature-photo-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.nature-photo-info {
+    padding: 1rem;
+}
+
+.nature-photo-name {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #1e3a5f;
+    margin: 0 0 0.5rem 0;
+}
+
+.nature-photo-details {
+    font-size: 0.85rem;
+    color: #5d6d7e;
+}
+
+/* Photo Collage */
+.photo-collage {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(3, 150px);
+    gap: 0.5rem;
+    margin: 2rem 0;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.collage-item {
+    position: relative;
+    overflow: hidden;
+}
+
+.collage-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: all 0.3s ease;
+}
+
+.collage-item:hover img {
+    transform: scale(1.1);
+}
+
+.collage-item-large {
+    grid-column: span 2;
+    grid-row: span 2;
+}
+
+/* Photo with Quote */
+.photo-quote-container {
+    position: relative;
+    margin: 2rem 0;
+}
+
+.photo-quote-overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(255,255,255,0.95);
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.2);
+    max-width: 80%;
+    text-align: center;
+}
+
+.photo-quote-text {
+    font-family: 'Georgia', serif;
+    font-size: 1.3rem;
+    font-style: italic;
+    color: #1e3a5f;
+    margin: 0 0 0.5rem 0;
+}
+
+.photo-quote-author {
+    font-size: 0.9rem;
+    color: #5d6d7e;
+    font-weight: 600;
+}
+
+/* Before/After Slider */
+.photo-comparison {
+    position: relative;
+    margin: 2rem 0;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.comparison-label {
+    position: absolute;
+    top: 1rem;
+    background: rgba(30,58,95,0.9);
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    font-weight: 600;
+    font-size: 0.85rem;
+    z-index: 10;
+}
+
+.label-before {
+    left: 1rem;
+}
+
+.label-after {
+    right: 1rem;
+}
+
+/* Print Optimization */
+@media print {
+    .photo-wrapper {
+        box-shadow: none;
+        border: 1px solid #ddd;
+    }
+    
+    .photo-caption {
+        position: static;
+        transform: none;
+        background: #f8f9fa !important;
+        color: #1e3a5f !important;
+        border-top: 2px solid #1e3a5f;
+    }
+    
+    .photo-container:hover .photo-caption {
+        transform: none;
+    }
+    
+    .photo-hero {
+        height: 300px;
+        page-break-inside: avoid;
+    }
+    
+    .photo-grid {
+        display: block;
+    }
+    
+    .photo-grid > * {
+        margin-bottom: 1rem;
+        page-break-inside: avoid;
+    }
+}
+
+/* Responsive Images */
+@media (max-width: 768px) {
+    .photo-grid-2,
+    .photo-grid-3,
+    .photo-grid-featured {
+        grid-template-columns: 1fr;
+    }
+    
+    .photo-hero {
+        height: 250px;
+    }
+    
+    .photo-collage {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(6, 100px);
+    }
+}

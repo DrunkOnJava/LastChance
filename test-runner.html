@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BMPOA Test Runner</title>
+    <style>
+        /* Test Suite Panel Styles */
+        .test-suite-panel {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            width: 400px;
+            max-height: 80vh;
+            background: white;
+            border: 2px solid #333;
+            border-radius: 8px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+            z-index: 10000;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .test-panel-header {
+            background: #1e3a5f;
+            color: white;
+            padding: 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .test-panel-header h3 {
+            margin: 0;
+            font-size: 18px;
+        }
+
+        .run-all-btn {
+            background: #4a90e2;
+            color: white;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        .run-all-btn:hover {
+            background: #357abd;
+        }
+
+        .test-categories {
+            flex: 1;
+            overflow-y: auto;
+            padding: 15px;
+        }
+
+        .test-category {
+            margin-bottom: 20px;
+        }
+
+        .test-category h4 {
+            color: #1e3a5f;
+            margin-bottom: 10px;
+            font-size: 16px;
+        }
+
+        .test-category button {
+            display: block;
+            width: 100%;
+            padding: 8px 12px;
+            margin-bottom: 5px;
+            background: #f0f0f0;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            cursor: pointer;
+            text-align: left;
+            transition: background 0.2s;
+        }
+
+        .test-category button:hover {
+            background: #e0e0e0;
+        }
+
+        .test-results {
+            max-height: 300px;
+            overflow-y: auto;
+            padding: 15px;
+            border-top: 1px solid #ddd;
+            background: #f9f9f9;
+        }
+
+        .test-result {
+            padding: 5px 10px;
+            margin-bottom: 5px;
+            border-radius: 4px;
+            font-size: 14px;
+        }
+
+        .test-result.pass {
+            background: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+        }
+
+        .test-result.fail {
+            background: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+        }
+
+        .test-result.warning {
+            background: #fff3cd;
+            color: #856404;
+            border: 1px solid #ffeeba;
+        }
+
+        .test-result.info {
+            background: #d1ecf1;
+            color: #0c5460;
+            border: 1px solid #bee5eb;
+        }
+
+        /* Frame for document preview */
+        .document-frame {
+            width: 100%;
+            height: 100vh;
+            border: none;
+        }
+
+        /* Container */
+        .test-container {
+            display: flex;
+            height: 100vh;
+        }
+
+        .document-preview {
+            flex: 1;
+            position: relative;
+        }
+    </style>
+</head>
+<body>
+    <div class="test-container">
+        <div class="document-preview">
+            <iframe src="bmpoa-print-optimized.html" class="document-frame" id="documentFrame"></iframe>
+        </div>
+    </div>
+
+    <div class="test-suite-panel">
+        <div class="test-panel-header">
+            <h3>BMPOA Test Suite</h3>
+            <button onclick="runAllTests()" class="run-all-btn">Run All Tests</button>
+        </div>
+        <div class="test-categories">
+            <div class="test-category">
+                <h4>Document Tests</h4>
+                <button onclick="testPageCount()">Page Count</button>
+                <button onclick="testContentOverflow()">Content Overflow</button>
+                <button onclick="testImageLoading()">Image Loading</button>
+                <button onclick="testLinkIntegrity()">Link Integrity</button>
+            </div>
+            <div class="test-category">
+                <h4>Pagination Tests</h4>
+                <button onclick="testOrphanedHeaders()">Orphaned Headers</button>
+                <button onclick="testTableBreaks()">Table Breaks</button>
+                <button onclick="testPageBreaks()">Page Breaks</button>
+            </div>
+            <div class="test-category">
+                <h4>Print Tests</h4>
+                <button onclick="testPrintMargins()">Print Margins</button>
+                <button onclick="testPrintColors()">Print Colors</button>
+                <button onclick="testPrintFonts()">Print Fonts</button>
+            </div>
+        </div>
+        <div class="test-results" id="testResults">
+            <div class="test-result info">Ready to run tests...</div>
+        </div>
+    </div>
+
+    <script>
+        let testResults = [];
+        const resultsContainer = document.getElementById('testResults');
+        const iframe = document.getElementById('documentFrame');
+
+        function logResult(type, message) {
+            const result = { type, message, timestamp: new Date() };
+            testResults.push(result);
+            
+            const resultEl = document.createElement('div');
+            resultEl.className = `test-result ${type}`;
+            resultEl.textContent = message;
+            resultsContainer.appendChild(resultEl);
+            resultsContainer.scrollTop = resultsContainer.scrollHeight;
+        }
+
+        function clearResults() {
+            testResults = [];
+            resultsContainer.innerHTML = '';
+        }
+
+        // Wait for iframe to load
+        iframe.onload = function() {
+            logResult('info', 'Document loaded successfully');
+            
+            // Load pagination test suite into iframe context
+            const script = iframe.contentDocument.createElement('script');
+            script.src = 'pagination-test-suite.js';
+            iframe.contentDocument.head.appendChild(script);
+        };
+
+        // Test Functions
+        function testPageCount() {
+            clearResults();
+            const doc = iframe.contentDocument;
+            const pages = doc.querySelectorAll('.page');
+            
+            if (pages.length === 0) {
+                logResult('fail', 'No pages found in document');
+                return;
+            }
+            
+            logResult('info', `Found ${pages.length} pages`);
+            
+            if (pages.length <= 20) {
+                logResult('pass', `Document fits within 20-page target (${pages.length} pages)`);
+            } else {
+                logResult('warning', `Document exceeds 20-page target (${pages.length} pages)`);
+            }
+            
+            // Check for empty pages
+            let emptyPages = 0;
+            pages.forEach((page, index) => {
+                const content = page.querySelector('.page-content');
+                if (!content || content.textContent.trim().length < 50) {
+                    emptyPages++;
+                    logResult('warning', `Page ${index + 1} appears to be empty or nearly empty`);
+                }
+            });
+            
+            if (emptyPages === 0) {
+                logResult('pass', 'No empty pages detected');
+            }
+        }
+
+        function testContentOverflow() {
+            clearResults();
+            const doc = iframe.contentDocument;
+            const pages = doc.querySelectorAll('.page');
+            let overflowCount = 0;
+            
+            pages.forEach((page, index) => {
+                const pageContent = page.querySelector('.page-content');
+                if (!pageContent) return;
+                
+                const pageHeight = page.offsetHeight;
+                const contentHeight = pageContent.scrollHeight;
+                const marginTop = parseFloat(getComputedStyle(pageContent).marginTop) || 0;
+                const marginBottom = parseFloat(getComputedStyle(pageContent).marginBottom) || 0;
+                const availableHeight = pageHeight - marginTop - marginBottom;
+                
+                if (contentHeight > availableHeight) {
+                    overflowCount++;
+                    const overflow = contentHeight - availableHeight;
+                    logResult('fail', `Page ${index + 1}: Content overflow by ${overflow}px`);
+                }
+            });
+            
+            if (overflowCount === 0) {
+                logResult('pass', 'No content overflow detected');
+            } else {
+                logResult('fail', `${overflowCount} pages have content overflow`);
+            }
+        }
+
+        function testImageLoading() {
+            clearResults();
+            const doc = iframe.contentDocument;
+            const images = doc.querySelectorAll('img');
+            let brokenImages = 0;
+            let loadedImages = 0;
+            
+            if (images.length === 0) {
+                logResult('warning', 'No images found in document');
+                return;
+            }
+            
+            logResult('info', `Checking ${images.length} images...`);
+            
+            images.forEach((img, index) => {
+                if (!img.complete || img.naturalHeight === 0) {
+                    brokenImages++;
+                    logResult('fail', `Broken image: ${img.src}`);
+                } else {
+                    loadedImages++;
+                }
+            });
+            
+            if (brokenImages === 0) {
+                logResult('pass', `All ${loadedImages} images loaded successfully`);
+            } else {
+                logResult('fail', `${brokenImages} broken images found`);
+            }
+        }
+
+        function testLinkIntegrity() {
+            clearResults();
+            const doc = iframe.contentDocument;
+            const links = doc.querySelectorAll('a[href]');
+            let internalLinks = 0;
+            let externalLinks = 0;
+            let brokenLinks = 0;
+            
+            logResult('info', `Checking ${links.length} links...`);
+            
+            links.forEach(link => {
+                const href = link.getAttribute('href');
+                
+                if (href.startsWith('http://') || href.startsWith('https://')) {
+                    externalLinks++;
+                } else if (href.startsWith('#')) {
+                    internalLinks++;
+                    // Check if anchor exists
+                    const targetId = href.substring(1);
+                    if (targetId && !doc.getElementById(targetId)) {
+                        brokenLinks++;
+                        logResult('warning', `Broken anchor link: ${href}`);
+                    }
+                } else {
+                    internalLinks++;
+                }
+            });
+            
+            logResult('info', `Internal links: ${internalLinks}, External links: ${externalLinks}`);
+            
+            if (brokenLinks === 0) {
+                logResult('pass', 'All links are valid');
+            } else {
+                logResult('warning', `${brokenLinks} broken anchor links found`);
+            }
+        }
+
+        function testOrphanedHeaders() {
+            clearResults();
+            const doc = iframe.contentDocument;
+            const headers = doc.querySelectorAll('h1, h2, h3, h4, h5, h6');
+            let orphanedCount = 0;
+            
+            headers.forEach(header => {
+                const rect = header.getBoundingClientRect();
+                const page = header.closest('.page');
+                if (!page) return;
+                
+                const pageRect = page.getBoundingClientRect();
+                const pageBottom = pageRect.bottom;
+                const headerBottom = rect.bottom;
+                const spaceAfter = pageBottom - headerBottom;
+                
+                // If header is in the last 100px of page with little content after
+                if (spaceAfter < 100) {
+                    const nextElement = header.nextElementSibling;
+                    if (!nextElement || nextElement.textContent.trim().length < 50) {
+                        orphanedCount++;
+                        logResult('warning', `Orphaned header on page: "${header.textContent.trim()}"`);
+                    }
+                }
+            });
+            
+            if (orphanedCount === 0) {
+                logResult('pass', 'No orphaned headers detected');
+            } else {
+                logResult('warning', `${orphanedCount} orphaned headers found`);
+            }
+        }
+
+        function testTableBreaks() {
+            clearResults();
+            const doc = iframe.contentDocument;
+            const tables = doc.querySelectorAll('table');
+            let brokenTables = 0;
+            
+            tables.forEach((table, index) => {
+                const style = getComputedStyle(table);
+                const pageBreakInside = style.pageBreakInside || style.breakInside;
+                
+                if (pageBreakInside !== 'avoid') {
+                    brokenTables++;
+                    logResult('warning', `Table ${index + 1} missing page-break-inside: avoid`);
+                }
+                
+                // Check if table spans pages
+                const rect = table.getBoundingClientRect();
+                const pages = doc.querySelectorAll('.page');
+                let spansPages = false;
+                
+                pages.forEach(page => {
+                    const pageRect = page.getBoundingClientRect();
+                    if (rect.top < pageRect.bottom && rect.bottom > pageRect.bottom) {
+                        spansPages = true;
+                    }
+                });
+                
+                if (spansPages) {
+                    logResult('fail', `Table ${index + 1} spans across pages`);
+                }
+            });
+            
+            if (brokenTables === 0) {
+                logResult('pass', 'All tables have proper break protection');
+            }
+        }
+
+        function testPageBreaks() {
+            clearResults();
+            const doc = iframe.contentDocument;
+            const pages = doc.querySelectorAll('.page');
+            
+            pages.forEach((page, index) => {
+                const style = getComputedStyle(page);
+                const pageBreakAfter = style.pageBreakAfter || style.breakAfter;
+                
+                if (index < pages.length - 1 && pageBreakAfter !== 'always' && pageBreakAfter !== 'page') {
+                    logResult('warning', `Page ${index + 1} missing page-break-after`);
+                }
+            });
+            
+            logResult('pass', 'Page break rules checked');
+        }
+
+        function testPrintMargins() {
+            clearResults();
+            const doc = iframe.contentDocument;
+            const pages = doc.querySelectorAll('.page');
+            
+            pages.forEach((page, index) => {
+                const content = page.querySelector('.page-content');
+                if (!content) return;
+                
+                const style = getComputedStyle(content);
+                const marginTop = parseFloat(style.marginTop) || parseFloat(style.top) || 0;
+                const marginBottom = parseFloat(style.marginBottom) || parseFloat(style.bottom) || 0;
+                const marginLeft = parseFloat(style.marginLeft) || parseFloat(style.left) || 0;
+                const marginRight = parseFloat(style.marginRight) || parseFloat(style.right) || 0;
+                
+                // Check if margins are at least 0.75in (72px at 96dpi)
+                const minMargin = 72;
+                
+                if (marginTop < minMargin || marginBottom < minMargin || 
+                    marginLeft < minMargin || marginRight < minMargin) {
+                    logResult('warning', `Page ${index + 1} has insufficient margins`);
+                }
+            });
+            
+            logResult('pass', 'Print margins checked');
+        }
+
+        function testPrintColors() {
+            clearResults();
+            const doc = iframe.contentDocument;
+            
+            // Check print color adjust
+            const coloredElements = doc.querySelectorAll('.alert-box, .warning-box, .info-box, .emergency-card');
+            let hasColorAdjust = true;
+            
+            coloredElements.forEach(el => {
+                const style = getComputedStyle(el);
+                const colorAdjust = style.printColorAdjust || style.webkitPrintColorAdjust || style.colorAdjust;
+                
+                if (colorAdjust !== 'exact') {
+                    hasColorAdjust = false;
+                }
+            });
+            
+            if (hasColorAdjust) {
+                logResult('pass', 'Print colors configured correctly');
+            } else {
+                logResult('warning', 'Some elements may not print with colors');
+            }
+        }
+
+        function testPrintFonts() {
+            clearResults();
+            const doc = iframe.contentDocument;
+            
+            // Check font loading
+            const fonts = ['Montserrat', 'Roboto'];
+            let allFontsLoaded = true;
+            
+            fonts.forEach(font => {
+                if (!doc.fonts.check(`16px ${font}`)) {
+                    allFontsLoaded = false;
+                    logResult('warning', `Font "${font}" may not be loaded`);
+                }
+            });
+            
+            if (allFontsLoaded) {
+                logResult('pass', 'All fonts loaded correctly');
+            }
+        }
+
+        function runAllTests() {
+            clearResults();
+            logResult('info', 'Running all tests...');
+            
+            setTimeout(() => testPageCount(), 100);
+            setTimeout(() => testContentOverflow(), 300);
+            setTimeout(() => testImageLoading(), 500);
+            setTimeout(() => testLinkIntegrity(), 700);
+            setTimeout(() => testOrphanedHeaders(), 900);
+            setTimeout(() => testTableBreaks(), 1100);
+            setTimeout(() => testPageBreaks(), 1300);
+            setTimeout(() => testPrintMargins(), 1500);
+            setTimeout(() => testPrintColors(), 1700);
+            setTimeout(() => testPrintFonts(), 1900);
+            
+            setTimeout(() => {
+                logResult('info', 'All tests completed');
+                
+                // Summary
+                const passes = testResults.filter(r => r.type === 'pass').length;
+                const failures = testResults.filter(r => r.type === 'fail').length;
+                const warnings = testResults.filter(r => r.type === 'warning').length;
+                
+                logResult('info', `Summary: ${passes} passed, ${failures} failed, ${warnings} warnings`);
+            }, 2100);
+        }
+    </script>
+</body>
+</html>

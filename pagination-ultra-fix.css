@@ -1,0 +1,128 @@
+/* Ultra-Aggressive Pagination Fix for 20-page target */
+
+/* Global resets */
+* {
+    margin: 0 !important;
+    padding: 0 !important;
+    box-sizing: border-box !important;
+}
+
+/* Base typography - extremely compact */
+body {
+    font-size: 10pt !important;
+    line-height: 1.2 !important;
+}
+
+/* Headings - minimal spacing */
+h1 { 
+    font-size: 16pt !important; 
+    margin: 0.3em 0 0.2em 0 !important;
+    page-break-after: avoid !important;
+}
+
+h2 { 
+    font-size: 14pt !important; 
+    margin: 0.25em 0 0.15em 0 !important;
+    page-break-after: avoid !important;
+}
+
+h3 { 
+    font-size: 12pt !important; 
+    margin: 0.2em 0 0.1em 0 !important;
+    page-break-after: avoid !important;
+}
+
+/* Paragraphs - tight spacing */
+p {
+    margin: 0 0 0.3em 0 !important;
+    text-align: justify !important;
+}
+
+/* Lists - compact */
+ul, ol {
+    margin: 0.2em 0 0.3em 1.2em !important;
+}
+
+li {
+    margin: 0 0 0.1em 0 !important;
+}
+
+/* Tables - space-saving */
+table {
+    font-size: 9pt !important;
+    margin: 0.3em 0 !important;
+    width: 100% !important;
+}
+
+th, td {
+    padding: 0.15em 0.3em !important;
+}
+
+/* Images - constrained */
+img {
+    max-height: 150px !important;
+    width: auto !important;
+    margin: 0.2em auto !important;
+    display: block !important;
+}
+
+/* Alert boxes - minimal */
+.alert-box, .info-box, .warning-box {
+    padding: 0.3em 0.5em !important;
+    margin: 0.3em 0 !important;
+    font-size: 9pt !important;
+}
+
+/* Page layout - maximized */
+.page {
+    padding: 0 !important;
+}
+
+.page-content {
+    padding: 0.5in !important;
+    margin: 0 !important;
+}
+
+/* Remove all decorative elements */
+.divider, .separator, .spacer,
+.decorative, .page-decoration {
+    display: none !important;
+}
+
+/* Multi-column for appropriate content */
+.amenity-list, .service-list,
+.contact-list {
+    column-count: 2 !important;
+    column-gap: 0.5em !important;
+}
+
+/* Hide page numbers on screen, show in print */
+@media screen {
+    .page-number { display: none !important; }
+}
+
+@media print {
+    .page {
+        height: 11in !important;
+        width: 8.5in !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        page-break-after: always !important;
+    }
+    
+    .page-content {
+        height: calc(11in - 1in) !important;
+        width: calc(8.5in - 1in) !important;
+        overflow: hidden !important;
+    }
+    
+    /* Force keep together */
+    .keep-together {
+        page-break-inside: avoid !important;
+    }
+    
+    /* Emergency section special handling */
+    .emergency-section {
+        page-break-before: always !important;
+    }
+}

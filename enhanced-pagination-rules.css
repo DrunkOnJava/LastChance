@@ -1,0 +1,225 @@
+/**
+ * Enhanced Pagination Rules for BMPOA Document
+ * Prevents orphans, widows, and content overflow
+ */
+
+/* Global orphan and widow control */
+* {
+    orphans: 3;
+    widows: 3;
+}
+
+/* Prevent headers from being orphaned */
+h1, h2, h3, h4, h5, h6 {
+    page-break-after: avoid;
+    break-after: avoid;
+    page-break-inside: avoid;
+    break-inside: avoid;
+}
+
+/* Keep headers with following content */
+h1 + *, h2 + *, h3 + *, h4 + * {
+    page-break-before: avoid;
+    break-before: avoid;
+}
+
+/* Keep related elements together */
+.keep-together,
+.alert-box,
+.contact-card,
+.emergency-card,
+.service-card,
+.committee-card {
+    page-break-inside: avoid;
+    break-inside: avoid;
+}
+
+/* Table pagination rules */
+table {
+    page-break-inside: auto;
+    break-inside: auto;
+}
+
+thead, tbody {
+    page-break-inside: avoid;
+    break-inside: avoid;
+}
+
+tr {
+    page-break-inside: avoid;
+    break-inside: avoid;
+    page-break-after: auto;
+    break-after: auto;
+}
+
+/* List pagination */
+ul, ol {
+    page-break-before: avoid;
+    break-before: avoid;
+}
+
+li {
+    page-break-inside: avoid;
+    break-inside: avoid;
+}
+
+/* Keep first/last list items with list */
+li:first-child,
+li:last-child,
+li:last-child + li {
+    page-break-after: avoid;
+    break-after: avoid;
+}
+
+/* Image pagination */
+img {
+    page-break-inside: avoid;
+    break-inside: avoid;
+    page-break-before: auto;
+    break-before: auto;
+    max-height: 8in; /* Prevent images from being too tall for page */
+}
+
+/* Figure and caption stay together */
+figure {
+    page-break-inside: avoid;
+    break-inside: avoid;
+}
+
+figure img + figcaption,
+img + p[style*="font-style: italic"] {
+    page-break-before: avoid;
+    break-before: avoid;
+}
+
+/* Professional component pagination */
+.section-header,
+.emergency-section-header,
+.professional-header,
+.quick-reference-card {
+    page-break-inside: avoid;
+    break-inside: avoid;
+    page-break-after: avoid;
+    break-after: avoid;
+}
+
+/* Emergency information stays together */
+.primary-emergency,
+.emergency-categories,
+.emergency-procedures {
+    page-break-inside: avoid;
+    break-inside: avoid;
+}
+
+/* Keep small sections together */
+.page-content > *:last-child {
+    margin-bottom: 0;
+}
+
+/* Prevent single lines at top/bottom of pages */
+p {
+    orphans: 2;
+    widows: 2;
+}
+
+/* Long paragraphs can break */
+p:not(.no-break) {
+    page-break-inside: auto;
+    break-inside: auto;
+}
+
+/* Chapter starts always on new page */
+.page[data-template="chapter-start"] {
+    page-break-before: always;
+    break-before: page;
+}
+
+/* Back cover on new page */
+.back-cover {
+    page-break-before: always;
+    break-before: page;
+}
+
+/* Force page breaks where needed */
+.page-break-before {
+    page-break-before: always;
+    break-before: page;
+}
+
+.page-break-after {
+    page-break-after: always;
+    break-after: page;
+}
+
+/* Adjust content to prevent overflow */
+.page-content {
+    max-height: calc(11in - 1.5in - 0.25in); /* Page height - margins - safety */
+    overflow: hidden;
+    position: relative;
+}
+
+/* Print-specific adjustments */
+@media print {
+    /* Ensure proper page dimensions */
+    .page {
+        height: 11in !important;
+        width: 8.5in !important;
+        margin: 0 !important;
+        page-break-after: always !important;
+        break-after: page !important;
+        position: relative !important;
+        overflow: hidden !important;
+    }
+    
+    /* Content area constraints */
+    .page-content {
+        position: absolute !important;
+        top: 0.75in !important;
+        left: 0.75in !important;
+        right: 0.75in !important;
+        bottom: 0.75in !important;
+        max-height: 9.5in !important;
+        overflow: hidden !important;
+    }
+    
+    /* Hide overflow indicators */
+    .overflow-indicator {
+        display: none !important;
+    }
+    
+    /* Professional footers at bottom */
+    .professional-footer,
+    .page-footer {
+        position: absolute !important;
+        bottom: 0.5in !important;
+        left: 0.75in !important;
+        right: 0.75in !important;
+    }
+    
+    /* Shrink oversized elements */
+    .contact-cards-container,
+    .emergency-categories {
+        font-size: 0.95em;
+    }
+    
+    /* Reduce spacing in tight spots */
+    .page-content > * {
+        margin-top: 0.8em;
+        margin-bottom: 0.8em;
+    }
+    
+    .page-content > h1,
+    .page-content > h2 {
+        margin-top: 1em;
+        margin-bottom: 0.5em;
+    }
+    
+    /* Compress tables slightly */
+    table {
+        font-size: 0.95em;
+    }
+    
+    td, th {
+        padding: 0.4em 0.6em;
+    }
+}

@@ -1,0 +1,387 @@
+/**
+ * Final Polish and Flourishes for BMPOA Document
+ * Professional finishing touches
+ */
+
+/* Drop Caps */
+.drop-cap {
+    float: left;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 4rem;
+    line-height: 1;
+    font-weight: 800;
+    margin: 0 0.5rem 0 0;
+    color: #1e3a5f;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+}
+
+/* Chapter opening paragraphs */
+.chapter-opening::first-letter {
+    float: left;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 4.5rem;
+    line-height: 1;
+    font-weight: 800;
+    margin: 0 0.5rem -0.2rem 0;
+    color: #4a90e2;
+    background: linear-gradient(135deg, #1e3a5f, #4a90e2);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+/* Decorative Section Breaks */
+.section-break {
+    text-align: center;
+    margin: 2rem 0;
+    position: relative;
+    height: 30px;
+}
+
+.section-break::before {
+    content: '❖ ❖ ❖';
+    font-size: 1rem;
+    color: #4a90e2;
+    letter-spacing: 1rem;
+}
+
+/* Ornamental Dividers */
+.ornamental-divider {
+    display: flex;
+    align-items: center;
+    margin: 2rem 0;
+    position: relative;
+}
+
+.ornamental-divider::before,
+.ornamental-divider::after {
+    content: '';
+    flex: 1;
+    height: 2px;
+    background: linear-gradient(
+        to right,
+        transparent,
+        #4a90e2 20%,
+        #4a90e2 80%,
+        transparent
+    );
+}
+
+.ornamental-divider-symbol {
+    margin: 0 1rem;
+    font-size: 1.5rem;
+    color: #1e3a5f;
+}
+
+/* Pull Quotes */
+.pull-quote {
+    position: relative;
+    margin: 2rem 2rem;
+    padding: 1.5rem 2rem;
+    font-family: 'Georgia', serif;
+    font-size: 1.3rem;
+    font-style: italic;
+    color: #1e3a5f;
+    text-align: center;
+    line-height: 1.8;
+}
+
+.pull-quote::before,
+.pull-quote::after {
+    position: absolute;
+    font-size: 4rem;
+    color: #e7f3ff;
+    font-family: 'Georgia', serif;
+    font-weight: bold;
+}
+
+.pull-quote::before {
+    content: '"';
+    top: -1rem;
+    left: 0;
+}
+
+.pull-quote::after {
+    content: '"';
+    bottom: -2.5rem;
+    right: 0;
+}
+
+/* Sidebar Highlights */
+.sidebar-highlight {
+    float: right;
+    width: 35%;
+    margin: 0 0 1rem 1.5rem;
+    padding: 1.5rem;
+    background: linear-gradient(135deg, #f8f9fa, white);
+    border-left: 4px solid #4a90e2;
+    border-radius: 0 8px 8px 0;
+    font-size: 0.95rem;
+    box-shadow: -4px 0 20px rgba(0,0,0,0.05);
+}
+
+.sidebar-highlight h4 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.1rem;
+    color: #1e3a5f;
+    margin: 0 0 0.75rem 0;
+}
+
+/* Callout Ribbons */
+.ribbon-callout {
+    position: relative;
+    background: #4a90e2;
+    color: white;
+    padding: 1rem 3rem;
+    margin: 2rem -2rem;
+    text-align: center;
+    font-weight: 600;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+.ribbon-callout::before,
+.ribbon-callout::after {
+    content: '';
+    position: absolute;
+    top: 100%;
+    border-style: solid;
+    border-color: #1e3a5f transparent transparent transparent;
+}
+
+.ribbon-callout::before {
+    left: 0;
+    border-width: 1rem 0 0 2rem;
+}
+
+.ribbon-callout::after {
+    right: 0;
+    border-width: 1rem 2rem 0 0;
+}
+
+/* Elegant Lists */
+ul.elegant-list {
+    list-style: none;
+    padding-left: 0;
+}
+
+ul.elegant-list li {
+    position: relative;
+    padding-left: 2rem;
+    margin-bottom: 0.75rem;
+}
+
+ul.elegant-list li::before {
+    content: '◆';
+    position: absolute;
+    left: 0;
+    color: #4a90e2;
+    font-size: 1rem;
+}
+
+/* Special Emphasis */
+.special-emphasis {
+    display: inline-block;
+    position: relative;
+    padding: 0 0.5rem;
+    font-weight: 600;
+    color: #1e3a5f;
+}
+
+.special-emphasis::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(to right, #4a90e2, #1e3a5f);
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+}
+
+.special-emphasis:hover::after {
+    transform: scaleX(1);
+}
+
+/* Corner Flourishes */
+.corner-flourish {
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    opacity: 0.1;
+}
+
+.corner-flourish::before,
+.corner-flourish::after {
+    content: '';
+    position: absolute;
+    background: #1e3a5f;
+}
+
+.corner-flourish.top-left {
+    top: 0;
+    left: 0;
+}
+
+.corner-flourish.top-left::before {
+    width: 100%;
+    height: 3px;
+}
+
+.corner-flourish.top-left::after {
+    width: 3px;
+    height: 100%;
+}
+
+.corner-flourish.bottom-right {
+    bottom: 0;
+    right: 0;
+}
+
+.corner-flourish.bottom-right::before {
+    width: 100%;
+    height: 3px;
+    bottom: 0;
+}
+
+.corner-flourish.bottom-right::after {
+    width: 3px;
+    height: 100%;
+    right: 0;
+}
+
+/* Page Edge Decoration */
+.page-edge-decoration {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 20px;
+    height: 80%;
+    opacity: 0.05;
+    background: repeating-linear-gradient(
+        0deg,
+        #1e3a5f,
+        #1e3a5f 10px,
+        transparent 10px,
+        transparent 20px
+    );
+}
+
+.page-edge-left {
+    left: 0;
+}
+
+.page-edge-right {
+    right: 0;
+}
+
+/* Enhanced Blockquotes */
+blockquote.enhanced {
+    position: relative;
+    margin: 2rem 0;
+    padding: 1.5rem 2rem 1.5rem 3rem;
+    background: linear-gradient(to right, #f8f9fa, white);
+    border-left: 6px solid #4a90e2;
+    font-style: italic;
+    font-size: 1.1rem;
+    line-height: 1.8;
+}
+
+blockquote.enhanced::before {
+    content: '"';
+    position: absolute;
+    left: 0.5rem;
+    top: 0;
+    font-size: 4rem;
+    color: #4a90e2;
+    opacity: 0.3;
+    font-family: 'Georgia', serif;
+}
+
+/* Subtle Animations */
+@media screen {
+    .drop-cap,
+    .chapter-opening::first-letter {
+        animation: fadeInScale 0.8s ease-out;
+    }
+    
+    @keyframes fadeInScale {
+        from {
+            opacity: 0;
+            transform: scale(0.8);
+        }
+        to {
+            opacity: 1;
+            transform: scale(1);
+        }
+    }
+    
+    .ornamental-divider {
+        animation: expandWidth 1s ease-out;
+    }
+    
+    @keyframes expandWidth {
+        from {
+            width: 0;
+            opacity: 0;
+        }
+        to {
+            width: 100%;
+            opacity: 1;
+        }
+    }
+}
+
+/* Polish for Headers */
+h1.polished,
+h2.polished {
+    position: relative;
+    padding-bottom: 1rem;
+}
+
+h1.polished::after,
+h2.polished::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100px;
+    height: 4px;
+    background: linear-gradient(to right, #1e3a5f, #4a90e2, transparent);
+    border-radius: 2px;
+}
+
+/* First Line Enhancement */
+.first-line-enhance::first-line {
+    font-weight: 600;
+    color: #1e3a5f;
+    letter-spacing: 0.5px;
+}
+
+/* Print Optimizations */
+@media print {
+    .drop-cap,
+    .chapter-opening::first-letter {
+        color: #1e3a5f !important;
+        -webkit-text-fill-color: #1e3a5f !important;
+        background: none !important;
+    }
+    
+    .corner-flourish,
+    .page-edge-decoration {
+        display: none;
+    }
+    
+    .ribbon-callout {
+        margin-left: 0;
+        margin-right: 0;
+        box-shadow: none;
+        border: 2px solid #4a90e2;
+    }
+    
+    .sidebar-highlight {
+        page-break-inside: avoid;
+        box-shadow: none;
+        border: 1px solid #dfe6e9;
+    }
+}

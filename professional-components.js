@@ -567,6 +567,16 @@ class ProfessionalComponents {
         checklistScript.src = 'professional-checklist.js';
         document.head.appendChild(checklistScript);
         
+        // Load back cover script
+        const backCoverScript = document.createElement('script');
+        backCoverScript.src = 'professional-back-cover.js';
+        document.head.appendChild(backCoverScript);
+        
+        // Load final polish script
+        const polishScript = document.createElement('script');
+        polishScript.src = 'final-polish.js';
+        document.head.appendChild(polishScript);
+        
         // Apply enhancements
         // this.createProfessionalCoverPage(); // Keeping original cover page
         this.improveTOC();
@@ -617,6 +627,23 @@ class ProfessionalComponents {
         checklistScript.onload = () => {
             if (typeof professionalChecklists !== 'undefined') {
                 professionalChecklists.createChecklists();
+            }
+        };
+        
+        // Apply back cover after script loads
+        backCoverScript.onload = () => {
+            if (typeof backCover !== 'undefined') {
+                backCover.createBackCover();
+            }
+        };
+        
+        // Apply final polish after script loads
+        polishScript.onload = () => {
+            if (typeof finalPolish !== 'undefined') {
+                // Apply final polish after a delay to ensure all other components are loaded
+                setTimeout(() => {
+                    finalPolish.applyFinalPolish();
+                }, 1000);
             }
         };
         

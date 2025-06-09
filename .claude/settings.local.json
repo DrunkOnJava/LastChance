@@ -17,7 +17,24 @@
       "Bash(node:*)",
       "Bash(npm install)",
       "Bash(rm:*)",
-      "Bash(git add:*)"
+      "Bash(git add:*)",
+      "Bash(git commit:*)",
+      "Bash(git push:*)",
+      "Bash(ls:*)",
+      "Bash(git config:*)",
+      "Bash(git remote add:*)",
+      "Bash(gh repo create:*)",
+      "Bash(gh repo view:*)",
+      "Bash(node:*)",
+      "Bash(for file in pagination-fixes.css restored-content-styles.css auto-pagination.js directory-monitor-browser.js fix-pagination.js pagination-auto-fix.js pagination-safeguards.js pagination-test-suite.js print-preview-testing.js restore-archive-content.js)",
+      "Bash(do if [ -f \"$file\" ])",
+      "Bash(then echo \"✓ $file\")",
+      "Bash(else echo \"✗ $file (MISSING)\")",
+      "Bash(fi)",
+      "Bash(done)",
+      "Bash(gh api:*)",
+      "Bash(ls:*)",
+      "Bash(osascript:*)"
     ],
     "deny": []
   }

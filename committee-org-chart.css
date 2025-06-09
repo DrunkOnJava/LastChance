@@ -1,0 +1,395 @@
+/**
+ * Committee Organization Chart Styles for BMPOA Document
+ * Based on verified committee structure from source materials
+ */
+
+/* Organization Chart Container */
+.org-chart-container {
+    background: linear-gradient(to bottom, #f8f9fa, white);
+    border-radius: 16px;
+    padding: 2rem;
+    margin: 2rem 0;
+    page-break-inside: avoid;
+    position: relative;
+    overflow: hidden;
+}
+
+.org-chart-title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2rem;
+    font-weight: 800;
+    color: #1e3a5f;
+    text-align: center;
+    margin-bottom: 2rem;
+    position: relative;
+}
+
+.org-chart-title::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 150px;
+    height: 3px;
+    background: linear-gradient(to right, #1e3a5f, #4a90e2);
+}
+
+/* Chart Structure */
+.org-chart {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+}
+
+/* Board Level */
+.board-level {
+    background: #1e3a5f;
+    color: white;
+    padding: 2rem 3rem;
+    border-radius: 12px;
+    text-align: center;
+    margin-bottom: 3rem;
+    box-shadow: 0 8px 32px rgba(30, 58, 95, 0.3);
+    position: relative;
+}
+
+.board-level::after {
+    content: '';
+    position: absolute;
+    bottom: -30px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 2px;
+    height: 30px;
+    background: #4a90e2;
+}
+
+.board-title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin: 0 0 0.5rem 0;
+}
+
+.board-subtitle {
+    font-size: 1rem;
+    opacity: 0.9;
+}
+
+/* Executive Officers */
+.executive-officers {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 3rem;
+    width: 100%;
+}
+
+.officer-card {
+    background: white;
+    border: 2px solid #4a90e2;
+    border-radius: 10px;
+    padding: 1.5rem;
+    text-align: center;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+}
+
+.officer-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+}
+
+.officer-role {
+    font-size: 0.85rem;
+    color: #4a90e2;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+}
+
+.officer-name {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #1e3a5f;
+    margin: 0;
+}
+
+.officer-additional {
+    font-size: 0.85rem;
+    color: #5d6d7e;
+    margin-top: 0.5rem;
+    font-style: italic;
+}
+
+/* Committees Grid */
+.committees-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    width: 100%;
+    margin-top: 2rem;
+}
+
+.committee-card {
+    background: white;
+    border: 2px solid #e0e0e0;
+    border-radius: 12px;
+    padding: 1.5rem;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.committee-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(to right, #1e3a5f, #4a90e2);
+}
+
+.committee-card:hover {
+    border-color: #4a90e2;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+}
+
+.committee-header {
+    margin-bottom: 1rem;
+}
+
+.committee-name {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #1e3a5f;
+    margin: 0 0 0.5rem 0;
+}
+
+.committee-abbreviation {
+    font-size: 0.8rem;
+    color: #7f8c8d;
+    font-weight: 600;
+    background: #f0f0f0;
+    padding: 0.2rem 0.5rem;
+    border-radius: 12px;
+    display: inline-block;
+}
+
+.committee-chair {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid #e0e0e0;
+}
+
+.chair-icon {
+    font-size: 1.2rem;
+}
+
+.chair-info {
+    flex: 1;
+}
+
+.chair-label {
+    font-size: 0.75rem;
+    color: #7f8c8d;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.chair-name {
+    font-weight: 600;
+    color: #2c3e50;
+}
+
+/* Special Committee Styles */
+.committee-active {
+    border-color: #27ae60;
+}
+
+.committee-active::before {
+    background: linear-gradient(to right, #27ae60, #2ecc71);
+}
+
+.committee-inactive {
+    opacity: 0.7;
+    border-style: dashed;
+}
+
+.committee-inactive .committee-chair {
+    color: #95a5a6;
+}
+
+/* Sub-committees */
+.sub-committees {
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid #e0e0e0;
+}
+
+.sub-committee-label {
+    font-size: 0.75rem;
+    color: #7f8c8d;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 0.5rem;
+}
+
+.sub-committee-item {
+    font-size: 0.85rem;
+    color: #5d6d7e;
+    padding: 0.25rem 0;
+}
+
+/* Directors Section */
+.directors-section {
+    background: #f8f9fa;
+    border-radius: 12px;
+    padding: 1.5rem;
+    margin: 2rem 0;
+}
+
+.directors-title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: #1e3a5f;
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+.directors-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+}
+
+.director-item {
+    background: white;
+    padding: 1rem;
+    border-radius: 8px;
+    text-align: center;
+    border: 1px solid #e0e0e0;
+}
+
+.director-name {
+    font-weight: 600;
+    color: #2c3e50;
+    margin-bottom: 0.25rem;
+}
+
+.director-roles {
+    font-size: 0.85rem;
+    color: #5d6d7e;
+}
+
+/* Visual Connections */
+.connection-line {
+    position: absolute;
+    width: 2px;
+    background: #4a90e2;
+    z-index: -1;
+}
+
+.horizontal-line {
+    height: 2px;
+    width: auto;
+    background: #4a90e2;
+}
+
+/* Committee Statistics */
+.committee-stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 1rem;
+    margin: 2rem 0;
+    padding: 1.5rem;
+    background: linear-gradient(135deg, #e7f3ff, #f8f9fa);
+    border-radius: 12px;
+}
+
+.stat-item {
+    text-align: center;
+}
+
+.stat-number {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: #1e3a5f;
+    line-height: 1;
+}
+
+.stat-label {
+    font-size: 0.9rem;
+    color: #5d6d7e;
+    margin-top: 0.5rem;
+}
+
+/* Legend */
+.org-chart-legend {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-top: 2rem;
+    padding: 1rem;
+    background: #f8f9fa;
+    border-radius: 8px;
+}
+
+.legend-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.85rem;
+    color: #5d6d7e;
+}
+
+.legend-color {
+    width: 20px;
+    height: 20px;
+    border-radius: 4px;
+    border: 2px solid #ddd;
+}
+
+.legend-color.active { background: #27ae60; }
+.legend-color.board { background: #1e3a5f; }
+.legend-color.executive { background: #4a90e2; }
+
+/* Print Optimization */
+@media print {
+    .org-chart-container {
+        page-break-inside: avoid;
+        background: white !important;
+    }
+    
+    .board-level {
+        background: #f8f9fa !important;
+        color: #1e3a5f !important;
+        border: 3px solid #1e3a5f;
+    }
+    
+    .committees-grid {
+        display: block;
+    }
+    
+    .committee-card {
+        page-break-inside: avoid;
+        margin-bottom: 1rem;
+    }
+    
+    .officer-card {
+        background: white !important;
+        border: 2px solid #4a90e2;
+    }
+}
