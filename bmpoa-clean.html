@@ -3,14 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Official Blue Mountain Property Owners Association (BMPOA) resident guide covering governance, services, safety, wildlife, and community resources for Linden, VA.">
-    <meta name="keywords" content="BMPOA, Blue Mountain, Property Owners Association, Linden Virginia, Warren County, Sanitary District, Community Guide">
-    <meta name="author" content="Blue Mountain Property Owners Association">
-    <meta name="generator" content="BMPOA Community Guide 2025">
-    <meta name="format-detection" content="telephone=no">
-    <meta name="print-color-adjust" content="exact">
-    <meta name="color-scheme" content="light">
-    <title>Blue Mountain Property Owners Association - Official Resident Guide 2025</title>
+    <title>Blue Mountain Property Owners Association Guide - Print Version</title>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="pagination-fixes.css">
     <link rel="stylesheet" href="restored-content-styles.css">
@@ -20,127 +13,6 @@
     <link rel="stylesheet" href="enriched-content-styles.css">
     <link rel="stylesheet" href="pdf-export-styles.css">
     <style>
-        /* Print Optimization Settings */
-        @page {
-            size: 8.5in 11in;
-            margin: 0.75in;
-            marks: crop cross;
-            bleed: 0.125in;
-            orphans: 3;
-            widows: 3;
-            @top-center {
-                content: "Blue Mountain Property Owners Association - Official Guide 2025";
-                font-family: 'Montserrat', Arial, sans-serif;
-                font-size: 9pt;
-                color: #5d6d7e;
-                margin-top: 0.25in;
-            }
-            @bottom-center {
-                content: "Page " counter(page);
-                font-family: 'Montserrat', Arial, sans-serif;
-                font-size: 9pt;
-                color: #5d6d7e;
-                margin-bottom: 0.25in;
-            }
-        }
-        
-        @page :first {
-            @top-center { content: none; }
-            @bottom-center { content: none; }
-        }
-        
-        @media print {
-            * {
-                -webkit-print-color-adjust: exact !important;
-                color-adjust: exact !important;
-                print-color-adjust: exact !important;
-            }
-            
-            html, body {
-                width: 100% !important;
-                height: 100% !important;
-                margin: 0 !important;
-                padding: 0 !important;
-                overflow: visible !important;
-                background: white !important;
-            }
-            
-            .page {
-                page-break-after: always;
-                page-break-inside: avoid;
-                margin: 0 !important;
-                width: 100% !important;
-                height: auto !important;
-                min-height: 100vh !important;
-                box-shadow: none !important;
-                border: none !important;
-                background: white !important;
-            }
-            
-            .page:last-child {
-                page-break-after: avoid;
-            }
-            
-            h1, h2, h3, h4, h5, h6 {
-                page-break-after: avoid;
-                orphans: 3;
-                widows: 3;
-            }
-            
-            p, li {
-                orphans: 3;
-                widows: 3;
-            }
-            
-            img {
-                max-width: 100% !important;
-                height: auto !important;
-                page-break-inside: avoid;
-                display: block;
-            }
-            
-            table {
-                page-break-inside: avoid;
-            }
-            
-            .page-break-before {
-                page-break-before: always;
-            }
-            
-            .page-break-after {
-                page-break-after: always;
-            }
-            
-            .no-break {
-                page-break-inside: avoid;
-            }
-            
-            /* Hide screen-only elements */
-            .screen-only {
-                display: none !important;
-            }
-            
-            /* Ensure proper font rendering in print */
-            @font-face {
-                font-family: 'Print Montserrat';
-                src: local('Montserrat'), local('Arial'), local('Helvetica');
-                font-display: block;
-            }
-            
-            @font-face {
-                font-family: 'Print Roboto';
-                src: local('Roboto'), local('Georgia'), local('Times');
-                font-display: block;
-            }
-        }
-        
-        /* PDF Export Optimization */
-        @media screen and (prefers-color-scheme: light) {
-            html {
-                background-color: #e0e0e0;
-            }
-        }
-        
         /* CSS Variables */
         :root {
             /* Page Dimensions */
@@ -5795,35 +5667,26 @@
             object-fit: contain;
         }
         
-        /* Hide error notifications for production */
-        .error-notification,
-        .dev-toolbar,
-        .pagination-error,
-        .error-panel,
-        #error-logger-panel,
-        .toolbar,
-        .console-panel {
-            display: none !important;
-        }
-        
-        /* Hide overflow indicators */
+        /* Emergency overflow indicator */
         .page-content[data-overflow="true"]::after {
-            display: none !important;
+            content: "⚠️ OVERFLOW";
+            position: relative;
+            bottom: 0;
+            right: 0;
+            background: red;
+            color: white;
+            padding: 2px 6px;
+            font-size: 10px;
+            font-weight: bold;
+            z-index: 9999;
         }
     </style>
     
-    <!-- Include Test Suite -->
-    <script src="pagination-test-suite.js"></script>
+    <!-- Scripts removed for clean display -->
     
-    <!-- Include Auto-Pagination -->
-    <script src="auto-pagination.js"></script>
-    
-    <!-- Include Directory Monitor -->
-    <script src="directory-monitor-browser.js"></script>
-    
-    <!-- Enhanced Error Logging System -->
+    <!-- Clean document - error logging removed -->
     <script>
-        // Comprehensive Error Logging System
+        // Simple page initialization
         class ErrorLogger {
             constructor() {
                 this.errors = [];
@@ -6136,19 +5999,13 @@ Total Info: ${this.errors.filter(e => e.level === 'INFO').length}
             }
         }
         
-        // Initialize error logger - disabled for production
-        const errorLogger = { 
-            logError: () => {}, 
-            logWarning: () => {}, 
-            logInfo: () => {},
-            hidePanel: () => {},
-            showPanel: () => {}
-        };
+        // Initialize error logger
+        const errorLogger = new ErrorLogger();
         window.errorLogger = errorLogger;
         
-        // Error notification styles disabled for production
-        // const errorStyles = document.createElement('style');
-        // errorStyles.textContent = `
+        // Add error notification styles
+        const errorStyles = document.createElement('style');
+        errorStyles.textContent = `
             .error-notification {
                 position: fixed;
                 top: 20px;
@@ -6223,7 +6080,7 @@ Total Info: ${this.errors.filter(e => e.level === 'INFO').length}
                 }
             }
         `;
-        // document.head.appendChild(errorStyles);
+        document.head.appendChild(errorStyles);
     </script>
     
     <!-- Toolbar JavaScript -->

@@ -36,6 +36,8 @@
       "Bash(ls:*)",
       "Bash(osascript:*)",
       "Bash(jq:*)",
+      "Bash(cp:*)",
+      "Bash(npm install:*)",
       "Bash(cp:*)"
     ],
     "deny": []

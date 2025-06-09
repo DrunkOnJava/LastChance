@@ -1,0 +1,2000 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blue Mountain Property Owners Association Guide - Print Version</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="pagination-fixes.css">
+    <link rel="stylesheet" href="restored-content-styles.css">
+    <link rel="stylesheet" href="enhanced-pagination-rules.css">
+    <link rel="stylesheet" href="fix-margin-violations.css">
+    <link rel="stylesheet" href="pagination-ultra-fix.css">
+    <link rel="stylesheet" href="enriched-content-styles.css">
+    <link rel="stylesheet" href="pdf-export-styles.css">
+    <style>
+        /* CSS Variables */
+        :root {
+            /* Page Dimensions */
+            --page-width: 8.5in;
+            --page-height: 11in;
+            --page-margin-top: 0.75in;
+            --page-margin-bottom: 0.75in;
+            --page-margin-left: 0.75in;
+            --page-margin-right: 0.75in;
+            
+            /* Safe content area with margin error boundaries */
+            --safe-margin: 0.25in;
+            --content-width: calc(var(--page-width) - var(--page-margin-left) - var(--page-margin-right) - var(--safe-margin));
+            --content-height: calc(var(--page-height) - var(--page-margin-top) - var(--page-margin-bottom) - var(--safe-margin));
+            
+            /* Typography */
+            --font-heading: 'Montserrat', Arial, sans-serif;
+            --font-body: 'Roboto', Georgia, serif;
+            --font-size-base: 11pt;
+            --line-height-base: 1.6;
+            
+            /* Colors */
+            --color-primary: #1e3a5f;
+            --color-secondary: #4a90e2;
+            --color-accent: #e74c3c;
+            --color-text: #2c3e50;
+            --color-text-light: #5d6d7e;
+            --color-border: #ddd;
+            --color-background: #fff;
+            --color-background-alt: #f7f9fa;
+            
+            /* Professional touches */
+            --shadow-subtle: 0 2px 4px rgba(0,0,0,0.08);
+            --shadow-medium: 0 4px 12px rgba(0,0,0,0.12);
+            --shadow-strong: 0 8px 24px rgba(0,0,0,0.16);
+            --radius-small: 8px;
+            --radius-medium: 12px;
+            --radius-large: 16px;
+        }
+        
+        /* Global Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        /* Base Typography */
+        html {
+            font-size: var(--font-size-base);
+            line-height: var(--line-height-base);
+            color: var(--color-text);
+            font-family: var(--font-body);
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+        
+        body {
+            background: #e0e0e0;
+            margin: 0;
+            padding: 1in 0;
+            counter-reset: page-counter;
+        }
+        
+        /* Page Container Template System */
+        .page {
+            width: var(--page-width);
+            min-height: var(--page-height);
+            height: var(--page-height);
+            margin: 0 auto 0.5in auto;
+            background: var(--color-background);
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+            position: relative;
+            overflow: hidden;
+            counter-increment: page-counter;
+            
+            /* Page break rules */
+            page-break-after: always;
+            page-break-inside: avoid;
+            break-after: page;
+            break-inside: avoid;
+        }
+        
+        /* Content Area with Margin Error Boundaries */
+        .page-content {
+            position: relative;
+            top: var(--page-margin-top);
+            left: var(--page-margin-left);
+            right: var(--page-margin-right);
+            bottom: var(--page-margin-bottom);
+            overflow: hidden;
+            columns: 1;
+            column-fill: auto;
+            height: var(--content-height);
+        }
+        
+        /* Page Templates */
+        .page[data-template="cover"] .page-content {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+        
+        .page[data-template="chapter-start"] .page-content {
+            padding-top: 1.5in;
+        }
+        
+        /* Page Header/Footer Areas */
+        .page-header {
+            position: relative;
+            top: 0.25in;
+            left: var(--page-margin-left);
+            right: var(--page-margin-right);
+            height: 0.5in;
+            font-size: 9pt;
+            color: var(--color-text-light);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .page-footer {
+            position: relative;
+            bottom: 0.25in;
+            left: var(--page-margin-left);
+            right: var(--page-margin-right);
+            height: 0.5in;
+            font-size: 9pt;
+            color: var(--color-text-light);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .page-number::after {
+            content: counter(page-counter);
+        }
+        
+        /* Typography with Break Control */
+        h1, h2, h3, h4, h5, h6 {
+            font-family: var(--font-heading);
+            font-weight: 600;
+            line-height: 1.3;
+            color: var(--color-primary);
+            margin-top: 0;
+            margin-bottom: 0.5em;
+            
+            /* Pagination control */
+            page-break-after: avoid;
+            break-after: avoid;
+            page-break-inside: avoid;
+            break-inside: avoid;
+            
+            /* Keep with next element */
+            orphans: 3;
+            widows: 3;
+        }
+        
+        h1 {
+            font-size: 28pt;
+            font-weight: 700;
+            margin-bottom: 1em;
+            page-break-before: always;
+            break-before: page;
+        }
+        
+        .page[data-template="cover"] h1,
+        .page[data-template="chapter-start"] h1 {
+            page-break-before: auto;
+            break-before: auto;
+        }
+        
+        h2 {
+            font-size: 20pt;
+            margin-top: 1.5em;
+            margin-bottom: 0.75em;
+        }
+        
+        h3 {
+            font-size: 16pt;
+            margin-top: 1.2em;
+            margin-bottom: 0.6em;
+        }
+        
+        h4 {
+            font-size: 14pt;
+            margin-top: 1em;
+            margin-bottom: 0.5em;
+        }
+        
+        /* Paragraphs with Widow/Orphan Control */
+        p {
+            margin-bottom: 0.75em;
+            text-align: justify;
+            hyphens: auto;
+            -webkit-hyphens: auto;
+            -moz-hyphens: auto;
+            -ms-hyphens: auto;
+            orphans: 2;
+            widows: 2;
+            word-wrap: break-word;
+            overflow-wrap: break-word;
+        }
+        
+        /* Lists with Keep-Together Rules */
+        ul, ol {
+            margin-bottom: 0.75em;
+            margin-left: 1.5em;
+            page-break-inside: avoid;
+            break-inside: avoid;
+        }
+        
+        li {
+            margin-bottom: 0.25em;
+            orphans: 2;
+            widows: 2;
+        }
+        
+        /* Nested lists can break */
+        li > ul, li > ol {
+            page-break-inside: auto;
+            break-inside: auto;
+        }
+        
+        /* Tables with Smart Breaking */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1em 0;
+            font-size: 10pt;
+            page-break-inside: auto;
+            break-inside: auto;
+        }
+        
+        thead {
+            display: table-header-group;
+        }
+        
+        tbody {
+            display: table-row-group;
+        }
+        
+        th, td {
+            border: 1px solid var(--color-border);
+            padding: 0.5em;
+            text-align: left;
+        }
+        
+        th {
+            background: var(--color-background-alt);
+            font-weight: 600;
+            page-break-inside: avoid;
+            break-inside: avoid;
+            page-break-after: avoid;
+            break-after: avoid;
+        }
+        
+        tr {
+            page-break-inside: avoid;
+            break-inside: avoid;
+        }
+        
+        /* Images with Size Constraints */
+        img {
+            max-width: 100%;
+            max-height: calc(var(--content-height) - 2em);
+            height: auto;
+            display: block;
+            margin: 1em auto;
+            page-break-inside: avoid;
+            break-inside: avoid;
+            object-fit: contain;
+        }
+        
+        figure {
+            margin: 1em 0;
+            page-break-inside: avoid;
+            break-inside: avoid;
+        }
+        
+        figcaption {
+            font-size: 9pt;
+            color: var(--color-text-light);
+            text-align: center;
+            margin-top: 0.5em;
+            page-break-before: avoid;
+            break-before: avoid;
+        }
+        
+        /* Professional Image Container Styles */
+        .image-container {
+            position: relative;
+            overflow: hidden;
+            border-radius: var(--radius-medium);
+            box-shadow: var(--shadow-medium);
+            background: #f8f9fa;
+            padding: 4px;
+            margin: 1em 0;
+        }
+        
+        .image-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: calc(var(--radius-medium) - 4px);
+            box-shadow: none;
+            margin: 0;
+        }
+        
+        /* Hero Image Style */
+        .hero-image {
+            position: relative;
+            width: 100%;
+            height: 4.5in;
+            margin: 1em 0;
+            overflow: hidden;
+            border-radius: var(--radius-large);
+            box-shadow: var(--shadow-strong);
+        }
+        
+        .hero-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            margin: 0;
+            border-radius: 0;
+        }
+        
+        .hero-image .overlay {
+            position: relative;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(to top, rgba(30, 58, 95, 0.9), transparent);
+            padding: 2em 1.5em 1em;
+            color: white;
+        }
+        
+        .hero-image .overlay h2 {
+            color: white;
+            margin-bottom: 0.25em;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        .hero-image .overlay p {
+            color: rgba(255,255,255,0.9);
+            margin-bottom: 0;
+        }
+        
+        /* Image Grid Layouts */
+        .image-grid-2 {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1em;
+            margin: 1.5em 0;
+        }
+        
+        .image-grid-3 {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 0.75em;
+            margin: 1.5em 0;
+        }
+        
+        .image-feature {
+            display: grid;
+            grid-template-columns: 2fr 3fr;
+            gap: 1.5em;
+            align-items: center;
+            margin: 2em 0;
+        }
+        
+        .image-feature.reverse {
+            grid-template-columns: 3fr 2fr;
+        }
+        
+        .image-feature .content {
+            padding: 1em;
+        }
+        
+        /* Professional rounded corners for all images */
+        img {
+            border-radius: var(--radius-small);
+            box-shadow: var(--shadow-subtle);
+        }
+        
+        /* Layout Variations */
+        .layout-sidebar {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 1.5em;
+            margin: 1em 0;
+        }
+        
+        .layout-sidebar .sidebar {
+            background: var(--color-background-alt);
+            padding: 1em;
+            border-radius: var(--radius-medium);
+            border-left: 0 solid var(--color-primary);
+        }
+        
+        .layout-cards {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1em;
+            margin: 1.5em 0;
+        }
+        
+        .card {
+            background: white;
+            border: 1px solid var(--color-border);
+            border-radius: var(--radius-medium);
+            padding: 1em;
+            box-shadow: var(--shadow-subtle);
+            transition: box-shadow 0.2s ease;
+        }
+        
+        .card:hover {
+            box-shadow: var(--shadow-medium);
+        }
+        
+        .card h4 {
+            color: var(--color-primary);
+            margin-bottom: 0.5em;
+            padding-bottom: 0.5em;
+            border-bottom: 2px solid var(--color-border);
+        }
+        
+        /* Feature Box Layouts */
+        .feature-box {
+            background: linear-gradient(135deg, var(--color-background-alt) 0%, white 100%);
+            border-radius: var(--radius-large);
+            padding: 2em;
+            margin: 1.5em 0;
+            box-shadow: var(--shadow-medium);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .feature-box::before {
+            content: '';
+            position: relative;
+            top: 0;
+            left: 0;
+            width: 5px;
+            height: 100%;
+            background: var(--color-secondary);
+        }
+        
+        /* Statistic Displays */
+        .stat-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 1em;
+            margin: 1.5em 0;
+        }
+        
+        .stat-card {
+            text-align: center;
+            padding: 1.5em 1em;
+            background: var(--color-background-alt);
+            border-radius: var(--radius-medium);
+            box-shadow: var(--shadow-subtle);
+        }
+        
+        .stat-card .number {
+            font-size: 2em;
+            font-weight: 700;
+            color: var(--color-primary);
+            margin-bottom: 0.25em;
+        }
+        
+        .stat-card .label {
+            font-size: 0.9em;
+            color: var(--color-text-light);
+        }
+        
+        /* Timeline Layout */
+        .timeline {
+            position: relative;
+            padding-left: 2em;
+            margin: 1.5em 0;
+        }
+        
+        .timeline::before {
+            content: '';
+            position: relative;
+            left: 0.75em;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: var(--color-border);
+        }
+        
+        .timeline-item {
+            position: relative;
+            margin-bottom: 1.5em;
+        }
+        
+        .timeline-item::before {
+            content: '';
+            position: relative;
+            left: -1.375em;
+            top: 0.25em;
+            width: 0.75em;
+            height: 0.75em;
+            background: var(--color-secondary);
+            border-radius: 50%;
+            box-shadow: 0 0 0 3px white, 0 0 0 4px var(--color-border);
+        }
+        
+        /* Professional Box Shadows */
+        .shadow-sm { box-shadow: var(--shadow-subtle); }
+        .shadow-md { box-shadow: var(--shadow-medium); }
+        .shadow-lg { box-shadow: var(--shadow-strong); }
+        
+        /* Enhanced Info Boxes */
+        .info-box, .alert-box, .warning-box {
+            border-radius: var(--radius-medium);
+            box-shadow: var(--shadow-subtle);
+        }
+        
+        .info-box h4, .alert-box h4, .warning-box h4 {
+            margin-top: 0;
+            font-weight: 600;
+        }
+        
+        /* Content Boxes */
+        .info-box, .alert-box, .warning-box {
+            padding: 1em;
+            margin: 1em 0;
+            border-radius: 4px;
+            page-break-inside: avoid;
+            break-inside: avoid;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .info-box {
+            background: #e3f2fd;
+            border-left: 0 solid var(--color-secondary);
+        }
+        
+        .alert-box {
+            background: #ffebee;
+            border-left: 0 solid var(--color-accent);
+        }
+        
+        .warning-box {
+            background: #fff3cd;
+            border-left: 0 solid #ff9800;
+        }
+        
+        /* Utility Classes for Break Control */
+        .page-break-before {
+            page-break-before: always !important;
+            break-before: page !important;
+        }
+        
+        .page-break-after {
+            page-break-after: always !important;
+            break-after: page !important;
+        }
+        
+        .avoid-break {
+            page-break-inside: avoid !important;
+            break-inside: avoid !important;
+        }
+        
+        .keep-together {
+            page-break-inside: avoid !important;
+            break-inside: avoid !important;
+            page-break-before: auto !important;
+            break-before: auto !important;
+            page-break-after: auto !important;
+            break-after: auto !important;
+        }
+        
+        .keep-with-next {
+            page-break-after: avoid !important;
+            break-after: avoid !important;
+        }
+        
+        /* Column Layout for Better Flow */
+        .two-column {
+            columns: 2;
+            column-gap: 0.5in;
+            column-rule: 1px solid var(--color-border);
+        }
+        
+        .two-column > * {
+            break-inside: avoid;
+            page-break-inside: avoid;
+        }
+        
+        /* Print Optimization */
+        @media print {
+            body {
+                background: white;
+                margin: 0;
+                padding: 0;
+            }
+            
+            .page {
+                margin: 0;
+                box-shadow: none;
+                page-break-after: always;
+                break-after: page;
+            }
+            
+            .page:last-child {
+                page-break-after: auto;
+                break-after: auto;
+            }
+            
+            /* Page Setup */
+            @page {
+                size: letter portrait;
+                margin: 0.75in;
+                counter-increment: page;
+                
+                @bottom-right {
+                    content: counter(page);
+                    font-family: var(--font-body);
+                    font-size: 10pt;
+                    color: #666;
+                }
+                
+                @bottom-center {
+                    content: "Blue Mountain Property Owners Association";
+                    font-family: var(--font-body);
+                    font-size: 8pt;
+                    color: #999;
+                }
+            }
+            
+            @page :first {
+                @bottom-right {
+                    content: none;
+                }
+                @bottom-center {
+                    content: none;
+                }
+            }
+            
+            @page chapter {
+                @top-center {
+                    content: string(chapter-title);
+                    font-family: var(--font-heading);
+                    font-size: 9pt;
+                    color: #666;
+                }
+            }
+            
+            /* Force color printing for important elements */
+            .info-box, .alert-box, .warning-box {
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+                color-adjust: exact !important;
+            }
+            
+            /* Hide screen-only elements */
+            .no-print, .page-header, .page-footer {
+                display: none !important;
+            }
+            
+            /* Ensure links are visible */
+            a[href^="http"]:after {
+                content: " (" attr(href) ")";
+                font-size: 8pt;
+                color: #666;
+                word-wrap: break-word;
+            }
+            
+            /* Prevent blank pages */
+            h1, h2, h3, h4, h5, h6 {
+                page-break-before: auto;
+                break-before: auto;
+            }
+            
+            h1.chapter-title {
+                page-break-before: always;
+                break-before: page;
+                string-set: chapter-title content();
+            }
+        }
+        
+        /* Special Print-Only Content */
+        @media screen {
+            .print-only {
+                display: none;
+            }
+        }
+        
+        /* Debug Mode for Development */
+        body.debug-mode .page::before {
+            content: '';
+            position: relative;
+            top: var(--page-margin-top);
+            left: var(--page-margin-left);
+            right: var(--page-margin-right);
+            bottom: var(--page-margin-bottom);
+            border: 2px dashed rgba(255, 0, 0, 0.3);
+            pointer-events: none;
+            z-index: 1000;
+        }
+        
+        body.debug-mode .page::after {
+            content: 'Page ' counter(page-counter);
+            position: relative;
+            top: 10px;
+            right: 0;
+            background: rgba(255, 0, 0, 0.8);
+            color: white;
+            padding: 5px 10px;
+            font-size: 12px;
+            z-index: 1001;
+        }
+    </style>
+    <script src="pagination-auto-fix.js" defer></script>
+    <link rel="stylesheet" href="critical-margin-fix.css">
+</head>
+<body>
+    <!-- Cover Page -->
+    <div class="page" style="overflow: hidden;" data-template="cover">
+        <div class="page-content" style="background: linear-gradient(135deg, #f7f9fa 0%, white 50%, #f7f9fa 100%);">
+            <div style="text-align: center; padding-top: 2in;">
+                <div class="image-container" style="width: 100%; height: 220px; margin: 0 auto; border-radius: 50%; padding: 8px; background: white; box-shadow: 0 8px 32px rgba(30,58,95,0.2);">
+                    <img src="images/bmpoa-emblem.png" alt="BMPOA Logo" style="width: 100%; height: 100%; object-fit: contain; border-radius: 50%;">
+                </div>
+                
+                <h1 style="margin-top: 1.5em; font-size: 28pt; font-weight: 700; color: var(--color-primary); letter-spacing: -0.5px;">Blue Mountain</h1>
+                <h2 style="font-size: 20pt; font-weight: 300; color: var(--color-primary); margin-top: 0.25em;">Property Owners Association</h2>
+                
+                <div style="width: 100%; height: 3px; background: var(--color-secondary); margin: 1.5em auto;"></div>
+                
+                <p style="font-size: 14pt; color: var(--color-text-light); font-weight: 400; margin-top: 1em;">Community Guide & Reference Manual</p>
+            </div>
+            
+            <div style="position: relative; bottom: 1.5in; left: 0; right: 0; text-align: center;">
+                <div class="feature-box" style="max-width: 100%; margin: 0 auto; padding: 1.5em; background: white;">
+                    <p style="font-size: 11pt; margin-bottom: 0.5em; color: var(--color-primary); font-weight: 500;">Warren County, Virginia</p>
+                    <p style="font-size: 10pt; color: var(--color-text-light);">Established 1968</p>
+                    <p style="margin-top: 1em; font-size: 9pt; color: var(--color-text-light);">2025 Edition</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Table of Contents -->
+    <div class="page" style="overflow: hidden;" data-template="toc">
+        <div class="page-content" style="box-sizing: border-box; max-width: 100%;">
+            <h1 style="page-break-before: auto;">Table of Contents</h1>
+            
+            <style>
+                .toc-entry {
+                    display: flex;
+                    align-items: baseline;
+                    margin-bottom: 0.75em;
+                    page-break-inside: avoid;
+                }
+                .toc-title {
+                    flex: 0 0 auto;
+                    max-width: 80%;
+                }
+                .toc-dots {
+                    flex: 1 1 auto;
+                    border-bottom: 1px dotted #999;
+                    margin: 0 0.5em;
+                    min-width: 1em;
+                }
+                .toc-page {
+                    flex: 0 0 auto;
+                    text-align: right;
+                    min-width: 2em;
+                }
+                .toc-section {
+                    margin-bottom: 1.5em;
+                }
+                .toc-subsection {
+                    margin-left: 1.5em;
+                    font-size: 10pt;
+                }
+            </style>
+            
+            <div class="toc-section" style="box-sizing: border-box; max-width: 100%;">
+                <div class="toc-entry" style="box-sizing: border-box; max-width: 100%;">
+                    <span class="toc-title"><strong>I. Welcome to Blue Mountain</strong></span>
+                    <span class="toc-dots"></span>
+                    <span class="toc-page">1</span>
+                </div>
+                <div class="toc-subsection" style="box-sizing: border-box; max-width: 100%;">
+                    <div class="toc-entry" style="box-sizing: border-box; max-width: 100%;">
+                        <span class="toc-title">About Our Community</span>
+                        <span class="toc-dots"></span>
+                        <span class="toc-page">1</span>
+                    </div>
+                    <div class="toc-entry" style="box-sizing: border-box; max-width: 100%;">
+                        <span class="toc-title">Community Vision & Values</span>
+                        <span class="toc-dots"></span>
+                        <span class="toc-page">2</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="toc-section" style="box-sizing: border-box; max-width: 100%;">
+                <div class="toc-entry" style="box-sizing: border-box; max-width: 100%;">
+                    <span class="toc-title"><strong>II. Governance & Administration</strong></span>
+                    <span class="toc-dots"></span>
+                    <span class="toc-page">3</span>
+                </div>
+                <div class="toc-subsection" style="box-sizing: border-box; max-width: 100%;">
+                    <div class="toc-entry" style="box-sizing: border-box; max-width: 100%;">
+                        <span class="toc-title">Board of Directors</span>
+                        <span class="toc-dots"></span>
+                        <span class="toc-page">4</span>
+                    </div>
+                    <div class="toc-entry" style="box-sizing: border-box; max-width: 100%;">
+                        <span class="toc-title">Committees</span>
+                        <span class="toc-dots"></span>
+                        <span class="toc-page">4</span>
+                    </div>
+                    <div class="toc-entry" style="box-sizing: border-box; max-width: 100%;">
+                        <span class="toc-title">Annual Meetings</span>
+                        <span class="toc-dots"></span>
+                        <span class="toc-page">5</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="toc-section" style="box-sizing: border-box; max-width: 100%;">
+                <div class="toc-entry" style="box-sizing: border-box; max-width: 100%;">
+                    <span class="toc-title"><strong>III. Community Regulations</strong></span>
+                    <span class="toc-dots"></span>
+                    <span class="toc-page">7</span>
+                </div>
+                <div class="toc-subsection" style="box-sizing: border-box; max-width: 100%;">
+                    <div class="toc-entry" style="box-sizing: border-box; max-width: 100%;">
+                        <span class="toc-title">Building & Construction</span>
+                        <span class="toc-dots"></span>
+                        <span class="toc-page">11</span>
+                    </div>
+                    <div class="toc-entry" style="box-sizing: border-box; max-width: 100%;">
+                        <span class="toc-title">Property Use Guidelines</span>
+                        <span class="toc-dots"></span>
+                        <span class="toc-page">9</span>
+                    </div>
+                    <div class="toc-entry" style="box-sizing: border-box; max-width: 100%;">
+                        <span class="toc-title">Vehicle & Parking Rules</span>
+                        <span class="toc-dots"></span>
+                        <span class="toc-page">11</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="toc-section" style="box-sizing: border-box; max-width: 100%;">
+                <div class="toc-entry" style="box-sizing: border-box; max-width: 100%;">
+                    <span class="toc-title"><strong>IV. Emergency Preparedness</strong></span>
+                    <span class="toc-dots"></span>
+                    <span class="toc-page">15</span>
+                </div>
+                <div class="toc-subsection" style="box-sizing: border-box; max-width: 100%;">
+                    <div class="toc-entry" style="box-sizing: border-box; max-width: 100%;">
+                        <span class="toc-title">Emergency Contacts</span>
+                        <span class="toc-dots"></span>
+                        <span class="toc-page">Appendix A</span>
+                    </div>
+                    <div class="toc-entry" style="box-sizing: border-box; max-width: 100%;">
+                        <span class="toc-title">Wildfire Safety</span>
+                        <span class="toc-dots"></span>
+                        <span class="toc-page">16</span>
+                    </div>
+                    <div class="toc-entry" style="box-sizing: border-box; max-width: 100%;">
+                        <span class="toc-title">Evacuation Planning</span>
+                        <span class="toc-dots"></span>
+                        <span class="toc-page">20</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="page-footer" style="box-sizing: border-box; max-width: 100%;">
+            <span></span>
+            <span class="page-number"></span>
+        </div>
+    </div>
+    
+    <!-- Welcome Letter Page -->
+    <div class="page" style="overflow: hidden;">
+        <div class="page-content" style="box-sizing: border-box; max-width: 100%;">
+            <!-- Letterhead -->
+            <div style="text-align: center; margin-bottom: 2em; padding-bottom: 1em; border-bottom: 3px double #1e3a5f;">
+                <img src="images/bmpoa-emblem.png" alt="BMPOA Emblem" style="width: 100%; height: auto; margin-bottom: 0.5em;">
+                <h2 style="color: #1e3a5f; margin: 0; font-size: 1.8em; font-weight: 700; letter-spacing: 2px;">BLUE MOUNTAIN</h2>
+                <h3 style="color: #4a90e2; margin: 0.2em 0 0 0; font-size: 1.2em; font-weight: 400; letter-spacing: 1px;">PROPERTY OWNERS ASSOCIATION</h3>
+                <p style="color: #666; margin: 0.5em 0 0 0; font-size: 0.9em;">Established 1968 • Warren County, Virginia</p>
+            </div>
+            
+            <!-- Letter Date -->
+            <p style="text-align: right; color: #666; margin-bottom: 2em;">2025 Edition</p>
+            
+            <!-- Letter Title -->
+            <h1 style="text-align: center; color: #1e3a5f; font-size: 1.8em; margin-bottom: 1.5em;">Welcome to Blue Mountain</h1>
+            
+            <!-- Salutation -->
+            <p style="font-size: 1.1em; margin-bottom: 1em;">Dear Neighbor,</p>
+            
+            <!-- Letter Body - Verbatim from database -->
+            <div style="line-height: 1.8; text-align: justify;">
+                <p>On behalf of the Blue Mountain Property Owners Association Board of Directors, we warmly welcome you to our mountain community. Whether you are a new resident, a longtime homeowner, or a visitor, we are delighted you are here.</p>
+                
+                <p>Blue Mountain has been a special place since the late 1950s, when it was established as a vacation retreat for Washington, D.C. area residents seeking clean mountain air and peaceful surroundings. Today, we are a vibrant mix of seasonal and year-round families who share a commitment to preserving the natural beauty and neighborly spirit that make our community unique.</p>
+                
+                <p>This guide provides comprehensive information about living in Blue Mountain, from governance and community services to recreational opportunities and safety guidelines. We encourage you to reference it often and to participate actively in our community life.</p>
+                
+                <p>We look forward to seeing you at community events, board meetings, and around the mountain. Together, we continue the tradition of stewardship and fellowship that has defined Blue Mountain for over six decades.</p>
+            </div>
+            
+            <!-- Signature Block -->
+            <div style="margin-top: 3em;">
+                <p style="margin-bottom: 3em;">Sincerely,<br>
+                The BMPOA Board of Directors</p>
+                
+                <!-- Board Member Names in Professional Layout -->
+                <div style="background: #f7f9fa; padding: 2em; border-radius: 8px; margin-top: 2em;">
+                    <h3 style="color: #1e3a5f; text-align: center; margin-bottom: 1em;">2023-2025 Board of Directors</h3>
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5em; font-size: 0.95em;">
+                        <div>
+                            <p style="margin: 0.3em 0;"><strong>Jim Critcher</strong><br><span style="color: #666;">President & ARC Chair</span></p>
+                            <p style="margin: 0.3em 0;"><strong>Harry Davis</strong><br><span style="color: #666;">1st VP & Newsletter Editor</span></p>
+                            <p style="margin: 0.3em 0;"><strong>Jonathan Morrison</strong><br><span style="color: #666;">2nd VP & Recreation Chair</span></p>
+                            <p style="margin: 0.3em 0;"><strong>Mike Veasey</strong><br><span style="color: #666;">Financial Secretary</span></p>
+                            <p style="margin: 0.3em 0;"><strong>Patrick Patton</strong><br><span style="color: #666;">Secretary</span></p>
+                        </div>
+                        <div>
+                            <p style="margin: 0.3em 0;"><strong>David Cook</strong><br><span style="color: #666;">Director & Lodge Access Chair</span></p>
+                            <p style="margin: 0.3em 0;"><strong>Carl Herz</strong><br><span style="color: #666;">Director & Roads Chair</span></p>
+                            <p style="margin: 0.3em 0;"><strong>Garrett McNamara</strong><br><span style="color: #666;">Director & Deer Lake Chair</span></p>
+                            <p style="margin: 0.3em 0;"><strong>Erica Santana</strong><br><span style="color: #666;">Director & CRMSC Chair</span></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Footer with Contact Info -->
+            <div style="position: relative; bottom: 1in; left: 0; right: 0; text-align: center; font-size: 0.85em; color: #666; border-top: 1px solid #ddd; padding-top: 1em;">
+                <p style="margin: 0;"><strong>Blue Mountain Property Owners Association</strong></p>
+                <p style="margin: 0.2em 0;">P.O. Box 114, Linden, VA 22642 • www.bmpoa.org</p>
+                <p style="margin: 0.2em 0;">Board Meetings: First Monday of each month, 6:00 PM at The Lodge</p>
+            </div>
+        </div>
+        <div class="page-footer" style="box-sizing: border-box; max-width: 100%;">
+            <span></span>
+            <span class="page-number">iii</span>
+        </div>
+    </div>
+    
+    <!-- Chapter 1 -->
+    <div class="page" style="overflow: hidden;" data-template="chapter-start">
+        <div class="page-content" style="box-sizing: border-box; max-width: 100%;">
+            <h1 class="chapter-title">I. Welcome to Blue Mountain</h1>
+            
+            <div class="hero-image" style="height: 3.5in;">
+                <img src="images/OverlookatVineyard.png" alt="Blue Mountain scenic overlook">
+                <div class="overlay" style="box-sizing: border-box; max-width: 100%;">
+                    <h2>Welcome Home</h2>
+                    <p>Where mountain living meets community spirit</p>
+                </div>
+            </div>
+            
+            <div class="feature-box" style="margin-top: 1.5em;">
+                <p style="font-size: 12pt; line-height: 1.8;">Welcome to Blue Mountain, a unique residential community nestled in the beautiful mountains of Warren County, Virginia. Our community, established in 1968, spans approximately 3,000 acres and is home to over 450 property owners who value the natural beauty, privacy, and sense of community that Blue Mountain offers.</p>
+            </div>
+            
+            <div class="stat-grid" style="box-sizing: border-box; max-width: 100%;">
+                <div class="stat-card" style="box-sizing: border-box; max-width: 100%;">
+                    <div class="number" style="box-sizing: border-box; max-width: 100%;">1968</div>
+                    <div class="label" style="box-sizing: border-box; max-width: 100%;">Established</div>
+                </div>
+                <div class="stat-card" style="box-sizing: border-box; max-width: 100%;">
+                    <div class="number" style="box-sizing: border-box; max-width: 100%;">3,000</div>
+                    <div class="label" style="box-sizing: border-box; max-width: 100%;">Acres</div>
+                </div>
+                <div class="stat-card" style="box-sizing: border-box; max-width: 100%;">
+                    <div class="number" style="box-sizing: border-box; max-width: 100%;">450+</div>
+                    <div class="label" style="box-sizing: border-box; max-width: 100%;">Property Owners</div>
+                </div>
+                <div class="stat-card" style="box-sizing: border-box; max-width: 100%;">
+                    <div class="number" style="box-sizing: border-box; max-width: 100%;">2,800ft</div>
+                    <div class="label" style="box-sizing: border-box; max-width: 100%;">Elevation</div>
+                </div>
+            </div>
+            
+            <h2 style="margin-top: 1.5em;">About Our Community</h2>
+            <p>Blue Mountain is more than just a place to live—it's a lifestyle choice. Our residents enjoy:</p>
+            
+            <ul>
+                <li>Pristine natural surroundings with abundant wildlife</li>
+                <li>Private roads maintained by the community</li>
+                <li>Access to Deer Lake for recreation</li>
+                <li>A strong sense of community and neighborly support</li>
+                <li>Proximity to Shenandoah National Park and Skyline Drive</li>
+            </ul>
+            
+            <h2>About This Guide</h2>
+            <p>This comprehensive guide serves as your primary reference for understanding the governance, regulations, and services that help maintain Blue Mountain as a desirable place to live. Whether you're a new resident or a long-time property owner, this guide will help you:</p>
+            
+            <ul>
+                <li>Understand your rights and responsibilities as a property owner</li>
+                <li>Navigate community regulations and covenant requirements</li>
+                <li>Access important emergency preparedness information</li>
+                <li>Learn about available community services and amenities</li>
+                <li>Connect with community governance and committees</li>
+            </ul>
+            
+            <div class="info-box keep-together" style="box-sizing: border-box; max-width: 100%;">
+                <h4>Important First Steps for New Residents</h4>
+                <ol>
+                    <li>Register your contact information with the BMPOA office</li>
+                    <li>Review the restrictive covenants that apply to your property</li>
+                    <li>Familiarize yourself with emergency evacuation routes</li>
+                    <li>Consider joining a committee to get involved in the community</li>
+                    <li>Introduce yourself to your neighbors</li>
+                </ol>
+            </div>
+        </div>
+        <div class="page-footer" style="box-sizing: border-box; max-width: 100%;">
+            <span>Chapter I: Welcome</span>
+            <span class="page-number">1</span>
+        </div>
+    </div>
+    
+    <!-- Regular Content Page -->
+    <div class="page" style="overflow: hidden;">
+        <div class="page-content" style="box-sizing: border-box; max-width: 100%;">
+            <h2>Community Vision & Values</h2>
+            <p>Blue Mountain strives to preserve its natural environment while providing a safe, well-maintained community for all residents. We balance individual property rights with community standards that protect property values and quality of life for all.</p>
+            
+            <h3>Our Core Values</h3>
+            <ul>
+                <li><strong>Environmental Stewardship:</strong> Protecting our natural resources for future generations</li>
+                <li><strong>Community Spirit:</strong> Fostering neighborly connections and mutual support</li>
+                <li><strong>Property Rights:</strong> Respecting individual ownership while maintaining community standards</li>
+                <li><strong>Safety First:</strong> Prioritizing the safety and security of all residents</li>
+                <li><strong>Fiscal Responsibility:</strong> Managing community resources efficiently and transparently</li>
+            </ul>
+            
+            <h3>Community History</h3>
+            <p>Blue Mountain's story began in 1968 when visionary developers recognized the potential of this mountain paradise. The original plan called for a residential community that would preserve the natural beauty while providing modern amenities.</p>
+            
+            <table class="keep-together" style="width: 100%; border-collapse: collapse; margin: 1.5em 0; box-shadow: 0 1px 3px rgba(0,0,0,0.1); border-radius: 8px; overflow: hidden;">
+                <caption style="caption-side: top; margin-bottom: 0.5em; font-weight: bold;">Key Milestones in Blue Mountain History</caption>
+                <th ead style="padding: 1em; text-align: left; font-weight: 600; letter-spacing: 0.5px; border-bottom: 2px solid #fff;">
+                    <tr>
+                        <th  style="padding: 1em; text-align: left; font-weight: 600; letter-spacing: 0.5px; border-bottom: 2px solid #fff;">Year</th>
+                        <th  style="padding: 1em; text-align: left; font-weight: 600; letter-spacing: 0.5px; border-bottom: 2px solid #fff;">Milestone</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td  style="padding: 0.8em 1em; border-bottom: 1px solid #e0e0e0;">1968</td>
+                        <td  style="padding: 0.8em 1em; border-bottom: 1px solid #e0e0e0;">Blue Mountain subdivision established</td>
+                    </tr>
+                    <tr  style="background: #f7f9fa;">
+                        <td  style="padding: 0.8em 1em; border-bottom: 1px solid #e0e0e0;">1970</td>
+                        <td  style="padding: 0.8em 1em; border-bottom: 1px solid #e0e0e0;">First homes constructed</td>
+                    </tr>
+                    <tr>
+                        <td  style="padding: 0.8em 1em; border-bottom: 1px solid #e0e0e0;">1975</td>
+                        <td  style="padding: 0.8em 1em; border-bottom: 1px solid #e0e0e0;">Deer Lake constructed for community recreation</td>
+                    </tr>
+                    <tr  style="background: #f7f9fa;">
+                        <td  style="padding: 0.8em 1em; border-bottom: 1px solid #e0e0e0;">1982</td>
+                        <td  style="padding: 0.8em 1em; border-bottom: 1px solid #e0e0e0;">Sanitary District formed for road maintenance</td>
+                    </tr>
+                    <tr>
+                        <td  style="padding: 0.8em 1em; border-bottom: 1px solid #e0e0e0;">1990</td>
+                        <td  style="padding: 0.8em 1em; border-bottom: 1px solid #e0e0e0;">Community center established</td>
+                    </tr>
+                    <tr  style="background: #f7f9fa;">
+                        <td  style="padding: 0.8em 1em; border-bottom: 1px solid #e0e0e0;">2005</td>
+                        <td  style="padding: 0.8em 1em; border-bottom: 1px solid #e0e0e0;">Major road improvement project completed</td>
+                    </tr>
+                    <tr>
+                        <td  style="padding: 0.8em 1em; border-bottom: 1px solid #e0e0e0;">2015</td>
+                        <td  style="padding: 0.8em 1em; border-bottom: 1px solid #e0e0e0;">Emergency preparedness program launched</td>
+                    </tr>
+                    <tr  style="background: #f7f9fa;">
+                        <td  style="padding: 0.8em 1em; border-bottom: 1px solid #e0e0e0;">2020</td>
+                        <td  style="padding: 0.8em 1em; border-bottom: 1px solid #e0e0e0;">Digital communication systems upgraded</td>
+                    </tr>
+                </tbody>
+            </table>
+            
+            <figure class="keep-together">
+                <img src="images/deer-lake-dock.jpeg" alt="Deer Lake with dock and mountain views">
+                <figcaption>Deer Lake has been a centerpiece of community recreation since 1975</figcaption>
+            </figure>
+        </div>
+        <div class="page-footer" style="box-sizing: border-box; max-width: 100%;">
+            <span>Chapter I: Welcome</span>
+            <span class="page-number">2</span>
+        </div>
+    </div>
+    
+    <!-- Chapter 2 -->
+    <div class="page" style="overflow: hidden;" data-template="chapter-start">
+        <div class="page-content" style="box-sizing: border-box; max-width: 100%;">
+            <h1 class="chapter-title">II. Governance & Administration</h1>
+            
+            <p>The Blue Mountain Property Owners Association (BMPOA) is governed by a volunteer Board of Directors elected by the membership. Understanding our governance structure helps you participate effectively in community decisions.</p>
+            
+            <h2>Board of Directors</h2>
+            <p>The Board consists of seven members serving staggered three-year terms. Board responsibilities include:</p>
+            
+            <ul>
+                <li>Setting community policies and enforcing covenants</li>
+                <li>Managing the annual budget and reserves</li>
+                <li>Overseeing maintenance of common areas</li>
+                <li>Appointing committee chairs and members</li>
+                <li>Representing the community in legal matters</li>
+            </ul>
+            
+            <h3>Current Board Members</h3>
+            <table  style="width: 100%; border-collapse: collapse; margin: 1.5em 0; box-shadow: 0 1px 3px rgba(0,0,0,0.1); border-radius: 8px; overflow: hidden;">
+                <th ead style="padding: 1em; text-align: left; font-weight: 600; letter-spacing: 0.5px; border-bottom: 2px solid #fff;">
+                    <tr>
+                        <th  style="padding: 1em; text-align: left; font-weight: 600; letter-spacing: 0.5px; border-bottom: 2px solid #fff;">Position</th>
+                        <th  style="padding: 1em; text-align: left; font-weight: 600; letter-spacing: 0.5px; border-bottom: 2px solid #fff;">Name</th>
+                        <th  style="padding: 1em; text-align: left; font-weight: 600; letter-spacing: 0.5px; border-bottom: 2px solid #fff;">Additional Roles</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td  style="padding: 0.8em 1em; border-bottom: 1px solid #e0e0e0;">President</td>
+                        <td  style="padding: 0.8em 1em; border-bottom: 1px solid #e0e0e0;">Jim Critcher</td>
+                        <td  style="padding: 0.8em 1em; border-bottom: 1px solid #e0e0e0;">ARC Chair</td>
+                    </tr>
+                    <tr  style="background: #f7f9fa;">
+                        <td  style="padding: 0.8em 1em; border-bottom: 1px solid #e0e0e0;">1st Vice President</td>
+                        <td  style="padding: 0.8em 1em; border-bottom: 1px solid #e0e0e0;">Harry Davis</td>
+                        <td  style="padding: 0.8em 1em; border-bottom: 1px solid #e0e0e0;">Newsletter Editor</td>
+                    </tr>
+                    <tr>
+                        <td  style="padding: 0.8em 1em; border-bottom: 1px solid #e0e0e0;">2nd Vice President</td>
+                        <td  style="padding: 0.8em 1em; border-bottom: 1px solid #e0e0e0;">Jonathan Morrison</td>
+                        <td  style="padding: 0.8em 1em; border-bottom: 1px solid #e0e0e0;">Recreation Committee Chair</td>
+                    </tr>
+                    <tr  style="background: #f7f9fa;">
+                        <td  style="padding: 0.8em 1em; border-bottom: 1px solid #e0e0e0;">Financial Secretary</td>
+                        <td  style="padding: 0.8em 1em; border-bottom: 1px solid #e0e0e0;">Mike Veasey</td>
+                        <td  style="padding: 0.8em 1em; border-bottom: 1px solid #e0e0e0;">Manages BMPOA finances</td>
+                    </tr>
+                    <tr>
+                        <td  style="padding: 0.8em 1em; border-bottom: 1px solid #e0e0e0;">Secretary</td>
+                        <td  style="padding: 0.8em 1em; border-bottom: 1px solid #e0e0e0;">Patrick Patton</td>
+                        <td  style="padding: 0.8em 1em; border-bottom: 1px solid #e0e0e0;">Board minutes, newsletter support</td>
+                    </tr>
+                    <tr  style="background: #f7f9fa;">
+                        <td  style="padding: 0.8em 1em; border-bottom: 1px solid #e0e0e0;">Director</td>
+                        <td  style="padding: 0.8em 1em; border-bottom: 1px solid #e0e0e0;">David Cook</td>
+                        <td  style="padding: 0.8em 1em; border-bottom: 1px solid #e0e0e0;">Roads Committee, Lodge Access Chair</td>
+                    </tr>
+                    <tr>
+                        <td  style="padding: 0.8em 1em; border-bottom: 1px solid #e0e0e0;">Director</td>
+                        <td  style="padding: 0.8em 1em; border-bottom: 1px solid #e0e0e0;">Carl Herz</td>
+                        <td  style="padding: 0.8em 1em; border-bottom: 1px solid #e0e0e0;">Roads Committee Chair</td>
+                    </tr>
+                    <tr  style="background: #f7f9fa;">
+                        <td  style="padding: 0.8em 1em; border-bottom: 1px solid #e0e0e0;">Director</td>
+                        <td  style="padding: 0.8em 1em; border-bottom: 1px solid #e0e0e0;">Garrett McNamara</td>
+                        <td  style="padding: 0.8em 1em; border-bottom: 1px solid #e0e0e0;">Deer Lake Recreation Chair</td>
+                    </tr>
+                    <tr>
+                        <td  style="padding: 0.8em 1em; border-bottom: 1px solid #e0e0e0;">Director</td>
+                        <td  style="padding: 0.8em 1em; border-bottom: 1px solid #e0e0e0;">Erica Santana</td>
+                        <td  style="padding: 0.8em 1em; border-bottom: 1px solid #e0e0e0;">CRMSC Chair</td>
+                    </tr>
+                </tbody>
+            </table>
+            
+            <h3>Committee Chairs</h3>
+            <table class="committee-table"  style="width: 100%; border-collapse: collapse; margin: 1.5em 0; box-shadow: 0 1px 3px rgba(0,0,0,0.1); border-radius: 8px; overflow: hidden;">
+                <th ead style="padding: 1em; text-align: left; font-weight: 600; letter-spacing: 0.5px; border-bottom: 2px solid #fff;">
+                    <tr>
+                        <th  style="padding: 1em; text-align: left; font-weight: 600; letter-spacing: 0.5px; border-bottom: 2px solid #fff;">Committee</th>
+                        <th  style="padding: 1em; text-align: left; font-weight: 600; letter-spacing: 0.5px; border-bottom: 2px solid #fff;">Chair</th>
+                        <th  style="padding: 1em; text-align: left; font-weight: 600; letter-spacing: 0.5px; border-bottom: 2px solid #fff;">Contact</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td  style="padding: 0.8em 1em; border-bottom: 1px solid #e0e0e0;">Social Committee</td>
+                        <td  style="padding: 0.8em 1em; border-bottom: 1px solid #e0e0e0;">Mackenzie Williams</td>
+                        <td  style="padding: 0.8em 1em; border-bottom: 1px solid #e0e0e0;"><span style="word-break: break-all;">mll2294@me.com</span></td>
+                    </tr>
+                    <tr  style="background: #f7f9fa;">
+                        <td  style="padding: 0.8em 1em; border-bottom: 1px solid #e0e0e0;">CEC & Nominating</td>
+                        <td  style="padding: 0.8em 1em; border-bottom: 1px solid #e0e0e0;">Billy Orndorff</td>
+                        <td  style="padding: 0.8em 1em; border-bottom: 1px solid #e0e0e0;">Contact via BMPOA.org</td>
+                    </tr>
+                    <tr>
+                        <td  style="padding: 0.8em 1em; border-bottom: 1px solid #e0e0e0;">Legislative & Public Relations</td>
+                        <td  style="padding: 0.8em 1em; border-bottom: 1px solid #e0e0e0;">Morgan Fox Elder</td>
+                        <td  style="padding: 0.8em 1em; border-bottom: 1px solid #e0e0e0;">Contact via BMPOA.org</td>
+                    </tr>
+                    <tr  style="background: #f7f9fa;">
+                        <td  style="padding: 0.8em 1em; border-bottom: 1px solid #e0e0e0;">Membership Committee</td>
+                        <td  style="padding: 0.8em 1em; border-bottom: 1px solid #e0e0e0;">Beth Herz</td>
+                        <td  style="padding: 0.8em 1em; border-bottom: 1px solid #e0e0e0;">Contact via BMPOA.org</td>
+                    </tr>
+                    <tr>
+                        <td  style="padding: 0.8em 1em; border-bottom: 1px solid #e0e0e0;">Deer Lake Operations</td>
+                        <td  style="padding: 0.8em 1em; border-bottom: 1px solid #e0e0e0;">Toni Magro</td>
+                        <td  style="padding: 0.8em 1em; border-bottom: 1px solid #e0e0e0;"><span style="word-break: break-all;">bmpoadeerlake@gmail.com</span></td>
+                    </tr>
+                    <tr  style="background: #f7f9fa;">
+                        <td  style="padding: 0.8em 1em; border-bottom: 1px solid #e0e0e0;">Wood Chipping Program</td>
+                        <td  style="padding: 0.8em 1em; border-bottom: 1px solid #e0e0e0;">J Cook</td>
+                        <td  style="padding: 0.8em 1em; border-bottom: 1px solid #e0e0e0;"><span style="word-break: break-all;">jcook0313@gmail.com</span></td>
+                    </tr>
+                </tbody>
+            </table>
+            
+            <div class="info-box" style="box-sizing: border-box; max-width: 100%;">
+                <h4>Board Meetings</h4>
+                <p>Regular board meetings are held on the first Monday of each month at 6:00 PM EST at the Blue Mountain Lodge (540 Cliff Road, Linden, VA 22642). All property owners are welcome to attend. Meeting agendas are posted in advance on the community website.</p>
+                
+                <h4>Official Mailing Address</h4>
+                <p>Blue Mountain Sanitary District<br>
+                P.O. Box 114<br>
+                Linden, VA 22642</p>
+            </div>
+            
+            <!-- Sanitary District Explanation -->
+            <h3 style="color: #1e3a5f; font-size: 1.6em; margin: 2.5em 0 1em 0; border-bottom: 2px solid #e3f2fd; padding-bottom: 0.5em;">Blue Mountain Sanitary District</h3>
+            
+            <div style="background: linear-gradient(135deg, #f0f4f8 0%, #e6effa 100%); padding: 2em; border-radius: 12px; margin: 1.5em 0; border-left: 0 solid #2563eb;">
+                <h4 style="color: #1e3a5f; margin: 0 0 1em 0; font-size: 1.3em;">Understanding Our Legal Structure</h4>
+                <p style="margin: 0 0 1em 0; line-height: 1.8;">Blue Mountain Property Owners Association (BMPOA) operates as a <strong>Sanitary District</strong> under Warren County regulations. This unique legal status enables us to provide essential services to our mountain community while maintaining local control and governance.</p>
+            </div>
+            
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5em; margin: 2em 0;">
+                <!-- What is a Sanitary District -->
+                <div style="background: white; border: 1px solid #e5e7eb; border-radius: 12px; padding: 2em; box-shadow: 0 2px 4px rgba(0,0,0,0.05);">
+                    <div style="background: #dbeafe; width: 48px; height: 48px; border-radius: 12px; display: flex; align-items: center; justify-content: center; margin-bottom: 1em;">
+                        <span style="font-size: 1.5em;">🏛️</span>
+                    </div>
+                    <h5 style="color: #1e3a5f; margin: 0 0 0.5em 0; font-size: 1.1em;">What is a Sanitary District?</h5>
+                    <p style="color: #64748b; margin: 0; line-height: 1.6;">A Sanitary District is a special administrative unit established under Virginia law to provide essential services such as water, sewer, and waste management to a defined geographic area. It operates with specific powers granted by the state and county.</p>
+                </div>
+                
+                <!-- Services Provided -->
+                <div style="background: white; border: 1px solid #e5e7eb; border-radius: 12px; padding: 2em; box-shadow: 0 2px 4px rgba(0,0,0,0.05);">
+                    <div style="background: #dcfce7; width: 48px; height: 48px; border-radius: 12px; display: flex; align-items: center; justify-content: center; margin-bottom: 1em;">
+                        <span style="font-size: 1.5em;">🛠️</span>
+                    </div>
+                    <h5 style="color: #1e3a5f; margin: 0 0 0.5em 0; font-size: 1.1em;">Services We Provide</h5>
+                    <ul style="color: #64748b; margin: 0; padding-left: 1.5em; line-height: 1.6;">
+                        <li>Road maintenance and snow removal</li>
+                        <li>Fire mitigation and wood chipping</li>
+                        <li>Common area maintenance</li>
+                        <li>Covenant enforcement</li>
+                        <li>Community facilities management</li>
+                        <li>Emergency coordination</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <!-- Benefits of Sanitary District Status -->
+            <h4 style="color: #1e3a5f; font-size: 1.3em; margin: 2em 0 1em 0;">Benefits of Our Sanitary District Status</h4>
+            <div style="background: #f0fdf4; border: 1px solid #86efac; border-radius: 12px; padding: 1.5em; margin: 1.5em 0;">
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5em;">
+                    <div style="display: flex; align-items: start; gap: 1em;">
+                        <span style="color: #22c55e; font-size: 1.5em; line-height: 1;">✓</span>
+                        <div>
+                            <h6 style="color: #166534; margin: 0 0 0.3em 0;">Legal Authority</h6>
+                            <p style="color: #15803d; margin: 0; font-size: 0.95em;">Ability to levy assessments and enforce regulations under state law</p>
+                        </div>
+                    </div>
+                    <div style="display: flex; align-items: start; gap: 1em;">
+                        <span style="color: #22c55e; font-size: 1.5em; line-height: 1;">✓</span>
+                        <div>
+                            <h6 style="color: #166534; margin: 0 0 0.3em 0;">Tax Benefits</h6>
+                            <p style="color: #15803d; margin: 0; font-size: 0.95em;">Property owners qualify for certain tax advantages and deductions</p>
+                        </div>
+                    </div>
+                    <div style="display: flex; align-items: start; gap: 1em;">
+                        <span style="color: #22c55e; font-size: 1.5em; line-height: 1;">✓</span>
+                        <div>
+                            <h6 style="color: #166534; margin: 0 0 0.3em 0;">Local Control</h6>
+                            <p style="color: #15803d; margin: 0; font-size: 0.95em;">Community-elected board maintains direct oversight of services</p>
+                        </div>
+                    </div>
+                    <div style="display: flex; align-items: start; gap: 1em;">
+                        <span style="color: #22c55e; font-size: 1.5em; line-height: 1;">✓</span>
+                        <div>
+                            <h6 style="color: #166534; margin: 0 0 0.3em 0;">Cost Efficiency</h6>
+                            <p style="color: #15803d; margin: 0; font-size: 0.95em;">Shared services reduce individual property owner costs</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Important Note -->
+            <div style="background: #fef3c7; border: 1px solid #fbbf24; border-radius: 12px; padding: 1.5em; margin: 2em 0;">
+                <h5 style="color: #92400e; margin: 0 0 0.5em 0; display: flex; align-items: center; gap: 0.5em;">
+                    <span style="font-size: 1.3em;">📍</span>
+                    Important for Property Owners
+                </h5>
+                <p style="margin: 0; color: #78350f; line-height: 1.6;">All property within the Blue Mountain Sanitary District boundaries is subject to annual assessments and must comply with district regulations. These assessments fund the essential services that maintain our community's infrastructure and quality of life. Property owners automatically become members of BMPOA upon purchasing property within the district.</p>
+            </div>
+        </div>
+        <div class="page-footer" style="box-sizing: border-box; max-width: 100%;">
+            <span>Chapter II: Governance</span>
+            <span class="page-number">3</span>
+        </div>
+    </div>
+    
+    <!-- Committee Page -->
+    <div class="page" style="overflow: hidden;">
+        <div class="page-content" style="box-sizing: border-box; max-width: 100%;">
+            <h2>Committees</h2>
+            <p>Much of the community's work is accomplished through volunteer committees. Each committee focuses on specific aspects of community life and reports to the Board of Directors.</p>
+            
+            <h3>Standing Committees</h3>
+            
+            <h4 class="keep-with-next">Roads Committee</h4>
+            <ul>
+                <li>Oversees maintenance of private roads</li>
+                <li>Manages snow removal contracts</li>
+                <li>Coordinates drainage improvements</li>
+                <li>Monitors road conditions and safety</li>
+            </ul>
+            
+            <h4 class="keep-with-next">Architectural Review Committee (ARC)</h4>
+            <ul>
+                <li>Reviews building and renovation plans</li>
+                <li>Ensures covenant compliance</li>
+                <li>Issues building permits</li>
+                <li>Provides guidance on design standards</li>
+            </ul>
+            
+            <h4 class="keep-with-next">Lake Committee</h4>
+            <ul>
+                <li>Maintains Deer Lake and surrounding areas</li>
+                <li>Manages fish stocking program</li>
+                <li>Oversees dock and boat launch maintenance</li>
+                <li>Coordinates lake safety measures</li>
+            </ul>
+            
+            <h4 class="keep-with-next">Emergency Preparedness Committee</h4>
+            <ul>
+                <li>Develops evacuation plans</li>
+                <li>Coordinates with county emergency services</li>
+                <li>Promotes wildfire prevention</li>
+                <li>Maintains emergency communication systems</li>
+            </ul>
+            
+            <h4 class="keep-with-next">Finance Committee</h4>
+            <ul>
+                <li>Reviews annual budget proposals</li>
+                <li>Monitors financial performance</li>
+                <li>Recommends reserve funding levels</li>
+                <li>Oversees annual audit</li>
+            </ul>
+            
+            <div class="alert-box keep-together" style="box-sizing: border-box; max-width: 100%;">
+                <h4>Join a Committee!</h4>
+                <p>Volunteering for a committee is a great way to contribute to the community and meet your neighbors. Contact the BMPOA office to express your interest.</p>
+            </div>
+            
+            <h3>Annual Meetings</h3>
+            <p>The Annual Meeting of the membership is held each year on the third Saturday in June. This meeting includes:</p>
+            
+            <ul>
+                <li>Election of Board members</li>
+                <li>Financial report and budget approval</li>
+                <li>Committee reports</li>
+                <li>Community awards and recognition</li>
+                <li>Open forum for member questions</li>
+            </ul>
+            
+            <p>A quorum of 10% of members in good standing is required for official business. Proxy voting is permitted with proper documentation submitted 48 hours before the meeting.</p>
+        </div>
+        <div class="page-footer" style="box-sizing: border-box; max-width: 100%;">
+            <span>Chapter II: Governance</span>
+            <span class="page-number">4</span>
+        </div>
+    </div>
+    
+    <!-- Chapter 3 -->
+    <div class="page" style="overflow: hidden;" data-template="chapter-start">
+        <div class="page-content" style="box-sizing: border-box; max-width: 100%;">
+            <h1 class="chapter-title">III. Community Regulations</h1>
+            
+            <p>Blue Mountain's regulations are designed to maintain property values, ensure safety, and preserve the natural beauty of our community. All property owners are bound by the restrictive covenants recorded with their deeds.</p>
+            
+            <h2>Building & Construction</h2>
+            <p>All new construction, additions, and major renovations require approval from the Architectural Review Committee (ARC) before work begins.</p>
+            
+            <h3>ARC Review Process</h3>
+            <ol>
+                <li><strong>Submit Plans:</strong> Provide detailed plans including site plan, elevations, and materials list</li>
+                <li><strong>Committee Review:</strong> ARC meets monthly to review submissions</li>
+                <li><strong>Site Visit:</strong> Committee members may visit your property</li>
+                <li><strong>Decision:</strong> Approval, conditional approval, or denial within 30 days</li>
+                <li><strong>Appeals:</strong> Decisions may be appealed to the Board of Directors</li>
+            </ol>
+            
+            <h3>Design Standards</h3>
+            <table class="keep-together" style="width: 100%; border-collapse: collapse; margin: 1.5em 0; box-shadow: 0 1px 3px rgba(0,0,0,0.1); border-radius: 8px; overflow: hidden;">
+                <th ead style="padding: 1em; text-align: left; font-weight: 600; letter-spacing: 0.5px; border-bottom: 2px solid #fff;">
+                    <tr>
+                        <th  style="padding: 1em; text-align: left; font-weight: 600; letter-spacing: 0.5px; border-bottom: 2px solid #fff;">Element</th>
+                        <th  style="padding: 1em; text-align: left; font-weight: 600; letter-spacing: 0.5px; border-bottom: 2px solid #fff;">Requirement</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td  style="padding: 0.8em 1em; border-bottom: 1px solid #e0e0e0;">Minimum Square Footage</td>
+                        <td  style="padding: 0.8em 1em; border-bottom: 1px solid #e0e0e0;">1,200 sq ft (single story), 1,500 sq ft (multi-story)</td>
+                    </tr>
+                    <tr  style="background: #f7f9fa;">
+                        <td  style="padding: 0.8em 1em; border-bottom: 1px solid #e0e0e0;">Setbacks</td>
+                        <td  style="padding: 0.8em 1em; border-bottom: 1px solid #e0e0e0;">Front: 35 ft, Side: 15 ft, Rear: 25 ft</td>
+                    </tr>
+                    <tr>
+                        <td  style="padding: 0.8em 1em; border-bottom: 1px solid #e0e0e0;">Height Limit</td>
+                        <td  style="padding: 0.8em 1em; border-bottom: 1px solid #e0e0e0;">35 feet from average grade</td>
+                    </tr>
+                    <tr  style="background: #f7f9fa;">
+                        <td  style="padding: 0.8em 1em; border-bottom: 1px solid #e0e0e0;">Exterior Colors</td>
+                        <td  style="padding: 0.8em 1em; border-bottom: 1px solid #e0e0e0;">Earth tones that blend with natural surroundings</td>
+                    </tr>
+                    <tr>
+                        <td  style="padding: 0.8em 1em; border-bottom: 1px solid #e0e0e0;">Roofing</td>
+                        <td  style="padding: 0.8em 1em; border-bottom: 1px solid #e0e0e0;">Architectural shingles or metal in approved colors</td>
+                    </tr>
+                    <tr  style="background: #f7f9fa;">
+                        <td  style="padding: 0.8em 1em; border-bottom: 1px solid #e0e0e0;">Foundations</td>
+                        <td  style="padding: 0.8em 1em; border-bottom: 1px solid #e0e0e0;">Must be faced with stone, brick, or approved siding</td>
+                    </tr>
+                </tbody>
+            </table>
+            
+            <div class="warning-box" style="box-sizing: border-box; max-width: 100%;">
+                <h4>Construction Hours</h4>
+                <p>Construction work is permitted Monday through Friday 7:00 AM to 6:00 PM, Saturday 8:00 AM to 5:00 PM. No construction on Sundays or federal holidays without special permission.</p>
+            </div>
+        </div>
+        <div class="page-footer" style="box-sizing: border-box; max-width: 100%;">
+            <span>Chapter III: Regulations</span>
+            <span class="page-number">5</span>
+        </div>
+    </div>
+    
+    <!-- Property Use Page -->
+    <div class="page" style="overflow: hidden;">
+        <div class="page-content" style="box-sizing: border-box; max-width: 100%;">
+            <h2>Property Use Guidelines</h2>
+            
+            <h3>Permitted Uses</h3>
+            <ul>
+                <li>Single-family residential dwellings</li>
+                <li>Home offices that don't generate customer traffic</li>
+                <li>Detached garages and storage buildings (with ARC approval)</li>
+                <li>Greenhouses and garden structures</li>
+                <li>Swimming pools and hot tubs (with proper screening)</li>
+            </ul>
+            
+            <h3>Prohibited Uses</h3>
+            <ul>
+                <li>Commercial businesses with customer traffic</li>
+                <li>Multi-family dwellings or apartments</li>
+                <li>Mobile homes or temporary structures</li>
+                <li>Livestock or poultry (except as noted below)</li>
+                <li>Junkyards or outdoor storage of inoperable vehicles</li>
+            </ul>
+            
+            <h3>Animals and Pets</h3>
+            <div class="info-box keep-together" style="box-sizing: border-box; max-width: 100%;">
+                <h4>Pet Regulations</h4>
+                <ul>
+                    <li>Dogs and cats must be kept under owner's control</li>
+                    <li>Limit of 4 dogs per household</li>
+                    <li>No commercial breeding operations</li>
+                    <li>Horses permitted on lots of 3+ acres with proper fencing</li>
+                    <li>Chickens allowed (up to 6 hens, no roosters) with neighbor consent</li>
+                </ul>
+            </div>
+            
+            <h3>Landscaping and Trees</h3>
+            <p>Property owners are encouraged to maintain the natural beauty of their lots while creating defensible space for fire safety.</p>
+            
+            <ul>
+                <li><strong>Tree Removal:</strong> Clearing more than 1/4 acre requires ARC approval</li>
+                <li><strong>Native Plants:</strong> Use of native species is strongly encouraged</li>
+                <li><strong>Erosion Control:</strong> Required on slopes greater than 20%</li>
+                <li><strong>Outdoor Lighting:</strong> Must be shielded to prevent light pollution</li>
+            </ul>
+            
+            <h3>Signs</h3>
+            <table  style="width: 100%; border-collapse: collapse; margin: 1.5em 0; box-shadow: 0 1px 3px rgba(0,0,0,0.1); border-radius: 8px; overflow: hidden;">
+                <th ead style="padding: 1em; text-align: left; font-weight: 600; letter-spacing: 0.5px; border-bottom: 2px solid #fff;">
+                    <tr>
+                        <th  style="padding: 1em; text-align: left; font-weight: 600; letter-spacing: 0.5px; border-bottom: 2px solid #fff;">Sign Type</th>
+                        <th  style="padding: 1em; text-align: left; font-weight: 600; letter-spacing: 0.5px; border-bottom: 2px solid #fff;">Allowed</th>
+                        <th  style="padding: 1em; text-align: left; font-weight: 600; letter-spacing: 0.5px; border-bottom: 2px solid #fff;">Restrictions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td  style="padding: 0.8em 1em; border-bottom: 1px solid #e0e0e0;">For Sale/Rent</td>
+                        <td  style="padding: 0.8em 1em; border-bottom: 1px solid #e0e0e0;">Yes</td>
+                        <td  style="padding: 0.8em 1em; border-bottom: 1px solid #e0e0e0;">One sign, max 6 sq ft</td>
+                    </tr>
+                    <tr  style="background: #f7f9fa;">
+                        <td  style="padding: 0.8em 1em; border-bottom: 1px solid #e0e0e0;">Security</td>
+                        <td  style="padding: 0.8em 1em; border-bottom: 1px solid #e0e0e0;">Yes</td>
+                        <td  style="padding: 0.8em 1em; border-bottom: 1px solid #e0e0e0;">Max 1 sq ft per sign</td>
+                    </tr>
+                    <tr>
+                        <td  style="padding: 0.8em 1em; border-bottom: 1px solid #e0e0e0;">Address Numbers</td>
+                        <td  style="padding: 0.8em 1em; border-bottom: 1px solid #e0e0e0;">Yes</td>
+                        <td  style="padding: 0.8em 1em; border-bottom: 1px solid #e0e0e0;">Required for emergency services</td>
+                    </tr>
+                    <tr  style="background: #f7f9fa;">
+                        <td  style="padding: 0.8em 1em; border-bottom: 1px solid #e0e0e0;">Political</td>
+                        <td  style="padding: 0.8em 1em; border-bottom: 1px solid #e0e0e0;">Yes</td>
+                        <td  style="padding: 0.8em 1em; border-bottom: 1px solid #e0e0e0;">30 days before to 7 days after election</td>
+                    </tr>
+                    <tr>
+                        <td  style="padding: 0.8em 1em; border-bottom: 1px solid #e0e0e0;">Commercial</td>
+                        <td  style="padding: 0.8em 1em; border-bottom: 1px solid #e0e0e0;">No</td>
+                        <td  style="padding: 0.8em 1em; border-bottom: 1px solid #e0e0e0;">Not permitted</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="page-footer" style="box-sizing: border-box; max-width: 100%;">
+            <span>Chapter III: Regulations</span>
+            <span class="page-number">6</span>
+        </div>
+    </div>
+    
+    <!-- Vehicle Rules Page -->
+    <div class="page" style="overflow: hidden;">
+        <div class="page-content" style="box-sizing: border-box; max-width: 100%;">
+            <h2>Vehicle & Parking Rules</h2>
+            
+            <h3>General Vehicle Regulations</h3>
+            <ul>
+                <li>All vehicles must be currently registered and operable</li>
+                <li>Speed limit on all Blue Mountain roads: 20 MPH</li>
+                <li>Yield to pedestrians and wildlife at all times</li>
+                <li>No parking on roads or shoulders except for emergencies</li>
+            </ul>
+            
+            <h3>Recreational Vehicles</h3>
+            <div class="two-column" style="box-sizing: border-box; max-width: 100%;">
+                <div>
+                    <h4>Permitted</h4>
+                    <ul>
+                        <li>RVs stored on owner's property</li>
+                        <li>Boats on trailers</li>
+                        <li>ATVs for property maintenance</li>
+                        <li>Guest RVs (up to 14 days)</li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Restrictions</h4>
+                    <ul>
+                        <li>Must be screened from road view</li>
+                        <li>No permanent RV living</li>
+                        <li>No RV rentals permitted</li>
+                        <li>ATVs not for recreation on roads</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <h3>Commercial Vehicles</h3>
+            <p>Commercial vehicles are restricted to preserve the residential character of the community:</p>
+            <ul>
+                <li>No vehicles over 10,000 lbs GVW without approval</li>
+                <li>No commercial logos larger than 2 sq ft</li>
+                <li>Must be parked in garages or screened from view</li>
+                <li>Temporary exemptions for construction/delivery vehicles</li>
+            </ul>
+            
+            <div class="alert-box keep-together" style="box-sizing: border-box; max-width: 100%;">
+                <h4>Winter Driving Safety</h4>
+                <p>Blue Mountain roads can be challenging in winter conditions:</p>
+                <ul>
+                    <li>4WD or AWD strongly recommended</li>
+                    <li>Carry chains November through March</li>
+                    <li>Keep emergency supplies in vehicle</li>
+                    <li>Check road conditions before traveling</li>
+                </ul>
+            </div>
+            
+            <h3>Enforcement</h3>
+            <p>The Board of Directors enforces vehicle regulations through:</p>
+            <ol>
+                <li><strong>Warning Notice:</strong> First violation</li>
+                <li><strong>Fine:</strong> $50 for second violation</li>
+                <li><strong>Increased Fines:</strong> $100+ for repeated violations</li>
+                <li><strong>Legal Action:</strong> For persistent violators</li>
+            </ol>
+            
+            <p>All fines collected are deposited in the community's general fund for road maintenance.</p>
+        </div>
+        <div class="page-footer" style="box-sizing: border-box; max-width: 100%;">
+            <span>Chapter III: Regulations</span>
+            <span class="page-number">7</span>
+        </div>
+    </div>
+    
+    <!-- Road Maintenance Page -->
+    <div class="page" style="overflow: hidden;">
+        <div class="page-content" style="box-sizing: border-box; max-width: 100%;">
+            <h2>Road Maintenance & Winter Weather</h2>
+            
+            <div class="alert-box" style="background: #e3f2fd; border-left: 0 solid #2196f3;">
+                <h3 style="color: #1565c0; margin-top: 0;">Important: No Salt on Gravel Roads</h3>
+                <p>Salt use is <strong>prohibited</strong> on BMPOA gravel roads. Salt damages the roadbed and significantly increases maintenance costs. Blue barrels of gravel chips are placed on steep hills for traction during winter weather.</p>
+            </div>
+            
+            <h3>BMPOA Road System</h3>
+            <p>The Blue Mountain Property Owners Association maintains approximately 15 miles of private roads throughout our community. These roads are funded through the Sanitary District tax assessment and maintained by the Roads Committee.</p>
+            
+            <div class="info-box" style="box-sizing: border-box; max-width: 100%;">
+                <h4>Roads Committee Contact</h4>
+                <p><strong>Chair:</strong> Carl Herz<br>
+                <strong>Email:</strong> <span style="word-break: break-all;">bmpoaroads@gmail.com</span><br>
+                <strong>Purpose:</strong> Report road conditions, potholes, washouts, or signage issues. Include your name, email, location details, and photos if possible.</p>
+            </div>
+            
+            <h3>Winter Weather Operations</h3>
+            
+            <table style="width: 100%; border-collapse: collapse; margin: 1.5em 0; box-shadow: 0 1px 3px rgba(0,0,0,0.1); border-radius: 8px; overflow: hidden;">
+                <thead style="background: #1e3a5f; color: white;">
+                    <tr>
+                        <th style="padding: 1em; text-align: left; font-weight: 600; letter-spacing: 0.5px; border-bottom: 2px solid #fff;">Service</th>
+                        <th style="padding: 1em; text-align: left; font-weight: 600; letter-spacing: 0.5px; border-bottom: 2px solid #fff;">Details</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td style="padding: 0.8em 1em; border-bottom: 1px solid #e0e0e0;"><strong>Snow Plowing Trigger</strong></td>
+                        <td style="padding: 0.8em 1em; border-bottom: 1px solid #e0e0e0;">Begins when 4 inches of snow accumulates at the designated mountain location</td>
+                    </tr>
+                    <tr style="background: #f7f9fa;">
+                        <td style="padding: 0.8em 1em; border-bottom: 1px solid #e0e0e0;"><strong>Priority Routes</strong></td>
+                        <td style="padding: 0.8em 1em; border-bottom: 1px solid #e0e0e0;">Main access roads cleared first, followed by secondary roads</td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 0.8em 1em; border-bottom: 1px solid #e0e0e0;"><strong>Traction Materials</strong></td>
+                        <td style="padding: 0.8em 1em; border-bottom: 1px solid #e0e0e0;">Blue barrels with gravel chips located on steep grades</td>
+                    </tr>
+                    <tr style="background: #f7f9fa;">
+                        <td style="padding: 0.8em 1em; border-bottom: 1px solid #e0e0e0;"><strong>Resident Responsibility</strong></td>
+                        <td style="padding: 0.8em 1em; border-bottom: 1px solid #e0e0e0;">Clear driveways after plow passes; do not push snow into roads</td>
+                    </tr>
+                </tbody>
+            </table>
+            
+            <h3>Winter Driving Recommendations</h3>
+            
+            <div class="two-column" style="box-sizing: border-box; max-width: 100%;">
+                <div>
+                    <h4>Vehicle Preparation</h4>
+                    <ul>
+                        <li><strong>Tire Chains:</strong> Recommended for ice/snow conditions</li>
+                        <li><strong>Practice Installation:</strong> Learn before winter arrives</li>
+                        <li><strong>4WD/AWD:</strong> Helpful but not a substitute for chains</li>
+                        <li><strong>Emergency Kit:</strong> Include shovel, sand/kitty litter, flashlight</li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Driving Tips</h4>
+                    <ul>
+                        <li>Reduce speed significantly on snow/ice</li>
+                        <li>Allow extra distance for stopping</li>
+                        <li>Avoid sudden acceleration or braking</li>
+                        <li>Know alternate routes in case of blockage</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <h3>Emergency Situations</h3>
+            
+            <div class="warning-box" style="box-sizing: border-box; max-width: 100%;">
+                <h4>Downed Trees on Roads</h4>
+                <p>Residents may safely clear small branches and debris. For large trees:</p>
+                <ul>
+                    <li>Report location via "Contact Us" on BMPOA.org</li>
+                    <li>Include exact location and photos if possible</li>
+                    <li>Do not attempt to move trees near power lines</li>
+                </ul>
+            </div>
+            
+            <div class="alert-box" style="background: #ffebee; border-left: 0 solid #f44336; margin-top: 1.5em;">
+                <h4 style="color: #c62828;">Fallen Power Lines - EXTREME DANGER</h4>
+                <ul style="margin: 0.5em 0;">
+                    <li><strong>If a line falls on your vehicle:</strong> STAY INSIDE the vehicle</li>
+                    <li><strong>If you must exit:</strong> Jump clear without touching the car and ground simultaneously</li>
+                    <li><strong>Shuffle away:</strong> Keep feet together, shuffle at least 35 feet away</li>
+                    <li><strong>Report immediately:</strong> Call Rappahannock Electric Cooperative (REC) at <strong>(800) 552-3904</strong></li>
+                    <li><strong>Online reporting:</strong> myrec.coop/outagecenter</li>
+                </ul>
+            </div>
+            
+            <h3>Year-Round Maintenance</h3>
+            
+            <table style="width: 100%; border-collapse: collapse; margin: 1.5em 0; box-shadow: 0 1px 3px rgba(0,0,0,0.1); border-radius: 8px; overflow: hidden;">
+                <thead style="background: #1e3a5f; color: white;">
+                    <tr>
+                        <th style="padding: 1em; text-align: left; font-weight: 600; letter-spacing: 0.5px; border-bottom: 2px solid #fff;">Season</th>
+                        <th style="padding: 1em; text-align: left; font-weight: 600; letter-spacing: 0.5px; border-bottom: 2px solid #fff;">Maintenance Activities</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td style="padding: 0.8em 1em; border-bottom: 1px solid #e0e0e0;"><strong>Spring</strong></td>
+                        <td style="padding: 0.8em 1em; border-bottom: 1px solid #e0e0e0;">Grading, pothole repair, drainage clearing</td>
+                    </tr>
+                    <tr style="background: #f7f9fa;">
+                        <td style="padding: 0.8em 1em; border-bottom: 1px solid #e0e0e0;"><strong>Summer</strong></td>
+                        <td style="padding: 0.8em 1em; border-bottom: 1px solid #e0e0e0;">Dust control, vegetation management, culvert maintenance</td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 0.8em 1em; border-bottom: 1px solid #e0e0e0;"><strong>Fall</strong></td>
+                        <td style="padding: 0.8em 1em; border-bottom: 1px solid #e0e0e0;">Leaf removal from drainage, pre-winter repairs</td>
+                    </tr>
+                    <tr style="background: #f7f9fa;">
+                        <td style="padding: 0.8em 1em; border-bottom: 1px solid #e0e0e0;"><strong>Winter</strong></td>
+                        <td style="padding: 0.8em 1em; border-bottom: 1px solid #e0e0e0;">Snow removal, ice management, emergency repairs</td>
+                    </tr>
+                </tbody>
+            </table>
+            
+            <div class="info-box" style="margin-top: 2em;">
+                <h4>Important Note: Fire Trail Road</h4>
+                <p>Fire Trail Road is <strong>NOT</strong> owned or maintained by BMPOA. For issues on Fire Trail Road, contact the Virginia Department of Wildlife Resources (DWR) Region 4 Board of Directors.</p>
+            </div>
+        </div>
+        <div class="page-footer" style="box-sizing: border-box; max-width: 100%;">
+            <span>Chapter III: Regulations</span>
+            <span class="page-number">8</span>
+        </div>
+    </div>
+    
+    <!-- Chapter 4 - Community Life & Recreation -->
+    <div class="page" style="overflow: hidden;" data-template="chapter-start">
+        <div class="page-content" style="box-sizing: border-box; max-width: 100%;">
+            <h1 class="chapter-title">IV. Community Life & Recreation</h1>
+            
+            <p>Blue Mountain offers a variety of recreational facilities and social activities that bring our community together. From our historic Lodge to the beautiful Deer Lake, these amenities create opportunities for neighbors to connect and enjoy our mountain setting.</p>
+            
+            <h2>The Blue Mountain Lodge</h2>
+            
+            <div class="hero-image" style="box-sizing: border-box; max-width: 100%;">
+                <img src="images/TheLodgeOverlook.jpg" alt="View from Lodge overlook">
+                <div class="overlay" style="box-sizing: border-box; max-width: 100%;">
+                    <h2>Our Community Center</h2>
+                    <p>A gathering place with stunning mountain views where memories are made</p>
+                </div>
+            </div>
+            
+            <div class="layout-sidebar" style="box-sizing: border-box; max-width: 100%;">
+                <div class="main-content" style="box-sizing: border-box; max-width: 100%;">
+                    <h3>About The Lodge</h3>
+                    <p>The Blue Mountain Lodge serves as the heart of our community, hosting board meetings, social events, and private gatherings. This rustic facility offers stunning mountain views and a warm, welcoming atmosphere for all occasions.</p>
+                    
+                    <div class="image-grid-2" style="margin-top: 1.5em;">
+                        <div class="image-container" style="box-sizing: border-box; max-width: 100%;">
+                            <img src="images/TheLodge.jpg" alt="Blue Mountain Lodge exterior view">
+                        </div>
+                        <div class="image-container" style="box-sizing: border-box; max-width: 100%;">
+                            <img src="images/TheLodgeEntrance.jpg" alt="Lodge entrance">
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="sidebar" style="box-sizing: border-box; max-width: 100%;">
+                    <h4>Lodge Details</h4>
+                    <ul style="list-style: none; padding-left: 0;">
+                        <li style="margin-bottom: 0.75em;"><strong>Location</strong><br>540 Cliff Road<br>Linden, VA 22642</li>
+                        <li style="margin-bottom: 0.75em;"><strong>Capacity</strong><br>Up to 80 guests</li>
+                        <li style="margin-bottom: 0.75em;"><strong>Amenities</strong><br>Full kitchen, restrooms, tables & chairs, HVAC</li>
+                        <li><strong>Parking</strong><br>Ample parking available</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <h3 style="color: #1e3a5f; font-size: 1.6em; margin: 2em 0 1em 0; border-bottom: 2px solid #e3f2fd; padding-bottom: 0.5em;">Lodge Rental Information</h3>
+            
+            <!-- Professional Rental Info Box -->
+            <div style="background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%); padding: 2em; border-radius: 12px; margin: 1.5em 0; border-left: 0 solid #3b82f6;">
+                <h4 style="color: #1e3a5f; margin: 0 0 1em 0; font-size: 1.3em;">Reserve Your Event Space</h4>
+                <p style="margin: 0 0 1em 0; line-height: 1.8;">The Lodge is available for rental by BMPOA members for private events. We offer discounted rates for property owners in good standing.</p>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1em; margin-top: 1.5em;">
+                    <div style="background: white; padding: 1em; border-radius: 8px; text-align: center;">
+                        <span style="font-size: 2em;">👨‍👩‍👧‍👦</span>
+                        <h5 style="margin: 0.5em 0 0.3em 0; color: #1e3a5f;">Family Reunions</h5>
+                        <p style="font-size: 0.9em; color: #64748b; margin: 0;">Gather your loved ones</p>
+                    </div>
+                    <div style="background: white; padding: 1em; border-radius: 8px; text-align: center;">
+                        <span style="font-size: 2em;">💒</span>
+                        <h5 style="margin: 0.5em 0 0.3em 0; color: #1e3a5f;">Weddings</h5>
+                        <p style="font-size: 0.9em; color: #64748b; margin: 0;">Celebrate your special day</p>
+                    </div>
+                    <div style="background: white; padding: 1em; border-radius: 8px; text-align: center;">
+                        <span style="font-size: 2em;">🎉</span>
+                        <h5 style="margin: 0.5em 0 0.3em 0; color: #1e3a5f;">Community Events</h5>
+                        <p style="font-size: 0.9em; color: #64748b; margin: 0;">Host your gatherings</p>
+                    </div>
+                    <div style="background: white; padding: 1em; border-radius: 8px; text-align: center;">
+                        <span style="font-size: 2em;">📚</span>
+                        <h5 style="margin: 0.5em 0 0.3em 0; color: #1e3a5f;">Workshops</h5>
+                        <p style="font-size: 0.9em; color: #64748b; margin: 0;">Educational sessions</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Pricing Table -->
+            <h4 style="color: #1e3a5f; font-size: 1.3em; margin: 2em 0 1em 0;">Rental Rates for BMPOA Members</h4>
+            <div style="overflow-x: auto; margin: 1.5em 0;">
+                <table style="width: 100%; border-collapse: collapse; box-shadow: 0 4px 6px rgba(0,0,0,0.1); border-radius: 12px; overflow: hidden; background: white;">
+                    <thead style="background: linear-gradient(135deg, #1e3a5f 0%, #2c5282 100%); color: white;">
+                        <tr>
+                            <th style="padding: 1.2em; text-align: left; font-weight: 600; letter-spacing: 0.5px;">Rental Package</th>
+                            <th style="padding: 1.2em; text-align: center; font-weight: 600; letter-spacing: 0.5px;">Duration</th>
+                            <th style="padding: 1.2em; text-align: center; font-weight: 600; letter-spacing: 0.5px;">Member Rate</th>
+                            <th style="padding: 1.2em; text-align: center; font-weight: 600; letter-spacing: 0.5px;">Security Deposit</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td style="padding: 1em 1.2em; border-bottom: 1px solid #e5e7eb; font-weight: 500;">Half Day Rental</td>
+                            <td style="padding: 1em 1.2em; border-bottom: 1px solid #e5e7eb; text-align: center;">4 hours</td>
+                            <td style="padding: 1em 1.2em; border-bottom: 1px solid #e5e7eb; text-align: center; font-weight: 600; color: #059669;">$150</td>
+                            <td style="padding: 1em 1.2em; border-bottom: 1px solid #e5e7eb; text-align: center;">$100</td>
+                        </tr>
+                        <tr style="background: #f9fafb;">
+                            <td style="padding: 1em 1.2em; border-bottom: 1px solid #e5e7eb; font-weight: 500;">Full Day Rental</td>
+                            <td style="padding: 1em 1.2em; border-bottom: 1px solid #e5e7eb; text-align: center;">8 hours</td>
+                            <td style="padding: 1em 1.2em; border-bottom: 1px solid #e5e7eb; text-align: center; font-weight: 600; color: #059669;">$250</td>
+                            <td style="padding: 1em 1.2em; border-bottom: 1px solid #e5e7eb; text-align: center;">$150</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 1em 1.2em; border-bottom: 1px solid #e5e7eb; font-weight: 500;">Weekend Package</td>
+                            <td style="padding: 1em 1.2em; border-bottom: 1px solid #e5e7eb; text-align: center;">Fri 4pm - Sun 4pm</td>
+                            <td style="padding: 1em 1.2em; border-bottom: 1px solid #e5e7eb; text-align: center; font-weight: 600; color: #059669;">$400</td>
+                            <td style="padding: 1em 1.2em; border-bottom: 1px solid #e5e7eb; text-align: center;">$200</td>
+                        </tr>
+                        <tr style="background: #f9fafb;">
+                            <td style="padding: 1em 1.2em; font-weight: 500;">Special Event</td>
+                            <td style="padding: 1em 1.2em; text-align: center;">Wedding/Large Event</td>
+                            <td style="padding: 1em 1.2em; text-align: center; font-weight: 600; color: #059669;">Contact for Quote</td>
+                            <td style="padding: 1em 1.2em; text-align: center;">$250+</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            
+            <!-- Note about discounts -->
+            <div style="background: #f0fdf4; border-left: 0 solid #22c55e; padding: 1em 1.5em; margin: 1em 0; border-radius: 0 8px 8px 0;">
+                <p style="margin: 0; color: #166534;"><strong>Note:</strong> BMPOA property owners in good standing receive discounted rates. Non-member rates available upon request.</p>
+            </div>
+            
+            <!-- Booking Process -->
+            <h4 style="color: #1e3a5f; font-size: 1.3em; margin: 2em 0 1em 0;">How to Book</h4>
+            <div style="background: white; border: 1px solid #e5e7eb; border-radius: 12px; padding: 2em; margin: 1.5em 0; box-shadow: 0 2px 4px rgba(0,0,0,0.05);">
+                <div style="display: grid; gap: 1.5em;">
+                    <div style="display: flex; align-items: start; gap: 1em;">
+                        <div style="background: #3b82f6; color: white; width: 32px; height: 32px; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-weight: bold;">1</div>
+                        <div>
+                            <h5 style="margin: 0 0 0.5em 0; color: #1e3a5f;">Submit Your Request</h5>
+                            <p style="margin: 0; color: #64748b;">Email <strong><span style="word-break: break-all;">bluemountainlodgebooking@gmail.com</span></strong> with:</p>
+                            <ul style="margin: 0.5em 0 0 1.5em; color: #64748b;">
+                                <li>Your name and contact information</li>
+                                <li>Requested date(s) and times</li>
+                                <li>Event type and estimated attendance</li>
+                                <li>Any special requirements</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div style="display: flex; align-items: start; gap: 1em;">
+                        <div style="background: #3b82f6; color: white; width: 32px; height: 32px; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-weight: bold;">2</div>
+                        <div>
+                            <h5 style="margin: 0 0 0.5em 0; color: #1e3a5f;">Confirmation & Agreement</h5>
+                            <p style="margin: 0; color: #64748b;">You'll receive a rental agreement with usage guidelines and liability waiver to sign and return.</p>
+                        </div>
+                    </div>
+                    
+                    <div style="display: flex; align-items: start; gap: 1em;">
+                        <div style="background: #3b82f6; color: white; width: 32px; height: 32px; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-weight: bold;">3</div>
+                        <div>
+                            <h5 style="margin: 0 0 0.5em 0; color: #1e3a5f;">Payment & Deposit</h5>
+                            <p style="margin: 0; color: #64748b;">Submit rental fee and security deposit. Deposit is refunded after successful inspection.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Usage Guidelines -->
+            <h4 style="color: #1e3a5f; font-size: 1.3em; margin: 2em 0 1em 0;">Lodge Usage Guidelines</h4>
+            <div style="background: #fef3c7; border: 1px solid #fbbf24; border-radius: 12px; padding: 1.5em; margin: 1.5em 0;">
+                <h5 style="color: #92400e; margin: 0 0 1em 0; display: flex; align-items: center; gap: 0.5em;">
+                    <span style="font-size: 1.5em;">⚠️</span>
+                    Important Rules & Responsibilities
+                </h5>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5em;">
+                    <div>
+                        <h6 style="color: #92400e; margin: 0 0 0.5em 0;">Cleanup Requirements:</h6>
+                        <ul style="margin: 0; padding-left: 1.5em; color: #78350f;">
+                            <li>Sweep and mop floors</li>
+                            <li>Remove all trash to dumpster</li>
+                            <li>Clean kitchen appliances used</li>
+                            <li>Return tables/chairs to original layout</li>
+                            <li>Turn off all lights and lock doors</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h6 style="color: #92400e; margin: 0 0 0.5em 0;">Prohibited Activities:</h6>
+                        <ul style="margin: 0; padding-left: 1.5em; color: #78350f;">
+                            <li>No smoking inside the Lodge</li>
+                            <li>No open flames (candles in votives only)</li>
+                            <li>No amplified music after 10 PM</li>
+                            <li>No illegal activities</li>
+                            <li>No alterations to Lodge property</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Contact Information -->
+            <div style="background: linear-gradient(135deg, #e0f2fe 0%, #bae6fd 100%); border-radius: 12px; padding: 2em; margin: 2em 0; text-align: center;">
+                <h4 style="color: #075985; margin: 0 0 0.5em 0;">Lodge Access Committee</h4>
+                <p style="color: #0c4a6e; margin: 0 0 1em 0;">For questions about Lodge availability, keys, or special arrangements:</p>
+                <div style="background: white; border-radius: 8px; padding: 1.5em; display: inline-block; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+                    <p style="margin: 0; color: #1e3a5f;"><strong>Chair:</strong> David Cook</p>
+                    <p style="margin: 0.5em 0 0 0; color: #1e3a5f;"><strong>Email:</strong> <span style="word-break: break-all;">bluemountainlodgebooking@gmail.com</span></p>
+                </div>
+            </div>
+        </div>
+        <div class="page-footer" style="box-sizing: border-box; max-width: 100%;">
+            <span>Chapter IV: Community Life</span>
+            <span class="page-number">8</span>
+        </div>
+    </div>
+    
+    <!-- Deer Lake Page -->
+    <div class="page" style="overflow: hidden;">
+        <div class="page-content" style="box-sizing: border-box; max-width: 100%;">
+            <h2>Deer Lake Recreation Area</h2>
+            
+            <h3>About Deer Lake</h3>
+            <p>Deer Lake is Blue Mountain's private recreational facility, offering a peaceful retreat for swimming, fishing, and relaxation. This members-only amenity is one of the most cherished features of our community.</p>
+            
+            <div class="info-box" style="box-sizing: border-box; max-width: 100%;">
+                <h4>Lake Features</h4>
+                <ul>
+                    <li>Private sandy beach area</li>
+                    <li>Swimming dock with ladder</li>
+                    <li>Picnic tables and grills</li>
+                    <li>Walking paths around the lake</li>
+                    <li>Catch-and-release fishing</li>
+                </ul>
+            </div>
+            
+            <h3>Access Requirements</h3>
+            <p>Deer Lake is exclusively for BMPOA members and their guests. Access requires:</p>
+            <ul>
+                <li><strong>Annual Recreation Pass:</strong> Required for all members</li>
+                <li><strong>Guest Policy:</strong> Members may bring up to 4 guests at a time</li>
+                <li><strong>Gate Access:</strong> Combination lock (code provided with pass)</li>
+            </ul>
+            
+            <div class="alert-box" style="box-sizing: border-box; max-width: 100%;">
+                <h4>Obtaining Your Recreation Pass</h4>

@@ -1,0 +1,701 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BMPOA Guide - First 10 Pages</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    
+    <style>
+        /* Reset and base styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Roboto', Georgia, serif;
+            font-size: 11pt;
+            line-height: 1.6;
+            color: #2c3e50;
+            background: white;
+        }
+        
+        /* Page setup */
+        .page {
+            width: 8.5in;
+            height: 11in;
+            margin: 0 auto 0.5in auto;
+            padding: 0.75in;
+            background: white;
+            position: relative;
+            page-break-after: always;
+            page-break-inside: avoid;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        
+        .page:last-child {
+            page-break-after: avoid;
+        }
+        
+        /* Typography */
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Montserrat', Arial, sans-serif;
+            color: #1e3a5f;
+            margin-bottom: 1rem;
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+        
+        h2 {
+            font-size: 1.8rem;
+            font-weight: 700;
+            border-bottom: 3px solid #4a90e2;
+            padding-bottom: 0.5rem;
+            margin-top: 2rem;
+        }
+        
+        h3 {
+            font-size: 1.4rem;
+            font-weight: 600;
+            color: #2c3e50;
+            margin-top: 1.5rem;
+        }
+        
+        p {
+            margin-bottom: 1rem;
+            text-align: justify;
+        }
+        
+        ul, ol {
+            margin-bottom: 1rem;
+            padding-left: 2rem;
+        }
+        
+        li {
+            margin-bottom: 0.5rem;
+        }
+        
+        /* Tables */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 1.5rem;
+        }
+        
+        th, td {
+            border: 1px solid #ddd;
+            padding: 0.75rem;
+            text-align: left;
+        }
+        
+        th {
+            background: #f8f9fa;
+            font-weight: 600;
+            color: #1e3a5f;
+        }
+        
+        /* Alert boxes */
+        .alert-box {
+            background: #fff3cd;
+            border: 2px solid #ffc107;
+            border-radius: 8px;
+            padding: 1rem;
+            margin: 1.5rem 0;
+        }
+        
+        .emergency {
+            background: #f8d7da;
+            border-color: #dc3545;
+        }
+        
+        .info {
+            background: #d1ecf1;
+            border-color: #17a2b8;
+        }
+        
+        /* Images */
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 1rem auto;
+            border-radius: 8px;
+        }
+        
+        /* Footer */
+        .page-footer {
+            position: absolute;
+            bottom: 0.5in;
+            left: 0.75in;
+            right: 0.75in;
+            text-align: center;
+            font-size: 10pt;
+            color: #666;
+            border-top: 1px solid #ddd;
+            padding-top: 0.5rem;
+        }
+        
+        /* Print styles */
+        @media print {
+            body {
+                margin: 0;
+                padding: 0;
+            }
+            
+            .page {
+                margin: 0;
+                box-shadow: none;
+                page-break-after: always;
+            }
+            
+            .page:last-child {
+                page-break-after: avoid;
+            }
+            
+            @page {
+                size: letter;
+                margin: 0;
+            }
+        }
+        
+        /* Cover page */
+        .cover-page {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+        
+        .cover-title {
+            font-size: 3rem;
+            margin: 2rem 0;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+        
+        .cover-subtitle {
+            font-size: 1.5rem;
+            color: #4a90e2;
+            margin-bottom: 3rem;
+        }
+        
+        /* TOC styles */
+        .toc-entry {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 0.75rem;
+            border-bottom: 2px dotted #ccc;
+            padding-bottom: 0.25rem;
+        }
+        
+        .toc-text {
+            flex: 1;
+        }
+        
+        .toc-page {
+            font-weight: 600;
+            margin-left: 1rem;
+        }
+    </style>
+</head>
+<body>
+    <!-- Page 1: Cover -->
+    <div class="page cover-page">
+        <img src="images/bmpoa-emblem.png" alt="BMPOA Emblem" style="width: 200px; height: auto;">
+        <h1 class="cover-title">Blue Mountain<br>Property Owners<br>Association</h1>
+        <p class="cover-subtitle">Community Guide 2025</p>
+        <p style="font-style: italic; font-size: 1.2rem;">A Mountain Home</p>
+        <p style="margin-top: 3rem; font-size: 1rem;">P.O. Box 114, Linden, VA 22642<br>BMPOA.org</p>
+    </div>
+    
+    <!-- Page 2: Table of Contents -->
+    <div class="page">
+        <h1>Table of Contents</h1>
+        
+        <div class="toc-entry">
+            <span class="toc-text"><strong>Chapter I: Welcome & Governance</strong></span>
+            <span class="toc-page">3</span>
+        </div>
+        
+        <div class="toc-entry">
+            <span class="toc-text">Board of Directors</span>
+            <span class="toc-page">3</span>
+        </div>
+        
+        <div class="toc-entry">
+            <span class="toc-text">Committee Structure</span>
+            <span class="toc-page">4</span>
+        </div>
+        
+        <div class="toc-entry">
+            <span class="toc-text">Board Meetings</span>
+            <span class="toc-page">4</span>
+        </div>
+        
+        <div class="toc-entry">
+            <span class="toc-text"><strong>Chapter II: Emergency Information</strong></span>
+            <span class="toc-page">5</span>
+        </div>
+        
+        <div class="toc-entry">
+            <span class="toc-text">Emergency Contacts</span>
+            <span class="toc-page">5</span>
+        </div>
+        
+        <div class="toc-entry">
+            <span class="toc-text">Evacuation Procedures</span>
+            <span class="toc-page">6</span>
+        </div>
+        
+        <div class="toc-entry">
+            <span class="toc-text"><strong>Chapter III: Fire Safety</strong></span>
+            <span class="toc-page">7</span>
+        </div>
+        
+        <div class="toc-entry">
+            <span class="toc-text">Fire Regulations</span>
+            <span class="toc-page">7</span>
+        </div>
+        
+        <div class="toc-entry">
+            <span class="toc-text">FireWise Community</span>
+            <span class="toc-page">8</span>
+        </div>
+        
+        <div class="toc-entry">
+            <span class="toc-text"><strong>Chapter IV: Community Life</strong></span>
+            <span class="toc-page">9</span>
+        </div>
+        
+        <div class="toc-entry">
+            <span class="toc-text">The Lodge</span>
+            <span class="toc-page">9</span>
+        </div>
+        
+        <div class="toc-entry">
+            <span class="toc-text">Community Events</span>
+            <span class="toc-page">10</span>
+        </div>
+        
+        <div class="page-footer">Blue Mountain Property Owners Association • Page 2</div>
+    </div>
+    
+    <!-- Page 3: Governance -->
+    <div class="page">
+        <h1>Chapter I: Welcome & Governance</h1>
+        
+        <p>Welcome to Blue Mountain! This guide contains essential information for residents of our mountain community. Whether you're a new resident or a longtime member, this guide will help you navigate community life, safety procedures, and available services.</p>
+        
+        <h2>Board of Directors</h2>
+        <p>The Blue Mountain Property Owners Association is governed by a seven-member volunteer board elected by the community.</p>
+        
+        <table>
+            <thead>
+                <tr>
+                    <th>Position</th>
+                    <th>Name</th>
+                    <th>Responsibilities</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>President</td>
+                    <td>Board Member</td>
+                    <td>Overall leadership, board meetings</td>
+                </tr>
+                <tr>
+                    <td>Vice President</td>
+                    <td>Board Member</td>
+                    <td>Support president, special projects</td>
+                </tr>
+                <tr>
+                    <td>Secretary</td>
+                    <td>Board Member</td>
+                    <td>Meeting minutes, correspondence</td>
+                </tr>
+                <tr>
+                    <td>Treasurer</td>
+                    <td>Board Member</td>
+                    <td>Financial oversight</td>
+                </tr>
+                <tr>
+                    <td>Directors (3)</td>
+                    <td>Board Members</td>
+                    <td>Committee leadership</td>
+                </tr>
+            </tbody>
+        </table>
+        
+        <div class="alert-box info">
+            <strong>Contact the Board:</strong> All board communications should be sent to the official BMPOA mailing address: P.O. Box 114, Linden, VA 22642
+        </div>
+        
+        <div class="page-footer">Blue Mountain Property Owners Association • Page 3</div>
+    </div>
+    
+    <!-- Page 4: Committee Structure -->
+    <div class="page">
+        <h2>Committee Structure</h2>
+        
+        <p>BMPOA operations are supported by several committees that handle specific aspects of community management:</p>
+        
+        <h3>Active Committees</h3>
+        <ul>
+            <li><strong>Architectural Review Committee (ARC):</strong> Reviews and approves construction projects</li>
+            <li><strong>Social Committee:</strong> Organizes community events and gatherings</li>
+            <li><strong>Lodge Access Committee:</strong> Manages lodge rentals and maintenance</li>
+            <li><strong>Roads Committee:</strong> Oversees road maintenance and improvements</li>
+            <li><strong>FireWise Committee:</strong> Focuses on fire safety and prevention</li>
+        </ul>
+        
+        <h3>Board Meetings</h3>
+        <p>Regular board meetings are held on the <strong>second Monday of each month at 6:00 PM</strong> at The Lodge (540 Cliff Road). All residents are welcome to attend.</p>
+        
+        <div class="alert-box">
+            <strong>Meeting Schedule:</strong>
+            <ul>
+                <li>Regular meetings: 2nd Monday, 6:00 PM</li>
+                <li>Annual meeting: First Saturday in May</li>
+                <li>Special meetings: As needed (announced via email)</li>
+            </ul>
+        </div>
+        
+        <h3>Getting Involved</h3>
+        <p>Volunteers are always needed for committees. Contact any board member to learn about opportunities to contribute to your community.</p>
+        
+        <div class="page-footer">Blue Mountain Property Owners Association • Page 4</div>
+    </div>
+    
+    <!-- Page 5: Emergency Information -->
+    <div class="page">
+        <h1>Chapter II: Emergency Information</h1>
+        
+        <div class="alert-box emergency">
+            <h2 style="text-align: center; font-size: 2.5rem; margin: 0;">🚨 911 🚨</h2>
+            <p style="text-align: center; font-size: 1.2rem; margin: 0.5rem 0 0 0;"><strong>For ALL Emergencies</strong></p>
+        </div>
+        
+        <h2>Emergency Contacts</h2>
+        
+        <table>
+            <thead>
+                <tr>
+                    <th>Service</th>
+                    <th>Contact</th>
+                    <th>Notes</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>All Emergencies</strong></td>
+                    <td><strong>911</strong></td>
+                    <td>Fire, Police, Medical</td>
+                </tr>
+                <tr>
+                    <td>Fire & Rescue Station #1</td>
+                    <td>(540) 635-1435</td>
+                    <td>Front Royal</td>
+                </tr>
+                <tr>
+                    <td>Fire & Rescue Station #5</td>
+                    <td>(540) 635-0053</td>
+                    <td>Linden</td>
+                </tr>
+                <tr>
+                    <td>Power Outages (REC)</td>
+                    <td>(800) 552-3904</td>
+                    <td>Rappahannock Electric</td>
+                </tr>
+                <tr>
+                    <td>Wildlife Conflict</td>
+                    <td>(804) 367-1000</td>
+                    <td>VA Wildlife</td>
+                </tr>
+                <tr>
+                    <td>Animal Control</td>
+                    <td>(540) 636-7834</td>
+                    <td>Warren County</td>
+                </tr>
+            </tbody>
+        </table>
+        
+        <div class="alert-box emergency">
+            <strong>⚠️ IMPORTANT:</strong> Cell phone service can be spotty on Blue Mountain. Consider a landline for emergency communications. Know your exact address and nearest cross street.
+        </div>
+        
+        <div class="page-footer">Blue Mountain Property Owners Association • Page 5</div>
+    </div>
+    
+    <!-- Page 6: Evacuation -->
+    <div class="page">
+        <h2>Evacuation Procedures</h2>
+        
+        <p>Blue Mountain is divided into evacuation zones for emergency response. Familiarize yourself with your zone and primary/alternate routes.</p>
+        
+        <h3>Evacuation Zones</h3>
+        <ul>
+            <li><strong>Zone 1 (Red):</strong> Highest priority - immediate evacuation</li>
+            <li><strong>Zone 2 (Orange):</strong> High priority - 30 minutes</li>
+            <li><strong>Zone 3 (Yellow):</strong> Standard evacuation - 45 minutes</li>
+            <li><strong>Zone 4 (Green):</strong> Staged evacuation - 1 hour</li>
+            <li><strong>Zone 5 (Blue):</strong> Shelter in place until directed</li>
+        </ul>
+        
+        <h3>Emergency Kit Essentials</h3>
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+            <div>
+                <h4>Documents & Communication</h4>
+                <ul>
+                    <li>ID and insurance papers</li>
+                    <li>Cash and credit cards</li>
+                    <li>Phone chargers</li>
+                    <li>Emergency contact list</li>
+                </ul>
+            </div>
+            <div>
+                <h4>Supplies</h4>
+                <ul>
+                    <li>3-day water supply</li>
+                    <li>Non-perishable food</li>
+                    <li>Medications</li>
+                    <li>Flashlights & batteries</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="alert-box">
+            <strong>Stay Informed:</strong> Monitor local radio (AM 1050, FM 95.3) and Warren County emergency alerts for evacuation orders and updates.
+        </div>
+        
+        <div class="page-footer">Blue Mountain Property Owners Association • Page 6</div>
+    </div>
+    
+    <!-- Page 7: Fire Safety -->
+    <div class="page">
+        <h1>Chapter III: Fire Safety</h1>
+        
+        <div class="alert-box emergency">
+            <h2 style="margin-top: 0;">🔥 CRITICAL FIRE SAFETY 🔥</h2>
+            <p><strong>Open burning is FORBIDDEN AT ALL TIMES</strong> within BMPOA boundaries. This is more restrictive than Warren County regulations.</p>
+            <p><strong>Violations:</strong> Class 3 misdemeanor, fines up to $500</p>
+        </div>
+        
+        <h2>Fire Regulations</h2>
+        
+        <h3>❌ Prohibited Activities</h3>
+        <ul>
+            <li>Open burning of any kind</li>
+            <li>Burn barrels or burn piles</li>
+            <li>Campfires or fire pits</li>
+            <li>Outdoor fireplaces (open flame)</li>
+            <li>Burning of brush, leaves, or debris</li>
+        </ul>
+        
+        <h3>✅ Permitted Activities</h3>
+        <ul>
+            <li>Gas grills (with precautions)</li>
+            <li>Enclosed fire containment devices</li>
+            <li>Charcoal grills (in designated areas)</li>
+        </ul>
+        
+        <h3>Grilling Safety</h3>
+        <div class="alert-box">
+            <strong>Required Precautions:</strong>
+            <ul>
+                <li>Keep 10+ feet from structures</li>
+                <li>Have water/extinguisher ready</li>
+                <li>Never leave unattended</li>
+                <li>Properly dispose of ashes (cool, metal container)</li>
+            </ul>
+        </div>
+        
+        <h3>🚨 Report Fire Violations</h3>
+        <p>Fire safety violations should be reported immediately:</p>
+        <ul>
+            <li><strong>Active fire:</strong> Call 911</li>
+            <li><strong>Violations:</strong> Contact BMPOA Board</li>
+            <li><strong>Warren County Fire Marshal:</strong> (540) 635-4357</li>
+        </ul>
+        
+        <div class="page-footer">Blue Mountain Property Owners Association • Page 7</div>
+    </div>
+    
+    <!-- Page 8: FireWise -->
+    <div class="page">
+        <h2>FireWise Community</h2>
+        
+        <p>Blue Mountain is a certified FireWise community, committed to reducing wildfire risk through education and community action.</p>
+        
+        <h3>Defensible Space Zones</h3>
+        <ul>
+            <li><strong>Zone 1 (0-30 feet):</strong> Remove all dead vegetation, maintain irrigated plants</li>
+            <li><strong>Zone 2 (30-100 feet):</strong> Create fuel breaks, remove ladder fuels</li>
+            <li><strong>Zone 3 (100+ feet):</strong> Thin forest, remove dead trees</li>
+        </ul>
+        
+        <h3>Home Hardening</h3>
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+            <div>
+                <h4>Roof & Gutters</h4>
+                <ul>
+                    <li>Class A fire-rated materials</li>
+                    <li>Clean gutters regularly</li>
+                    <li>Screen roof vents</li>
+                </ul>
+            </div>
+            <div>
+                <h4>Vegetation</h4>
+                <ul>
+                    <li>Plant fire-resistant species</li>
+                    <li>Maintain irrigation</li>
+                    <li>Remove dead branches</li>
+                </ul>
+            </div>
+        </div>
+        
+        <h3>Recommended Fire-Resistant Plants</h3>
+        <ul>
+            <li><strong>Trees:</strong> Maple, Cherry, Dogwood</li>
+            <li><strong>Shrubs:</strong> Azalea, Mountain Laurel, Rhododendron</li>
+            <li><strong>Ground Cover:</strong> Hostas, Ferns, Wild Ginger</li>
+        </ul>
+        
+        <div class="alert-box info">
+            <strong>FireWise Activities:</strong> Annual community projects include brush clearing, education workshops, and home assessments. Volunteer participation helps maintain our certification.
+        </div>
+        
+        <div class="page-footer">Blue Mountain Property Owners Association • Page 8</div>
+    </div>
+    
+    <!-- Page 9: Community Life -->
+    <div class="page">
+        <h1>Chapter IV: Community Life</h1>
+        
+        <h2>The Lodge</h2>
+        <p>The Blue Mountain Lodge serves as our community gathering place, available for member rentals and community events.</p>
+        
+        <h3>Lodge Features</h3>
+        <ul>
+            <li><strong>Main Hall:</strong> Seats 120 for dining, 150 for presentations</li>
+            <li><strong>Commercial Kitchen:</strong> Full catering capabilities</li>
+            <li><strong>Stone Fireplace:</strong> Original 1960s construction</li>
+            <li><strong>Covered Deck:</strong> Mountain views, seats 40</li>
+            <li><strong>AV Equipment:</strong> Projector, screen, sound system</li>
+        </ul>
+        
+        <h3>Rental Information</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>Event Type</th>
+                    <th>Member Rate</th>
+                    <th>Deposit</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Family Gatherings</td>
+                    <td>$100</td>
+                    <td>$50</td>
+                </tr>
+                <tr>
+                    <td>Community Events</td>
+                    <td>$150</td>
+                    <td>$75</td>
+                </tr>
+                <tr>
+                    <td>Private Parties</td>
+                    <td>$200</td>
+                    <td>$100</td>
+                </tr>
+            </tbody>
+        </table>
+        
+        <div class="alert-box info">
+            <strong>How to Book:</strong> Email <strong>bluemountainlodgebooking@gmail.com</strong> with your event details, preferred dates, and contact information. Bookings require 2-week advance notice.
+        </div>
+        
+        <h3>Lodge Guidelines</h3>
+        <ul>
+            <li>BMPOA members only (guests must be accompanied)</li>
+            <li>No smoking anywhere on premises</li>
+            <li>Music ends at 10:00 PM</li>
+            <li>Clean-up is renter's responsibility</li>
+            <li>Report damages immediately</li>
+        </ul>
+        
+        <div class="page-footer">Blue Mountain Property Owners Association • Page 9</div>
+    </div>
+    
+    <!-- Page 10: Community Events -->
+    <div class="page">
+        <h2>Community Events</h2>
+        
+        <p>The Social Committee organizes quarterly events to bring our community together throughout the year.</p>
+        
+        <h3>Annual Event Calendar</h3>
+        
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 2rem;">
+            <div>
+                <h4>🌸 Spring Cleanup & Potluck</h4>
+                <p><strong>When:</strong> First Saturday in May<br>
+                <strong>Time:</strong> 9:00 AM - 2:00 PM<br>
+                <strong>Where:</strong> The Lodge</p>
+                <p>Community-wide cleanup followed by potluck lunch. Bring a dish to share!</p>
+            </div>
+            
+            <div>
+                <h4>☀️ Summer Picnic</h4>
+                <p><strong>When:</strong> Third Saturday in July<br>
+                <strong>Time:</strong> 4:00 PM - 8:00 PM<br>
+                <strong>Where:</strong> The Lodge</p>
+                <p>BBQ, games, and music. Family-friendly event with activities for all ages.</p>
+            </div>
+            
+            <div>
+                <h4>🍂 Fall Harvest Festival</h4>
+                <p><strong>When:</strong> Second Saturday in October<br>
+                <strong>Time:</strong> 3:00 PM - 7:00 PM<br>
+                <strong>Where:</strong> The Lodge</p>
+                <p>Celebration of autumn with local harvest, crafts, and seasonal treats.</p>
+            </div>
+            
+            <div>
+                <h4>❄️ Winter Holiday Gathering</h4>
+                <p><strong>When:</strong> Second Saturday in December<br>
+                <strong>Time:</strong> 6:00 PM - 9:00 PM<br>
+                <strong>Where:</strong> The Lodge</p>
+                <p>Holiday celebration with dinner, music, and community recognition.</p>
+            </div>
+        </div>
+        
+        <h3>Deer Lake Recreation</h3>
+        <p>Deer Lake is available for BMPOA members with a valid recreation pass (issued annually in May).</p>
+        
+        <div class="alert-box">
+            <strong>Lake Rules:</strong>
+            <ul>
+                <li>Pass required for all visitors</li>
+                <li>Swimming at your own risk - no lifeguard</li>
+                <li>Fishing permitted (VA license required)</li>
+                <li>No motorized watercraft</li>
+                <li>Dogs must be leashed</li>
+                <li>Pack out all trash</li>
+            </ul>
+        </div>
+        
+        <p><strong>Contact:</strong> bmpoadeerlake@gmail.com for recreation pass information.</p>
+        
+        <div class="page-footer">Blue Mountain Property Owners Association • Page 10</div>
+    </div>
+</body>
+</html>
