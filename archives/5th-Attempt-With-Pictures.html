@@ -1,0 +1,1847 @@
+<!DOCTYPE html><html lang="en"><head><meta http-equiv="Content-Security-Policy" content="default-src 'self' 'unsafe-inline' 'unsafe-eval' data: blob: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://code.jquery.com https://unpkg.com https://d3js.org https://threejs.org https://cdn.plot.ly https://stackpath.bootstrapcdn.com https://maps.googleapis.com https://cdn.tailwindcss.com https://ajax.googleapis.com https://kit.fontawesome.com https://cdn.datatables.net https://maxcdn.bootstrapcdn.com https://code.highcharts.com https://tako-static-assets-production.s3.amazonaws.com https://www.youtube.com https://fonts.googleapis.com https://fonts.gstatic.com https://pfst.cf2.poecdn.net https://puc.poecdn.net https://i.imgur.com https://wikimedia.org https://*.icons8.com https://*.giphy.com https://picsum.photos https://images.unsplash.com; frame-src 'self' https://www.youtube.com https://trytako.com; child-src 'self'; manifest-src 'self'; worker-src 'self'; upgrade-insecure-requests; block-all-mixed-content;">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blue Mountain Property Owners Association Guide</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&amp;family=Roboto:wght@300;400;500;700&amp;display=swap" rel="stylesheet">
+    <style>
+        :root {
+            /* Primary Colors */
+            --primary: #5D5CDE;
+            --primary-light: #7A79E3;
+            --secondary: #3498DB;
+            --secondary-light: #5DADE2;
+            --accent: #E74C3C;
+            --accent-light: #F1948A;
+            
+            /* Seasonal Colors */
+            --spring: #2ECC71;
+            --spring-light: #A3E4BC;
+            --summer: #F39C12;
+            --summer-light: #FAD7A0;
+            --fall: #D35400;
+            --fall-light: #EDBB99;
+            --winter: #3498DB;
+            --winter-light: #AED6F1;
+            
+            /* Neutral Colors */
+            --neutral-100: #FFFFFF;
+            --neutral-200: #F7F9FA;
+            --neutral-300: #EEF2F5;
+            --neutral-400: #D1D8E0;
+            --neutral-500: #A9B4C0;
+            --neutral-600: #7F8C9A;
+            --neutral-700: #5D6D7E;
+            --neutral-800: #34495E;
+            --neutral-900: #2C3E50;
+            
+            /* Typography Colors */
+            --text-primary: #2C3E50;
+            --text-secondary: #5D6D7E;
+            --text-muted: #7F8C9A;
+            --text-light: #FFFFFF;
+            
+            /* Shadow */
+            --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
+            --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
+            --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.1);
+            
+            /* Paper Dimensions (Letter size) */
+            --paper-width: 8.5in;
+            --paper-height: 11in;
+            --paper-padding: 0.75in;
+            
+            /* Typography */
+            --font-heading: 'Montserrat', sans-serif;
+            --font-body: 'Roboto', sans-serif;
+            
+            /* Border Radius */
+            --radius-sm: 4px;
+            --radius-md: 8px;
+            --radius-lg: 12px;
+        }
+        
+        /* Dark Mode Variables */
+        .dark {
+            --neutral-100: #181818;
+            --neutral-200: #202020;
+            --neutral-300: #2A2A2A;
+            --neutral-400: #333333;
+            --neutral-500: #444444;
+            --neutral-600: #666666;
+            --neutral-700: #888888;
+            --neutral-800: #AAAAAA;
+            --neutral-900: #DDDDDD;
+            
+            --text-primary: #F7F9FA;
+            --text-secondary: #D1D8E0;
+            --text-muted: #A9B4C0;
+            --text-light: #F7F9FA;
+            
+            --spring-light: rgba(46, 204, 113, 0.3);
+            --summer-light: rgba(243, 156, 18, 0.3);
+            --fall-light: rgba(211, 84, 0, 0.3);
+            --winter-light: rgba(52, 152, 219, 0.3);
+        }
+        
+        /* Base Reset */
+        *, *::before, *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        body {
+            font-family: var(--font-body);
+            font-size: 11pt;
+            line-height: 1.5;
+            color: var(--text-primary);
+            background-color: var(--neutral-200);
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            transition: background-color 0.3s, color 0.3s;
+            padding: 2rem;
+        }
+        
+        /* Typography */
+        h1, h2, h3, h4, h5, h6 {
+            font-family: var(--font-heading);
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 1rem;
+            color: var(--text-primary);
+            page-break-after: avoid;
+        }
+        
+        h1 {
+            font-size: 24pt;
+            letter-spacing: -0.025em;
+            margin-top: 2rem;
+        }
+        
+        h2 {
+            font-size: 18pt;
+            letter-spacing: -0.0125em;
+            margin-top: 1.5rem;
+            color: var(--primary);
+            border-bottom: 2px solid var(--primary-light);
+            padding-bottom: 0.5rem;
+        }
+        
+        h3 {
+            font-size: 14pt;
+            letter-spacing: -0.0125em;
+            margin-top: 1.25rem;
+            color: var(--primary);
+        }
+        
+        h4 {
+            font-size: 12pt;
+            margin-top: 1rem;
+        }
+        
+        h5 {
+            font-size: 11pt;
+            font-weight: 600;
+        }
+        
+        h6 {
+            font-size: 10pt;
+            font-weight: 600;
+        }
+        
+        p {
+            margin-bottom: 0.75rem;
+        }
+        
+        ul, ol {
+            margin-bottom: 1rem;
+            padding-left: 1.5rem;
+        }
+        
+        li {
+            margin-bottom: 0.25rem;
+            page-break-inside: avoid;
+        }
+
+        /* Document Container */
+        .document-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            max-width: 100%;
+            margin: 0 auto;
+        }
+        
+        /* Paper Page */
+        .paper-page {
+            width: var(--paper-width);
+            background-color: var(--neutral-100);
+            padding: var(--paper-padding);
+            box-shadow: var(--shadow-md);
+            margin-bottom: 2rem;
+            max-width: 100%;
+        }
+        
+        /* Cover Page */
+        .cover-page {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(rgba(44, 62, 80, 0.7), rgba(44, 62, 80, 0.7)), 
+                        url('https://pfst.cf2.poecdn.net/base/image/7a0c6bd484cc86de1995d0bca3f25eeb906a4009564e94bc8be356659911e703?w=1179&h=758');
+            background-size: cover;
+            background-position: center;
+            color: var(--text-light);
+            height: 9.5in;
+            margin: -0.75in;
+            padding: 2in;
+            text-align: center;
+        }
+        
+        .cover-title {
+            font-size: 28pt;
+            margin-bottom: 1rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            line-height: 1.2;
+        }
+        
+        .cover-subtitle {
+            font-size: 16pt;
+            margin-bottom: 2rem;
+            font-weight: 400;
+        }
+        
+        /* Table of Contents */
+        .toc {
+            margin-bottom: 2rem;
+        }
+        
+        .toc-title {
+            font-size: 20pt;
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+        
+        .toc-section {
+            margin-bottom: 1rem;
+        }
+        
+        .toc-item {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 0.5rem;
+            border-bottom: 1px dotted var(--neutral-400);
+            padding-bottom: 0.25rem;
+        }
+        
+        .toc-page {
+            color: var(--primary);
+        }
+        
+        /* Info Boxes */
+        .info-box {
+            background-color: rgba(52, 152, 219, 0.1);
+            border-left: 4px solid var(--secondary);
+            padding: 1rem;
+            margin: 1.5rem 0;
+            border-radius: 0 var(--radius-md) var(--radius-md) 0;
+        }
+        
+        .info-box h4 {
+            color: var(--secondary);
+            margin-top: 0;
+            margin-bottom: 0.5rem;
+        }
+        
+        .alert-box {
+            background-color: rgba(231, 76, 60, 0.1);
+            border-left: 4px solid var(--accent);
+            padding: 1rem;
+            margin: 1.5rem 0;
+            border-radius: 0 var(--radius-md) var(--radius-md) 0;
+        }
+        
+        .alert-box h4 {
+            color: var(--accent);
+            margin-top: 0;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Contact Card */
+        .contact-card {
+            border: 1px solid var(--neutral-300);
+            border-radius: var(--radius-md);
+            padding: 1rem;
+            margin-bottom: 1rem;
+            background-color: var(--neutral-100);
+        }
+        
+        .contact-name {
+            font-weight: 600;
+            margin-bottom: 0.25rem;
+            color: var(--primary);
+        }
+        
+        .contact-role {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            margin-bottom: 0.5rem;
+        }
+        
+        .contact-info {
+            font-size: 0.9rem;
+        }
+        
+        /* Image Gallery */
+        .image-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin: 1.5rem 0;
+        }
+        
+        .gallery-image {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+            border-radius: var(--radius-md);
+        }
+        
+        /* Two Column Layout */
+        .two-column {
+            column-count: 2;
+            column-gap: 2rem;
+            margin: 1.5rem 0;
+        }
+        
+        .two-column h3 {
+            column-span: all;
+        }
+        
+        /* Services Box */
+        .service-box {
+            border: 1px solid var(--neutral-300);
+            border-radius: var(--radius-md);
+            padding: 1rem;
+            margin-bottom: 1rem;
+        }
+        
+        .service-name {
+            font-weight: 600;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+        
+        /* Responsive Adjustments */
+        @media (max-width: 8.5in) {
+            body {
+                padding: 1rem;
+            }
+            
+            .paper-page {
+                padding: 1rem;
+            }
+            
+            .cover-page {
+                padding: 1rem;
+                margin: -1rem;
+                height: auto;
+                min-height: 80vh;
+            }
+            
+            .cover-title {
+                font-size: 24pt;
+            }
+            
+            .cover-subtitle {
+                font-size: 14pt;
+            }
+            
+            .two-column {
+                column-count: 1;
+            }
+        }
+        
+        /* Print Styles */
+        @media print {
+            body {
+                padding: 0;
+                background-color: white;
+            }
+            
+            .paper-page {
+                width: 100%;
+                box-shadow: none;
+                margin-bottom: 0;
+                page-break-after: always;
+            }
+            
+            .theme-toggle {
+                display: none;
+            }
+        }
+        
+        /* Theme Toggle */
+        .theme-toggle {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: var(--primary);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            box-shadow: var(--shadow-md);
+            z-index: 100;
+        }
+        
+        /* Table Styles */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 1.5rem;
+        }
+        
+        th, td {
+            padding: 0.5rem;
+            border: 1px solid var(--neutral-400);
+            text-align: left;
+        }
+        
+        th {
+            background-color: var(--neutral-300);
+            font-weight: 600;
+        }
+        
+        /* Checklist Style */
+        .checklist {
+            list-style-type: none;
+            padding-left: 1.75rem;
+        }
+        
+        .checklist li {
+            position: relative;
+            margin-bottom: 0.5rem;
+        }
+        
+        .checklist li::before {
+            content: "✓";
+            position: absolute;
+            left: -1.5rem;
+            color: var(--spring);
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="document-container">
+        <!-- Cover Page -->
+        <div class="paper-page">
+            <div class="cover-page">
+                <h1 class="cover-title">BLUE MOUNTAIN PROPERTY OWNERS ASSOCIATION</h1>
+                <p class="cover-subtitle">Your Complete Guide to Mountain Living in Linden, Virginia</p>
+                <p>A comprehensive resource for new and existing residents</p>
+            </div>
+        </div>
+        
+        <!-- Table of Contents Page -->
+        <div class="paper-page">
+            <h1 class="toc-title">TABLE OF CONTENTS</h1>
+            
+            <div class="toc">
+                <div class="toc-section">
+                    <div class="toc-item">
+                        <span>I. GOVERNANCE &amp; STRUCTURE</span>
+                    </div>
+                    <div class="toc-item">
+                        <span>&nbsp;&nbsp;&nbsp;&nbsp;A. BMPOA Overview</span>
+                    </div>
+                    <div class="toc-item">
+                        <span>&nbsp;&nbsp;&nbsp;&nbsp;B. Sanitary District Explained</span>
+                    </div>
+                    <div class="toc-item">
+                        <span>&nbsp;&nbsp;&nbsp;&nbsp;C. Board &amp; Committees Structure</span>
+                    </div>
+                    <div class="toc-item">
+                        <span>&nbsp;&nbsp;&nbsp;&nbsp;D. Membership &amp; Meetings</span>
+                    </div>
+                </div>
+                
+                <div class="toc-section">
+                    <div class="toc-item">
+                        <span>II. A MOUNTAIN HOME</span>
+                    </div>
+                    <div class="toc-item">
+                        <span>&nbsp;&nbsp;&nbsp;&nbsp;A. Community Origins</span>
+                    </div>
+                    <div class="toc-item">
+                        <span>&nbsp;&nbsp;&nbsp;&nbsp;B. Seasonal and Permanent Residents</span>
+                    </div>
+                    <div class="toc-item">
+                        <span>&nbsp;&nbsp;&nbsp;&nbsp;C. Natural Beauty &amp; Wildlife</span>
+                    </div>
+                </div>
+                
+                <div class="toc-section">
+                    <div class="toc-item">
+                        <span>III. WOOD-CHIPPING PROGRAM</span>
+                    </div>
+                    <div class="toc-item">
+                        <span>&nbsp;&nbsp;&nbsp;&nbsp;A. Annual Chipping &amp; Fire Mitigation</span>
+                    </div>
+                    <div class="toc-item">
+                        <span>&nbsp;&nbsp;&nbsp;&nbsp;B. Brush Pile Guidelines</span>
+                    </div>
+                    <div class="toc-item">
+                        <span>&nbsp;&nbsp;&nbsp;&nbsp;C. Wood Chip Access &amp; Delivery</span>
+                    </div>
+                </div>
+                
+                <div class="toc-section">
+                    <div class="toc-item">
+                        <span>IV. FIRE SAFETY &amp; EMERGENCY PREPAREDNESS</span>
+                    </div>
+                    <div class="toc-item">
+                        <span>&nbsp;&nbsp;&nbsp;&nbsp;A. Wildfire Risk Understanding</span>
+                    </div>
+                    <div class="toc-item">
+                        <span>&nbsp;&nbsp;&nbsp;&nbsp;B. Evacuation Zones &amp; Routes</span>
+                    </div>
+                    <div class="toc-item">
+                        <span>&nbsp;&nbsp;&nbsp;&nbsp;C. Home Fire Protection Strategies</span>
+                    </div>
+                    <div class="toc-item">
+                        <span>&nbsp;&nbsp;&nbsp;&nbsp;D. Family Emergency Planning</span>
+                    </div>
+                </div>
+                
+                <div class="toc-section">
+                    <div class="toc-item">
+                        <span>V. COMMUNITY SERVICES &amp; AMENITIES</span>
+                    </div>
+                    <div class="toc-item">
+                        <span>&nbsp;&nbsp;&nbsp;&nbsp;A. Roads &amp; Winter Weather Guidelines</span>
+                    </div>
+                    <div class="toc-item">
+                        <span>&nbsp;&nbsp;&nbsp;&nbsp;B. Refuse Collection &amp; Disposal</span>
+                    </div>
+                    <div class="toc-item">
+                        <span>&nbsp;&nbsp;&nbsp;&nbsp;C. Internet Service Providers</span>
+                    </div>
+                </div>
+                
+                <div class="toc-section">
+                    <div class="toc-item">
+                        <span>VI. DEER LAKE RECREATION AREA</span>
+                    </div>
+                    <div class="toc-item">
+                        <span>&nbsp;&nbsp;&nbsp;&nbsp;A. Location &amp; Access</span>
+                    </div>
+                    <div class="toc-item">
+                        <span>&nbsp;&nbsp;&nbsp;&nbsp;B. Recreational Area Passes</span>
+                    </div>
+                    <div class="toc-item">
+                        <span>&nbsp;&nbsp;&nbsp;&nbsp;C. Lake &amp; Beach Rules</span>
+                    </div>
+                </div>
+                
+                <div class="toc-section">
+                    <div class="toc-item">
+                        <span>VII. THE LODGE</span>
+                    </div>
+                    <div class="toc-item">
+                        <span>&nbsp;&nbsp;&nbsp;&nbsp;A. Lodge Location &amp; Features</span>
+                    </div>
+                    <div class="toc-item">
+                        <span>&nbsp;&nbsp;&nbsp;&nbsp;B. Rental Information &amp; Pricing</span>
+                    </div>
+                    <div class="toc-item">
+                        <span>&nbsp;&nbsp;&nbsp;&nbsp;C. Lodge Usage Guidelines</span>
+                    </div>
+                </div>
+                
+                <div class="toc-section">
+                    <div class="toc-item">
+                        <span>VIII. COMMUNITY COMMUNICATION</span>
+                    </div>
+                    <div class="toc-item">
+                        <span>&nbsp;&nbsp;&nbsp;&nbsp;A. Social Events &amp; Activities</span>
+                    </div>
+                    <div class="toc-item">
+                        <span>&nbsp;&nbsp;&nbsp;&nbsp;B. Facebook Groups &amp; Online Resources</span>
+                    </div>
+                    <div class="toc-item">
+                        <span>&nbsp;&nbsp;&nbsp;&nbsp;C. Newsletter &amp; Announcements</span>
+                    </div>
+                </div>
+                
+                <div class="toc-section">
+                    <div class="toc-item">
+                        <span>IX. CONTACTS &amp; COMMUNICATION</span>
+                    </div>
+                    <div class="toc-item">
+                        <span>&nbsp;&nbsp;&nbsp;&nbsp;A. BMPOA Contact Directory</span>
+                    </div>
+                    <div class="toc-item">
+                        <span>&nbsp;&nbsp;&nbsp;&nbsp;B. Emergency Numbers</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Governance & Structure Page -->
+        <div class="paper-page">
+            <h2 id="governance">I. GOVERNANCE &amp; STRUCTURE</h2>
+            
+            <h3>A. BMPOA OVERVIEW</h3>
+            <p>The Blue Mountain Property Owners Association (BMPOA) serves as the governing body for our mountain community. As a homeowner in Blue Mountain, you are automatically a member of this association, which is dedicated to preserving and enhancing our unique mountain lifestyle.</p>
+            
+            <h4>1. PURPOSE &amp; MISSION</h4>
+            <p>As outlined in our bylaws, the purpose of the BMPOA is:</p>
+            <ul>
+                <li>To promote the health, safety, and general welfare of its members</li>
+                <li>To preserve the natural beauty of the subdivision and its environment</li>
+                <li>To assist members with matters relating to both internal roads and public roads</li>
+                <li>To oversee community recreation facilities</li>
+                <li>To enforce the Covenants</li>
+                <li>To assist members with federal, state, and local matters affecting their property</li>
+            </ul>
+            
+            <h4>2. LEGAL STATUS</h4>
+            <p>The BMPOA is a legally established non-profit organization incorporated under Virginia law. The Association operates according to its bylaws and the Blue Mountain Subdivision Declaration of Protective Covenants, Conditions &amp; Restrictions, which run with the land and are binding on all property owners.</p>
+            
+            <div class="info-box">
+                <h4>YOUR RELATIONSHIP WITH BMPOA</h4>
+                <p>As a Blue Mountain property owner, you are automatically a member of the Association. There are no additional dues required for membership, as community maintenance and services are funded through the Blue Mountain Sanitary District tax, which is collected with your Warren County property taxes.</p>
+            </div>
+            
+            <h4>3. MANAGEMENT STRUCTURE</h4>
+            <p>The BMPOA is managed by an elected Board of Officers and Directors who volunteer their time to serve the community. The Board consists of:</p>
+            <ul>
+                <li>Five Officers (President, First Vice President, Second Vice President, Secretary, and Treasurer)</li>
+                <li>Four Directors-at-Large</li>
+            </ul>
+            <p>All Board members are Blue Mountain property owners elected at the Annual Meeting for two-year terms.</p>
+            
+            <h3>B. SANITARY DISTRICT EXPLAINED</h3>
+            <p>One of the most important aspects of Blue Mountain's governance is its designation as a Sanitary District. This special status provides significant benefits to our community and is essential to understand as a property owner.</p>
+            
+            <h4>1. WHAT IS A SANITARY DISTRICT?</h4>
+            <p>A Sanitary District is a special taxing district allowed by the Code of Virginia. It provides a mechanism for communities like ours to fund necessary infrastructure and services through a dedicated tax assessment on properties within the district.</p>
+            
+            <div class="info-box">
+                <h4>Key Benefit</h4>
+                <p>Our Sanitary District status ensures that all property owners, including developers, contribute fairly to the maintenance of our roads and community assets.</p>
+            </div>
+            
+            <h4>2. BLUE MOUNTAIN SANITARY DISTRICT</h4>
+            <p>The Blue Mountain Subdivision Sanitary District was created by Order of the Circuit Court of Warren County. By agreement with the Warren County Board of Supervisors, the BMPOA Executive Board serves as the managing agent of the Sanitary District.</p>
+            
+            <h4>3. KEY BENEFITS OF SANITARY DISTRICT STATUS</h4>
+            <p>Our Sanitary District status provides numerous advantages:</p>
+            <ul>
+                <li><strong>Uniform Funding:</strong> Establishes consistent fees throughout the entire subdivision</li>
+                <li><strong>Reliable Collection:</strong> Taxes are collected by the Warren County Treasurer's Office, ensuring a high collection rate</li>
+                <li><strong>Tax Deductibility:</strong> Sanitary district taxes may be deductible on federal income tax returns (consult your tax advisor)</li>
+                <li><strong>Universal Participation:</strong> All lots, including those owned by developers, are subject to the tax</li>
+                <li><strong>Property Value Protection:</strong> Unpaid taxes must be satisfied before property sales, protecting community resources</li>
+                <li><strong>Disaster Relief Eligibility:</strong> Qualifies the community for various state and federal disaster relief funds</li>
+                <li><strong>Private Road Protection:</strong> Sanitary district status does not affect the privacy of our roads or other amenities</li>
+            </ul>
+        </div>
+        
+        <!-- Board & Committees Structure Page -->
+        <div class="paper-page">
+            <h3>C. BOARD &amp; COMMITTEES STRUCTURE</h3>
+            
+            <h4>1. BOARD OF DIRECTORS</h4>
+            <p>The Board of Directors consists of nine members, all of whom are Blue Mountain property owners:</p>
+            <ul>
+                <li><strong>President:</strong> Oversees all Association operations and serves as the primary representative</li>
+                <li><strong>First Vice President:</strong> Assists the President and fills in when needed</li>
+                <li><strong>Second Vice President:</strong> Provides additional leadership support</li>
+                <li><strong>Secretary:</strong> Maintains records and handles correspondence</li>
+                <li><strong>Treasurer:</strong> Manages financial matters and reporting</li>
+                <li><strong>Four Directors-at-Large:</strong> Serve in various capacities as needed</li>
+            </ul>
+            
+            <h4>2. COMMITTEES</h4>
+            <p>Several committees assist the Board with specific responsibilities:</p>
+            <ul>
+                <li><strong>Roads Committee:</strong> Oversees road maintenance, improvement projects, and snow removal coordination</li>
+                <li><strong>Architectural Review Committee:</strong> Reviews building plans and enforces covenants</li>
+                <li><strong>Social Committee:</strong> Plans community events and activities</li>
+                <li><strong>Public Safety Committee:</strong> Addresses safety concerns, including fire prevention and emergency preparedness</li>
+                <li><strong>Recreation Committee:</strong> Manages recreational facilities including Deer Lake and the Lodge</li>
+                <li><strong>Communications Committee:</strong> Handles newsletters, website updates, and other communications</li>
+            </ul>
+            
+            <h4>3. VOLUNTEER OPPORTUNITIES</h4>
+            <p>All committees welcome resident participation! Volunteering is an excellent way to meet neighbors and contribute to the community. Contact the BMPOA Secretary at secretary@bmpoa.org if you're interested in joining a committee.</p>
+            
+            <h3>D. MEMBERSHIP &amp; MEETINGS</h3>
+            
+            <h4>1. ASSOCIATION MEMBERSHIP</h4>
+            <p>As a Blue Mountain property owner, you are automatically a member of the BMPOA. Your membership begins when you purchase property and continues as long as you own property within the Blue Mountain subdivision.</p>
+            
+            <p><strong>Membership Benefits:</strong></p>
+            <ul>
+                <li>Voting rights at Association meetings</li>
+                <li>Access to community facilities (Deer Lake, Lodge, etc.)</li>
+                <li>Participation in community events</li>
+                <li>Road maintenance and snow removal services</li>
+                <li>Representation on community matters with local government</li>
+            </ul>
+            
+            <h4>2. BOARD MEETINGS</h4>
+            <p>The BMPOA Board meets monthly to conduct Association business. These meetings are typically held on the second Monday of each month at the Blue Mountain Lodge at 7:00 PM. All property owners are welcome and encouraged to attend.</p>
+            
+            <p><strong>Meeting Structure:</strong></p>
+            <ul>
+                <li>Board meetings follow a standard agenda</li>
+                <li>Minutes are taken and approved at subsequent meetings</li>
+                <li>Property owners may address the Board during the designated public comment period</li>
+                <li>Meeting dates and any changes are posted on the BMPOA website and Facebook group</li>
+            </ul>
+            
+            <h4>3. ANNUAL MEETING</h4>
+            <p>The Annual Meeting of the Association is typically held in the spring and includes:</p>
+            <ul>
+                <li>Election of Board members</li>
+                <li>Annual financial report</li>
+                <li>Committee reports</li>
+                <li>Discussion of major projects and initiatives</li>
+                <li>Open forum for property owner questions and comments</li>
+            </ul>
+            
+            <p>This meeting is important for staying informed about community matters and participating in the governance process. All property owners are strongly encouraged to attend.</p>
+        </div>
+        
+        <!-- Mountain Home Page -->
+        <div class="paper-page">
+            <h2 id="mountain-home">II. A MOUNTAIN HOME</h2>
+            
+            <div class="image-gallery">
+                <img src="https://pfst.cf2.poecdn.net/base/image/7a0c6bd484cc86de1995d0bca3f25eeb906a4009564e94bc8be356659911e703?w=1179&amp;h=758" alt="Mountain View" class="gallery-image">
+                <img src="https://pfst.cf2.poecdn.net/base/image/466f185ee00b0bdf71b1717db6d8f9a0451c7ef7c3c1a81bc2c9dfd6ae3529b3?w=1170&amp;h=757" alt="Mountain Home" class="gallery-image">
+            </div>
+            
+            <h3>A. COMMUNITY ORIGINS</h3>
+            <p>Created in the late 1950's as a vacation community for Washington D.C. residents, Blue Mountain has become a mix of summer residents and families establishing year-round homes. The area is known for its scenic overlooks and seasonal wildflowers as well as a peaceful and serene mountain getaway.</p>
+            
+            <p>The Subdivision is a Sanitary District in Warren County and is managed by an executive board elected by the property owners.</p>
+            
+            <h4>1. HISTORICAL DEVELOPMENT</h4>
+            <p>Blue Mountain was developed in phases, with the initial roads and infrastructure laid out to maximize the natural beauty of the terrain. The Sanitary District was established to ensure ongoing maintenance of these private roads and community amenities.</p>
+            
+            <p>Over the decades, the community has grown steadily, with a mix of year-round residents and weekend/vacation homeowners. Many of the original homes have been renovated and expanded, while new construction continues as remaining lots are developed.</p>
+            
+            <h4>2. COMMUNITY CHARACTER</h4>
+            <p>Since its inception, Blue Mountain has maintained a commitment to preserving its natural environment and fostering a strong sense of community. Unlike many modern subdivisions, Blue Mountain has retained much of its original wooded character, with homes nestled among mature trees on spacious lots.</p>
+            
+            <p>The community's founding principles continue to guide its development, with an emphasis on:</p>
+            <ul>
+                <li>Respecting the natural landscape</li>
+                <li>Maintaining privacy between homes</li>
+                <li>Preserving wildlife habitat</li>
+                <li>Creating a close-knit community through shared spaces and activities</li>
+            </ul>
+            
+            <h3>B. SEASONAL AND PERMANENT RESIDENTS</h3>
+            
+            <h4>1. YEAR-ROUND RESIDENTS</h4>
+            <p>Many Blue Mountain homeowners live here permanently, including:</p>
+            <ul>
+                <li>Retirees enjoying mountain living full-time</li>
+                <li>Professionals who commute to work in nearby areas</li>
+                <li>Remote workers who can perform their jobs from home</li>
+                <li>Families drawn to the natural setting and community atmosphere</li>
+            </ul>
+            <p>Full-time residents form the core of our community's ongoing activities and often take leading roles in Association governance and committees.</p>
+            
+            <h4>2. WEEKEND AND SEASONAL RESIDENTS</h4>
+            <p>A significant portion of Blue Mountain homeowners use their properties as:</p>
+            <ul>
+                <li>Weekend retreats from urban areas like Washington D.C.</li>
+                <li>Seasonal homes for different times of the year</li>
+                <li>Vacation properties for family gatherings</li>
+                <li>Future retirement homes</li>
+            </ul>
+            <p>These residents add vibrancy to our community, especially during weekends and holidays when the mountain population swells.</p>
+        </div>
+        
+        <!-- Wildlife Page -->
+        <div class="paper-page">
+            <h3>C. NATURAL BEAUTY &amp; WILDLIFE</h3>
+            
+            <h4>1. SCENIC VIEWS</h4>
+            <p>Blue Mountain is known for its spectacular vistas, particularly:</p>
+            <ul>
+                <li>Sweeping views of the Shenandoah Valley</li>
+                <li>Distant mountain ranges visible on clear days</li>
+                <li>Dramatic sunrises and sunsets</li>
+                <li>Star-filled night skies with minimal light pollution</li>
+            </ul>
+            <p>Many homes feature decks or picture windows oriented to capture these views, creating ever-changing natural paintings throughout the year.</p>
+            
+            <h4>2. SEASONAL BEAUTY</h4>
+            <p>Each season brings its own distinctive charm to Blue Mountain:</p>
+            <ul>
+                <li><strong>Spring:</strong> Wildflowers carpet the forest floor, dogwoods and redbuds bloom, and birds return with their songs</li>
+                <li><strong>Summer:</strong> Dense, green canopies provide shade, while butterflies and hummingbirds visit flowering plants</li>
+                <li><strong>Fall:</strong> Spectacular foliage transforms the mountain with vivid reds, oranges, and golds</li>
+                <li><strong>Winter:</strong> Snow-covered landscapes create a serene atmosphere, and leafless trees reveal views normally hidden by foliage</li>
+            </ul>
+            
+            <h4>3. WILDLIFE ENCOUNTERS</h4>
+            <p>Blue Mountain hosts a remarkable diversity of wildlife. Common sightings include:</p>
+            <ul>
+                <li>White-tailed deer, often seen in small groups</li>
+                <li>Wild turkeys strutting through the forest</li>
+                <li>Black bears, particularly in spring and fall</li>
+                <li>Red and gray foxes</li>
+                <li>A wide variety of songbirds, woodpeckers, and raptors</li>
+                <li>Box turtles, salamanders, and other amphibians</li>
+            </ul>
+            
+            <h4>4. LIVING WITH BEARS</h4>
+            <p>Black bears are part of our mountain ecosystem. To prevent unwanted encounters:</p>
+            <ul>
+                <li>Secure your garbage in bear-resistant containers</li>
+                <li>Remove bird feeders when bears are active (April-November)</li>
+                <li>Clean grills thoroughly after use</li>
+                <li>Don't leave pet food outside overnight</li>
+                <li>Never intentionally feed bears</li>
+            </ul>
+            
+            <div class="info-box">
+                <h4>BEAR SAFETY RESOURCES</h4>
+                <p>For more detailed information about living safely with black bears, visit the Virginia Department of Wildlife Resources website: <strong>dwr.virginia.gov/wildlife/bear/living-with-black-bears/</strong></p>
+            </div>
+            
+            <h2 id="wood-chipping">III. WOOD-CHIPPING PROGRAM</h2>
+            
+            <h3>A. ANNUAL CHIPPING &amp; FIRE MITIGATION</h3>
+            
+            <h4>1. FREE ANNUAL WOOD CHIPPING</h4>
+            <p>All property owners within the BMPOA Sanitary District are eligible for free wood chipping annually. This valuable service helps reduce fire hazards around homes while providing a convenient way to dispose of woody debris.</p>
+            
+            <p><strong>FIRE PREVENTION BENEFIT:</strong> Property owners are highly encouraged to participate in the cleanup as it helps reduce the risk and impact of fire events on our mountain. Removing dead branches, brush, and small trees creates defensible space around your home--one of the most effective wildfire protection strategies.</p>
+            
+            <h4>2. PARTNERSHIP WITH VIRGINIA FORESTRY</h4>
+            <p>The wood-chipping program is conducted in partnership with the Virginia Department of Forestry as part of their wildfire prevention efforts. This collaboration reflects the recognition of Blue Mountain as a Wildland-Urban Interface (WUI) area where homes are interspersed with natural vegetation that can fuel wildfires.</p>
+            
+            <p>Benefits of this partnership include:</p>
+            <ul>
+                <li>Access to professional equipment and expertise</li>
+                <li>Cost-sharing that makes the program financially sustainable</li>
+                <li>Educational resources on creating defensible space</li>
+                <li>Follow-up assessments and recommendations</li>
+            </ul>
+        </div>
+        
+        <!-- Wood Chipping Program Page -->
+        <div class="paper-page">            
+            <h4>3. CHIPPING SCHEDULE</h4>
+            <p>Wood chipping typically occurs in early spring to ensure that severe weather known to cause deadfall has passed. The process spans over a week and will be announced several weeks in advance on the website and community Facebook groups.</p>
+            
+            <p>The timing is strategic to:</p>
+            <ul>
+                <li>Allow residents to clean up winter debris</li>
+                <li>Prepare properties before spring growth begins</li>
+                <li>Create defensible spaces before the spring fire season</li>
+                <li>Accommodate both weekend and full-time residents</li>
+            </ul>
+            
+            <div class="alert-box">
+                <h4>2025 SPRING CHIPPING DATE CHANGE</h4>
+                <p>The spring chipping date has been changed to April 30th, 2025. We are scheduling the chipping for the week of May 5th. To help us secure grant funding, please report your brush clearing hours or contractor payments to Patrick at quietgeneral@yahoo.com.</p>
+            </div>
+            
+            <h3>B. BRUSH PILE GUIDELINES</h3>
+            
+            <h4>1. PREPARING YOUR BRUSH PILE</h4>
+            <p>Proper preparation of your brush pile is essential for efficient chipping. Follow these guidelines to ensure your debris can be processed:</p>
+            
+            <p><strong>BRUSH PILE CHECKLIST:</strong></p>
+            <ul>
+                <li>Establish a brush pile within 5 feet of the roadside for easy access</li>
+                <li>Place all cut ends facing the same direction, toward the road</li>
+                <li>Keep pile height under 4 feet for stability and safety</li>
+                <li>Do not include anything larger than 6 inches in diameter</li>
+                <li>Limit branch lengths to 12 feet maximum</li>
+                <li>Ensure piles are free of wire, nails, rope, and other non-wood materials</li>
+                <li>Separate vines and thorny vegetation into a separate pile</li>
+            </ul>
+            
+            <h4>2. MATERIALS NOT ACCEPTED</h4>
+            <ul>
+                <li>Lumber, treated wood, or construction debris</li>
+                <li>Root balls with dirt and rocks</li>
+                <li>Stumps and chunks of wood</li>
+                <li>Grass clippings, leaves, or garden waste</li>
+                <li>Household trash or non-vegetation items</li>
+            </ul>
+            
+            <h3>C. WOOD CHIP ACCESS &amp; DELIVERY</h3>
+            
+            <h4>1. WOOD CHIP AVAILABILITY</h4>
+            <p>The wood-chipping program generates large quantities of wood chips that are available to Blue Mountain residents at no charge. These chips can be valuable resources for:</p>
+            <ul>
+                <li>Landscaping and garden mulch</li>
+                <li>Erosion control on steep slopes</li>
+                <li>Path creation through wooded areas</li>
+                <li>Suppressing weeds around ornamental plants</li>
+                <li>Composting (when mixed with nitrogen-rich materials)</li>
+            </ul>
+            
+            <h4>2. DIRECT DELIVERY OPTIONS</h4>
+            <p>Surplus wood chips are typically available for delivery to your property during the chipping process, free of charge. When the chipping crew comes to process your brush pile, you can request that they leave the resulting chips rather than hauling them away.</p>
+            
+            <p><strong>COORDINATE DELIVERY:</strong> For more information or to arrange a wood chip delivery, please contact jcook0313@gmail.com</p>
+            
+            <h4>3. COMMUNITY ACCESS POINTS</h4>
+            <p>Wood chips are also available at communal stockpile locations for any homeowners in need. These locations are accessible year-round, not just during the chipping season:</p>
+            <ul>
+                <li><strong>Lodge Parking Area:</strong> A pile is maintained near the Blue Mountain Lodge at 540 Cliff Road</li>
+                <li><strong>Dam Parking Area at Deer Lake:</strong> Chips are available at the parking area near the dam</li>
+            </ul>
+        </div>
+        
+        <!-- Fire Safety Page -->
+        <div class="paper-page">
+            <h2 id="fire-safety">IV. FIRE SAFETY &amp; EMERGENCY PREPAREDNESS</h2>
+            
+            <h3>A. WILDFIRE RISK UNDERSTANDING</h3>
+            
+            <h4>1. FIRE SEASON</h4>
+            <ul>
+                <li><strong>Spring Fire Season:</strong> February 15 - April 30</li>
+                <li><strong>Fall Fire Season:</strong> October 15 - November 30</li>
+                <li>Summer drought conditions can extend risk periods</li>
+            </ul>
+            
+            <div class="alert-box">
+                <h4>BURN BAN INFORMATION</h4>
+                <p>During designated fire seasons, Virginia law restricts open burning before 4:00 PM. All fires must be attended at all times and completely extinguished before leaving. Check with Warren County Fire &amp; Rescue for current burn restrictions before burning anything outdoors.</p>
+            </div>
+            
+            <h4>2. UNDERSTANDING RISK LEVELS</h4>
+            <p><strong>High Risk Areas:</strong> Steep slopes, areas with dense vegetation, properties with unmaintained defensible space, and homes with wooden decks/roofs are at highest risk.</p>
+            
+            <p><strong>Moderate Risk Areas:</strong> Properties with partial defensible space, some vegetation management, and homes with some fire-resistant features but remaining vulnerabilities.</p>
+            
+            <p><strong>Lower Risk Areas:</strong> Properties with well-maintained defensible space (at least 30ft), fire-resistant landscaping, and homes with fire-resistant roofing and construction.</p>
+            
+            <h4>3. COMMUNITY FIRE PREVENTION EFFORTS</h4>
+            <p>The BMPOA works with local fire authorities and the Virginia Department of Forestry to implement fire prevention measures:</p>
+            <ul>
+                <li>Annual wood-chipping program to reduce fuel loads</li>
+                <li>Community-wide evacuation planning</li>
+                <li>Educational programs on defensible space</li>
+                <li>Participation in the Firewise USA program</li>
+            </ul>
+            
+            <h3>B. EVACUATION ZONES &amp; ROUTES</h3>
+            
+            <h4>1. EVACUATION ZONES &amp; PRIMARY ROUTES</h4>
+            <p><strong>ZONE 1:</strong></p>
+            <ul>
+                <li>FAR VIEW, SHADY TREE, BLACK WALNUT: To Blue Mt Rd, then as directed</li>
+                <li>BLUE MOUNTAIN RD, DOGWOOD BLOSSOM: To Blue Mt Rd, then as directed</li>
+                <li>LITTLE INDIAN, LONESOME PINE, WOODCHUCK: To Blue Mt Rd, then as directed</li>
+                <li>HAWK HILL, LOST CREEK: Old Sawmill to Blue Mt Rd, then as directed</li>
+                <li>MOONSHINER, OLD SAWMILL: Old Sawmill to Blue Mt Rd, then as directed</li>
+            </ul>
+            
+            <p><strong>ZONE 2:</strong></p>
+            <ul>
+                <li>BLOOD ROOT, FERN TRAIL, JASPER: Old Sawmill to Blue Mt Rd, then as directed</li>
+                <li>MOCKINGBIRD, SPRING HILL, MOSSY ROCK: Spring Hill to Blue Mt Rd to Freezeland</li>
+                <li>PEE WEE: Uphill to Blue Mt Rd, L to Freezeland</li>
+                <li>ROCKY BOULDER, ROCK SPRING: Uphill to Firetrail, R to Freezeland</li>
+                <li>INDIAN PIPES, PARADISE, WOODHAVEN: Fire Trail, R to Freezeland</li>
+            </ul>
+        </div>
+        
+        <!-- Evacuation Routes Page -->
+        <div class="paper-page">
+            <p><strong>ZONE 3:</strong></p>
+            <ul>
+                <li>BLUE MOUNTAIN RD: Uphill on Blue Mt Rd to Freezeland</li>
+                <li>CHIPMUNK TRAIL: Cliff to Blue Mt Rd, R to Freezeland</li>
+                <li>CLIFF: Down to Blue Mt Rd, R to Freezeland</li>
+                <li>HENRY, OLD DOMINION: Down to cliff, R to Blue Mt Rd, R to Freezeland</li>
+                <li>TRILLIUM TRAIL: Up to Blue Mt Rd, R to Freezeland</li>
+            </ul>
+            
+            <p><strong>ZONE 4:</strong></p>
+            <ul>
+                <li>ALLEGHENY, HIDEAWAY, OLD BEACON: Freezeland Rd to Linden</li>
+                <li>PEACEFUL, FREEZELAND RD: Freezeland Rd to Linden</li>
+            </ul>
+            
+            <p><strong>ZONE 5:</strong></p>
+            <ul>
+                <li>BLUE MOUNTAIN RD, OLD LINDEN: Uphill or downhill as directed</li>
+                <li>SCARLET TANAGER, WOODPECKER: To Blue Mt. Rd, then as directed</li>
+            </ul>
+            
+            <div class="alert-box">
+                <h4>IMPORTANT EVACUATION GUIDELINES</h4>
+                <ul>
+                    <li>You do not need to wait for official notices to evacuate if you feel unsafe</li>
+                    <li>Always follow directions from law enforcement and fire personnel</li>
+                    <li>Yield immediately to emergency equipment, especially on narrow roads</li>
+                    <li>Do not drive over fire hoses (violation of Virginia law)</li>
+                    <li>If you see a wildfire, call 911 immediately</li>
+                </ul>
+            </div>
+            
+            <h4>2. MAIN EVACUATION ROUTES</h4>
+            <p>Our community has two primary evacuation routes:</p>
+            <ol>
+                <li><strong>Blue Mountain Road</strong> - down the mountain to Howellsville Road and beyond</li>
+                <li><strong>Freezeland Road</strong> - south to Linden and beyond</li>
+            </ol>
+            
+            <div class="info-box">
+                <h4>TIP: EVACUATION PRACTICE</h4>
+                <p>Take time with your family to physically drive your evacuation routes before an emergency occurs. Identify landmarks and alternative routes in case primary roads are blocked. This practice can save critical time during an actual evacuation.</p>
+            </div>
+            
+            <h3>C. HOME FIRE PROTECTION STRATEGIES</h3>
+            
+            <h4>1. DEFENSIBLE SPACE ZONES</h4>
+            <p><strong>Zone 1: 0-30 feet from structures</strong></p>
+            <ul>
+                <li>Remove all flammable materials including dead vegetation, woodpiles, and propane tanks</li>
+                <li>Keep grass mowed and irrigated if possible</li>
+                <li>Prune tree branches up 6-10 feet from the ground</li>
+                <li>Space trees so crowns are at least 10 feet apart</li>
+                <li>Choose fire-resistant plants for landscaping</li>
+                <li>Keep gutters and roof clear of leaves and debris</li>
+                <li>Move patio furniture, doormats, and decorative items away during high fire danger</li>
+            </ul>
+            
+            <p><strong>Zone 2: 30-100 feet from structures</strong></p>
+            <ul>
+                <li>Reduce and space vegetation</li>
+                <li>Remove ladder fuels (vegetation that allows fire to climb from ground into tree canopy)</li>
+                <li>Create fuel breaks with driveways, walkways, and lawns</li>
+                <li>Keep firewood stacks at least 30 feet from structures</li>
+            </ul>
+        </div>
+        
+        <!-- Home Fire Protection Page -->
+        <div class="paper-page">
+            <h4>2. HOME HARDENING MEASURES</h4>
+            
+            <p><strong>Roof &amp; Gutters:</strong></p>
+            <ul>
+                <li>Install Class A fire-rated roofing materials (metal recommended)</li>
+                <li>Use non-combustible gutter covers</li>
+                <li>Regularly clean gutters and roof of debris</li>
+            </ul>
+            
+            <p><strong>Vents &amp; Openings:</strong></p>
+            <ul>
+                <li>Cover all vents with 1/8-inch metal mesh</li>
+                <li>Box in eaves with non-combustible materials</li>
+                <li>Install weather stripping around garage doors</li>
+            </ul>
+            
+            <p><strong>Windows &amp; Doors:</strong></p>
+            <ul>
+                <li>Install dual-paned windows with tempered glass</li>
+                <li>Consider shutters for additional protection</li>
+                <li>Use non-combustible door materials</li>
+            </ul>
+            
+            <p><strong>Decks &amp; Attachments:</strong></p>
+            <ul>
+                <li>Build with fire-resistant or non-combustible materials</li>
+                <li>Enclose areas beneath decks to prevent ember accumulation</li>
+                <li>Keep decks clear of flammable items</li>
+            </ul>
+            
+            <h4>3. PREPARING FOR EVACUATION</h4>
+            <p>If time permits when you first become aware of an approaching wildfire:</p>
+            <ul>
+                <li>Remove all combustible material (doormats, grills, firewood, etc.) at least 30-50 feet from your home</li>
+                <li>Wet gutters and foundation areas to reduce ignition risk</li>
+                <li>Leave connected garden hoses and buckets of water around the exterior for firefighters</li>
+                <li>Place aluminum ladders outside for firefighter roof access</li>
+                <li>Leave electricity on to power well pumps and lights</li>
+                <li>Turn off central heating/air conditioning systems</li>
+                <li>Leave doors and windows closed but unlocked for firefighters' access</li>
+            </ul>
+            
+            <h3>D. FAMILY EMERGENCY PLANNING</h3>
+            
+            <h4>1. KEEPING CHILDREN SAFE IN A HOME FIRE</h4>
+            <ol class="checklist">
+                <li>Teach children fire safety: Explain why fire safety is important and demonstrate safe behaviors</li>
+                <li>Install smoke alarms near your kitchen, on each home level, near sleeping areas, and in each bedroom</li>
+                <li>Teach children about firefighters in fire suits and masks so they aren't afraid</li>
+                <li>Keep matches and lighters out of reach and use lighters with child-lock features</li>
+                <li>Keep children away from flames and heat sources, never leave them unattended near stoves or candles</li>
+                <li>Teach children 9-1-1 (or local emergency number) and when to call for help</li>
+                <li>Practice fire drills at least twice a year so children can practice escape routes</li>
+                <li>Demonstrate how to escape by crawling along the floor to the nearest exit</li>
+                <li>Get out and stay out - don't go back into a burning building for belongings</li>
+                <li>Teach children to STOP-DROP-and-ROLL if their clothes catch on fire</li>
+            </ol>
+            
+            <div class="info-box">
+                <h4>FREE SMOKE ALARMS</h4>
+                <p>Warren County Fire and Rescue, in partnership with the American Red Cross, will provide and install smoke alarms for all Warren County residents for FREE! To get them just call WCFR at (540) 636-3830. They will work with you to schedule a FREE smoke alarm inspection appointment and install them as needed.</p>
+            </div>
+        </div>
+        
+        <!-- Emergency Planning Page -->
+        <div class="paper-page">
+            <h4>2. DEVELOP YOUR EVACUATION PLAN</h4>
+            <p>Your family's evacuation plan should be:</p>
+            <ul>
+                <li>Simple enough to be followed when under stress</li>
+                <li>Detailed enough to cover key elements</li>
+                <li>Understood by everyone residing in your home</li>
+                <li>Practiced regularly to ensure familiarity</li>
+                <li>Updated as your family situation changes</li>
+            </ul>
+            
+            <h4>3. FAMILY EVACUATION PLAN CHECKLIST</h4>
+            <ul class="checklist">
+                <li>Identify two escape routes from each room</li>
+                <li>Choose multiple evacuation routes from your neighborhood</li>
+                <li>Establish meeting places: near your home and outside the area</li>
+                <li>Designate an out-of-area contact person</li>
+                <li>Plan for pets and livestock evacuation</li>
+                <li>Prepare an emergency supply kit</li>
+                <li>Create a home inventory with photos for insurance</li>
+                <li>Identify special needs (elderly, disabled, children)</li>
+            </ul>
+            
+            <h4>4. EVACUATION ALERT LEVELS</h4>
+            <p><strong>Level 1 – READY:</strong> Be aware of danger in your area. Monitor emergency services websites and local media. Pack essential items and prepare to leave if necessary.</p>
+            
+            <p><strong>Level 2 – SET:</strong> There is significant danger in your area. Be prepared to leave at a moment's notice. Consider voluntarily relocating to a safe area.</p>
+            
+            <p><strong>Level 3 – GO:</strong> Imminent danger exists. Leave immediately. Delay puts your life at risk. Do not return until officials declare the area safe.</p>
+            
+            <div class="alert-box">
+                <h4>STAY INFORMED</h4>
+                <p>Sign up for emergency notifications through Smart911.com and monitor local radio stations WZRV 95.3 FM and WFTR 1450 AM during emergencies.</p>
+            </div>
+            
+            <h4>5. IMPORTANT DOCUMENTS FILE</h4>
+            <p>Create a single file of important documents that can be quickly retrieved:</p>
+            <ul>
+                <li>Insurance policies and property inventory</li>
+                <li>Personal identification documents</li>
+                <li>Medical and vaccination records</li>
+                <li>Financial account information</li>
+                <li>Emergency contact list</li>
+                <li>Property deed and vehicle titles</li>
+                <li>Pet vaccination records</li>
+            </ul>
+            
+            <div class="info-box">
+                <h4>DIGITAL BACKUP</h4>
+                <p>Consider scanning important documents and storing them in a secure cloud service or on a password-protected flash drive that you can grab quickly. This provides a backup in case original documents are destroyed.</p>
+            </div>
+        </div>
+        
+        <!-- Community Services Page -->
+        <div class="paper-page">
+            <h2 id="community-services">V. COMMUNITY SERVICES &amp; AMENITIES</h2>
+            
+            <h3>A. ROADS &amp; WINTER WEATHER GUIDELINES</h3>
+            
+            <h4>1. ROAD MAINTENANCE RESPONSIBILITIES</h4>
+            <p>Blue Mountain's roads are privately owned and maintained by the BMPOA through Sanitary District funds, with the exception of:</p>
+            <ul>
+                <li><strong>Fire Trail Road:</strong> This road is NOT owned or maintained by BMPOA. For concerns, contact VDGIF Region 4 Board of Directors.</li>
+                <li><strong>State-Maintained Roads:</strong> Certain connecting roads like portions of Blue Mountain Road and Freezeland Road are maintained by VDOT.</li>
+            </ul>
+            
+            <p>The BMPOA Roads Committee oversees maintenance, which includes:</p>
+            <ul>
+                <li>Regular grading of gravel roads</li>
+                <li>Pothole filling</li>
+                <li>Drainage management</li>
+                <li>Winter weather response</li>
+                <li>Vegetation control along roadways</li>
+            </ul>
+            
+            <h4>2. SALT USE PROHIBITED</h4>
+            <p>The use of salt on all gravel roads within BMPOA is strictly prohibited as it damages the roadbed and increases maintenance costs for the community. Use approved alternatives for traction instead.</p>
+            
+            <h4>3. WINTER TRACTION OPTIONS</h4>
+            <p><strong>Gravel Chips:</strong> Look for blue poly barrels placed on hills for traction assistance. These barrels contain crushed gravel that can be spread on slippery areas to improve traction. After use, please notify the Roads Committee so barrels can be refilled as needed.</p>
+            
+            <p><strong>Tire Chains:</strong> A great option when road conditions are poor. Ensure they fit your vehicle and practice installation in advance. Modern cable chains are generally easier to install than traditional link chains and usually provide adequate traction for Blue Mountain's roads.</p>
+            
+            <h4>4. SNOW &amp; ICE REMOVAL</h4>
+            <ul>
+                <li>Plowing begins when snow accumulation reaches 4 inches at a designated location on the mountain.</li>
+                <li>Plowing priorities focus on main roads first, then secondary roads as conditions permit.</li>
+                <li>Steep sections may require additional attention and are sometimes treated differently than flatter areas.</li>
+                <li>During heavy snowfalls, multiple plowing passes may be needed as the storm progresses.</li>
+                <li>Please be patient during major storms, as some areas may remain unplowed until conditions improve.</li>
+            </ul>
+            
+            <h4>5. WINTER DRIVING TIPS</h4>
+            <ul>
+                <li>Maintain a greater following distance on slippery roads</li>
+                <li>Brake gently to avoid skidding</li>
+                <li>Drive slowly and accelerate and decelerate slowly</li>
+                <li>Know your brakes - whether you have anti-lock brakes or not</li>
+                <li>Don't stop when going up a hill if possible</li>
+                <li>Stay home if conditions are dangerous</li>
+            </ul>
+        </div>
+        
+        <!-- Refuse Collection Page -->
+        <div class="paper-page">
+            <h3>B. REFUSE COLLECTION &amp; DISPOSAL</h3>
+            
+            <h4>1. BEAR SAFETY</h4>
+            <p>Our community is located in bear habitat, and it is important to take precautions to avoid attracting bears. Improperly stored trash is one of the biggest attractants for bears and can lead to dangerous situations for both residents and wildlife.</p>
+            
+            <h4>2. PRIVATE TRASH SERVICES</h4>
+            <p>You have the option to hire a private trash collection service for your convenience. Common providers serving Blue Mountain include:</p>
+            
+            <div class="service-box">
+                <div class="service-name">Skyline Trash Service</div>
+                <p><strong>Owner/Operator:</strong> Robert Lillard</p>
+                <p><strong>Phone:</strong> (540) 974-9418</p>
+                <p><strong>Email:</strong> lillardr8@gmail.com</p>
+                <p><strong>Address:</strong> 853 Morgan Pl, Front Royal, VA 22630</p>
+                <p><strong>Services:</strong> In business for over 25 years, licensed and insured. Weekly trash, recycling and special pickups.</p>
+            </div>
+            
+            <div class="service-box">
+                <div class="service-name">Freedom Disposal Services</div>
+                <p><strong>Phone:</strong> (540) 631-3467</p>
+                <p><strong>Services:</strong> Residential and commercial waste collection with scheduled pickups.</p>
+            </div>
+            
+            <p>When using private trash service:</p>
+            <ul>
+                <li>Use bear-resistant containers if available</li>
+                <li>Store containers in a secure location between pickups</li>
+                <li>Put containers out the morning of pickup, not the night before</li>
+                <li>Clean containers regularly to reduce odors</li>
+            </ul>
+            
+            <h4>3. WARREN COUNTY CONVENIENCE SITES</h4>
+            <p>Warren County offers five Citizen Convenience sites throughout the county for household waste disposal and recycling:</p>
+            <ul>
+                <li>Route 522/340 Cooley: 10037 Winchester Road, Front Royal</li>
+                <li>Route 340 South Rockledge: 9823 Stonewall Jackson Highway, Front Royal</li>
+                <li>Linden: 2664 Dismal Hollow Road, Linden</li>
+                <li>Shenandoah Farms: 47 Blue Mountain Road, Front Royal</li>
+                <li>Bentonville: 232 Shangri-La Road, Bentonville, Virginia 22610</li>
+            </ul>
+            
+            <p><strong>CONVENIENCE SITE HOURS:</strong> Most convenience sites are open Tuesday through Saturday from 7:00 AM to 7:00 PM and Sunday from 9:00 AM to 5:00 PM. Sites are typically closed on Mondays and certain holidays.</p>
+            
+            <h4>4. RECYCLING OPTIONS</h4>
+            <p>Warren County operates recycling centers at several convenience sites where you can dispose of:</p>
+            <ul>
+                <li>Paper products (newspapers, magazines, cardboard)</li>
+                <li>Glass containers (clear, brown, green)</li>
+                <li>Metal cans (aluminum, steel)</li>
+                <li>Plastics (#1 and #2)</li>
+                <li>Used motor oil (at designated sites)</li>
+            </ul>
+        </div>
+        
+        <!-- Internet Services Page -->
+        <div class="paper-page">
+            <h3>C. INTERNET SERVICE PROVIDERS</h3>
+            
+            <h4>1. AVAILABLE PROVIDERS</h4>
+            <p>Several internet service options are available to Blue Mountain residents:</p>
+            
+            <div class="two-column">
+                <div>
+                    <p><strong>Xfinity/Comcast:</strong> Cable internet service is available in many parts of Blue Mountain, offering relatively high-speed options. Contact them at 1-855-399-1542 to check availability at your specific address.</p>
+                    
+                    <p><strong>HughesNet:</strong> Satellite internet service is available throughout the entire community, regardless of terrain or tree coverage. While speeds are typically slower than cable options, it may be the only option for certain locations.</p>
+                    
+                    <p><strong>Viasat:</strong> Another satellite internet provider serving the Blue Mountain area, offering various plans with different speed and data allowances.</p>
+                </div>
+                
+                <div>
+                    <p><strong>CenturyLink:</strong> DSL service may be available in some areas of Blue Mountain, though availability and speeds vary significantly by location.</p>
+                    
+                    <p><strong>Mobile Hotspots:</strong> Some residents use cellular hotspots from providers like Verizon, AT&amp;T, or T-Mobile, particularly for weekend or occasional use. Coverage quality varies by location on the mountain.</p>
+                </div>
+            </div>
+            
+            <h4>2. INTERNET AVAILABILITY TIP</h4>
+            <p>Before committing to a service provider, ask neighbors near your property about their experiences. Internet quality can vary dramatically even between properties on the same road due to terrain and tree coverage. Consider testing cellular signal strength at your property before choosing a mobile hotspot solution.</p>
+            
+            <h4>3. REMOTE WORK CONSIDERATIONS</h4>
+            <p>If you plan to work remotely from Blue Mountain, consider these factors:</p>
+            <ul>
+                <li>Request a service test before committing to a long-term contract</li>
+                <li>Consider having a backup internet option for critical work (e.g., both cable and mobile hotspot)</li>
+                <li>Power outages are more common in mountain areas, so a battery backup or generator may be necessary for consistent connectivity</li>
+                <li>Some residents install cell signal boosters to improve mobile hotspot performance</li>
+                <li>Check with your employer about minimum bandwidth requirements for remote work tools</li>
+            </ul>
+            
+            <div class="info-box">
+                <h4>COMMUNITY INTERNET RESOURCES</h4>
+                <p>The Blue Mountain Lodge offers Wi-Fi internet access when it's open for community events. The Front Royal library also provides free Wi-Fi and computer access during regular business hours for those who need occasional high-speed access or a backup option during outages.</p>
+            </div>
+            
+            <h2 id="deer-lake">VI. DEER LAKE RECREATION AREA</h2>
+            
+            <h3>A. LOCATION &amp; ACCESS</h3>
+            
+            <h4>1. DEER LAKE LOCATION</h4>
+            <p><strong>Address:</strong> 3367 Blue Mountain Road, Linden, Virginia 22630</p>
+            <p>Deer Lake is nestled in a peaceful setting on Blue Mountain Road. The lake features a beach area, swimming area with a dock, picnic facilities, and fishing opportunities. It serves as a central gathering place for community events and a recreational retreat for residents.</p>
+            
+            <img src="https://pfst.cf2.poecdn.net/base/image/c1d92cbfaeeba52200d374dc78880bf7b91175428db4858e41f5f28b846fc6b9?w=1179&amp;h=1333" alt="Deer Lake Map" style="width: 100%; max-width: 500px; margin: 1rem auto; display: block;">
+        </div>
+        
+        <!-- Deer Lake Access Page -->
+        <div class="paper-page">
+            <h4>2. EXCLUSIVE ACCESS</h4>
+            <p>Deer Lake is for Blue Mountain property owners, their renters, and guests. Access is restricted to ensure the area remains a private amenity for our community members.</p>
+            
+            <p><strong>Access Requirements:</strong></p>
+            <ul>
+                <li>A Blue Mountain Recreational Area Pass is required when using common areas</li>
+                <li>Guests under 18 must be accompanied by the property owner</li>
+                <li>Renters must obtain passes from their property owner</li>
+                <li>Those without a pass may be asked to leave or reported for trespassing</li>
+            </ul>
+            
+            <h4>3. OBTAINING YOUR PASSES</h4>
+            <p>To receive your recreational area passes, email bmpoadeerlake@gmail.com with documentation verifying property ownership. Passes are typically mailed annually in May before the summer season begins.</p>
+            
+            <h4>4. HOURS OF OPERATION</h4>
+            <p>Deer Lake recreation area is generally open from dawn to dusk. Swimming is permitted when conditions are safe and appropriate. During the summer season (Memorial Day through Labor Day), the beach area may have more restricted hours which will be posted at the entrance.</p>
+            
+            <h3>B. RECREATIONAL AREA PASSES</h3>
+            
+            <h4>1. PASS DISTRIBUTION</h4>
+            <p>Each property owner is issued a set number of recreational area passes, typically:</p>
+            <ul>
+                <li>Two permanent passes for property owners</li>
+                <li>Additional guest passes as determined by the Board</li>
+                <li>Special passes may be issued for events with advance notice</li>
+            </ul>
+            
+            <p>Passes are usually mailed to property owners in good standing (current on Sanitary District taxes) each spring before the summer season begins. If you haven't received your passes by June 1, or if you're a new property owner, contact bmpoadeerlake@gmail.com.</p>
+            
+            <h4>2. GUEST POLICY</h4>
+            <p>Residents should use good judgment when inviting guests to Deer Lake. The guest policy includes several important guidelines:</p>
+            <ul>
+                <li>Property owners must be present with their guests at all times</li>
+                <li>Guests under 18 must be accompanied by an adult property owner</li>
+                <li>The number of guests should be reasonable to avoid overcrowding</li>
+                <li>Frequent large gatherings may inconvenience others and raise concerns about improper use</li>
+                <li>The Executive Board reserves the right to review and amend guest policies as needed</li>
+            </ul>
+            
+            <div class="alert-box">
+                <h4>IMPORTANT NOTE</h4>
+                <p>Selling access to Deer Lake is strictly prohibited. Property owners who allow their passes to be used by unauthorized individuals or who misuse guest privileges may have their recreation privileges suspended.</p>
+            </div>
+        </div>
+        
+        <!-- Lake Rules Page -->
+        <div class="paper-page">
+            <h3>C. LAKE &amp; BEACH RULES</h3>
+            
+            <h4>1. GENERAL RULES</h4>
+            <ul>
+                <li>Recreational Area Passes must be visible when using the lake area</li>
+                <li>Swimming is at your own risk -- no lifeguards are on duty</li>
+                <li>Children under 16 must be accompanied by an adult</li>
+                <li>Glass containers are prohibited in the beach and swimming areas</li>
+                <li>All trash must be packed out -- there is no garbage collection</li>
+                <li>Open fires are prohibited except in designated grills</li>
+                <li>Motorized boats and watercraft are not permitted on the lake</li>
+                <li>Respect others by keeping noise levels reasonable</li>
+            </ul>
+            
+            <h4>2. DOG POLICY</h4>
+            <ul>
+                <li>No dogs on weekends/holidays during summer season (Memorial Day--Labor Day)</li>
+                <li>Weekdays (Mon--Fri): Dogs allowed near the dam but not on the dock</li>
+                <li>Dogs must be leashed in the recreation area at all times</li>
+                <li>Dogs are never allowed on the beach</li>
+                <li>Owners must clean up after their pets</li>
+            </ul>
+            
+            <h4>3. ALCOHOL &amp; MINORS</h4>
+            <ul>
+                <li>Underage drinking is illegal and prohibited in all recreation areas</li>
+                <li>Anyone under 16 must be accompanied by an adult</li>
+                <li>Alcohol consumption should be moderate and discreet</li>
+                <li>Glass containers are prohibited to prevent injuries from broken glass</li>
+            </ul>
+            
+            <h4>4. FISHING &amp; NOISE</h4>
+            <ul>
+                <li>No fishing from the beach at any time</li>
+                <li>Fishing is permitted from the dam and designated areas</li>
+                <li>Catch and release is encouraged to maintain fish populations</li>
+                <li>Valid Virginia fishing license required for those 16 and older</li>
+                <li>Loud music or disruptive behavior on the beach or dock is not allowed</li>
+            </ul>
+            
+            <h4>5. SAFETY &amp; LIFE PRESERVERS</h4>
+            <ul>
+                <li>No lifeguards -- swim at your own risk</li>
+                <li>Life preservers are for emergencies only and not for play</li>
+                <li>Parents will be asked to leave if children misuse safety equipment</li>
+                <li>No diving from the dock or dam</li>
+                <li>Swimming after dark is prohibited</li>
+                <li>No swimming during thunderstorms</li>
+            </ul>
+            
+            <h4>6. VEHICLES &amp; DAM ACCESS</h4>
+            <ul>
+                <li>No unlicensed vehicles (ATVs, etc.) in common areas or on BMPOA roads</li>
+                <li>No parking/driving on the dam -- per Virginia law, except for maintenance</li>
+                <li>Park only in designated areas</li>
+                <li>Do not block access roads or emergency access points</li>
+            </ul>
+            
+            <h2 id="lodge">VII. THE LODGE</h2>
+            
+            <h3>A. LODGE LOCATION &amp; FEATURES</h3>
+            
+            <h4>1. ABOUT THE LODGE</h4>
+            <p><strong>Location:</strong> 540 Cliff Road, Linden, VA</p>
+            <p>The Blue Mountain Lodge is a rustic community facility owned and maintained by BMPOA. It serves as a gathering space for community events, board meetings, and private rentals by property owners. The Lodge offers a warm, cabin-like atmosphere with mountain charm and practical amenities.</p>
+        </div>
+        
+        <!-- Lodge Information Page -->
+        <div class="paper-page">
+            <h4>2. LODGE AMENITIES</h4>
+            <p>The Lodge offers several features that make it suitable for various events:</p>
+            <ul>
+                <li><strong>Main Hall:</strong> Large open space with seating capacity for approximately 80 people</li>
+                <li><strong>Kitchen:</strong> Equipped with refrigerator, stove, microwave, and sink</li>
+                <li><strong>Restrooms:</strong> Men's and women's facilities</li>
+                <li><strong>Tables &amp; Chairs:</strong> Multiple tables and chairs that can be arranged as needed</li>
+                <li><strong>Stone Fireplace:</strong> Functional fireplace for cooler months (firewood not provided)</li>
+                <li><strong>Wi-Fi:</strong> Internet access available during events</li>
+                <li><strong>Outdoor Space:</strong> Surrounding grounds with parking area</li>
+            </ul>
+            
+            <p>The Lodge does not provide linens, dishes, utensils, or serving items. Renters must bring their own supplies or arrange for rental of these items if needed.</p>
+            
+            <h4>3. SUITABLE EVENTS</h4>
+            <p>The Lodge is appropriate for a variety of events, including:</p>
+            <ul>
+                <li>Family gatherings and reunions</li>
+                <li>Birthday parties and anniversary celebrations</li>
+                <li>Small wedding ceremonies and receptions</li>
+                <li>Community meetings and workshops</li>
+                <li>Holiday celebrations</li>
+                <li>Book clubs and special interest group meetings</li>
+                <li>Yoga and fitness classes (community organized)</li>
+            </ul>
+            
+            <div class="info-box">
+                <h4>PLAN AHEAD!</h4>
+                <p>Lodge bookings fill up quickly, with some dates reserved up to two years in advance, especially for weekend events. If you're considering the Lodge for a special occasion, it's best to inquire about availability as early as possible.</p>
+            </div>
+            
+            <h3>B. RENTAL INFORMATION &amp; PRICING</h3>
+            
+            <h4>1. RENTAL ELIGIBILITY</h4>
+            <p>The Lodge is available for rent to:</p>
+            <ul>
+                <li>Blue Mountain property owners in good standing (current on Sanitary District taxes)</li>
+                <li>Authorized community organizations for events benefiting the community</li>
+                <li>Non-residents with sponsorship by a property owner (at higher rental rates)</li>
+            </ul>
+            
+            <p>The property owner must be present for the duration of any event they sponsor or organize and are responsible for ensuring compliance with all Lodge rules.</p>
+            
+            <h4>2. RENTAL RATES</h4>
+            <p>Rental fees are heavily discounted for residents compared to similar venues in the area:</p>
+            <ul>
+                <li>Blue Mountain Property Owners: Significantly reduced rates</li>
+                <li>Non-residents: Standard market rates apply</li>
+                <li>Community Events: May qualify for waived or reduced fees with Board approval</li>
+            </ul>
+            
+            <p>All rentals require a security deposit in addition to the rental fee. The deposit is refundable after inspection confirms the Lodge has been properly cleaned and no damage has occurred.</p>
+            
+            <p>For current specific rental rates, please contact the Lodge Coordinator at bluemountainlodgebooking@gmail.com.</p>
+        </div>
+        
+        <!-- Lodge Usage Guidelines Page -->
+        <div class="paper-page">
+            <h3>C. LODGE USAGE GUIDELINES</h3>
+            
+            <h4>1. GENERAL RULES</h4>
+            <ul>
+                <li>Maximum capacity is 80 people per fire code regulations</li>
+                <li>Events must end by 11:00 PM to respect neighbors</li>
+                <li>Smoking is not permitted inside the Lodge</li>
+                <li>Open flames (candles, etc.) are restricted except in the fireplace</li>
+                <li>Do not use nails, tacks, or tape that may damage walls</li>
+                <li>Fireplace must be used according to posted safety guidelines</li>
+                <li>Children must be supervised at all times</li>
+                <li>All food and beverages must be removed after the event</li>
+            </ul>
+            
+            <h4>2. CLEANING RESPONSIBILITIES</h4>
+            <p>Renters are responsible for leaving the Lodge in clean condition:</p>
+            <ul>
+                <li>Remove all decorations and personal items</li>
+                <li>Return furniture to its original arrangement</li>
+                <li>Sweep floors and clean up any spills</li>
+                <li>Clean kitchen surfaces, appliances, and sink</li>
+                <li>Remove all food from refrigerator</li>
+                <li>Empty all trash and take bags with you (there is no waste pickup)</li>
+                <li>Turn off all lights and lock all doors upon departure</li>
+            </ul>
+            
+            <p>Failure to properly clean the facility may result in forfeiture of some or all of the security deposit.</p>
+            
+            <h4>3. ALCOHOL POLICY</h4>
+            <p>If alcohol will be served at your event:</p>
+            <ul>
+                <li>The property owner must be present throughout the event</li>
+                <li>No service to those under 21 years of age</li>
+                <li>Event insurance may be required</li>
+                <li>The property owner assumes responsibility for guests' behavior</li>
+                <li>A licensed bartender may be required for larger events</li>
+                <li>Sales of alcohol require appropriate ABC permits</li>
+            </ul>
+            
+            <h4>4. DAMAGE POLICY</h4>
+            <p>The renter is responsible for any damage to the Lodge or its contents during their rental period. Minor damage may be covered by the security deposit, but significant damage will require additional payment. A pre- and post-event inspection will be conducted to document the condition of the facility.</p>
+            
+            <h2 id="community-communication">VIII. COMMUNITY COMMUNICATION</h2>
+            
+            <h3>A. SOCIAL EVENTS &amp; ACTIVITIES</h3>
+            
+            <h4>1. COMMUNITY EVENTS</h4>
+            <p>The BMPOA sponsors several events throughout the year for residents, planned by the Social Committee. These events are a great way to connect with neighbors and enjoy our community.</p>
+            
+            <p><strong>Annual Community Events include:</strong></p>
+            <ul>
+                <li>Spring Community Clean-up: Volunteer day to beautify common areas</li>
+                <li>Summer Picnic: Typically held at Deer Lake with food, games, and swimming</li>
+                <li>Fall Festival: Seasonal celebration with activities for all ages</li>
+                <li>Holiday Gathering: End-of-year celebration at the Lodge</li>
+            </ul>
+        </div>
+        
+        <!-- Community Communication Page -->
+        <div class="paper-page">
+            <h4>2. OTHER ACTIVITIES</h4>
+            <p>In addition to the quarterly events, other activities are held throughout the year:</p>
+            <ul>
+                <li>Yoga at the Lodge: Community members lead regular yoga sessions</li>
+                <li>Community Clean-up Days: Volunteer opportunities to help maintain common areas</li>
+                <li>Educational Workshops: Presentations on topics relevant to mountain living</li>
+                <li>Book Clubs: Resident-organized reading groups</li>
+                <li>Hiking Groups: Casual gatherings to explore local trails</li>
+            </ul>
+            
+            <div class="info-box">
+                <h4>UPCOMING EVENTS</h4>
+                <p>The next board meeting is scheduled for Monday, May 12th at 6:00 PM at the Blue Mountain Lodge.</p>
+                <p>Yoga classes are held every Tuesday at 7:00 PM at the Blue Mountain Lodge through May 27th, 2025.</p>
+            </div>
+            
+            <h3>B. FACEBOOK GROUPS &amp; ONLINE RESOURCES</h3>
+            
+            <h4>1. COMMUNITY FACEBOOK GROUPS</h4>
+            
+            <p><strong>Blue Mountain POA</strong></p>
+            <p>This is the official Facebook group for the Blue Mountain Property Owners Association. It's used for:</p>
+            <ul>
+                <li>Official announcements from the BMPOA Board</li>
+                <li>Community event information</li>
+                <li>Meeting notices and updates</li>
+                <li>Important community alerts</li>
+            </ul>
+            <p>To join this group, you'll need to verify your status as a Blue Mountain property owner.</p>
+            
+            <p><strong>Blue Mountain Information Exchange</strong></p>
+            <p>This resident-led group serves as a forum for sharing information relevant to daily life on the mountain:</p>
+            <ul>
+                <li>Weather updates and conditions</li>
+                <li>Downed trees and road issues</li>
+                <li>Utility outages</li>
+                <li>Wildlife sightings</li>
+                <li>Contractor and service provider recommendations</li>
+                <li>Community announcements and discussion</li>
+            </ul>
+            
+            <h4>2. WEBSITE &amp; EMAIL COMMUNICATIONS</h4>
+            <p><strong>BMPOA Website:</strong> www.bmpoa.org</p>
+            <p>The official website contains:</p>
+            <ul>
+                <li>Governance documents (bylaws, covenants, etc.)</li>
+                <li>Board meeting minutes and financial information</li>
+                <li>Forms and applications</li>
+                <li>Event calendar</li>
+                <li>Contact information</li>
+            </ul>
+            
+            <p><strong>Email Updates</strong></p>
+            <p>The BMPOA occasionally sends email updates to registered property owners with important information. To ensure you receive these communications, make sure your current email address is on file with the Association Secretary.</p>
+        </div>
+        
+        <!-- Contacts Page -->
+        <div class="paper-page">
+            <h2 id="contacts">IX. CONTACTS &amp; COMMUNICATION</h2>
+            
+            <h3>A. BMPOA CONTACT DIRECTORY</h3>
+            
+            <h4>1. BOARD OF DIRECTORS</h4>
+            
+            <div class="contact-card">
+                <div class="contact-name">John Smith</div>
+                <div class="contact-role">President</div>
+                <div class="contact-info">
+                    <p><strong>Phone:</strong> (555) 123-4567</p>
+                    <p><strong>Email:</strong> president@bmpoa.org</p>
+                </div>
+            </div>
+            
+            <div class="contact-card">
+                <div class="contact-name">Jane Doe</div>
+                <div class="contact-role">First Vice President</div>
+                <div class="contact-info">
+                    <p><strong>Phone:</strong> (555) 234-5678</p>
+                    <p><strong>Email:</strong> vicepresident@bmpoa.org</p>
+                </div>
+            </div>
+            
+            <div class="contact-card">
+                <div class="contact-name">Robert Johnson</div>
+                <div class="contact-role">Second Vice President</div>
+                <div class="contact-info">
+                    <p><strong>Phone:</strong> (555) 345-6789</p>
+                    <p><strong>Email:</strong> vicepresident2@bmpoa.org</p>
+                </div>
+            </div>
+            
+            <div class="contact-card">
+                <div class="contact-name">Mary Williams</div>
+                <div class="contact-role">Secretary</div>
+                <div class="contact-info">
+                    <p><strong>Phone:</strong> (555) 456-7890</p>
+                    <p><strong>Email:</strong> secretary@bmpoa.org</p>
+                </div>
+            </div>
+            
+            <div class="contact-card">
+                <div class="contact-name">David Brown</div>
+                <div class="contact-role">Treasurer</div>
+                <div class="contact-info">
+                    <p><strong>Phone:</strong> (555) 567-8901</p>
+                    <p><strong>Email:</strong> treasurer@bmpoa.org</p>
+                </div>
+            </div>
+            
+            <h4>2. COMMITTEE CHAIRS</h4>
+            
+            <div class="contact-card">
+                <div class="contact-name">Michael Robinson</div>
+                <div class="contact-role">Roads Committee</div>
+                <div class="contact-info">
+                    <p><strong>Phone:</strong> (555) 678-9012</p>
+                    <p><strong>Email:</strong> bmpoaroads@gmail.com</p>
+                </div>
+            </div>
+            
+            <div class="contact-card">
+                <div class="contact-name">Sarah Wilson</div>
+                <div class="contact-role">Architectural Review Committee</div>
+                <div class="contact-info">
+                    <p><strong>Phone:</strong> (555) 789-0123</p>
+                    <p><strong>Email:</strong> architecture@bmpoa.org</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Emergency Numbers Page -->
+        <div class="paper-page">
+            <h3>B. EMERGENCY NUMBERS</h3>
+            
+            <div class="alert-box">
+                <h4 class="alert-box-title" style="text-align: center;">EMERGENCY: 911</h4>
+                <p style="text-align: center;">Call for all urgent police, fire, or medical emergencies</p>
+            </div>
+            
+            <h4>1. FIRE DEPARTMENTS</h4>
+            <p><strong>Warren County Fire &amp; Rescue:</strong><br>
+            Emergency: 911<br>
+            Non-Emergency: (540) 636-3830</p>
+            
+            <p><strong>Linden Volunteer Fire Department:</strong><br>
+            Emergency: 911<br>
+            Non-Emergency: (540) 635-6759</p>
+            
+            <p><strong>Front Royal Volunteer Fire Department:</strong><br>
+            Emergency: 911<br>
+            Non-Emergency: (540) 635-2540</p>
+            
+            <h4>2. LAW ENFORCEMENT</h4>
+            <p><strong>Warren County Sheriff's Office:</strong><br>
+            Emergency: 911<br>
+            Non-Emergency: (540) 635-4128</p>
+            
+            <p><strong>Virginia State Police:</strong><br>
+            Emergency: 911<br>
+            Non-Emergency: (540) 829-7771</p>
+            
+            <h4>3. MEDICAL SERVICES</h4>
+            <p><strong>Warren Memorial Hospital:</strong><br>
+            Emergency Room: (540) 636-0300<br>
+            Main Number: (540) 636-0300</p>
+            
+            <p><strong>Poison Control Center:</strong><br>
+            1-800-222-1222</p>
+            
+            <h4>4. UTILITY EMERGENCIES</h4>
+            <p><strong>Rappahannock Electric Cooperative:</strong><br>
+            Outage Reporting: 1-800-552-3904<br>
+            Customer Service: 1-800-552-3904</p>
+            
+            <p><strong>Propane/Gas Leaks:</strong><br>
+            Evacuate first, then call from safe location<br>
+            Fire Department: 911</p>
+            
+            <h4>5. EMERGENCY NOTIFICATION SYSTEMS</h4>
+            <p>Sign up for these emergency alert systems:</p>
+            <ul>
+                <li><strong>Smart911:</strong> www.smart911.com</li>
+                <li><strong>Warren County Emergency Notifications:</strong> www.warrencountyva.net/alertsignup</li>
+                <li><strong>NOAA Weather Radio:</strong> Program to receive alerts for Warren County</li>
+            </ul>
+            
+            <div class="info-box">
+                <h4>EMERGENCY PREPARATION TIP</h4>
+                <p>Create a printed copy of these emergency contacts to keep in your emergency kit. Cell phones may not work during major emergencies due to power outages or network congestion.</p>
+            </div>
+            
+            <div style="text-align: center; margin-top: 3rem;">
+                <h3>CONCLUSION</h3>
+                <p>We hope this welcome booklet helps you settle into life on Blue Mountain. Our community thrives when residents actively participate and communicate with one another.</p>
+                <p>Living in Blue Mountain offers a unique combination of natural beauty, privacy, and community. The spectacular views, abundant wildlife, and peaceful environment make our mountain home special.</p>
+                <p style="font-style: italic; font-size: 1.2rem; margin: 1.5rem 0; color: var(--primary);">"Welcome to the mountain!"</p>
+                <p><strong>Blue Mountain Property Owners Association</strong><br>
+                P.O. Box 114 • Linden, VA 22642<br>
+                www.bmpoa.org</p>
+            </div>
+        </div>
+    </div>
+    
+    <button id="theme-toggle" class="theme-toggle">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+        </svg>
+    </button>
+    
+    <script>
+        // Dark Mode Toggle
+        const themeToggle = document.getElementById('theme-toggle');
+        
+        themeToggle.addEventListener('click', () => {
+            document.body.classList.toggle('dark');
+            
+            if (document.body.classList.contains('dark')) {
+                themeToggle.innerHTML = `
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                `;
+            } else {
+                themeToggle.innerHTML = `
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                `;
+            }
+        });
+        
+        // Check system preference for dark mode
+        if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+            document.body.classList.add('dark');
+            themeToggle.innerHTML = `
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="5"></circle>
+                    <line x1="12" y1="1" x2="12" y2="3"></line>
+                    <line x1="12" y1="21" x2="12" y2="23"></line>
+                    <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                    <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                    <line x1="1" y1="12" x2="3" y2="12"></line>
+                    <line x1="21" y1="12" x2="23" y2="12"></line>
+                    <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                    <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                </svg>
+            `;
+        }
+        
+        // Listen for changes in system preference
+        window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', event => {
+            if (event.matches) {
+                document.body.classList.add('dark');
+                themeToggle.innerHTML = `
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                `;
+            } else {
+                document.body.classList.remove('dark');
+                themeToggle.innerHTML = `
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                `;
+            }
+        });
+    </script>
+
+
+</body></html>

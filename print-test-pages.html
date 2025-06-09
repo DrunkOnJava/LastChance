@@ -1,0 +1,657 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Print Test Pages - Blue Mountain POA</title>
+    <style>
+        /* Reset and base styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        /* Print-specific settings */
+        @page {
+            size: letter;
+            margin: 0; /* We'll handle margins in the content */
+        }
+        
+        @media print {
+            body {
+                margin: 0;
+                padding: 0;
+            }
+            
+            .no-print {
+                display: none !important;
+            }
+            
+            .page {
+                page-break-after: always;
+                page-break-inside: avoid;
+                margin: 0;
+            }
+            
+            .page:last-child {
+                page-break-after: auto;
+            }
+        }
+        
+        /* Page setup */
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: #000;
+            background: #f0f0f0;
+        }
+        
+        .page {
+            width: 8.5in;
+            height: 11in;
+            margin: 0 auto 20px auto;
+            background: white;
+            position: relative;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+        
+        .page-content {
+            position: absolute;
+            top: 0.75in;
+            left: 0.75in;
+            right: 0.75in;
+            bottom: 0.75in;
+            border: 1px solid #000;
+            overflow: hidden;
+        }
+        
+        /* Alignment marks */
+        .alignment-marks {
+            position: absolute;
+            width: 0.25in;
+            height: 0.25in;
+        }
+        
+        .alignment-marks.top-left {
+            top: 0;
+            left: 0;
+            border-top: 2px solid black;
+            border-left: 2px solid black;
+        }
+        
+        .alignment-marks.top-right {
+            top: 0;
+            right: 0;
+            border-top: 2px solid black;
+            border-right: 2px solid black;
+        }
+        
+        .alignment-marks.bottom-left {
+            bottom: 0;
+            left: 0;
+            border-bottom: 2px solid black;
+            border-left: 2px solid black;
+        }
+        
+        .alignment-marks.bottom-right {
+            bottom: 0;
+            right: 0;
+            border-bottom: 2px solid black;
+            border-right: 2px solid black;
+        }
+        
+        /* Grid background */
+        .print-grid {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: 
+                repeating-linear-gradient(0deg, #ccc, #ccc 1px, transparent 1px, transparent 0.25in),
+                repeating-linear-gradient(90deg, #ccc, #ccc 1px, transparent 1px, transparent 0.25in);
+        }
+        
+        /* Instructions (screen only) */
+        .instructions {
+            max-width: 8.5in;
+            margin: 20px auto;
+            padding: 20px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        .instructions h1 {
+            color: #2c3e50;
+            margin-bottom: 20px;
+        }
+        
+        .instructions ol {
+            margin-left: 30px;
+        }
+        
+        .instructions li {
+            margin-bottom: 10px;
+        }
+        
+        /* Utility classes */
+        h2, h3, h4 {
+            margin-bottom: 10px;
+        }
+        
+        p {
+            margin-bottom: 10px;
+        }
+        
+        .center {
+            text-align: center;
+        }
+        
+        .measurement-box {
+            border: 2px solid black;
+            display: inline-block;
+            padding: 20px;
+            margin: 20px auto;
+        }
+    </style>
+</head>
+<body>
+    <!-- Instructions (won't print) -->
+    <div class="instructions no-print">
+        <h1>Print Test Pages Instructions</h1>
+        <ol>
+            <li><strong>Print Settings:</strong> Set scale to 100% (no "fit to page")</li>
+            <li><strong>Margins:</strong> Set to "None" or "Minimum"</li>
+            <li><strong>Orientation:</strong> Portrait</li>
+            <li><strong>Paper Size:</strong> US Letter (8.5" × 11")</li>
+            <li><strong>Print Preview:</strong> Check that alignment marks are visible at corners</li>
+            <li><strong>After Printing:</strong> Use a ruler to verify measurements</li>
+        </ol>
+        <p><strong>macOS Terminal Commands:</strong></p>
+        <pre style="background: #f5f5f5; padding: 10px; border-radius: 4px;">
+# View printers
+lpstat -p -d
+
+# Print this file
+lp -d [printer-name] -o media=Letter -o print-quality=high print-test-pages.html
+
+# Or use Chrome's headless printing
+/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome \
+  --headless --disable-gpu --print-to-pdf=test-output.pdf \
+  file:///Users/griffin/Projects/LastChance/print-test-pages.html
+        </pre>
+    </div>
+
+    <!-- Page 1: Alignment Test -->
+    <div class="page">
+        <div class="alignment-marks top-left"></div>
+        <div class="alignment-marks top-right"></div>
+        <div class="alignment-marks bottom-left"></div>
+        <div class="alignment-marks bottom-right"></div>
+        
+        <div class="page-content">
+            <h2 style="text-align: center; margin-top: 0;">Print Alignment Test Page</h2>
+            <p style="text-align: center;">Generated: <script>document.write(new Date().toLocaleString())</script></p>
+            
+            <div style="position: absolute; top: 0; left: 0; font-size: 8pt;">
+                TOP LEFT (0, 0)
+            </div>
+            <div style="position: absolute; top: 0; right: 0; font-size: 8pt; text-align: right;">
+                TOP RIGHT (7", 0)
+            </div>
+            <div style="position: absolute; bottom: 0; left: 0; font-size: 8pt;">
+                BOTTOM LEFT (0, 9.5")
+            </div>
+            <div style="position: absolute; bottom: 0; right: 0; font-size: 8pt; text-align: right;">
+                BOTTOM RIGHT (7", 9.5")
+            </div>
+            
+            <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);">
+                <div style="text-align: center;">
+                    <h3>Center Point</h3>
+                    <p>3.5" × 4.75"</p>
+                    <p>Page Size: 8.5" × 11"</p>
+                    <p>Margins: 0.75" all sides</p>
+                    <p>Content Area: 7" × 9.5"</p>
+                </div>
+            </div>
+            
+            <!-- Measurement rulers -->
+            <div style="position: absolute; top: 1in; left: 0; right: 0; border-top: 1px solid red;">
+                <span style="position: absolute; left: -30px; top: -10px; font-size: 8pt; color: red;">1"</span>
+            </div>
+            <div style="position: absolute; top: 2in; left: 0; right: 0; border-top: 1px solid red;">
+                <span style="position: absolute; left: -30px; top: -10px; font-size: 8pt; color: red;">2"</span>
+            </div>
+            <div style="position: absolute; top: 3in; left: 0; right: 0; border-top: 1px solid red;">
+                <span style="position: absolute; left: -30px; top: -10px; font-size: 8pt; color: red;">3"</span>
+            </div>
+            <div style="position: absolute; top: 4in; left: 0; right: 0; border-top: 1px solid red;">
+                <span style="position: absolute; left: -30px; top: -10px; font-size: 8pt; color: red;">4"</span>
+            </div>
+            <div style="position: absolute; left: 1in; top: 0; bottom: 0; border-left: 1px solid blue;">
+                <span style="position: absolute; top: -20px; left: -10px; font-size: 8pt; color: blue;">1"</span>
+            </div>
+            <div style="position: absolute; left: 2in; top: 0; bottom: 0; border-left: 1px solid blue;">
+                <span style="position: absolute; top: -20px; left: -10px; font-size: 8pt; color: blue;">2"</span>
+            </div>
+            <div style="position: absolute; left: 3in; top: 0; bottom: 0; border-left: 1px solid blue;">
+                <span style="position: absolute; top: -20px; left: -10px; font-size: 8pt; color: blue;">3"</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Page 2: Margin Test -->
+    <div class="page">
+        <div class="alignment-marks top-left"></div>
+        <div class="alignment-marks top-right"></div>
+        <div class="alignment-marks bottom-left"></div>
+        <div class="alignment-marks bottom-right"></div>
+        
+        <div class="page-content" style="border: 2px solid black;">
+            <h2 style="text-align: center;">Margin Test Page</h2>
+            <p style="text-align: center;">All text should be within the black border</p>
+            
+            <!-- Margin indicators -->
+            <div style="position: absolute; top: -0.75in; left: 0; right: 0; height: 0.75in; background: rgba(255,0,0,0.2);">
+                <span style="position: absolute; bottom: 5px; left: 5px; font-size: 10pt;">Top Margin: 0.75"</span>
+            </div>
+            <div style="position: absolute; bottom: -0.75in; left: 0; right: 0; height: 0.75in; background: rgba(255,0,0,0.2);">
+                <span style="position: absolute; top: 5px; left: 5px; font-size: 10pt;">Bottom Margin: 0.75"</span>
+            </div>
+            <div style="position: absolute; left: -0.75in; top: 0; bottom: 0; width: 0.75in; background: rgba(0,0,255,0.2);">
+                <span style="position: absolute; top: 50%; right: 5px; transform: rotate(-90deg); font-size: 10pt;">Left: 0.75"</span>
+            </div>
+            <div style="position: absolute; right: -0.75in; top: 0; bottom: 0; width: 0.75in; background: rgba(0,0,255,0.2);">
+                <span style="position: absolute; top: 50%; left: 5px; transform: rotate(90deg); font-size: 10pt;">Right: 0.75"</span>
+            </div>
+            
+            <!-- Content to test margins -->
+            <div style="margin-top: 1in;">
+                <p>This text should not extend into the margin areas (shaded in color).</p>
+                <p>The black border represents the exact edge of the content area.</p>
+                <p>If any text appears outside the black border when printed, margins need adjustment.</p>
+                
+                <div style="border: 1px dashed #666; padding: 10px; margin: 20px 0;">
+                    <h4>Margin Verification Checklist:</h4>
+                    <ul style="margin-left: 20px;">
+                        <li>☐ All text is within the black border</li>
+                        <li>☐ No content appears in shaded margin areas</li>
+                        <li>☐ Page corners align with alignment marks</li>
+                        <li>☐ Measured margins match specified 0.75"</li>
+                    </ul>
+                </div>
+                
+                <p style="position: absolute; bottom: 10px; left: 10px;">Bottom Left Text</p>
+                <p style="position: absolute; bottom: 10px; right: 10px;">Bottom Right Text</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Page 3: Grid Test -->
+    <div class="page">
+        <div class="alignment-marks top-left"></div>
+        <div class="alignment-marks top-right"></div>
+        <div class="alignment-marks bottom-left"></div>
+        <div class="alignment-marks bottom-right"></div>
+        
+        <div class="page-content">
+            <div class="print-grid"></div>
+            <div style="position: relative; z-index: 1; background: white; padding: 20px;">
+                <h2 style="text-align: center;">Grid Alignment Test</h2>
+                
+                <h4>Grid Information:</h4>
+                <ul style="margin-left: 20px;">
+                    <li>Grid squares: 0.25" × 0.25" (quarter inch)</li>
+                    <li>Total grid: 28 × 38 squares</li>
+                    <li>Content area: 7" × 9.5"</li>
+                </ul>
+                
+                <p>Use this grid to verify:</p>
+                <ol style="margin-left: 20px;">
+                    <li>Print scaling is correct (measure grid squares)</li>
+                    <li>No distortion in horizontal or vertical directions</li>
+                    <li>Consistent spacing across entire page</li>
+                </ol>
+                
+                <div style="margin-top: 20px; padding: 10px; border: 2px solid black; text-align: center;">
+                    <p style="margin: 0;">
+                        <strong>1 inch square</strong><br>
+                        (Should measure exactly 1" × 1" when printed)
+                    </p>
+                    <div style="width: 1in; height: 1in; border: 2px solid red; margin: 10px auto;"></div>
+                </div>
+                
+                <div style="margin-top: 20px; text-align: center;">
+                    <div style="width: 2in; height: 0.5in; border: 2px solid blue; margin: 10px auto;">
+                        <p style="line-height: 0.5in; margin: 0;">2" × 0.5"</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Corner markers -->
+            <div style="position: absolute; top: 0; left: 0; width: 1in; height: 1in; border-right: 1px solid red; border-bottom: 1px solid red;">
+                <span style="position: absolute; bottom: 5px; right: 5px; font-size: 8pt;">1"×1"</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Page 4: Color and Quality Test -->
+    <div class="page">
+        <div class="alignment-marks top-left"></div>
+        <div class="alignment-marks top-right"></div>
+        <div class="alignment-marks bottom-left"></div>
+        <div class="alignment-marks bottom-right"></div>
+        
+        <div class="page-content">
+            <h2 style="text-align: center;">Color & Print Quality Test</h2>
+            
+            <div style="margin: 20px;">
+                <h4>Color Accuracy Test</h4>
+                <div style="display: flex; justify-content: space-around; margin: 20px 0;">
+                    <div style="text-align: center;">
+                        <div style="width: 0.25in; height: 0.25in; background: #FF0000; border: 1px solid black; margin: 0 auto;"></div>
+                        <p>Red<br>#FF0000</p>
+                    </div>
+                    <div style="text-align: center;">
+                        <div style="width: 0.25in; height: 0.25in; background: #00FF00; border: 1px solid black; margin: 0 auto;"></div>
+                        <p>Green<br>#00FF00</p>
+                    </div>
+                    <div style="text-align: center;">
+                        <div style="width: 0.25in; height: 0.25in; background: #0000FF; border: 1px solid black; margin: 0 auto;"></div>
+                        <p>Blue<br>#0000FF</p>
+                    </div>
+                    <div style="text-align: center;">
+                        <div style="width: 0.25in; height: 0.25in; background: #000000; border: 1px solid #ccc; margin: 0 auto;"></div>
+                        <p>Black<br>#000000</p>
+                    </div>
+                </div>
+                
+                <h4>Grayscale Test</h4>
+                <div style="display: flex; margin: 20px 0; border: 1px solid black;">
+                    <div style="flex: 1; height: 0.25in; background: hsl(0, 0%, 0%); color: white; font-size: 8pt; padding: 2px;">0%</div>
+                    <div style="flex: 1; height: 0.25in; background: hsl(0, 0%, 10%); color: white; font-size: 8pt; padding: 2px;">10%</div>
+                    <div style="flex: 1; height: 0.25in; background: hsl(0, 0%, 20%); color: white; font-size: 8pt; padding: 2px;">20%</div>
+                    <div style="flex: 1; height: 0.25in; background: hsl(0, 0%, 30%); color: white; font-size: 8pt; padding: 2px;">30%</div>
+                    <div style="flex: 1; height: 0.25in; background: hsl(0, 0%, 40%); color: white; font-size: 8pt; padding: 2px;">40%</div>
+                    <div style="flex: 1; height: 0.25in; background: hsl(0, 0%, 50%); color: white; font-size: 8pt; padding: 2px;">50%</div>
+                    <div style="flex: 1; height: 0.25in; background: hsl(0, 0%, 60%); color: black; font-size: 8pt; padding: 2px;">60%</div>
+                    <div style="flex: 1; height: 0.25in; background: hsl(0, 0%, 70%); color: black; font-size: 8pt; padding: 2px;">70%</div>
+                    <div style="flex: 1; height: 0.25in; background: hsl(0, 0%, 80%); color: black; font-size: 8pt; padding: 2px;">80%</div>
+                    <div style="flex: 1; height: 0.25in; background: hsl(0, 0%, 90%); color: black; font-size: 8pt; padding: 2px;">90%</div>
+                    <div style="flex: 1; height: 0.25in; background: hsl(0, 0%, 100%); color: black; font-size: 8pt; padding: 2px;">100%</div>
+                </div>
+                
+                <h4>Line Quality Test</h4>
+                <div style="margin: 20px 0;">
+                    <p>1px lines (should be sharp and consistent):</p>
+                    <div style="border-top: 1px solid black; margin: 5px 0;"></div>
+                    <div style="border-top: 1px dashed black; margin: 5px 0;"></div>
+                    <div style="border-top: 1px dotted black; margin: 5px 0;"></div>
+                    <div style="border-top: 2px solid black; margin: 5px 0;"></div>
+                    <div style="border-top: 3px solid black; margin: 5px 0;"></div>
+                </div>
+                
+                <h4>Text Quality Test</h4>
+                <div style="margin: 20px 0;">
+                    <p style="font-size: 6pt;">6pt: The quick brown fox jumps over the lazy dog. 1234567890 !@#$%^&*()</p>
+                    <p style="font-size: 8pt;">8pt: The quick brown fox jumps over the lazy dog. 1234567890 !@#$%^&*()</p>
+                    <p style="font-size: 10pt;">10pt: The quick brown fox jumps over the lazy dog. 1234567890 !@#$%^&*()</p>
+                    <p style="font-size: 12pt;">12pt: The quick brown fox jumps over the lazy dog. 1234567890 !@#$%^&*()</p>
+                    <p style="font-size: 14pt;">14pt: The quick brown fox jumps over the lazy dog. 1234567890</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Page 5: Calibration Page -->
+    <div class="page">
+        <div class="alignment-marks top-left"></div>
+        <div class="alignment-marks top-right"></div>
+        <div class="alignment-marks bottom-left"></div>
+        <div class="alignment-marks bottom-right"></div>
+        
+        <div class="page-content">
+            <h2 style="text-align: center;">Print Calibration Page</h2>
+            
+            <div style="margin: 40px;">
+                <h3>Instructions:</h3>
+                <ol style="margin-left: 20px;">
+                    <li>Print this page at 100% scale (no fit to page)</li>
+                    <li>Measure the squares below with a ruler</li>
+                    <li>All measurements should match exactly</li>
+                    <li>If not, adjust print scale accordingly</li>
+                </ol>
+                
+                <div style="margin: 40px 0; text-align: center;">
+                    <h4>1 Inch Calibration Square</h4>
+                    <div style="width: 1in; height: 1in; border: 2px solid black; position: relative; margin: 0 auto;">
+                        <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);">
+                            1" × 1"
+                        </div>
+                    </div>
+                    <p>Should measure: exactly 1.00 inches</p>
+                </div>
+                
+                <div style="margin: 40px 0; text-align: center;">
+                    <h4>2 Inch Calibration Square</h4>
+                    <div style="width: 2in; height: 2in; border: 2px solid black; position: relative; margin: 0 auto;">
+                        <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);">
+                            2" × 2"
+                        </div>
+                    </div>
+                    <p>Should measure: exactly 2.00 inches</p>
+                </div>
+                
+                <div style="margin: 40px 0; text-align: center;">
+                    <h4>5 Inch Horizontal Line</h4>
+                    <div style="width: 5in; height: 0; border-top: 2px solid black; margin: 20px auto; position: relative;">
+                        <span style="position: absolute; left: 0; top: 5px;">0"</span>
+                        <span style="position: absolute; left: 1in; top: 5px;">1"</span>
+                        <span style="position: absolute; left: 2in; top: 5px;">2"</span>
+                        <span style="position: absolute; left: 3in; top: 5px;">3"</span>
+                        <span style="position: absolute; left: 4in; top: 5px;">4"</span>
+                        <span style="position: absolute; right: 0; top: 5px;">5"</span>
+                    </div>
+                    <p>Should measure: exactly 5.00 inches</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Page 6: Scan Quality Test -->
+    <div class="page">
+        <div class="alignment-marks top-left"></div>
+        <div class="alignment-marks top-right"></div>
+        <div class="alignment-marks bottom-left"></div>
+        <div class="alignment-marks bottom-right"></div>
+        
+        <div class="page-content">
+            <h2 style="text-align: center;">Scan Quality & Registration Test</h2>
+            <p style="text-align: center;">Elements designed to reveal print/scan issues</p>
+            
+            <!-- Registration marks for scan alignment -->
+            <div style="position: absolute; top: 50px; left: 50px; width: 20px; height: 20px;">
+                <div style="width: 20px; height: 1px; background: black; position: absolute; top: 10px;"></div>
+                <div style="width: 1px; height: 20px; background: black; position: absolute; left: 10px;"></div>
+                <div style="width: 10px; height: 10px; border: 1px solid black; position: absolute; top: 5px; left: 5px;"></div>
+            </div>
+            <div style="position: absolute; top: 50px; right: 50px; width: 20px; height: 20px;">
+                <div style="width: 20px; height: 1px; background: black; position: absolute; top: 10px;"></div>
+                <div style="width: 1px; height: 20px; background: black; position: absolute; left: 10px;"></div>
+                <div style="width: 10px; height: 10px; border: 1px solid black; position: absolute; top: 5px; left: 5px;"></div>
+            </div>
+            <div style="position: absolute; bottom: 50px; left: 50px; width: 20px; height: 20px;">
+                <div style="width: 20px; height: 1px; background: black; position: absolute; top: 10px;"></div>
+                <div style="width: 1px; height: 20px; background: black; position: absolute; left: 10px;"></div>
+                <div style="width: 10px; height: 10px; border: 1px solid black; position: absolute; top: 5px; left: 5px;"></div>
+            </div>
+            <div style="position: absolute; bottom: 50px; right: 50px; width: 20px; height: 20px;">
+                <div style="width: 20px; height: 1px; background: black; position: absolute; top: 10px;"></div>
+                <div style="width: 1px; height: 20px; background: black; position: absolute; left: 10px;"></div>
+                <div style="width: 10px; height: 10px; border: 1px solid black; position: absolute; top: 5px; left: 5px;"></div>
+            </div>
+            
+            <div style="margin: 100px 20px 20px 20px;">
+                <h4>Resolution Test Patterns</h4>
+                
+                <!-- Fine line patterns -->
+                <div style="margin: 20px 0;">
+                    <p>Line Resolution (1px spacing):</p>
+                    <svg width="200" height="30">
+                        <pattern id="lines1" patternUnits="userSpaceOnUse" width="2" height="30">
+                            <line x1="0" y1="0" x2="0" y2="30" stroke="black" stroke-width="1"/>
+                        </pattern>
+                        <rect width="200" height="30" fill="url(#lines1)"/>
+                    </svg>
+                </div>
+                
+                <!-- Moiré pattern test -->
+                <div style="margin: 20px 0;">
+                    <p>Moiré Pattern Test:</p>
+                    <div style="width: 200px; height: 50px; background-image: repeating-linear-gradient(45deg, black, black 1px, white 1px, white 2px);"></div>
+                </div>
+                
+                <!-- Text at various angles -->
+                <div style="margin: 20px 0;">
+                    <p>Rotated Text (scan distortion test):</p>
+                    <div style="height: 60px; position: relative;">
+                        <span style="position: absolute; transform: rotate(0deg); left: 0;">0°</span>
+                        <span style="position: absolute; transform: rotate(15deg); left: 50px;">15°</span>
+                        <span style="position: absolute; transform: rotate(30deg); left: 100px;">30°</span>
+                        <span style="position: absolute; transform: rotate(45deg); left: 150px;">45°</span>
+                        <span style="position: absolute; transform: rotate(-15deg); left: 200px;">-15°</span>
+                    </div>
+                </div>
+                
+                <!-- OCR test pattern -->
+                <div style="margin: 20px 0; border: 1px solid #ccc; padding: 10px;">
+                    <h4>OCR Test Pattern</h4>
+                    <p style="font-family: monospace; font-size: 10pt;">0O1Il|  8B  6G  5S  Z2  VU  MW</p>
+                    <p style="font-family: monospace; font-size: 8pt;">The quick brown fox jumps over the lazy dog.</p>
+                    <p style="font-family: monospace; font-size: 8pt;">THE QUICK BROWN FOX JUMPS OVER THE LAZY DOG.</p>
+                    <p style="font-family: monospace; font-size: 8pt;">1234567890 !@#$%^&*()_+-=[]{};':"|,./<>?</p>
+                </div>
+                
+                <!-- Contrast patterns -->
+                <div style="margin: 20px 0;">
+                    <p>Contrast Survival Test:</p>
+                    <div style="display: flex; gap: 5px;">
+                        <div style="width: 30px; height: 30px; background: #f0f0f0; border: 1px solid #e0e0e0;"></div>
+                        <div style="width: 30px; height: 30px; background: #d0d0d0; border: 1px solid #c0c0c0;"></div>
+                        <div style="width: 30px; height: 30px; background: #b0b0b0; border: 1px solid #a0a0a0;"></div>
+                        <div style="width: 30px; height: 30px; background: #909090; border: 1px solid #808080;"></div>
+                        <div style="width: 30px; height: 30px; background: #707070; border: 1px solid #606060;"></div>
+                        <div style="width: 30px; height: 30px; background: #505050; border: 1px solid #404040;"></div>
+                    </div>
+                </div>
+                
+                <!-- QR code placeholder -->
+                <div style="margin: 20px 0; text-align: center;">
+                    <div style="width: 100px; height: 100px; border: 2px solid black; margin: 0 auto; position: relative;">
+                        <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); text-align: center;">
+                            <small>QR Code<br>Placeholder<br>for future<br>scan tracking</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Page 7: Final Validation Checklist -->
+    <div class="page">
+        <div class="alignment-marks top-left"></div>
+        <div class="alignment-marks top-right"></div>
+        <div class="alignment-marks bottom-left"></div>
+        <div class="alignment-marks bottom-right"></div>
+        
+        <div class="page-content">
+            <h2 style="text-align: center;">Print Validation Checklist</h2>
+            
+            <div style="margin: 30px;">
+                <h3>Physical Measurements</h3>
+                <table style="width: 100%; border-collapse: collapse;">
+                    <tr>
+                        <td style="border: 1px solid black; padding: 10px;">Test</td>
+                        <td style="border: 1px solid black; padding: 10px;">Expected</td>
+                        <td style="border: 1px solid black; padding: 10px;">Actual</td>
+                        <td style="border: 1px solid black; padding: 10px;">Pass?</td>
+                    </tr>
+                    <tr>
+                        <td style="border: 1px solid black; padding: 10px;">Page Width</td>
+                        <td style="border: 1px solid black; padding: 10px;">8.5"</td>
+                        <td style="border: 1px solid black; padding: 10px;">_____"</td>
+                        <td style="border: 1px solid black; padding: 10px;">☐</td>
+                    </tr>
+                    <tr>
+                        <td style="border: 1px solid black; padding: 10px;">Page Height</td>
+                        <td style="border: 1px solid black; padding: 10px;">11"</td>
+                        <td style="border: 1px solid black; padding: 10px;">_____"</td>
+                        <td style="border: 1px solid black; padding: 10px;">☐</td>
+                    </tr>
+                    <tr>
+                        <td style="border: 1px solid black; padding: 10px;">Top Margin</td>
+                        <td style="border: 1px solid black; padding: 10px;">0.75"</td>
+                        <td style="border: 1px solid black; padding: 10px;">_____"</td>
+                        <td style="border: 1px solid black; padding: 10px;">☐</td>
+                    </tr>
+                    <tr>
+                        <td style="border: 1px solid black; padding: 10px;">Bottom Margin</td>
+                        <td style="border: 1px solid black; padding: 10px;">0.75"</td>
+                        <td style="border: 1px solid black; padding: 10px;">_____"</td>
+                        <td style="border: 1px solid black; padding: 10px;">☐</td>
+                    </tr>
+                    <tr>
+                        <td style="border: 1px solid black; padding: 10px;">Left Margin</td>
+                        <td style="border: 1px solid black; padding: 10px;">0.75"</td>
+                        <td style="border: 1px solid black; padding: 10px;">_____"</td>
+                        <td style="border: 1px solid black; padding: 10px;">☐</td>
+                    </tr>
+                    <tr>
+                        <td style="border: 1px solid black; padding: 10px;">Right Margin</td>
+                        <td style="border: 1px solid black; padding: 10px;">0.75"</td>
+                        <td style="border: 1px solid black; padding: 10px;">_____"</td>
+                        <td style="border: 1px solid black; padding: 10px;">☐</td>
+                    </tr>
+                    <tr>
+                        <td style="border: 1px solid black; padding: 10px;">1" Test Square</td>
+                        <td style="border: 1px solid black; padding: 10px;">1" × 1"</td>
+                        <td style="border: 1px solid black; padding: 10px;">_____"</td>
+                        <td style="border: 1px solid black; padding: 10px;">☐</td>
+                    </tr>
+                    <tr>
+                        <td style="border: 1px solid black; padding: 10px;">Grid Squares</td>
+                        <td style="border: 1px solid black; padding: 10px;">0.25" × 0.25"</td>
+                        <td style="border: 1px solid black; padding: 10px;">_____"</td>
+                        <td style="border: 1px solid black; padding: 10px;">☐</td>
+                    </tr>
+                </table>
+                
+                <h3 style="margin-top: 30px;">Quality Checks</h3>
+                <ul style="margin-left: 20px; line-height: 2;">
+                    <li>☐ Alignment marks visible at all corners</li>
+                    <li>☐ No content cut off at page edges</li>
+                    <li>☐ Text is sharp and readable at all sizes</li>
+                    <li>☐ Colors print as expected</li>
+                    <li>☐ No unwanted page breaks</li>
+                    <li>☐ Margins consistent on all pages</li>
+                    <li>☐ Grid lines are straight and evenly spaced</li>
+                    <li>☐ Page numbers align properly (if present)</li>
+                </ul>
+                
+                <div style="margin-top: 30px; padding: 20px; background: #f0f0f0; border: 1px solid #999;">
+                    <h4>Notes:</h4>
+                    <p style="margin-bottom: 100px;">Record any issues or adjustments needed:</p>
+                    <p>_____________________________________________</p>
+                    <p>_____________________________________________</p>
+                    <p>_____________________________________________</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
