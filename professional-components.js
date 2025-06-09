@@ -542,6 +542,11 @@ class ProfessionalComponents {
         fireScript.src = 'fire-safety-infographic.js';
         document.head.appendChild(fireScript);
         
+        // Load amenities script
+        const amenitiesScript = document.createElement('script');
+        amenitiesScript.src = 'professional-amenities.js';
+        document.head.appendChild(amenitiesScript);
+        
         // Apply enhancements
         // this.createProfessionalCoverPage(); // Keeping original cover page
         this.improveTOC();
@@ -556,6 +561,14 @@ class ProfessionalComponents {
         fireScript.onload = () => {
             if (typeof fireSafetyInfographic !== 'undefined') {
                 fireSafetyInfographic.createFireSafetyInfographic();
+            }
+        };
+        
+        // Apply amenities section after script loads
+        amenitiesScript.onload = () => {
+            if (typeof professionalAmenities !== 'undefined') {
+                professionalAmenities.createAmenitiesSection();
+                professionalAmenities.addIconsToExistingContent();
             }
         };
         

@@ -1,0 +1,358 @@
+/**
+ * Professional Icons and Amenities Styles for BMPOA Document
+ * Based on verified services and amenities from source materials
+ */
+
+/* Icon System Base */
+.icon-amenity {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-family: 'Roboto', sans-serif;
+    font-size: 1rem;
+    color: #2c3e50;
+}
+
+.icon-amenity::before {
+    font-size: 1.5rem;
+    width: 2rem;
+    text-align: center;
+}
+
+/* Facility Icons */
+.icon-lodge::before { content: "🏛️"; }
+.icon-deer-lake::before { content: "🏊"; }
+.icon-beach::before { content: "🏖️"; }
+.icon-dock::before { content: "⚓"; }
+.icon-picnic::before { content: "🧺"; }
+.icon-trails::before { content: "🥾"; }
+.icon-overlook::before { content: "🏔️"; }
+
+/* Service Icons */
+.icon-waste-disposal::before { content: "♻️"; }
+.icon-internet::before { content: "📶"; }
+.icon-power::before { content: "⚡"; }
+.icon-water::before { content: "💧"; }
+.icon-mail::before { content: "📮"; }
+.icon-wood-chipping::before { content: "🌲"; }
+
+/* Activity Icons */
+.icon-swimming::before { content: "🏊"; }
+.icon-kayaking::before { content: "🛶"; }
+.icon-fishing::before { content: "🎣"; }
+.icon-hiking::before { content: "🥾"; }
+.icon-wine-tasting::before { content: "🍷"; }
+.icon-events::before { content: "📅"; }
+.icon-yoga::before { content: "🧘"; }
+
+/* Wildlife Icons */
+.icon-bear::before { content: "🐻"; }
+.icon-deer::before { content: "🦌"; }
+.icon-birds::before { content: "🦅"; }
+.icon-wildlife::before { content: "🦝"; }
+
+/* Safety Icons */
+.icon-emergency::before { content: "🚨"; }
+.icon-fire-safety::before { content: "🔥"; }
+.icon-first-aid::before { content: "🏥"; }
+.icon-evacuation::before { content: "🚸"; }
+
+/* Governance Icons */
+.icon-board::before { content: "👥"; }
+.icon-committee::before { content: "📋"; }
+.icon-voting::before { content: "🗳️"; }
+.icon-meeting::before { content: "📅"; }
+
+/* Communication Icons */
+.icon-website::before { content: "🌐"; }
+.icon-newsletter::before { content: "📰"; }
+.icon-email::before { content: "✉️"; }
+.icon-facebook::before { content: "👥"; }
+
+/* Amenity Cards Grid */
+.amenities-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    margin: 2rem 0;
+}
+
+.amenity-card {
+    background: white;
+    border: 2px solid #e0e0e0;
+    border-radius: 12px;
+    padding: 1.5rem;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.amenity-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+    border-color: #4a90e2;
+}
+
+.amenity-header {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.amenity-icon {
+    font-size: 3rem;
+    line-height: 1;
+    opacity: 0.9;
+}
+
+.amenity-title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: #1e3a5f;
+    margin: 0;
+}
+
+.amenity-subtitle {
+    font-size: 0.9rem;
+    color: #5d6d7e;
+    margin-top: 0.25rem;
+}
+
+.amenity-features {
+    list-style: none;
+    padding: 0;
+    margin: 1rem 0 0 0;
+}
+
+.amenity-feature {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 0;
+    font-size: 0.95rem;
+    color: #2c3e50;
+}
+
+.amenity-feature::before {
+    content: "✓";
+    color: #27ae60;
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+/* Service Provider Cards */
+.service-provider-card {
+    background: linear-gradient(to bottom right, #f8f9fa, white);
+    border: 2px solid #4a90e2;
+    border-radius: 12px;
+    padding: 2rem;
+    margin: 1rem 0;
+    position: relative;
+}
+
+.service-provider-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.service-icon-large {
+    font-size: 3rem;
+    color: #4a90e2;
+}
+
+.service-provider-info h3 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #1e3a5f;
+    margin: 0;
+}
+
+.service-provider-type {
+    font-size: 0.9rem;
+    color: #5d6d7e;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.service-details-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.service-detail {
+    background: white;
+    padding: 1rem;
+    border-radius: 8px;
+    border: 1px solid #e0e0e0;
+}
+
+.service-detail-label {
+    font-size: 0.85rem;
+    color: #7f8c8d;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 0.25rem;
+}
+
+.service-detail-value {
+    font-weight: 600;
+    color: #2c3e50;
+    font-size: 1.1rem;
+}
+
+/* Icon Legend */
+.icon-legend {
+    background: #f8f9fa;
+    border-radius: 12px;
+    padding: 2rem;
+    margin: 2rem 0;
+}
+
+.icon-legend-title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #1e3a5f;
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+.icon-legend-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 1rem;
+}
+
+.icon-legend-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem;
+    background: white;
+    border-radius: 6px;
+    font-size: 0.9rem;
+}
+
+.icon-legend-symbol {
+    font-size: 1.5rem;
+    width: 2rem;
+    text-align: center;
+}
+
+/* Quick Access Services */
+.quick-services {
+    background: linear-gradient(135deg, #1e3a5f 0%, #4a90e2 100%);
+    color: white;
+    padding: 2rem;
+    border-radius: 12px;
+    margin: 2rem 0;
+}
+
+.quick-services-title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.8rem;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.quick-services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+}
+
+.quick-service-item {
+    background: rgba(255,255,255,0.1);
+    backdrop-filter: blur(10px);
+    padding: 1.5rem;
+    border-radius: 8px;
+    text-align: center;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(255,255,255,0.2);
+}
+
+.quick-service-item:hover {
+    background: rgba(255,255,255,0.2);
+    transform: translateY(-2px);
+}
+
+.quick-service-icon {
+    font-size: 3rem;
+    margin-bottom: 0.75rem;
+    display: block;
+}
+
+.quick-service-name {
+    font-weight: 600;
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+}
+
+.quick-service-info {
+    font-size: 0.9rem;
+    opacity: 0.9;
+}
+
+/* Facility Features Visual */
+.facility-features {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin: 1rem 0;
+}
+
+.feature-tag {
+    background: #e7f3ff;
+    color: #1e3a5f;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    border: 1px solid #4a90e2;
+}
+
+.feature-tag::before {
+    font-size: 1rem;
+}
+
+/* Print Styles */
+@media print {
+    .amenities-grid {
+        display: block;
+    }
+    
+    .amenity-card {
+        page-break-inside: avoid;
+        margin-bottom: 1rem;
+        border: 2px solid #dfe6e9;
+    }
+    
+    .service-provider-card {
+        background: white !important;
+        border: 2px solid #4a90e2;
+        page-break-inside: avoid;
+    }
+    
+    .quick-services {
+        background: #f8f9fa !important;
+        color: #1e3a5f !important;
+        border: 2px solid #1e3a5f;
+    }
+    
+    .quick-service-item {
+        background: white !important;
+        color: #1e3a5f !important;
+        border: 1px solid #dfe6e9 !important;
+    }
+}

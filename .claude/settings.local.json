@@ -16,7 +16,8 @@
       "Bash(chmod:*)",
       "Bash(node:*)",
       "Bash(npm install)",
-      "Bash(rm:*)"
+      "Bash(rm:*)",
+      "Bash(git add:*)"
     ],
     "deny": []
   }
