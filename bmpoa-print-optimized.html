@@ -186,6 +186,9 @@
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+            max-width: 100%;
+            word-wrap: break-word;
+            overflow-wrap: break-word;
         }
         
         /* Base Typography */
@@ -227,6 +230,26 @@
             break-inside: avoid;
         }
         
+        /* Ensure content never exceeds page boundaries */
+        .page > * {
+            max-width: 100% !important;
+            overflow: hidden;
+            word-wrap: break-word;
+        }
+        
+        /* Specific boundary controls for tables and wide elements */
+        table {
+            width: 100% !important;
+            max-width: 100% !important;
+            table-layout: fixed !important;
+        }
+        
+        td, th {
+            word-wrap: break-word !important;
+            overflow: hidden !important;
+            text-overflow: ellipsis !important;
+        }
+        
         /* Content Area with Margin Error Boundaries */
         .page-content {
             position: relative;
@@ -238,6 +261,9 @@
             columns: 1;
             column-fill: auto;
             height: var(--content-height);
+            width: var(--content-width);
+            max-width: var(--content-width);
+            box-sizing: border-box;
         }
         
         /* Page Templates */
