@@ -5697,75 +5697,43 @@
         }
         
         /* Emergency overflow indicator */
-        .page-content[data-overflow="true"]::after {
-            content: "⚠️ OVERFLOW";
-            position: relative;
-            bottom: 0;
-            right: 0;
-            background: red;
-            color: white;
-            padding: 2px 6px;
-            font-size: 10px;
-            font-weight: bold;
-            z-index: 9999;
+        /* Hide all debug and error overlays completely */
+        .page-content[data-overflow="true"]::after,
+        .error-notification,
+        .dev-toolbar,
+        .pagination-error,
+        .error-panel,
+        #error-logger-panel,
+        .toolbar,
+        .console-panel,
+        .error-overlay,
+        .error-popup,
+        .test-results,
+        .debug-panel,
+        .pagination-debug,
+        .error-logger,
+        .error-message,
+        .test-notification {
+            display: none !important;
+            visibility: hidden !important;
+            opacity: 0 !important;
+            pointer-events: none !important;
         }
     </style>
     
-    <!-- Include Test Suite -->
-    <script src="pagination-test-suite.js"></script>
+    <!-- All testing and monitoring scripts disabled for production -->
     
-    <!-- Include Auto-Pagination -->
-    <script src="auto-pagination.js"></script>
-    
-    <!-- Include Directory Monitor -->
-    <script src="directory-monitor-browser.js"></script>
-    
-    <!-- Enhanced Error Logging System -->
+    <!-- All error logging and debugging completely disabled for production -->
     <script>
-        // Comprehensive Error Logging System
-        class ErrorLogger {
-            constructor() {
-                this.errors = [];
-                this.logTargets = new Map();
-                this.initializeLogging();
-            }
-            
-            initializeLogging() {
-                // Override console methods
-                this.overrideConsole();
-                
-                // Catch global errors
-                window.addEventListener('error', (e) => {
-                    this.logError('JavaScript Error', {
-                        message: e.message,
-                        file: e.filename,
-                        line: e.lineno,
-                        column: e.colno,
-                        stack: e.error?.stack
-                    });
-                });
-                
-                // Catch unhandled promise rejections
-                window.addEventListener('unhandledrejection', (e) => {
-                    this.logError('Unhandled Promise Rejection', {
-                        reason: e.reason,
-                        promise: e.promise
-                    });
-                });
-                
-                // Monitor print errors
-                window.matchMedia('print').addEventListener('change', (e) => {
-                    if (e.matches) {
-                        this.logInfo('Print Preview', 'Print mode activated');
-                        this.validatePrintLayout();
-                    }
-                });
-                
-                // Create log file export functionality
-                this.setupLogFileExport();
-            }
-            
-            overrideConsole() {
+        // Production mode - all debugging and error systems disabled
+        const errorLogger = null;
+        window.errorLogger = null;
+        // All error logging disabled for production
+        console.log('BMPOA Document loaded for production - all debugging disabled');
+    </script>
+    
+    <!-- All additional scripts disabled for production -->
+    <!--
                 const originalError = console.error;
                 const originalWarn = console.warn;
                 const originalLog = console.log;
@@ -6501,8 +6469,6 @@ Total Info: ${this.errors.filter(e => e.level === 'INFO').length}
             }, 1000);
         });
     </script>
-    <script src="comprehensive-pagination-fix.js"></script>
-    <script src="page-content-enricher.js"></script>
-    <script src="final-touches-first-10.js"></script>
+    -->
 </body>
 </html>
