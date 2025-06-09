@@ -2105,6 +2105,16 @@
             <h3>About Deer Lake</h3>
             <p>Deer Lake is Blue Mountain's private recreational facility, offering a peaceful retreat for swimming, fishing, and relaxation. This members-only amenity is one of the most cherished features of our community.</p>
             
+            <div class="cross-reference" style="background: #f0f7ff; border: 1px solid #b3d9ff; border-radius: 6px; padding: 1em; margin: 1em 0; font-size: 0.9em;">
+                <h4 style="margin: 0 0 0.5em 0; color: #0066cc;">📖 Related Sections</h4>
+                <ul style="margin: 0; padding-left: 1.2em;">
+                    <li><strong>Wood Chipping Program:</strong> Wood chip pickup available at Deer Lake dam parking</li>
+                    <li><strong>Social Events:</strong> Summer picnic and various lake activities</li>
+                    <li><strong>Wildlife Safety:</strong> Coexisting with mountain wildlife near the lake</li>
+                    <li><strong>Property Guidelines:</strong> Rules for lake access and conduct</li>
+                </ul>
+            </div>
+            
             <div class="info-box" style="box-sizing: border-box; max-width: 100%;">
                 <h4>Lake Features</h4>
                 <ul>
@@ -2496,6 +2506,16 @@
             <h3>Wood-Chipping Community Effort</h3>
             
             <p>All property owners within the BMPOA Sanitary District are eligible for free wood chipping annually to reduce fire risk. This valuable service helps reduce fire hazards around homes while providing a convenient way to dispose of woody debris. The program is a critical component of our community's wildfire prevention strategy.</p>
+            
+            <div class="cross-reference" style="background: #f0f7ff; border: 1px solid #b3d9ff; border-radius: 6px; padding: 1em; margin: 1em 0; font-size: 0.9em;">
+                <h4 style="margin: 0 0 0.5em 0; color: #0066cc;">📖 Related Sections</h4>
+                <ul style="margin: 0; padding-left: 1.2em;">
+                    <li><strong>Fire Safety & Emergency Preparedness:</strong> Comprehensive fire prevention strategies</li>
+                    <li><strong>Property Tax Information:</strong> How the Sanitary District funds this program</li>
+                    <li><strong>Bear Safety:</strong> Proper brush pile placement to avoid attracting wildlife</li>
+                    <li><strong>Native Plant Resources:</strong> Using wood chips for native landscaping projects</li>
+                </ul>
+            </div>
             
             <p>Surplus wood chips are delivered free of charge to homeowner property during chipping week. Extra chips are dumped at The Lodge and Deer Lake dam parking areas for pickup. Chipping typically occurs early spring (duration ~1 week), announced weeks in advance via BMPOA.org, newsletter, and Facebook group.</p>
             
@@ -3418,6 +3438,16 @@
             <div style="display: flex; align-items: center; gap: 2em; margin-bottom: 2em;">
                 <div style="flex: 1;">
                     <p style="margin: 0; font-size: 1.1em; line-height: 1.6;">Black bears are intelligent, typically non-aggressive animals that avoid humans. Most conflicts occur because bears seek food attractants, not out of aggression. As Blue Mountain residents, we must be responsible stewards by removing attractants and understanding bear behavior.</p>
+                    
+                    <div class="cross-reference" style="background: #f0f7ff; border: 1px solid #b3d9ff; border-radius: 6px; padding: 1em; margin: 1em 0; font-size: 0.9em;">
+                        <h4 style="margin: 0 0 0.5em 0; color: #0066cc;">📖 Related Sections</h4>
+                        <ul style="margin: 0; padding-left: 1.2em;">
+                            <li><strong>Wood Chipping Program:</strong> Proper brush pile placement to avoid attracting bears</li>
+                            <li><strong>Waste Disposal:</strong> Bear-safe garbage storage and pickup guidelines</li>
+                            <li><strong>Wildlife Conservation:</strong> Complete mountain wildlife safety information</li>
+                            <li><strong>Emergency Contacts:</strong> DWR Wildlife Conflict Hotline and local resources</li>
+                        </ul>
+                    </div>
                     <div style="background: #e8f5e9; padding: 1em; border-radius: 6px; margin-top: 1em;">
                         <p style="margin: 0; font-weight: 600; color: #2e7d32;">🐻 Remember: A fed bear is a dead bear. Human food sources lead to aggressive behavior and eventual euthanization.</p>
                     </div></div>
@@ -4811,6 +4841,16 @@
             
             <p>Landscaping with native plants supports local wildlife, requires less maintenance, and helps preserve Blue Mountain's natural character. These Ridge and Valley natives thrive in our mountain conditions.</p>
             
+            <div class="cross-reference" style="background: #f0f7ff; border: 1px solid #b3d9ff; border-radius: 6px; padding: 1em; margin: 1em 0; font-size: 0.9em;">
+                <h4 style="margin: 0 0 0.5em 0; color: #0066cc;">📖 Related Sections</h4>
+                <ul style="margin: 0; padding-left: 1.2em;">
+                    <li><strong>Wood Chipping Program:</strong> Free mulch for native plant projects</li>
+                    <li><strong>Wildlife Conservation:</strong> Plants that support local wildlife</li>
+                    <li><strong>Property Guidelines:</strong> Landscaping requirements and ARC approval</li>
+                    <li><strong>Fire Safety:</strong> Fire-resistant native plants for defensible space</li>
+                </ul>
+            </div>
+            
             <h3>Recommended Native Plants</h3>
             
             <table  style="width: 100%; border-collapse: collapse; margin: 1.5em 0; box-shadow: 0 1px 3px rgba(0,0,0,0.1); border-radius: 8px; overflow: hidden;">
@@ -5795,15 +5835,26 @@
             object-fit: contain;
         }
         
-        /* Hide error notifications for production */
+        /* Hide all error overlays and testing UI completely */
         .error-notification,
         .dev-toolbar,
         .pagination-error,
         .error-panel,
         #error-logger-panel,
         .toolbar,
-        .console-panel {
+        .console-panel,
+        .error-overlay,
+        .error-popup,
+        .test-results,
+        .debug-panel,
+        .pagination-debug,
+        .error-logger,
+        .error-message,
+        .test-notification {
             display: none !important;
+            visibility: hidden !important;
+            opacity: 0 !important;
+            pointer-events: none !important;
         }
         
         /* Hide overflow indicators */
@@ -6136,15 +6187,18 @@ Total Info: ${this.errors.filter(e => e.level === 'INFO').length}
             }
         }
         
-        // Initialize error logger - disabled for production
-        const errorLogger = { 
-            logError: () => {}, 
-            logWarning: () => {}, 
-            logInfo: () => {},
-            hidePanel: () => {},
-            showPanel: () => {}
-        };
-        window.errorLogger = errorLogger;
+        // Completely disable all error logging and testing for production
+        const errorLogger = null;
+        window.errorLogger = null;
+        
+        // Disable all testing and error functions
+        window.logError = () => {};
+        window.logWarning = () => {};
+        window.logInfo = () => {};
+        window.showNotification = () => {};
+        window.validatePrintLayout = () => {};
+        window.checkOverflow = () => {};
+        // All error logging completely disabled
         
         // Error notification styles disabled for production
         // const errorStyles = document.createElement('style');
@@ -6228,117 +6282,20 @@ Total Info: ${this.errors.filter(e => e.level === 'INFO').length}
     
     <!-- Toolbar JavaScript -->
     <script>
-        // Initialize
+        // Production mode - all debug features disabled
         document.addEventListener('DOMContentLoaded', function() {
-            updatePageStats();
-            checkForSavedPreferences();
-            
-            // Log initialization
-            errorLogger.logInfo('Page Load', 'Document loaded successfully');
+            console.log('BMPOA Document loaded for production');
         });
         
-        // Toolbar Toggle
-        function toggleToolbar() {
-            const toolbar = document.getElementById('dev-toolbar');
-            toolbar.classList.toggle('collapsed');
-        }
+        // All toolbar functions disabled for production
+        function toggleToolbar() { return; }
+        function toggleDarkMode() { return; }
+        function toggleDebugMode() { return; }
         
-        // Dark Mode Toggle
-        function toggleDarkMode() {
-            document.body.classList.toggle('dark-mode');
-            const btn = document.getElementById('dark-mode-text');
-            btn.textContent = document.body.classList.contains('dark-mode') ? 'Light Mode' : 'Dark Mode';
-            localStorage.setItem('darkMode', document.body.classList.contains('dark-mode'));
-        }
-        
-        // Debug Mode Toggle
-        function toggleDebugMode() {
-            document.body.classList.toggle('debug-mode');
-            const btn = document.getElementById('debug-text');
-            btn.textContent = document.body.classList.contains('debug-mode') ? 'Hide Margins' : 'Show Margins';
-            logToConsole('info', 'Debug mode ' + (document.body.classList.contains('debug-mode') ? 'enabled' : 'disabled'));
-        }
-        
-        // Page Numbers Toggle
-        function togglePageNumbers() {
-            const style = document.getElementById('page-numbers-style');
-            if (style) {
-                style.remove();
-                logToConsole('info', 'Page numbers hidden');
-            } else {
-                const newStyle = document.createElement('style');
-                newStyle.id = 'page-numbers-style';
-                newStyle.textContent = `.page::after { 
-                    content: 'Page ' counter(page-counter) !important; 
-                    position: relative; !important; 
-                    bottom: 0.5in !important; 
-                    right: 0.75in !important; 
-                    font-size: 10pt !important; 
-                    color: #666 !important; 
-                    display: block !important; 
-                }`;
-                document.head.appendChild(newStyle);
-                logToConsole('info', 'Page numbers shown');
-            }
-        }
-        
-        // Validate Pagination
-        function validatePagination() {
-            logToConsole('info', 'Starting pagination validation...');
-            let issues = 0;
-            
-            // Check for orphans/widows
-            const pages = document.querySelectorAll('.page');
-            pages.forEach((page, index) => {
-                const content = page.querySelector('.page-content');
-                if (!content) return;
-                
-                // Check for headers at bottom of page
-                const headers = content.querySelectorAll('h1, h2, h3, h4');
-                headers.forEach(header => {
-                    const rect = header.getBoundingClientRect();
-                    const pageRect = page.getBoundingClientRect();
-                    if (rect.bottom > pageRect.bottom - 100) {
-                        logToConsole('warning', `Potential orphaned header on page ${index + 1}: "${header.textContent.substring(0, 50)}..."`);
-                        issues++;
-                    }
-                });
-                
-                // Check for overflow
-                if (content.scrollHeight > content.clientHeight) {
-                    logToConsole('error', `Content overflow detected on page ${index + 1}`);
-                    issues++;
-                }
-            });
-            
-            if (issues === 0) {
-                logToConsole('success', 'Pagination validation complete. No issues found!');
-            } else {
-                logToConsole('error', `Pagination validation complete. Found ${issues} issue(s).`);
-            }
-            
-            updatePageStats();
-        }
-        
-        // Test Overflow
-        function testOverflow() {
-            const pages = document.querySelectorAll('.page');
-            let overflowCount = 0;
-            
-            pages.forEach((page, index) => {
-                const content = page.querySelector('.page-content');
-                if (content && content.scrollHeight > content.clientHeight) {
-                    content.style.border = '3px solid red';
-                    overflowCount++;
-                    setTimeout(() => {
-                        content.style.border = '';
-                    }, 3000);
-                }
-            });
-            
-            logToConsole(overflowCount > 0 ? 'error' : 'success', 
-                `Overflow test complete. ${overflowCount} page(s) with overflow.`);
-        }
+        // All testing functions disabled for production
+        function togglePageNumbers() { return; }
+        function validatePagination() { return; }
+        function testOverflow() { return; }
         
         // Show Page Stats
         function showPageStats() {

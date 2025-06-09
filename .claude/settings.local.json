@@ -38,7 +38,8 @@
       "Bash(jq:*)",
       "Bash(cp:*)",
       "Bash(npm install:*)",
-      "Bash(cp:*)"
+      "Bash(cp:*)",
+      "Bash(open:*)"
     ],
     "deny": []
   }

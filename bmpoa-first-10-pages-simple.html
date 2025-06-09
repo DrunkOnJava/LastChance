@@ -3,7 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BMPOA Guide - First 10 Pages</title>
+    <meta name="description" content="Blue Mountain Property Owners Association Community Guide 2025 - Essential information for residents including governance, emergency procedures, fire safety, and community life.">
+    <meta name="keywords" content="BMPOA, Blue Mountain, Property Owners Association, Community Guide, Fire Safety, Emergency Information">
+    <meta name="author" content="Blue Mountain Property Owners Association">
+    <meta name="print-color-adjust" content="exact">
+    <title>Blue Mountain Property Owners Association - Community Guide 2025</title>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
     
     <style>
@@ -59,6 +63,17 @@
             border-bottom: 3px solid #4a90e2;
             padding-bottom: 0.5rem;
             margin-top: 2rem;
+            position: relative;
+        }
+        
+        h2::after {
+            content: '';
+            position: absolute;
+            bottom: -3px;
+            left: 0;
+            width: 60px;
+            height: 3px;
+            background: linear-gradient(90deg, #1e3a5f 0%, #4a90e2 100%);
         }
         
         h3 {
@@ -87,18 +102,31 @@
             width: 100%;
             border-collapse: collapse;
             margin-bottom: 1.5rem;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            border-radius: 8px;
+            overflow: hidden;
         }
         
         th, td {
-            border: 1px solid #ddd;
-            padding: 0.75rem;
+            border: 1px solid #e0e0e0;
+            padding: 1rem 0.75rem;
             text-align: left;
         }
         
         th {
-            background: #f8f9fa;
+            background: linear-gradient(135deg, #1e3a5f 0%, #2c5282 100%);
             font-weight: 600;
-            color: #1e3a5f;
+            color: white;
+            font-size: 0.95rem;
+            letter-spacing: 0.5px;
+        }
+        
+        tbody tr:nth-child(even) {
+            background-color: #f8f9fa;
+        }
+        
+        tbody tr:hover {
+            background-color: #e3f2fd;
         }
         
         /* Alert boxes */
@@ -106,18 +134,69 @@
             background: #fff3cd;
             border: 2px solid #ffc107;
             border-radius: 8px;
-            padding: 1rem;
+            padding: 1.5rem;
             margin: 1.5rem 0;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
         }
         
         .emergency {
-            background: #f8d7da;
+            background: linear-gradient(135deg, #f8d7da 0%, #f5c6cb 100%);
             border-color: #dc3545;
+            border-width: 3px;
         }
         
         .info {
-            background: #d1ecf1;
+            background: linear-gradient(135deg, #d1ecf1 0%, #bee5eb 100%);
             border-color: #17a2b8;
+        }
+        
+        .fire-safety {
+            background: linear-gradient(135deg, #fff8e1 0%, #ffe082 100%);
+            border: 3px solid #ff9800;
+            border-radius: 12px;
+            padding: 2rem;
+            margin: 2rem 0;
+            box-shadow: 0 4px 12px rgba(255, 152, 0, 0.2);
+        }
+        
+        .fire-danger {
+            background: linear-gradient(135deg, #ffebee 0%, #ef5350 20%, #ffebee 100%);
+            border: 4px solid #d32f2f;
+            border-radius: 12px;
+            padding: 2rem;
+            margin: 2rem 0;
+            box-shadow: 0 6px 20px rgba(211, 47, 47, 0.3);
+            text-align: center;
+        }
+        
+        .fire-regulations {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+        
+        .prohibited-box {
+            background: linear-gradient(135deg, #ffebee 0%, #ffcdd2 100%);
+            border: 2px solid #e57373;
+            border-radius: 8px;
+            padding: 1.5rem;
+        }
+        
+        .permitted-box {
+            background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%);
+            border: 2px solid #81c784;
+            border-radius: 8px;
+            padding: 1.5rem;
+        }
+        
+        .fire-image-container {
+            text-align: center;
+            margin: 2rem 0;
+            padding: 1rem;
+            background: linear-gradient(135deg, #f5f5f5 0%, #eeeeee 100%);
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
         }
         
         /* Images */
@@ -144,24 +223,64 @@
         
         /* Print styles */
         @media print {
+            * {
+                -webkit-print-color-adjust: exact !important;
+                color-adjust: exact !important;
+                print-color-adjust: exact !important;
+            }
+            
             body {
                 margin: 0;
                 padding: 0;
+                background: white !important;
             }
             
             .page {
                 margin: 0;
                 box-shadow: none;
                 page-break-after: always;
+                page-break-inside: avoid;
+                width: 100% !important;
+                height: auto !important;
+                min-height: 100vh !important;
             }
             
             .page:last-child {
                 page-break-after: avoid;
             }
             
+            h1, h2, h3, h4, h5, h6 {
+                page-break-after: avoid;
+                orphans: 3;
+                widows: 3;
+            }
+            
+            p, li {
+                orphans: 3;
+                widows: 3;
+            }
+            
+            table {
+                page-break-inside: avoid;
+            }
+            
+            .fire-regulations, .alert-box, .emergency, .fire-safety, .fire-danger {
+                page-break-inside: avoid;
+            }
+            
             @page {
                 size: letter;
-                margin: 0;
+                margin: 0.75in;
+                @top-center {
+                    content: "Blue Mountain Property Owners Association - Community Guide 2025";
+                    font-family: 'Montserrat', Arial, sans-serif;
+                    font-size: 9pt;
+                    color: #666;
+                }
+            }
+            
+            @page :first {
+                @top-center { content: none; }
             }
         }
         
@@ -172,6 +291,7 @@
             justify-content: center;
             align-items: center;
             text-align: center;
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
         }
         
         .cover-title {
@@ -179,12 +299,14 @@
             margin: 2rem 0;
             text-transform: uppercase;
             letter-spacing: 2px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
         }
         
         .cover-subtitle {
             font-size: 1.5rem;
             color: #4a90e2;
             margin-bottom: 3rem;
+            font-weight: 500;
         }
         
         /* TOC styles */
@@ -379,9 +501,10 @@
     <div class="page">
         <h1>Chapter II: Emergency Information</h1>
         
-        <div class="alert-box emergency">
-            <h2 style="text-align: center; font-size: 2.5rem; margin: 0;">🚨 911 🚨</h2>
-            <p style="text-align: center; font-size: 1.2rem; margin: 0.5rem 0 0 0;"><strong>For ALL Emergencies</strong></p>
+        <div class="emergency" style="text-align: center;">
+            <h2 style="font-size: 2.5rem; margin: 0; color: #b71c1c; font-weight: 800;">DIAL 911</h2>
+            <p style="font-size: 1.2rem; margin: 0.5rem 0 0 0; color: #d32f2f;"><strong>FOR ALL EMERGENCIES</strong></p>
+            <p style="font-size: 1rem; margin: 0.5rem 0 0 0; color: #666;">Fire • Police • Medical • Search & Rescue</p>
         </div>
         
         <h2>Emergency Contacts</h2>
@@ -429,7 +552,7 @@
         </table>
         
         <div class="alert-box emergency">
-            <strong>⚠️ IMPORTANT:</strong> Cell phone service can be spotty on Blue Mountain. Consider a landline for emergency communications. Know your exact address and nearest cross street.
+            <strong>CRITICAL COMMUNICATION NOTICE:</strong> Cell phone service can be spotty on Blue Mountain. Consider a landline for emergency communications. Know your exact address and nearest cross street for emergency responders.
         </div>
         
         <div class="page-footer">Blue Mountain Property Owners Association • Page 5</div>
@@ -483,94 +606,119 @@
     <div class="page">
         <h1>Chapter III: Fire Safety</h1>
         
-        <div class="alert-box emergency">
-            <h2 style="margin-top: 0;">🔥 CRITICAL FIRE SAFETY 🔥</h2>
-            <p><strong>Open burning is FORBIDDEN AT ALL TIMES</strong> within BMPOA boundaries. This is more restrictive than Warren County regulations.</p>
-            <p><strong>Violations:</strong> Class 3 misdemeanor, fines up to $500</p>
+        <div class="fire-image-container">
+            <img src="images/debris-fire.png" alt="Controlled fire management demonstration" style="max-width: 100%; height: 200px; object-fit: cover; border-radius: 8px;">
+            <p style="font-style: italic; color: #666; margin-top: 0.5rem; font-size: 0.9rem;">Professional fire management practices protect our mountain community</p>
         </div>
         
-        <h2>Fire Regulations</h2>
-        
-        <h3>❌ Prohibited Activities</h3>
-        <ul>
-            <li>Open burning of any kind</li>
-            <li>Burn barrels or burn piles</li>
-            <li>Campfires or fire pits</li>
-            <li>Outdoor fireplaces (open flame)</li>
-            <li>Burning of brush, leaves, or debris</li>
-        </ul>
-        
-        <h3>✅ Permitted Activities</h3>
-        <ul>
-            <li>Gas grills (with precautions)</li>
-            <li>Enclosed fire containment devices</li>
-            <li>Charcoal grills (in designated areas)</li>
-        </ul>
-        
-        <h3>Grilling Safety</h3>
-        <div class="alert-box">
-            <strong>Required Precautions:</strong>
-            <ul>
-                <li>Keep 10+ feet from structures</li>
-                <li>Have water/extinguisher ready</li>
-                <li>Never leave unattended</li>
-                <li>Properly dispose of ashes (cool, metal container)</li>
-            </ul>
+        <div class="fire-danger">
+            <h2 style="margin-top: 0; color: #b71c1c; font-weight: 800;">CRITICAL FIRE SAFETY NOTICE</h2>
+            <p style="font-size: 1.1rem; margin: 1rem 0;"><strong>Open burning is STRICTLY PROHIBITED at all times</strong> within BMPOA boundaries. This policy is more restrictive than Warren County regulations and is enforced for community safety.</p>
+            <p style="color: #d32f2f; font-weight: 600;">Violations constitute a Class 3 misdemeanor with fines up to $500</p>
         </div>
         
-        <h3>🚨 Report Fire Violations</h3>
-        <p>Fire safety violations should be reported immediately:</p>
-        <ul>
-            <li><strong>Active fire:</strong> Call 911</li>
-            <li><strong>Violations:</strong> Contact BMPOA Board</li>
-            <li><strong>Warren County Fire Marshal:</strong> (540) 635-4357</li>
-        </ul>
+        <h2>Fire Regulations & Compliance</h2>
+        
+        <div class="fire-regulations">
+            <div class="prohibited-box">
+                <h3 style="color: #c62828; margin-top: 0;">PROHIBITED ACTIVITIES</h3>
+                <ul style="margin: 0;">
+                    <li>Open burning of any material</li>
+                    <li>Burn barrels or burn piles</li>
+                    <li>Campfires or fire pits</li>
+                    <li>Outdoor fireplaces (open flame)</li>
+                    <li>Burning of brush, leaves, or debris</li>
+                    <li>Recreational fires</li>
+                </ul>
+            </div>
+            
+            <div class="permitted-box">
+                <h3 style="color: #2e7d32; margin-top: 0;">PERMITTED ACTIVITIES</h3>
+                <ul style="margin: 0;">
+                    <li>Gas grills (with safety precautions)</li>
+                    <li>Enclosed containment devices</li>
+                    <li>Charcoal grills (designated areas)</li>
+                    <li>Professional equipment only</li>
+                    <li>Approved community events</li>
+                </ul>
+            </div>
+        </div>
         
         <div class="page-footer">Blue Mountain Property Owners Association • Page 7</div>
     </div>
     
     <!-- Page 8: FireWise -->
     <div class="page">
-        <h2>FireWise Community</h2>
+        <h2>FireWise Community Certification</h2>
         
-        <p>Blue Mountain is a certified FireWise community, committed to reducing wildfire risk through education and community action.</p>
+        <p>Blue Mountain maintains certification as a FireWise community through the National Fire Protection Association, demonstrating our commitment to wildfire risk reduction through comprehensive education, planning, and community action.</p>
         
-        <h3>Defensible Space Zones</h3>
-        <ul>
-            <li><strong>Zone 1 (0-30 feet):</strong> Remove all dead vegetation, maintain irrigated plants</li>
-            <li><strong>Zone 2 (30-100 feet):</strong> Create fuel breaks, remove ladder fuels</li>
-            <li><strong>Zone 3 (100+ feet):</strong> Thin forest, remove dead trees</li>
-        </ul>
-        
-        <h3>Home Hardening</h3>
-        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
-            <div>
-                <h4>Roof & Gutters</h4>
-                <ul>
-                    <li>Class A fire-rated materials</li>
-                    <li>Clean gutters regularly</li>
-                    <li>Screen roof vents</li>
-                </ul>
-            </div>
-            <div>
-                <h4>Vegetation</h4>
-                <ul>
-                    <li>Plant fire-resistant species</li>
-                    <li>Maintain irrigation</li>
-                    <li>Remove dead branches</li>
-                </ul>
+        <div class="fire-safety">
+            <h3 style="margin-top: 0; color: #e65100;">Grilling & Cooking Safety Protocols</h3>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem;">
+                <div>
+                    <h4>Required Safety Measures</h4>
+                    <ul>
+                        <li>Maintain minimum 10-foot clearance from all structures</li>
+                        <li>Keep fire extinguisher or water source immediately accessible</li>
+                        <li>Never leave cooking fires unattended</li>
+                        <li>Ensure complete extinguishment before leaving area</li>
+                        <li>Store propane tanks away from heat sources</li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Ash & Ember Disposal</h4>
+                    <ul>
+                        <li>Use metal containers with tight-fitting lids</li>
+                        <li>Allow complete cooling (minimum 48 hours)</li>
+                        <li>Store containers away from combustible materials</li>
+                        <li>Dispose only when completely cold</li>
+                        <li>Never use cardboard, plastic, or wooden containers</li>
+                    </ul>
+                </div>
             </div>
         </div>
         
-        <h3>Recommended Fire-Resistant Plants</h3>
-        <ul>
-            <li><strong>Trees:</strong> Maple, Cherry, Dogwood</li>
-            <li><strong>Shrubs:</strong> Azalea, Mountain Laurel, Rhododendron</li>
-            <li><strong>Ground Cover:</strong> Hostas, Ferns, Wild Ginger</li>
-        </ul>
+        <h3>Defensible Space Management</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>Zone</th>
+                    <th>Distance</th>
+                    <th>Requirements</th>
+                    <th>Maintenance</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Zone 1</strong></td>
+                    <td>0-30 feet</td>
+                    <td>Remove all dead vegetation, maintain irrigated plants</td>
+                    <td>Monthly inspection</td>
+                </tr>
+                <tr>
+                    <td><strong>Zone 2</strong></td>
+                    <td>30-100 feet</td>
+                    <td>Create fuel breaks, remove ladder fuels</td>
+                    <td>Quarterly assessment</td>
+                </tr>
+                <tr>
+                    <td><strong>Zone 3</strong></td>
+                    <td>100+ feet</td>
+                    <td>Thin forest density, remove dead trees</td>
+                    <td>Annual evaluation</td>
+                </tr>
+            </tbody>
+        </table>
         
-        <div class="alert-box info">
-            <strong>FireWise Activities:</strong> Annual community projects include brush clearing, education workshops, and home assessments. Volunteer participation helps maintain our certification.
+        <h3>Emergency Reporting</h3>
+        <div class="emergency">
+            <p style="margin: 0; text-align: center;"><strong>Fire safety violations or active fires must be reported immediately</strong></p>
+            <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1rem; margin-top: 1rem; text-align: center;">
+                <div><strong>Active Fires:</strong><br>911</div>
+                <div><strong>Violations:</strong><br>BMPOA Board</div>
+                <div><strong>Fire Marshal:</strong><br>(540) 635-4357</div>
+            </div>
         </div>
         
         <div class="page-footer">Blue Mountain Property Owners Association • Page 8</div>
@@ -644,33 +792,33 @@
         
         <h3>Annual Event Calendar</h3>
         
-        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 2rem;">
-            <div>
-                <h4>🌸 Spring Cleanup & Potluck</h4>
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-bottom: 2rem;">
+            <div style="background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%); padding: 1.5rem; border-radius: 8px; border: 2px solid #81c784;">
+                <h4 style="color: #2e7d32; margin-top: 0;">Spring Cleanup & Potluck</h4>
                 <p><strong>When:</strong> First Saturday in May<br>
                 <strong>Time:</strong> 9:00 AM - 2:00 PM<br>
                 <strong>Where:</strong> The Lodge</p>
                 <p>Community-wide cleanup followed by potluck lunch. Bring a dish to share!</p>
             </div>
             
-            <div>
-                <h4>☀️ Summer Picnic</h4>
+            <div style="background: linear-gradient(135deg, #fff3e0 0%, #ffcc02 100%); padding: 1.5rem; border-radius: 8px; border: 2px solid #ffa726;">
+                <h4 style="color: #ef6c00; margin-top: 0;">Summer Picnic</h4>
                 <p><strong>When:</strong> Third Saturday in July<br>
                 <strong>Time:</strong> 4:00 PM - 8:00 PM<br>
                 <strong>Where:</strong> The Lodge</p>
                 <p>BBQ, games, and music. Family-friendly event with activities for all ages.</p>
             </div>
             
-            <div>
-                <h4>🍂 Fall Harvest Festival</h4>
+            <div style="background: linear-gradient(135deg, #fff8e1 0%, #ffecb3 100%); padding: 1.5rem; border-radius: 8px; border: 2px solid #ffb74d;">
+                <h4 style="color: #f57c00; margin-top: 0;">Fall Harvest Festival</h4>
                 <p><strong>When:</strong> Second Saturday in October<br>
                 <strong>Time:</strong> 3:00 PM - 7:00 PM<br>
                 <strong>Where:</strong> The Lodge</p>
                 <p>Celebration of autumn with local harvest, crafts, and seasonal treats.</p>
             </div>
             
-            <div>
-                <h4>❄️ Winter Holiday Gathering</h4>
+            <div style="background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%); padding: 1.5rem; border-radius: 8px; border: 2px solid #64b5f6;">
+                <h4 style="color: #1976d2; margin-top: 0;">Winter Holiday Gathering</h4>
                 <p><strong>When:</strong> Second Saturday in December<br>
                 <strong>Time:</strong> 6:00 PM - 9:00 PM<br>
                 <strong>Where:</strong> The Lodge</p>

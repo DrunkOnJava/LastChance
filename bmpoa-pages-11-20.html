@@ -1,0 +1,1015 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BMPOA Guide - Pages 11-20</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    
+    <style>
+        /* Reset and base styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Roboto', Georgia, serif;
+            font-size: 11pt;
+            line-height: 1.6;
+            color: #2c3e50;
+            background: white;
+        }
+        
+        /* Page setup */
+        .page {
+            width: 8.5in;
+            height: 11in;
+            margin: 0 auto 0.5in auto;
+            padding: 0.75in;
+            background: white;
+            position: relative;
+            page-break-after: always;
+            page-break-inside: avoid;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        
+        .page:last-child {
+            page-break-after: avoid;
+        }
+        
+        /* Typography */
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Montserrat', Arial, sans-serif;
+            color: #1e3a5f;
+            margin-bottom: 1rem;
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+        
+        h2 {
+            font-size: 1.8rem;
+            font-weight: 700;
+            border-bottom: 3px solid #4a90e2;
+            padding-bottom: 0.5rem;
+            margin-top: 2rem;
+        }
+        
+        h3 {
+            font-size: 1.4rem;
+            font-weight: 600;
+            color: #2c3e50;
+            margin-top: 1.5rem;
+        }
+        
+        h4 {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: #1e3a5f;
+            margin-top: 1rem;
+        }
+        
+        p {
+            margin-bottom: 1rem;
+            text-align: justify;
+        }
+        
+        ul, ol {
+            margin-bottom: 1rem;
+            padding-left: 2rem;
+        }
+        
+        li {
+            margin-bottom: 0.5rem;
+        }
+        
+        /* Tables */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 1.5rem;
+        }
+        
+        th, td {
+            border: 1px solid #ddd;
+            padding: 0.75rem;
+            text-align: left;
+        }
+        
+        th {
+            background: #f8f9fa;
+            font-weight: 600;
+            color: #1e3a5f;
+        }
+        
+        /* Alert boxes */
+        .alert-box {
+            background: #fff3cd;
+            border: 2px solid #ffc107;
+            border-radius: 8px;
+            padding: 1rem;
+            margin: 1.5rem 0;
+        }
+        
+        .emergency {
+            background: #f8d7da;
+            border-color: #dc3545;
+        }
+        
+        .info {
+            background: #d1ecf1;
+            border-color: #17a2b8;
+        }
+        
+        .success {
+            background: #d4edda;
+            border-color: #28a745;
+        }
+        
+        /* Images */
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 1rem auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        
+        /* Footer */
+        .page-footer {
+            position: absolute;
+            bottom: 0.5in;
+            left: 0.75in;
+            right: 0.75in;
+            text-align: center;
+            font-size: 10pt;
+            color: #666;
+            border-top: 1px solid #ddd;
+            padding-top: 0.5rem;
+        }
+        
+        /* Two-column layout */
+        .two-column {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        /* Highlight boxes */
+        .highlight-box {
+            background: linear-gradient(135deg, #e3f2fd 0%, #f3e5f5 100%);
+            border-left: 4px solid #4a90e2;
+            padding: 1rem;
+            border-radius: 0 8px 8px 0;
+            margin: 1rem 0;
+        }
+        
+        /* Print styles */
+        @media print {
+            body {
+                margin: 0;
+                padding: 0;
+            }
+            
+            .page {
+                margin: 0;
+                box-shadow: none;
+                page-break-after: always;
+            }
+            
+            .page:last-child {
+                page-break-after: avoid;
+            }
+            
+            @page {
+                size: letter;
+                margin: 0;
+            }
+        }
+        
+        /* Special formatting */
+        .bear-warning {
+            background: #fff8e1;
+            border: 3px solid #ff9800;
+            border-radius: 12px;
+            padding: 1.5rem;
+            text-align: center;
+            font-size: 1.1rem;
+        }
+        
+        .service-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+            margin: 1rem 0;
+        }
+        
+        .service-card {
+            background: #f8f9fa;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 1rem;
+        }
+        
+        .construction-step {
+            background: white;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 1rem;
+            margin-bottom: 1rem;
+        }
+        
+        .step-number {
+            background: #4a90e2;
+            color: white;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
+            margin-right: 1rem;
+        }
+    </style>
+</head>
+<body>
+    <!-- Page 11: Wildlife Safety -->
+    <div class="page">
+        <h1>Chapter V: Wildlife Safety</h1>
+        
+        <p>Blue Mountain's location provides habitat for diverse wildlife. Understanding how to coexist safely with our wild neighbors is essential for all residents.</p>
+        
+        <div class="bear-warning">
+            <h2 style="margin: 0; color: #e65100;">🐻 BEAR SAFETY CRITICAL 🐻</h2>
+            <p style="margin: 0.5rem 0 0 0;"><strong>Bears are active year-round. Following these guidelines protects you, your family, and the bears.</strong></p>
+        </div>
+        
+        <h2>Black Bear Safety</h2>
+        
+        <h3>Prevention is Key</h3>
+        <ul>
+            <li><strong>Remove bird feeders April-November</strong> (required by law)</li>
+            <li>Secure garbage in bear-resistant containers</li>
+            <li>Clean grills after each use</li>
+            <li>Don't leave pet food outside</li>
+            <li>Keep car doors and windows closed</li>
+            <li>Install motion-sensor lights</li>
+        </ul>
+        
+        <h3>If You See a Bear</h3>
+        <div class="two-column">
+            <div>
+                <h4>✅ DO:</h4>
+                <ul>
+                    <li>Remain calm and back away slowly</li>
+                    <li>Make yourself appear large</li>
+                    <li>Make noise - talk firmly</li>
+                    <li>Give the bear space to escape</li>
+                    <li>Fight back if attacked</li>
+                </ul>
+            </div>
+            <div>
+                <h4>❌ DON'T:</h4>
+                <ul>
+                    <li>Run (bears can run 35 mph)</li>
+                    <li>Make direct eye contact</li>
+                    <li>Turn your back on the bear</li>
+                    <li>Play dead</li>
+                    <li>Feed or approach bears</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="alert-box emergency">
+            <strong>⚖️ Virginia Law:</strong> Feeding bears is illegal and punishable by fines up to $2,000. Residents who attract bears through negligence may be held liable for damages.
+        </div>
+        
+        <div class="page-footer">Blue Mountain Property Owners Association • Page 11</div>
+    </div>
+    
+    <!-- Page 12: Other Wildlife -->
+    <div class="page">
+        <h2>Other Wildlife</h2>
+        
+        <h3>Deer</h3>
+        <p>White-tailed deer are abundant and can cause vehicle accidents and garden damage.</p>
+        <ul>
+            <li>Drive slowly, especially at dawn and dusk</li>
+            <li>Use deer-resistant plants in gardens</li>
+            <li>Install 8-foot fencing for complete protection</li>
+        </ul>
+        
+        <h3>Wild Turkey</h3>
+        <p>Wild turkeys are common and generally harmless but can be territorial during breeding season.</p>
+        <ul>
+            <li>Don't feed turkeys</li>
+            <li>Make noise if they block roadways</li>
+            <li>Keep distance during spring (March-May)</li>
+        </ul>
+        
+        <h3>Coyotes</h3>
+        <p>Coyotes are occasionally seen and generally avoid humans.</p>
+        <ul>
+            <li>Keep pets indoors at night</li>
+            <li>Don't leave small pets unattended</li>
+            <li>Remove attractants (pet food, garbage)</li>
+        </ul>
+        
+        <h3>Venomous Snakes</h3>
+        <p>Timber rattlesnakes and copperheads inhabit the area.</p>
+        <ul>
+            <li>Watch where you step and place hands</li>
+            <li>Wear boots when hiking</li>
+            <li>Keep grass cut short around homes</li>
+            <li>If bitten, call 911 immediately</li>
+        </ul>
+        
+        <div class="highlight-box">
+            <h4>🦌 Wildlife Viewing Tips</h4>
+            <p>Best times: Dawn and dusk • Use binoculars • Stay quiet • Keep distance • No flash photography</p>
+        </div>
+        
+        <h3>Reporting Wildlife Issues</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>Issue</th>
+                    <th>Contact</th>
+                    <th>Phone</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Bear problems</td>
+                    <td>VA Wildlife Conflict</td>
+                    <td>(804) 367-1000</td>
+                </tr>
+                <tr>
+                    <td>Injured wildlife</td>
+                    <td>Blue Ridge Wildlife Center</td>
+                    <td>(540) 837-9000</td>
+                </tr>
+                <tr>
+                    <td>Nuisance animals</td>
+                    <td>Warren County Animal Control</td>
+                    <td>(540) 636-7834</td>
+                </tr>
+            </tbody>
+        </table>
+        
+        <div class="page-footer">Blue Mountain Property Owners Association • Page 12</div>
+    </div>
+    
+    <!-- Page 13: Services & Utilities -->
+    <div class="page">
+        <h1>Chapter VI: Services & Utilities</h1>
+        
+        <p>Blue Mountain residents rely on various private and public services. This section provides contact information and important details for essential services.</p>
+        
+        <h2>Waste Management</h2>
+        
+        <div class="service-grid">
+            <div class="service-card">
+                <h4>🗑️ Freedom Disposal Services</h4>
+                <p><strong>Phone:</strong> (540) 631-3467</p>
+                <p><strong>Service:</strong> Weekly pickup</p>
+                <p><strong>Rates:</strong> Contact for pricing</p>
+            </div>
+            
+            <div class="service-card">
+                <h4>♻️ Skyline Trash Service</h4>
+                <p><strong>Phone:</strong> (540) 974-9418</p>
+                <p><strong>Service:</strong> Bi-weekly pickup</p>
+                <p><strong>Rates:</strong> Contact for pricing</p>
+            </div>
+        </div>
+        
+        <h3>Warren County Convenience Sites</h3>
+        <p>Free disposal sites for county residents (proof of residency required):</p>
+        <ul>
+            <li><strong>Linden Site:</strong> Route 638, near Fire Station #5</li>
+            <li><strong>Route 340 South:</strong> Bentonville area</li>
+            <li><strong>Route 522/340:</strong> Front Royal vicinity</li>
+            <li><strong>Shenandoah Farms:</strong> Residential area access</li>
+        </ul>
+        
+        <div class="alert-box info">
+            <strong>Accepted Items:</strong> Household trash, recyclables, yard waste, small appliances. <strong>Not Accepted:</strong> Hazardous materials, construction debris, electronics.
+        </div>
+        
+        <h2>Utilities</h2>
+        
+        <h3>⚡ Electricity</h3>
+        <p><strong>Rappahannock Electric Cooperative (REC)</strong></p>
+        <ul>
+            <li><strong>Service:</strong> (800) 552-3904</li>
+            <li><strong>Outages:</strong> (800) 552-3904</li>
+            <li><strong>Website:</strong> myrec.coop</li>
+        </ul>
+        
+        <h3>📶 Internet & Phone</h3>
+        <div class="service-grid">
+            <div class="service-card">
+                <h4>Xfinity (Comcast)</h4>
+                <p><strong>Service:</strong> (800) 934-6489</p>
+                <p><strong>Coverage:</strong> Most areas</p>
+                <p><strong>Speed:</strong> Up to 1 Gig</p>
+            </div>
+            
+            <div class="service-card">
+                <h4>HughesNet Satellite</h4>
+                <p><strong>Service:</strong> (866) 347-3292</p>
+                <p><strong>Coverage:</strong> All areas</p>
+                <p><strong>Speed:</strong> Up to 25 Mbps</p>
+            </div>
+        </div>
+        
+        <div class="page-footer">Blue Mountain Property Owners Association • Page 13</div>
+    </div>
+    
+    <!-- Page 14: Road Maintenance & Winter Services -->
+    <div class="page">
+        <h2>Road Maintenance</h2>
+        
+        <p>Blue Mountain roads are maintained by BMPOA through contracts and volunteer efforts. Understanding our road policies helps ensure safe travel year-round.</p>
+        
+        <h3>Road Classifications</h3>
+        <ul>
+            <li><strong>Primary Roads:</strong> Cliff Road, Ridge Trail Road - maintained year-round</li>
+            <li><strong>Secondary Roads:</strong> Most residential streets - seasonal maintenance</li>
+            <li><strong>Private Drives:</strong> Individual responsibility</li>
+        </ul>
+        
+        <h3>Winter Snow Policy</h3>
+        <div class="alert-box">
+            <strong>Snow Removal Priority:</strong>
+            <ol>
+                <li>Emergency access routes first</li>
+                <li>Primary roads within 24-48 hours</li>
+                <li>Secondary roads as conditions permit</li>
+                <li>Private drives are owner responsibility</li>
+            </ol>
+        </div>
+        
+        <h4>Resident Winter Preparedness</h4>
+        <ul>
+            <li>Maintain 4WD/AWD vehicles or snow chains</li>
+            <li>Keep extra food, water, and supplies</li>
+            <li>Have backup heating source</li>
+            <li>Clear your own driveway approaches</li>
+        </ul>
+        
+        <h3>Road Issues Reporting</h3>
+        <p><strong>Contact:</strong> bmpoaroads@gmail.com</p>
+        <p><strong>Include:</strong> Location, type of issue, photos if possible, contact information</p>
+        
+        <h4>Common Issues</h4>
+        <ul>
+            <li>Potholes and surface damage</li>
+            <li>Drainage problems</li>
+            <li>Fallen trees or debris</li>
+            <li>Missing or damaged signs</li>
+            <li>Washouts or erosion</li>
+        </ul>
+        
+        <h2>Construction Hours</h2>
+        <p>To maintain our peaceful mountain environment, construction activities are restricted:</p>
+        
+        <div class="highlight-box">
+            <h4>⏰ Permitted Hours</h4>
+            <p><strong>Monday - Friday:</strong> 7:00 AM - 6:00 PM<br>
+            <strong>Saturday:</strong> 8:00 AM - 5:00 PM<br>
+            <strong>Sunday & Holidays:</strong> No construction</p>
+        </div>
+        
+        <div class="alert-box emergency">
+            <strong>Violations:</strong> Excessive noise complaints will be forwarded to Warren County authorities. Repeated violations may result in ARC penalties.
+        </div>
+        
+        <div class="page-footer">Blue Mountain Property Owners Association • Page 14</div>
+    </div>
+    
+    <!-- Page 15: Construction Guidelines -->
+    <div class="page">
+        <h1>Chapter VII: Construction Guidelines</h1>
+        
+        <p>All construction and exterior modifications in Blue Mountain require Architectural Review Committee (ARC) approval. These guidelines ensure our community maintains its character and property values.</p>
+        
+        <h2>ARC Review Process</h2>
+        
+        <div class="construction-step">
+            <div style="display: flex; align-items: flex-start;">
+                <span class="step-number">1</span>
+                <div>
+                    <h4>Submit Application</h4>
+                    <p>Complete ARC application with detailed plans, materials list, and site survey. Applications available at BMPOA.org.</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="construction-step">
+            <div style="display: flex; align-items: flex-start;">
+                <span class="step-number">2</span>
+                <div>
+                    <h4>Review Period</h4>
+                    <p>ARC has 30 days to review and respond. Complex projects may require additional time or committee meeting presentation.</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="construction-step">
+            <div style="display: flex; align-items: flex-start;">
+                <span class="step-number">3</span>
+                <div>
+                    <h4>Approval & Permits</h4>
+                    <p>Upon ARC approval, obtain necessary county permits. Warren County Building Department: (540) 635-2435.</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="construction-step">
+            <div style="display: flex; align-items: flex-start;">
+                <span class="step-number">4</span>
+                <div>
+                    <h4>Construction</h4>
+                    <p>Follow approved plans exactly. Changes require new ARC approval. Maintain proper construction hours and site cleanliness.</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="construction-step">
+            <div style="display: flex; align-items: flex-start;">
+                <span class="step-number">5</span>
+                <div>
+                    <h4>Final Inspection</h4>
+                    <p>Schedule ARC final walkthrough within 30 days of completion. Address any deficiencies promptly.</p>
+                </div>
+            </div>
+        </div>
+        
+        <h3>Required Approvals</h3>
+        <div class="two-column">
+            <div>
+                <h4>Always Required:</h4>
+                <ul>
+                    <li>New construction</li>
+                    <li>Additions to homes</li>
+                    <li>Outbuildings & sheds</li>
+                    <li>Decks & patios</li>
+                    <li>Driveways & walkways</li>
+                    <li>Fencing</li>
+                    <li>Exterior color changes</li>
+                </ul>
+            </div>
+            <div>
+                <h4>May Be Exempt:</h4>
+                <ul>
+                    <li>Interior renovations</li>
+                    <li>Roof repairs (same material/color)</li>
+                    <li>Window replacement (same style)</li>
+                    <li>Landscaping (non-structural)</li>
+                    <li>Temporary structures (<30 days)</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="page-footer">Blue Mountain Property Owners Association • Page 15</div>
+    </div>
+    
+    <!-- Page 16: Building Requirements -->
+    <div class="page">
+        <h2>Building Requirements</h2>
+        
+        <h3>Setback Requirements</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>Structure Type</th>
+                    <th>Front Setback</th>
+                    <th>Side Setback</th>
+                    <th>Rear Setback</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Primary Residence</td>
+                    <td>40 feet</td>
+                    <td>20 feet</td>
+                    <td>30 feet</td>
+                </tr>
+                <tr>
+                    <td>Accessory Buildings</td>
+                    <td>40 feet</td>
+                    <td>10 feet</td>
+                    <td>20 feet</td>
+                </tr>
+                <tr>
+                    <td>Decks/Patios</td>
+                    <td>30 feet</td>
+                    <td>15 feet</td>
+                    <td>20 feet</td>
+                </tr>
+                <tr>
+                    <td>Swimming Pools</td>
+                    <td>50 feet</td>
+                    <td>20 feet</td>
+                    <td>30 feet</td>
+                </tr>
+            </tbody>
+        </table>
+        
+        <h3>Exterior Materials</h3>
+        <div class="two-column">
+            <div>
+                <h4>✅ Approved Materials:</h4>
+                <ul>
+                    <li>Natural wood siding</li>
+                    <li>Stone or brick</li>
+                    <li>Fiber cement siding</li>
+                    <li>Metal roofing (dark colors)</li>
+                    <li>Asphalt shingles</li>
+                </ul>
+            </div>
+            <div>
+                <h4>❌ Prohibited Materials:</h4>
+                <ul>
+                    <li>Vinyl siding</li>
+                    <li>Aluminum siding</li>
+                    <li>Bright or fluorescent colors</li>
+                    <li>Reflective materials</li>
+                    <li>Temporary/mobile structures</li>
+                </ul>
+            </div>
+        </div>
+        
+        <h3>Fencing Guidelines</h3>
+        <ul>
+            <li><strong>Height:</strong> Maximum 6 feet (4 feet for front yards)</li>
+            <li><strong>Materials:</strong> Wood, wrought iron, or decorative metal</li>
+            <li><strong>Style:</strong> Must complement home architecture</li>
+            <li><strong>Color:</strong> Natural wood tones or black/dark green</li>
+            <li><strong>Maintenance:</strong> Owner responsibility to maintain</li>
+        </ul>
+        
+        <h3>Accessory Buildings</h3>
+        <div class="alert-box info">
+            <strong>Size Limits:</strong> Maximum 1,200 sq ft or 15% of lot size, whichever is smaller. Buildings over 200 sq ft require county permits.
+        </div>
+        
+        <h4>Accessory Building Requirements:</h4>
+        <ul>
+            <li>Materials must match or complement main house</li>
+            <li>Same roof pitch and style preferred</li>
+            <li>Maximum height: 20 feet</li>
+            <li>Must be behind front building line</li>
+            <li>Commercial activities prohibited</li>
+        </ul>
+        
+        <h3>Enforcement</h3>
+        <p>ARC conducts periodic compliance reviews. Violations must be corrected within 30 days of written notice.</p>
+        
+        <div class="alert-box emergency">
+            <strong>⚠️ Penalties:</strong> Failure to obtain approval or correct violations may result in fines up to $100/day and legal action to compel compliance.
+        </div>
+        
+        <div class="page-footer">Blue Mountain Property Owners Association • Page 16</div>
+    </div>
+    
+    <!-- Page 17: Nature & Conservation -->
+    <div class="page">
+        <h1>Chapter VIII: Nature & Conservation</h1>
+        
+        <p>Blue Mountain's natural beauty is our greatest asset. From spring wildflowers to autumn foliage, our mountain ecosystem provides year-round wonder. This chapter helps you appreciate and protect our natural heritage.</p>
+        
+        <h2>Protecting Our Trilliums</h2>
+        
+        <div class="highlight-box">
+            <h3 style="margin-top: 0;">🌸 Blue Mountain's Spring Spectacular</h3>
+            <p>Each spring, nearby Thompson Wildlife Management Area hosts one of nature's most breathtaking displays — <strong>18 million Great White Trilliums</strong> carpet the forest floor, creating a sea of white blooms visible from space!</p>
+            
+            <div style="text-align: center; margin: 1rem 0;">
+                <div style="display: inline-block; background: white; padding: 1rem; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+                    <div style="font-size: 2rem;">🏵️</div>
+                    <div style="font-weight: 600; color: #2e7d32;">Peak Bloom</div>
+                    <div style="color: #666;">Late April - Early May</div>
+                </div>
+            </div>
+        </div>
+        
+        <img src="images/trillium-bloom-at-thompson-wma-in-virginia.jpeg" alt="Spectacular trillium bloom at Thompson Wildlife Management Area" style="max-width: 600px;">
+        <p style="text-align: center; font-style: italic; color: #666; margin-top: 0.5rem;">The breathtaking trillium bloom at Thompson WMA - one of nature's most spectacular displays</p>
+        
+        <div class="alert-box emergency">
+            <h4 style="margin-top: 0;">⚠️ CRITICAL CONSERVATION RULES ⚠️</h4>
+            <div class="two-column">
+                <div>
+                    <h5>🚫 NEVER:</h5>
+                    <ul>
+                        <li>Pick trillium flowers</li>
+                        <li>Dig up plants</li>
+                        <li>Trample the area</li>
+                        <li>Bring pets off-trail</li>
+                    </ul>
+                </div>
+                <div>
+                    <h5>✅ ALWAYS:</h5>
+                    <ul>
+                        <li>Stay on marked trails</li>
+                        <li>Take only photos</li>
+                        <li>Pack out all trash</li>
+                        <li>Respect wildlife</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <h3>🥾 Visiting Thompson Wildlife Management Area</h3>
+        <p><strong>📍 Location:</strong> 15 minutes from Blue Mountain via Route 638<br>
+        <strong>🏃 Trail:</strong> 1.5-mile loop trail through trillium fields<br>
+        <strong>🚗 Parking:</strong> Limited - arrive early during peak bloom<br>
+        <strong>🌟 Best Time:</strong> Mid-morning for optimal lighting</p>
+        
+        <div class="page-footer">Blue Mountain Property Owners Association • Page 17</div>
+    </div>
+    
+    <!-- Page 18: Native Plants & Wildlife Habitat -->
+    <div class="page">
+        <h2>Native Plants for Your Property</h2>
+        
+        <p>Creating habitat with native plants supports local wildlife while reducing maintenance and water needs.</p>
+        
+        <h3>Recommended Native Plants</h3>
+        <div class="two-column">
+            <div>
+                <h4>🌳 Trees</h4>
+                <ul>
+                    <li><strong>Eastern Redbud</strong> - Early spring blooms</li>
+                    <li><strong>Flowering Dogwood</strong> - State tree</li>
+                    <li><strong>Red Maple</strong> - Brilliant fall color</li>
+                    <li><strong>American Chestnut</strong> - Blight-resistant varieties</li>
+                    <li><strong>Tulip Poplar</strong> - Fast-growing native</li>
+                </ul>
+                
+                <h4>🌿 Shrubs</h4>
+                <ul>
+                    <li><strong>Mountain Laurel</strong> - June blooms</li>
+                    <li><strong>Spicebush</strong> - Butterfly host plant</li>
+                    <li><strong>Elderberry</strong> - Wildlife food source</li>
+                    <li><strong>Wild Azalea</strong> - Fragrant flowers</li>
+                </ul>
+            </div>
+            <div>
+                <h4>🌸 Wildflowers</h4>
+                <ul>
+                    <li><strong>Virginia Bluebells</strong> - Spring ephemeral</li>
+                    <li><strong>Wild Columbine</strong> - Hummingbird favorite</li>
+                    <li><strong>Bee Balm</strong> - Pollinator magnet</li>
+                    <li><strong>Black-eyed Susan</strong> - Summer blooms</li>
+                    <li><strong>Cardinal Flower</strong> - Bright red spikes</li>
+                </ul>
+                
+                <h4>🌾 Grasses & Ferns</h4>
+                <ul>
+                    <li><strong>Christmas Fern</strong> - Evergreen groundcover</li>
+                    <li><strong>Wild Ginger</strong> - Shade tolerant</li>
+                    <li><strong>Little Bluestem</strong> - Native grass</li>
+                    <li><strong>Sedges</strong> - Wetland plants</li>
+                </ul>
+            </div>
+        </div>
+        
+        <h3>Fire-Resistant Native Landscaping</h3>
+        <p>Combine fire safety with native plant gardening by choosing low-flammability species for defensible space zones.</p>
+        
+        <div class="service-grid">
+            <div class="service-card">
+                <h4>Zone 1 (0-30 feet)</h4>
+                <ul>
+                    <li>Hostas and ferns</li>
+                    <li>Native sedges</li>
+                    <li>Rock gardens</li>
+                    <li>Irrigated lawns</li>
+                </ul>
+            </div>
+            
+            <div class="service-card">
+                <h4>Zone 2 (30-100 feet)</h4>
+                <ul>
+                    <li>Deciduous trees</li>
+                    <li>Hardwood shrubs</li>
+                    <li>Perennial flowers</li>
+                    <li>Mulched beds</li>
+                </ul>
+            </div>
+        </div>
+        
+        <h3>Creating Wildlife Habitat</h3>
+        <div class="highlight-box">
+            <h4>🏡 Backyard Habitat Elements</h4>
+            <ul>
+                <li><strong>Food:</strong> Native plants, seed-producing flowers</li>
+                <li><strong>Water:</strong> Birdbaths, small ponds, rain gardens</li>
+                <li><strong>Shelter:</strong> Dense shrubs, brush piles, nesting boxes</li>
+                <li><strong>Space:</strong> Connected plantings, wildlife corridors</li>
+            </ul>
+        </div>
+        
+        <h3>Where to Obtain Native Plants</h3>
+        <ul>
+            <li><strong>Meadowlark Botanical Gardens</strong> - Annual native plant sale</li>
+            <li><strong>Virginia Native Plant Society</strong> - Local chapter sales</li>
+            <li><strong>Blandy Experimental Farm</strong> - Educational programs</li>
+            <li><strong>Local nurseries</strong> - Increasing native plant selection</li>
+        </ul>
+        
+        <div class="page-footer">Blue Mountain Property Owners Association • Page 18</div>
+    </div>
+    
+    <!-- Page 19: Local Attractions -->
+    <div class="page">
+        <h1>Chapter IX: Local Attractions</h1>
+        
+        <p>Blue Mountain's location provides easy access to numerous attractions, outdoor activities, and cultural sites in the Shenandoah Valley region.</p>
+        
+        <h2>Wineries & Breweries</h2>
+        
+        <div class="service-grid">
+            <div class="service-card">
+                <h4>🍷 Desert Rose Ranch and Winery</h4>
+                <p><strong>Distance:</strong> 8 miles</p>
+                <p><strong>Specialty:</strong> Estate-grown wines, events</p>
+                <p><strong>Features:</strong> Tasting room, vineyard tours</p>
+                <p><strong>Phone:</strong> (540) 635-7774</p>
+            </div>
+            
+            <div class="service-card">
+                <h4>🍇 Delaplane Cellars</h4>
+                <p><strong>Distance:</strong> 12 miles</p>
+                <p><strong>Specialty:</strong> Premium Virginia wines</p>
+                <p><strong>Features:</strong> Historic venue, weddings</p>
+                <p><strong>Phone:</strong> (540) 364-7900</p>
+            </div>
+        </div>
+        
+        <h3>🍷 Wine Tasting Tips</h3>
+        <ul>
+            <li>Make reservations, especially weekends</li>
+            <li>Designate a driver or use ride services</li>
+            <li>Many wineries allow picnics</li>
+            <li>Check event calendars for special tastings</li>
+        </ul>
+        
+        <h2>Outdoor Recreation</h2>
+        
+        <h3>🥾 Hiking & Nature</h3>
+        <div class="two-column">
+            <div>
+                <h4>Shenandoah National Park</h4>
+                <ul>
+                    <li><strong>Distance:</strong> 30 minutes</li>
+                    <li><strong>Highlights:</strong> Skyline Drive, waterfalls</li>
+                    <li><strong>Trails:</strong> 500+ miles of hiking</li>
+                    <li><strong>Entry:</strong> $30 vehicle pass</li>
+                </ul>
+            </div>
+            <div>
+                <h4>G. Richard Thompson WMA</h4>
+                <ul>
+                    <li><strong>Distance:</strong> 15 minutes</li>
+                    <li><strong>Highlights:</strong> Trillium bloom, birding</li>
+                    <li><strong>Trails:</strong> 1.5-mile loop</li>
+                    <li><strong>Entry:</strong> Free</li>
+                </ul>
+            </div>
+        </div>
+        
+        <h3>🚴 Biking</h3>
+        <ul>
+            <li><strong>Washington & Old Dominion Trail:</strong> 45-mile paved trail</li>
+            <li><strong>Shenandoah River Trail:</strong> Multi-use path</li>
+            <li><strong>Blue Mountain roads:</strong> Scenic but challenging climbs</li>
+        </ul>
+        
+        <h3>🎣 Fishing</h3>
+        <ul>
+            <li><strong>Shenandoah River:</strong> Smallmouth bass, catfish</li>
+            <li><strong>Deer Lake (BMPOA):</strong> Bass, bluegill (members only)</li>
+            <li><strong>Private ponds:</strong> Various species with permission</li>
+        </ul>
+        
+        <div class="alert-box info">
+            <strong>Virginia Fishing License Required:</strong> Purchase online at dgif.virginia.gov or at local retailers. Licenses valid from July 1 - June 30.
+        </div>
+        
+        <div class="page-footer">Blue Mountain Property Owners Association • Page 19</div>
+    </div>
+    
+    <!-- Page 20: Community Resources -->
+    <div class="page">
+        <h2>Community Resources</h2>
+        
+        <h3>📱 Digital Resources</h3>
+        <div class="service-grid">
+            <div class="service-card">
+                <h4>BMPOA.org</h4>
+                <ul>
+                    <li>Board meeting minutes</li>
+                    <li>ARC applications</li>
+                    <li>Community calendar</li>
+                    <li>Contact directory</li>
+                </ul>
+            </div>
+            
+            <div class="service-card">
+                <h4>Facebook Groups</h4>
+                <ul>
+                    <li>Blue Mountain Neighbors</li>
+                    <li>BMPOA Official</li>
+                    <li>Blue Mountain Buy/Sell</li>
+                    <li>Fire Safety Updates</li>
+                </ul>
+            </div>
+        </div>
+        
+        <h3>🏥 Healthcare</h3>
+        <div class="two-column">
+            <div>
+                <h4>Emergency Services</h4>
+                <ul>
+                    <li><strong>Warren Memorial Hospital</strong></li>
+                    <li>1000 N Shenandoah Ave</li>
+                    <li>Front Royal, VA 22630</li>
+                    <li>(540) 636-0300</li>
+                    <li>15 minutes from Blue Mountain</li>
+                </ul>
+            </div>
+            <div>
+                <h4>Urgent Care</h4>
+                <ul>
+                    <li><strong>FastMed Urgent Care</strong></li>
+                    <li>1303 N Royal Ave</li>
+                    <li>Front Royal, VA 22630</li>
+                    <li>(540) 636-0886</li>
+                    <li>Open 7 days/week</li>
+                </ul>
+            </div>
+        </div>
+        
+        <h3>📚 Education & Libraries</h3>
+        <ul>
+            <li><strong>Warren County Public Library</strong> - 195 N Commerce Ave, Front Royal</li>
+            <li><strong>Samuels Public Library</strong> - 124 S Loudoun St, Front Royal</li>
+            <li><strong>Warren County Schools</strong> - Enrollment information: (540) 635-2171</li>
+        </ul>
+        
+        <h3>🛒 Shopping & Services</h3>
+        <div class="two-column">
+            <div>
+                <h4>Groceries</h4>
+                <ul>
+                    <li>Food Lion - Front Royal</li>
+                    <li>Martin's - Front Royal</li>
+                    <li>Walmart - Front Royal</li>
+                    <li>Dollar General - Linden</li>
+                </ul>
+            </div>
+            <div>
+                <h4>Hardware</h4>
+                <ul>
+                    <li>Lowe's - Front Royal</li>
+                    <li>Home Depot - Winchester</li>
+                    <li>Ace Hardware - Front Royal</li>
+                    <li>Tractor Supply - Front Royal</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="alert-box success">
+            <h4 style="margin-top: 0;">📞 Important Reminders</h4>
+            <ul>
+                <li><strong>Emergency:</strong> Always call 911 first</li>
+                <li><strong>BMPOA Office:</strong> P.O. Box 114, Linden, VA 22642</li>
+                <li><strong>Website:</strong> BMPOA.org for latest updates</li>
+                <li><strong>Board Meetings:</strong> 2nd Monday, 6:00 PM at The Lodge</li>
+            </ul>
+        </div>
+        
+        <div style="text-align: center; margin-top: 2rem; padding: 1.5rem; background: #f8f9fa; border-radius: 8px;">
+            <h3 style="color: #1e3a5f; margin-bottom: 1rem;">Welcome to Blue Mountain!</h3>
+            <p style="margin: 0; font-style: italic;">"ANGULUS RIDET" - The Corner Smiles</p>
+            <p style="margin: 0.5rem 0 0 0; font-size: 0.9rem; color: #666;">A Mountain Home Since the Late 1950s</p>
+        </div>
+        
+        <div class="page-footer">Blue Mountain Property Owners Association • Page 20</div>
+    </div>
+</body>
+</html>
