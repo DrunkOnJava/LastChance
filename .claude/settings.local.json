@@ -34,7 +34,9 @@
       "Bash(done)",
       "Bash(gh api:*)",
       "Bash(ls:*)",
-      "Bash(osascript:*)"
+      "Bash(osascript:*)",
+      "Bash(jq:*)",
+      "Bash(cp:*)"
     ],
     "deny": []
   }

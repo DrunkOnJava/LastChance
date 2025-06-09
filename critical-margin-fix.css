@@ -1,0 +1,65 @@
+/* Critical Margin Violation Fixes */
+
+/* Force all content to respect boundaries */
+* {
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+}
+
+/* Prevent any element from extending beyond page */
+.page, .page-content {
+    overflow: hidden !important;
+}
+
+.page-content > * {
+    max-width: calc(100% - 1px) !important;
+}
+
+/* Fix specific elements that commonly overflow */
+span, p, div, h1, h2, h3, h4, h5, h6, li, td, th {
+    word-break: break-word !important;
+    overflow-wrap: break-word !important;
+    hyphens: auto !important;
+}
+
+/* Force tables to fit */
+table {
+    table-layout: fixed !important;
+    width: calc(100% - 1px) !important;
+}
+
+/* Aggressive text wrapping */
+@supports (overflow-wrap: anywhere) {
+    * {
+        overflow-wrap: anywhere !important;
+    }
+}
+
+/* Print-specific boundary enforcement */
+@media print {
+    .page {
+        width: 8.5in !important;
+        height: 11in !important;
+        overflow: hidden !important;
+        position: relative !important;
+    }
+    
+    .page-content {
+        position: absolute !important;
+        top: 0.75in !important;
+        left: 0.75in !important;
+        right: 0.75in !important;
+        bottom: 0.75in !important;
+        overflow: hidden !important;
+        width: auto !important;
+        height: auto !important;
+    }
+    
+    /* Ensure nothing escapes the content area */
+    .page-content * {
+        position: static !important;
+        float: none !important;
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+    }
+}

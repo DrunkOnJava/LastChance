@@ -1,0 +1,252 @@
+/**
+ * PDF Export Styles for First 10 Pages
+ * Optimized for perfect PDF generation
+ */
+
+/* PDF Export Mode */
+body.pdf-export-mode {
+    background: white !important;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+/* Hide UI elements during PDF export */
+body.pdf-export-mode button,
+body.pdf-export-mode .pagination-debug,
+body.pdf-export-mode .overflow-indicator {
+    display: none !important;
+}
+
+/* Page setup for PDF */
+@media print {
+    /* Page settings */
+    @page {
+        size: 8.5in 11in;
+        margin: 0;
+        bleed: 0;
+        marks: none;
+    }
+    
+    /* Ensure exact page dimensions */
+    .page {
+        width: 8.5in !important;
+        height: 11in !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        position: relative !important;
+        page-break-after: always !important;
+        page-break-inside: avoid !important;
+        background: white !important;
+        box-shadow: none !important;
+        overflow: hidden !important;
+    }
+    
+    /* Last visible page shouldn't force break */
+    .page:last-of-type {
+        page-break-after: auto !important;
+    }
+    
+    /* Content area with proper margins */
+    .page-content {
+        position: absolute !important;
+        top: 0.75in !important;
+        left: 0.75in !important;
+        right: 0.75in !important;
+        bottom: 0.75in !important;
+        width: 7in !important;
+        max-height: 9.5in !important;
+        overflow: hidden !important;
+    }
+    
+    /* Professional headers */
+    .professional-header {
+        position: relative !important;
+        margin-bottom: 1rem !important;
+        padding-bottom: 0.5rem !important;
+        border-bottom: 2px solid #1e3a5f !important;
+    }
+    
+    /* Professional footers */
+    .professional-footer,
+    .page-footer {
+        position: absolute !important;
+        bottom: 0.5in !important;
+        left: 0.75in !important;
+        right: 0.75in !important;
+        width: 7in !important;
+        border-top: 1px solid #ddd !important;
+        padding-top: 0.5rem !important;
+        font-size: 10pt !important;
+        color: #666 !important;
+    }
+    
+    /* Typography optimization */
+    body {
+        font-family: 'Roboto', Georgia, serif !important;
+        font-size: 11pt !important;
+        line-height: 1.6 !important;
+        color: #2c3e50 !important;
+        text-rendering: optimizeLegibility !important;
+        -webkit-font-smoothing: antialiased !important;
+    }
+    
+    h1, h2, h3, h4, h5, h6 {
+        font-family: 'Montserrat', Arial, sans-serif !important;
+        color: #1e3a5f !important;
+        page-break-after: avoid !important;
+        page-break-inside: avoid !important;
+    }
+    
+    h1 {
+        font-size: 28pt !important;
+        font-weight: 800 !important;
+    }
+    
+    h2 {
+        font-size: 20pt !important;
+        font-weight: 700 !important;
+        margin-top: 1.5rem !important;
+        margin-bottom: 0.75rem !important;
+    }
+    
+    h3 {
+        font-size: 16pt !important;
+        font-weight: 600 !important;
+    }
+    
+    /* Paragraph spacing */
+    p {
+        margin-bottom: 0.75rem !important;
+        orphans: 3 !important;
+        widows: 3 !important;
+    }
+    
+    /* List formatting */
+    ul, ol {
+        margin-bottom: 1rem !important;
+        padding-left: 1.5rem !important;
+    }
+    
+    li {
+        margin-bottom: 0.25rem !important;
+        page-break-inside: avoid !important;
+    }
+    
+    /* Tables */
+    table {
+        width: 100% !important;
+        border-collapse: collapse !important;
+        margin-bottom: 1rem !important;
+        page-break-inside: auto !important;
+    }
+    
+    th, td {
+        border: 1px solid #ddd !important;
+        padding: 0.5rem !important;
+        text-align: left !important;
+    }
+    
+    th {
+        background: #f8f9fa !important;
+        font-weight: 600 !important;
+    }
+    
+    /* Alert boxes */
+    .alert-box,
+    .info-box,
+    .warning-box {
+        border: 2px solid !important;
+        padding: 1rem !important;
+        margin: 1rem 0 !important;
+        page-break-inside: avoid !important;
+        background: white !important;
+    }
+    
+    .alert-emergency {
+        border-color: #e74c3c !important;
+        background: #ffebee !important;
+    }
+    
+    .alert-warning {
+        border-color: #ff9800 !important;
+        background: #fff3e0 !important;
+    }
+    
+    .alert-info {
+        border-color: #2196f3 !important;
+        background: #e3f2fd !important;
+    }
+    
+    /* Images */
+    img {
+        max-width: 100% !important;
+        height: auto !important;
+        page-break-inside: avoid !important;
+        display: block !important;
+        margin: 1rem auto !important;
+    }
+    
+    /* Contact cards */
+    .contact-card {
+        border: 1px solid #ddd !important;
+        background: white !important;
+        page-break-inside: avoid !important;
+    }
+    
+    /* TOC specific */
+    .toc-entry {
+        display: flex !important;
+        justify-content: space-between !important;
+        align-items: baseline !important;
+        margin-bottom: 0.5rem !important;
+        page-break-inside: avoid !important;
+    }
+    
+    .toc-dots {
+        flex: 1 !important;
+        border-bottom: 2px dotted #999 !important;
+        margin: 0 0.5rem !important;
+        position: relative !important;
+        top: -0.3em !important;
+    }
+    
+    /* Hide elements that shouldn't print */
+    .no-print,
+    .screen-only,
+    .overflow-indicator,
+    .pagination-debug,
+    button {
+        display: none !important;
+    }
+    
+    /* Ensure colors print */
+    * {
+        print-color-adjust: exact !important;
+        -webkit-print-color-adjust: exact !important;
+        color-adjust: exact !important;
+    }
+    
+    /* Cover page special styling */
+    .page[data-template="cover"] .page-content {
+        display: flex !important;
+        flex-direction: column !important;
+        justify-content: center !important;
+        align-items: center !important;
+        text-align: center !important;
+    }
+    
+    /* Chapter start pages */
+    .page[data-template="chapter-start"] {
+        page-break-before: always !important;
+    }
+    
+    /* Final quality adjustments */
+    .enriched-content {
+        border: 1px solid #ddd !important;
+        background: #f8f9fa !important;
+    }
+    
+    .professional-footer .page-number {
+        font-weight: 600 !important;
+    }
+}

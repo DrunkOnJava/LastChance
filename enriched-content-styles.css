@@ -1,0 +1,287 @@
+/**
+ * Styles for Enriched Content from Archives
+ * Professional styling for additional content
+ */
+
+/* Enriched Content Container */
+.enriched-content {
+    margin: 1.5rem 0;
+    padding: 1.5rem;
+    background: linear-gradient(135deg, #f8f9fa 0%, white 100%);
+    border-left: 4px solid #4a90e2;
+    border-radius: 0 8px 8px 0;
+}
+
+.enriched-content h3 {
+    color: #1e3a5f;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.4rem;
+    margin-top: 0;
+    margin-bottom: 1rem;
+}
+
+.enriched-content h4 {
+    color: #2c3e50;
+    font-size: 1.1rem;
+    margin-top: 1.5rem;
+    margin-bottom: 0.75rem;
+}
+
+/* Timeline Box */
+.timeline-box {
+    background: white;
+    border: 1px solid #dfe6e9;
+    border-radius: 8px;
+    padding: 1.25rem;
+    margin: 1rem 0;
+}
+
+.timeline-box ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.timeline-box li {
+    padding: 0.5rem 0;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.timeline-box li:last-child {
+    border-bottom: none;
+}
+
+.timeline-box strong {
+    color: #1e3a5f;
+    display: inline-block;
+    width: 80px;
+}
+
+/* Zone Details */
+.zone-detail {
+    background: #fff5f5;
+    border: 1px solid #ffdddd;
+    border-radius: 8px;
+    padding: 1.25rem;
+    margin: 1rem 0;
+}
+
+.zone-detail h4 {
+    color: #c0392b;
+    margin-top: 0;
+}
+
+/* Checklist Grid */
+.checklist-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+    margin: 1rem 0;
+}
+
+.checklist-column {
+    background: white;
+    border: 1px solid #dfe6e9;
+    border-radius: 8px;
+    padding: 1rem;
+}
+
+.checklist-column h5 {
+    color: #1e3a5f;
+    margin-top: 0;
+    margin-bottom: 0.75rem;
+    font-size: 1.1rem;
+}
+
+.checklist-column ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.checklist-column li {
+    padding: 0.4rem 0;
+    padding-left: 1.5rem;
+    position: relative;
+}
+
+.checklist-column li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: #27ae60;
+    font-weight: bold;
+}
+
+/* Species Grid */
+.species-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+    margin: 1rem 0;
+}
+
+.species-box {
+    background: #f0f8ff;
+    border: 1px solid #4a90e2;
+    border-radius: 8px;
+    padding: 1rem;
+}
+
+.species-box h5 {
+    color: #1e3a5f;
+    margin-top: 0;
+    margin-bottom: 0.75rem;
+}
+
+.species-box ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.species-box li {
+    padding: 0.3rem 0;
+    font-style: italic;
+}
+
+/* Volunteer Grid */
+.volunteer-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+    margin: 1rem 0;
+}
+
+.volunteer-category {
+    background: #f8f9fa;
+    border-radius: 8px;
+    padding: 1.25rem;
+}
+
+.volunteer-category h4 {
+    color: #1e3a5f;
+    margin-top: 0;
+}
+
+/* Season Grid */
+.season-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    margin: 1rem 0;
+}
+
+.season-box {
+    background: white;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 1rem;
+    transition: all 0.3s ease;
+}
+
+.season-box:hover {
+    border-color: #4a90e2;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.season-box h4 {
+    margin-top: 0;
+    margin-bottom: 0.75rem;
+    font-size: 1.2rem;
+}
+
+.season-box ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.season-box li {
+    padding: 0.3rem 0;
+    font-size: 0.95rem;
+}
+
+/* Geology Fact Box */
+.geology-fact {
+    background: linear-gradient(135deg, #fff3e0 0%, #ffe0b2 100%);
+    border-left: 4px solid #ff9800;
+    border-radius: 0 8px 8px 0;
+    padding: 1rem 1.5rem;
+    margin: 1.5rem 0;
+}
+
+.geology-fact h4 {
+    color: #e65100;
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+}
+
+/* Photo Caption */
+.photo-caption {
+    background: #f8f9fa;
+    padding: 1rem;
+    border-radius: 8px;
+    margin: 1rem 0;
+    text-align: center;
+}
+
+.photo-caption p {
+    margin: 0;
+    color: #5d6d7e;
+    font-size: 0.95rem;
+}
+
+/* Page Enrichment Indicator */
+.page-enrichment {
+    position: relative;
+}
+
+.page-enrichment::before {
+    content: 'Enhanced Content';
+    position: absolute;
+    top: -10px;
+    right: 10px;
+    background: #4a90e2;
+    color: white;
+    padding: 2px 10px;
+    border-radius: 12px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    opacity: 0.7;
+}
+
+/* Print Optimization */
+@media print {
+    .enriched-content {
+        background: white !important;
+        border: 1px solid #dfe6e9;
+        page-break-inside: avoid;
+    }
+    
+    .checklist-grid,
+    .species-grid,
+    .volunteer-grid,
+    .season-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .page-enrichment::before {
+        display: none;
+    }
+    
+    .timeline-box,
+    .zone-detail,
+    .checklist-column,
+    .species-box,
+    .volunteer-category,
+    .season-box {
+        page-break-inside: avoid;
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .checklist-grid,
+    .species-grid,
+    .volunteer-grid,
+    .season-grid {
+        grid-template-columns: 1fr;
+    }
+}
