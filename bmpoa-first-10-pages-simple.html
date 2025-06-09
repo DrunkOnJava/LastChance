@@ -18,12 +18,31 @@
             box-sizing: border-box;
         }
         
+        :root {
+            --primary-blue: #1e3a5f;
+            --secondary-blue: #4a90e2;
+            --accent-blue: #2c5282;
+            --text-primary: #2c3e50;
+            --text-secondary: #5d6d7e;
+            --text-light: #7f8c8d;
+            --background-subtle: #f8f9fa;
+            --border-light: #e9ecef;
+            --shadow-subtle: 0 2px 8px rgba(0,0,0,0.08);
+            --shadow-medium: 0 4px 16px rgba(0,0,0,0.12);
+            --shadow-strong: 0 8px 32px rgba(0,0,0,0.16);
+            --gradient-primary: linear-gradient(135deg, #1e3a5f 0%, #2c5282 50%, #4a90e2 100%);
+            --gradient-subtle: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+        }
+        
         body {
-            font-family: 'Roboto', Georgia, serif;
+            font-family: 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
             font-size: 11pt;
-            line-height: 1.6;
-            color: #2c3e50;
+            line-height: 1.65;
+            color: var(--text-primary);
             background: white;
+            font-weight: 400;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
         }
         
         /* Page setup */
@@ -31,12 +50,23 @@
             width: 8.5in;
             height: 11in;
             margin: 0 auto 0.5in auto;
-            padding: 0.75in;
+            padding: 0.85in 0.75in;
             background: white;
             position: relative;
             page-break-after: always;
             page-break-inside: avoid;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            box-shadow: var(--shadow-medium);
+            border: 1px solid var(--border-light);
+        }
+        
+        .page::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: var(--gradient-primary);
         }
         
         .page:last-child {
@@ -45,128 +75,318 @@
         
         /* Typography */
         h1, h2, h3, h4, h5, h6 {
-            font-family: 'Montserrat', Arial, sans-serif;
-            color: #1e3a5f;
-            margin-bottom: 1rem;
+            font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, sans-serif;
+            color: var(--primary-blue);
+            margin-bottom: 1.25rem;
+            letter-spacing: -0.02em;
+            font-weight: 600;
         }
         
         h1 {
-            font-size: 2.5rem;
+            font-size: 2.75rem;
             font-weight: 800;
             text-align: center;
-            margin-bottom: 2rem;
+            margin-bottom: 2.5rem;
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-shadow: 0 2px 4px rgba(30, 58, 95, 0.1);
         }
         
         h2 {
-            font-size: 1.8rem;
+            font-size: 1.9rem;
             font-weight: 700;
-            border-bottom: 3px solid #4a90e2;
-            padding-bottom: 0.5rem;
-            margin-top: 2rem;
+            border-bottom: none;
+            padding: 1rem 0 0.75rem 0;
+            margin: 2.5rem 0 1.5rem 0;
             position: relative;
+            background: var(--gradient-subtle);
+            border-radius: 8px 8px 0 0;
+            padding-left: 1.5rem;
+            box-shadow: var(--shadow-subtle);
+        }
+        
+        h2::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 6px;
+            background: var(--gradient-primary);
+            border-radius: 3px 0 0 0;
         }
         
         h2::after {
             content: '';
             position: absolute;
-            bottom: -3px;
+            bottom: 0;
             left: 0;
-            width: 60px;
+            right: 0;
             height: 3px;
-            background: linear-gradient(90deg, #1e3a5f 0%, #4a90e2 100%);
+            background: var(--gradient-primary);
         }
         
         h3 {
-            font-size: 1.4rem;
+            font-size: 1.5rem;
+            font-weight: 650;
+            color: var(--accent-blue);
+            margin: 2rem 0 1rem 0;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--secondary-blue);
+            position: relative;
+        }
+        
+        h3::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 40px;
+            height: 2px;
+            background: var(--primary-blue);
+        }
+        
+        h4 {
+            font-size: 1.2rem;
             font-weight: 600;
-            color: #2c3e50;
-            margin-top: 1.5rem;
+            color: var(--text-primary);
+            margin: 1.5rem 0 0.75rem 0;
         }
         
         p {
-            margin-bottom: 1rem;
+            margin-bottom: 1.2rem;
             text-align: justify;
+            line-height: 1.7;
+            font-weight: 400;
+        }
+        
+        p:first-of-type {
+            font-size: 1.05em;
+            font-weight: 450;
+            color: var(--text-secondary);
         }
         
         ul, ol {
-            margin-bottom: 1rem;
-            padding-left: 2rem;
+            margin-bottom: 1.5rem;
+            padding-left: 0;
         }
         
         li {
+            margin-bottom: 0.75rem;
+            padding-left: 2rem;
+            position: relative;
+            line-height: 1.7;
+        }
+        
+        ul li::before {
+            content: '•';
+            position: absolute;
+            left: 0.5rem;
+            color: var(--secondary-blue);
+            font-weight: bold;
+            font-size: 1.2em;
+        }
+        
+        ol {
+            counter-reset: item;
+        }
+        
+        ol li {
+            counter-increment: item;
+        }
+        
+        ol li::before {
+            content: counter(item) '.';
+            position: absolute;
+            left: 0;
+            color: var(--primary-blue);
+            font-weight: 600;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.9em;
+        }
+        
+        /* Nested lists */
+        ul ul, ol ol, ul ol, ol ul {
+            margin-top: 0.5rem;
             margin-bottom: 0.5rem;
+        }
+        
+        ul ul li::before {
+            content: '◦';
+            color: var(--text-secondary);
         }
         
         /* Tables */
         table {
             width: 100%;
-            border-collapse: collapse;
-            margin-bottom: 1.5rem;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-            border-radius: 8px;
+            border-collapse: separate;
+            border-spacing: 0;
+            margin: 2rem 0;
+            box-shadow: var(--shadow-medium);
+            border-radius: 12px;
             overflow: hidden;
+            background: white;
+            border: 1px solid var(--border-light);
         }
         
         th, td {
-            border: 1px solid #e0e0e0;
-            padding: 1rem 0.75rem;
+            border: none;
+            border-bottom: 1px solid var(--border-light);
+            padding: 1.25rem 1rem;
             text-align: left;
+            vertical-align: top;
         }
         
         th {
-            background: linear-gradient(135deg, #1e3a5f 0%, #2c5282 100%);
-            font-weight: 600;
+            background: var(--gradient-primary);
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 650;
             color: white;
             font-size: 0.95rem;
             letter-spacing: 0.5px;
+            text-transform: uppercase;
+            border-bottom: 3px solid var(--primary-blue);
+            position: relative;
+        }
+        
+        th:first-child {
+            border-top-left-radius: 12px;
+        }
+        
+        th:last-child {
+            border-top-right-radius: 12px;
+        }
+        
+        tbody tr {
+            transition: all 0.2s ease;
         }
         
         tbody tr:nth-child(even) {
-            background-color: #f8f9fa;
+            background: linear-gradient(135deg, #fbfcfd 0%, #f8f9fa 100%);
         }
         
         tbody tr:hover {
-            background-color: #e3f2fd;
+            background: linear-gradient(135deg, #e8f4fd 0%, #d6eaff 100%);
+            transform: translateY(-1px);
+            box-shadow: 0 4px 12px rgba(74, 144, 226, 0.15);
+        }
+        
+        tbody tr:last-child td:first-child {
+            border-bottom-left-radius: 12px;
+        }
+        
+        tbody tr:last-child td:last-child {
+            border-bottom-right-radius: 12px;
+        }
+        
+        tbody tr:last-child td {
+            border-bottom: none;
         }
         
         /* Alert boxes */
         .alert-box {
-            background: #fff3cd;
-            border: 2px solid #ffc107;
-            border-radius: 8px;
-            padding: 1.5rem;
-            margin: 1.5rem 0;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            background: linear-gradient(135deg, #fff8e1 0%, #fff3cd 100%);
+            border: none;
+            border-left: 6px solid #ffc107;
+            border-radius: 12px;
+            padding: 2rem;
+            margin: 2rem 0;
+            box-shadow: var(--shadow-medium);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .alert-box::before {
+            content: '!';
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            width: 32px;
+            height: 32px;
+            background: #ffc107;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-family: 'Montserrat', sans-serif;
         }
         
         .emergency {
-            background: linear-gradient(135deg, #f8d7da 0%, #f5c6cb 100%);
-            border-color: #dc3545;
-            border-width: 3px;
+            background: linear-gradient(135deg, #fff5f5 0%, #fed7d7 100%);
+            border-left-color: #e53e3e;
+            box-shadow: 0 8px 25px rgba(229, 62, 62, 0.15);
+        }
+        
+        .emergency::before {
+            content: '⚠';
+            background: #e53e3e;
+            font-size: 1.1rem;
         }
         
         .info {
-            background: linear-gradient(135deg, #d1ecf1 0%, #bee5eb 100%);
-            border-color: #17a2b8;
+            background: linear-gradient(135deg, #ebf8ff 0%, #bee3f8 100%);
+            border-left-color: #3182ce;
+            box-shadow: 0 8px 25px rgba(49, 130, 206, 0.15);
+        }
+        
+        .info::before {
+            content: 'i';
+            background: #3182ce;
         }
         
         .fire-safety {
-            background: linear-gradient(135deg, #fff8e1 0%, #ffe082 100%);
-            border: 3px solid #ff9800;
-            border-radius: 12px;
-            padding: 2rem;
-            margin: 2rem 0;
-            box-shadow: 0 4px 12px rgba(255, 152, 0, 0.2);
+            background: linear-gradient(135deg, #fff8e1 0%, #ffecb3 50%, #ffe082 100%);
+            border: none;
+            border-left: 8px solid #ff9800;
+            border-radius: 16px;
+            padding: 2.5rem;
+            margin: 2.5rem 0;
+            box-shadow: 0 12px 40px rgba(255, 152, 0, 0.25);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .fire-safety::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 100px;
+            height: 100px;
+            background: radial-gradient(circle, rgba(255, 152, 0, 0.1) 0%, transparent 70%);
+            border-radius: 50%;
         }
         
         .fire-danger {
-            background: linear-gradient(135deg, #ffebee 0%, #ef5350 20%, #ffebee 100%);
-            border: 4px solid #d32f2f;
-            border-radius: 12px;
-            padding: 2rem;
-            margin: 2rem 0;
-            box-shadow: 0 6px 20px rgba(211, 47, 47, 0.3);
+            background: linear-gradient(135deg, #fff5f5 0%, #fed7d7 30%, #fc8181 60%, #fed7d7 100%);
+            border: none;
+            border-radius: 16px;
+            padding: 3rem 2rem;
+            margin: 3rem 0;
+            box-shadow: 0 16px 64px rgba(220, 38, 38, 0.25), inset 0 1px 0 rgba(255, 255, 255, 0.2);
             text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .fire-danger::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(220, 38, 38, 0.05) 0%, transparent 50%);
+            animation: pulse 4s ease-in-out infinite;
+        }
+        
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); opacity: 0.7; }
+            50% { transform: scale(1.1); opacity: 0.3; }
         }
         
         .fire-regulations {
@@ -177,26 +397,86 @@
         }
         
         .prohibited-box {
-            background: linear-gradient(135deg, #ffebee 0%, #ffcdd2 100%);
-            border: 2px solid #e57373;
-            border-radius: 8px;
-            padding: 1.5rem;
+            background: linear-gradient(135deg, #fff5f5 0%, #fed7d7 100%);
+            border: none;
+            border-left: 6px solid #e53e3e;
+            border-radius: 12px;
+            padding: 2rem;
+            box-shadow: 0 8px 25px rgba(229, 62, 62, 0.15);
+            position: relative;
+        }
+        
+        .prohibited-box::before {
+            content: '✕';
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            width: 28px;
+            height: 28px;
+            background: #e53e3e;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 0.9rem;
         }
         
         .permitted-box {
-            background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%);
-            border: 2px solid #81c784;
-            border-radius: 8px;
-            padding: 1.5rem;
+            background: linear-gradient(135deg, #f0fff4 0%, #c6f6d5 100%);
+            border: none;
+            border-left: 6px solid #38a169;
+            border-radius: 12px;
+            padding: 2rem;
+            box-shadow: 0 8px 25px rgba(56, 161, 105, 0.15);
+            position: relative;
+        }
+        
+        .permitted-box::before {
+            content: '✓';
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            width: 28px;
+            height: 28px;
+            background: #38a169;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 0.9rem;
         }
         
         .fire-image-container {
             text-align: center;
-            margin: 2rem 0;
-            padding: 1rem;
-            background: linear-gradient(135deg, #f5f5f5 0%, #eeeeee 100%);
+            margin: 3rem 0;
+            padding: 2rem;
+            background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 50%, #f1f3f4 100%);
+            border-radius: 16px;
+            box-shadow: var(--shadow-medium);
+            border: 1px solid var(--border-light);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .fire-image-container::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: var(--gradient-primary);
+        }
+        
+        .fire-image-container img {
+            margin: 0 auto 1rem auto;
             border-radius: 12px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            border: 2px solid white;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.15);
         }
         
         /* Images */
@@ -204,8 +484,15 @@
             max-width: 100%;
             height: auto;
             display: block;
-            margin: 1rem auto;
-            border-radius: 8px;
+            margin: 1.5rem auto;
+            border-radius: 12px;
+            box-shadow: var(--shadow-medium);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        img:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-strong);
         }
         
         /* Footer */
@@ -215,10 +502,28 @@
             left: 0.75in;
             right: 0.75in;
             text-align: center;
-            font-size: 10pt;
-            color: #666;
-            border-top: 1px solid #ddd;
-            padding-top: 0.5rem;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 9.5pt;
+            font-weight: 500;
+            color: var(--text-light);
+            border-top: 2px solid var(--secondary-blue);
+            padding-top: 0.75rem;
+            background: linear-gradient(90deg, transparent 0%, var(--secondary-blue) 20%, var(--secondary-blue) 80%, transparent 100%);
+            background-size: 100% 2px;
+            background-repeat: no-repeat;
+            background-position: top;
+        }
+        
+        .page-footer::before {
+            content: '';
+            position: absolute;
+            top: -6px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 6px;
+            background: var(--gradient-primary);
+            border-radius: 3px;
         }
         
         /* Print styles */
@@ -272,10 +577,18 @@
                 size: letter;
                 margin: 0.75in;
                 @top-center {
-                    content: "Blue Mountain Property Owners Association - Community Guide 2025";
+                    content: "Blue Mountain Property Owners Association - Official Guide 2025";
                     font-family: 'Montserrat', Arial, sans-serif;
                     font-size: 9pt;
-                    color: #666;
+                    color: var(--text-secondary);
+                    font-weight: 500;
+                }
+                @bottom-center {
+                    content: "Page " counter(page) " of 10";
+                    font-family: 'Montserrat', Arial, sans-serif;
+                    font-size: 9pt;
+                    color: var(--text-secondary);
+                    font-weight: 500;
                 }
             }
             
@@ -291,22 +604,55 @@
             justify-content: center;
             align-items: center;
             text-align: center;
-            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            background: radial-gradient(ellipse at center, #ffffff 0%, #f8f9fa 50%, #e9ecef 100%);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .cover-page::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(74, 144, 226, 0.03) 0%, transparent 50%);
+            animation: rotate 60s linear infinite;
+        }
+        
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
         }
         
         .cover-title {
-            font-size: 3rem;
-            margin: 2rem 0;
+            font-size: 3.5rem;
+            margin: 2.5rem 0;
             text-transform: uppercase;
-            letter-spacing: 2px;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+            letter-spacing: 3px;
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-shadow: 0 4px 8px rgba(30, 58, 95, 0.2);
+            position: relative;
+            z-index: 1;
         }
         
         .cover-subtitle {
-            font-size: 1.5rem;
-            color: #4a90e2;
+            font-size: 1.75rem;
+            color: var(--secondary-blue);
             margin-bottom: 3rem;
-            font-weight: 500;
+            font-weight: 600;
+            letter-spacing: 1px;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .cover-page img {
+            filter: drop-shadow(0 8px 24px rgba(30, 58, 95, 0.15));
+            position: relative;
+            z-index: 1;
         }
         
         /* TOC styles */
@@ -314,18 +660,41 @@
             display: flex;
             justify-content: space-between;
             align-items: baseline;
-            margin-bottom: 0.75rem;
-            border-bottom: 2px dotted #ccc;
-            padding-bottom: 0.25rem;
+            margin-bottom: 1rem;
+            padding: 0.75rem 1rem;
+            background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+            border-radius: 8px;
+            border-left: 4px solid var(--secondary-blue);
+            box-shadow: var(--shadow-subtle);
+            transition: all 0.2s ease;
+        }
+        
+        .toc-entry:hover {
+            transform: translateX(4px);
+            box-shadow: var(--shadow-medium);
+            border-left-color: var(--primary-blue);
         }
         
         .toc-text {
             flex: 1;
+            font-weight: 450;
+        }
+        
+        .toc-text strong {
+            color: var(--primary-blue);
+            font-weight: 650;
         }
         
         .toc-page {
-            font-weight: 600;
+            font-weight: 700;
             margin-left: 1rem;
+            color: var(--secondary-blue);
+            font-family: 'Montserrat', sans-serif;
+            background: var(--secondary-blue);
+            color: white;
+            padding: 0.25rem 0.75rem;
+            border-radius: 12px;
+            font-size: 0.9rem;
         }
     </style>
 </head>
@@ -458,7 +827,11 @@
         </table>
         
         <div class="alert-box info">
-            <strong>Contact the Board:</strong> All board communications should be sent to the official BMPOA mailing address: P.O. Box 114, Linden, VA 22642
+            <h4 style="margin-top: 0; color: var(--primary-blue); font-size: 1.1rem;">Contact the Board</h4>
+            <p style="margin-bottom: 0;">All board communications should be sent to our official address:</p>
+            <div style="background: white; padding: 1rem; border-radius: 8px; margin-top: 1rem; border-left: 4px solid var(--secondary-blue);">
+                <strong style="color: var(--primary-blue);">P.O. Box 114, Linden, VA 22642</strong>
+            </div>
         </div>
         
         <div class="page-footer">Blue Mountain Property Owners Association • Page 3</div>
@@ -483,12 +856,21 @@
         <p>Regular board meetings are held on the <strong>second Monday of each month at 6:00 PM</strong> at The Lodge (540 Cliff Road). All residents are welcome to attend.</p>
         
         <div class="alert-box">
-            <strong>Meeting Schedule:</strong>
-            <ul>
-                <li>Regular meetings: 2nd Monday, 6:00 PM</li>
-                <li>Annual meeting: First Saturday in May</li>
-                <li>Special meetings: As needed (announced via email)</li>
-            </ul>
+            <h4 style="margin-top: 0; color: var(--primary-blue); font-size: 1.1rem;">Meeting Schedule</h4>
+            <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1rem; margin-top: 1rem;">
+                <div style="background: white; padding: 1rem; border-radius: 8px; text-align: center; border-top: 3px solid var(--secondary-blue);">
+                    <strong style="color: var(--primary-blue); display: block; margin-bottom: 0.5rem;">Regular</strong>
+                    <span style="font-size: 0.9rem;">2nd Monday<br>6:00 PM</span>
+                </div>
+                <div style="background: white; padding: 1rem; border-radius: 8px; text-align: center; border-top: 3px solid var(--accent-blue);">
+                    <strong style="color: var(--primary-blue); display: block; margin-bottom: 0.5rem;">Annual</strong>
+                    <span style="font-size: 0.9rem;">First Saturday<br>in May</span>
+                </div>
+                <div style="background: white; padding: 1rem; border-radius: 8px; text-align: center; border-top: 3px solid var(--text-secondary);">
+                    <strong style="color: var(--primary-blue); display: block; margin-bottom: 0.5rem;">Special</strong>
+                    <span style="font-size: 0.9rem;">As needed<br>(via email)</span>
+                </div>
+            </div>
         </div>
         
         <h3>Getting Involved</h3>
@@ -501,10 +883,20 @@
     <div class="page">
         <h1>Chapter II: Emergency Information</h1>
         
-        <div class="emergency" style="text-align: center;">
-            <h2 style="font-size: 2.5rem; margin: 0; color: #b71c1c; font-weight: 800;">DIAL 911</h2>
-            <p style="font-size: 1.2rem; margin: 0.5rem 0 0 0; color: #d32f2f;"><strong>FOR ALL EMERGENCIES</strong></p>
-            <p style="font-size: 1rem; margin: 0.5rem 0 0 0; color: #666;">Fire • Police • Medical • Search & Rescue</p>
+        <div class="emergency" style="text-align: center; position: relative; overflow: hidden;">
+            <div style="position: absolute; top: -20px; left: -20px; width: 60px; height: 60px; background: radial-gradient(circle, rgba(220, 38, 38, 0.1) 0%, transparent 70%); border-radius: 50%;"></div>
+            <div style="position: absolute; bottom: -20px; right: -20px; width: 80px; height: 80px; background: radial-gradient(circle, rgba(220, 38, 38, 0.05) 0%, transparent 70%); border-radius: 50%;"></div>
+            <div style="background: white; padding: 2rem; border-radius: 16px; margin: 1rem; box-shadow: 0 8px 32px rgba(220, 38, 38, 0.15); position: relative; z-index: 1;">
+                <h2 style="font-size: 3rem; margin: 0; background: linear-gradient(135deg, #dc2626 0%, #b91c1c 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; font-weight: 900; letter-spacing: 2px;">DIAL 911</h2>
+                <div style="width: 100px; height: 4px; background: linear-gradient(90deg, #dc2626 0%, #b91c1c 100%); margin: 1rem auto; border-radius: 2px;"></div>
+                <p style="font-size: 1.3rem; margin: 1rem 0; color: #dc2626; font-weight: 700; letter-spacing: 1px;">FOR ALL EMERGENCIES</p>
+                <div style="display: flex; justify-content: center; gap: 1rem; margin-top: 1.5rem; flex-wrap: wrap;">
+                    <span style="background: #dc2626; color: white; padding: 0.5rem 1rem; border-radius: 20px; font-size: 0.9rem; font-weight: 600;">Fire</span>
+                    <span style="background: #dc2626; color: white; padding: 0.5rem 1rem; border-radius: 20px; font-size: 0.9rem; font-weight: 600;">Police</span>
+                    <span style="background: #dc2626; color: white; padding: 0.5rem 1rem; border-radius: 20px; font-size: 0.9rem; font-weight: 600;">Medical</span>
+                    <span style="background: #dc2626; color: white; padding: 0.5rem 1rem; border-radius: 20px; font-size: 0.9rem; font-weight: 600;">Search & Rescue</span>
+                </div>
+            </div>
         </div>
         
         <h2>Emergency Contacts</h2>
@@ -552,7 +944,17 @@
         </table>
         
         <div class="alert-box emergency">
-            <strong>CRITICAL COMMUNICATION NOTICE:</strong> Cell phone service can be spotty on Blue Mountain. Consider a landline for emergency communications. Know your exact address and nearest cross street for emergency responders.
+            <h4 style="margin-top: 0; color: #dc2626; font-size: 1.1rem; display: flex; align-items: center;">
+                <span style="background: #dc2626; color: white; border-radius: 50%; width: 24px; height: 24px; display: flex; align-items: center; justify-content: center; margin-right: 0.5rem; font-size: 0.8rem;">!</span>
+                Critical Communication Notice
+            </h4>
+            <div style="background: white; padding: 1.5rem; border-radius: 8px; margin-top: 1rem;">
+                <p style="margin-bottom: 1rem; font-weight: 500;">Cell phone service can be spotty on Blue Mountain. Consider a landline for emergency communications.</p>
+                <div style="background: #fef2f2; padding: 1rem; border-radius: 6px; border-left: 4px solid #dc2626;">
+                    <strong style="color: #dc2626;">Emergency Preparedness:</strong><br>
+                    Know your exact address and nearest cross street for emergency responders
+                </div>
+            </div>
         </div>
         
         <div class="page-footer">Blue Mountain Property Owners Association • Page 5</div>
@@ -596,7 +998,18 @@
         </div>
         
         <div class="alert-box">
-            <strong>Stay Informed:</strong> Monitor local radio (AM 1050, FM 95.3) and Warren County emergency alerts for evacuation orders and updates.
+            <h4 style="margin-top: 0; color: var(--primary-blue); font-size: 1.1rem;">Stay Informed</h4>
+            <p style="margin-bottom: 1rem;">Monitor these channels for evacuation orders and emergency updates:</p>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+                <div style="background: white; padding: 1rem; border-radius: 8px; border-left: 4px solid var(--secondary-blue);">
+                    <strong style="color: var(--primary-blue);">Radio Stations</strong><br>
+                    <span style="font-family: 'Montserrat', sans-serif; font-weight: 600;">AM 1050 • FM 95.3</span>
+                </div>
+                <div style="background: white; padding: 1rem; border-radius: 8px; border-left: 4px solid var(--accent-blue);">
+                    <strong style="color: var(--primary-blue);">Emergency Alerts</strong><br>
+                    <span style="font-weight: 500;">Warren County System</span>
+                </div>
+            </div>
         </div>
         
         <div class="page-footer">Blue Mountain Property Owners Association • Page 6</div>
@@ -713,11 +1126,25 @@
         
         <h3>Emergency Reporting</h3>
         <div class="emergency">
-            <p style="margin: 0; text-align: center;"><strong>Fire safety violations or active fires must be reported immediately</strong></p>
-            <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1rem; margin-top: 1rem; text-align: center;">
-                <div><strong>Active Fires:</strong><br>911</div>
-                <div><strong>Violations:</strong><br>BMPOA Board</div>
-                <div><strong>Fire Marshal:</strong><br>(540) 635-4357</div>
+            <div style="background: white; padding: 2rem; border-radius: 12px; margin: 1rem;">
+                <p style="margin: 0 0 2rem 0; text-align: center; font-size: 1.1rem; font-weight: 600; color: #dc2626;">Fire safety violations or active fires must be reported immediately</p>
+                <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1.5rem; text-align: center;">
+                    <div style="background: linear-gradient(135deg, #fef2f2 0%, #fee2e2 100%); padding: 1.5rem; border-radius: 10px; border-top: 4px solid #dc2626;">
+                        <div style="width: 40px; height: 40px; background: #dc2626; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem auto; color: white; font-weight: bold; font-size: 1.2rem;">🔥</div>
+                        <strong style="color: #dc2626; display: block; margin-bottom: 0.5rem;">Active Fires</strong>
+                        <span style="font-size: 1.5rem; font-weight: 800; color: #dc2626;">911</span>
+                    </div>
+                    <div style="background: linear-gradient(135deg, #fef7ed 0%, #fed7aa 100%); padding: 1.5rem; border-radius: 10px; border-top: 4px solid #ea580c;">
+                        <div style="width: 40px; height: 40px; background: #ea580c; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem auto; color: white; font-weight: bold; font-size: 1rem;">⚠</div>
+                        <strong style="color: #ea580c; display: block; margin-bottom: 0.5rem;">Violations</strong>
+                        <span style="font-size: 1rem; font-weight: 600; color: #ea580c;">BMPOA Board</span>
+                    </div>
+                    <div style="background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%); padding: 1.5rem; border-radius: 10px; border-top: 4px solid #2563eb;">
+                        <div style="width: 40px; height: 40px; background: #2563eb; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem auto; color: white; font-weight: bold; font-size: 1rem;">📞</div>
+                        <strong style="color: #2563eb; display: block; margin-bottom: 0.5rem;">Fire Marshal</strong>
+                        <span style="font-size: 1rem; font-weight: 600; color: #2563eb;">(540) 635-4357</span>
+                    </div>
+                </div>
             </div>
         </div>
         
@@ -769,7 +1196,22 @@
         </table>
         
         <div class="alert-box info">
-            <strong>How to Book:</strong> Email <strong>bluemountainlodgebooking@gmail.com</strong> with your event details, preferred dates, and contact information. Bookings require 2-week advance notice.
+            <h4 style="margin-top: 0; color: var(--primary-blue); font-size: 1.1rem;">Lodge Booking Process</h4>
+            <div style="background: white; padding: 1.5rem; border-radius: 8px; margin-top: 1rem;">
+                <div style="display: flex; align-items: center; margin-bottom: 1rem;">
+                    <div style="width: 40px; height: 40px; background: var(--secondary-blue); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-right: 1rem;">
+                        <span style="color: white; font-weight: bold;">@</span>
+                    </div>
+                    <div>
+                        <strong style="color: var(--primary-blue); display: block;">Email Address</strong>
+                        <span style="font-family: 'Montserrat', sans-serif; font-weight: 600; color: var(--secondary-blue);">bluemountainlodgebooking@gmail.com</span>
+                    </div>
+                </div>
+                <div style="background: var(--background-subtle); padding: 1rem; border-radius: 6px; border-left: 4px solid var(--secondary-blue);">
+                    <strong style="color: var(--primary-blue);">Required Information:</strong> Event details, preferred dates, contact information<br>
+                    <strong style="color: var(--primary-blue);">Advance Notice:</strong> 2 weeks minimum
+                </div>
+            </div>
         </div>
         
         <h3>Lodge Guidelines</h3>
@@ -830,18 +1272,38 @@
         <p>Deer Lake is available for BMPOA members with a valid recreation pass (issued annually in May).</p>
         
         <div class="alert-box">
-            <strong>Lake Rules:</strong>
-            <ul>
-                <li>Pass required for all visitors</li>
-                <li>Swimming at your own risk - no lifeguard</li>
-                <li>Fishing permitted (VA license required)</li>
-                <li>No motorized watercraft</li>
-                <li>Dogs must be leashed</li>
-                <li>Pack out all trash</li>
-            </ul>
+            <h4 style="margin-top: 0; color: var(--primary-blue); font-size: 1.1rem;">Deer Lake Rules & Regulations</h4>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 1rem;">
+                <div style="background: white; padding: 1.5rem; border-radius: 8px; border-left: 4px solid var(--secondary-blue);">
+                    <h5 style="color: var(--primary-blue); margin-top: 0; margin-bottom: 1rem;">Access & Safety</h5>
+                    <ul style="margin: 0; padding-left: 1rem;">
+                        <li>Pass required for all visitors</li>
+                        <li>Swimming at your own risk - no lifeguard</li>
+                        <li>Fishing permitted (VA license required)</li>
+                    </ul>
+                </div>
+                <div style="background: white; padding: 1.5rem; border-radius: 8px; border-left: 4px solid var(--accent-blue);">
+                    <h5 style="color: var(--primary-blue); margin-top: 0; margin-bottom: 1rem;">Rules & Environment</h5>
+                    <ul style="margin: 0; padding-left: 1rem;">
+                        <li>No motorized watercraft</li>
+                        <li>Dogs must be leashed</li>
+                        <li>Pack out all trash</li>
+                    </ul>
+                </div>
+            </div>
         </div>
         
-        <p><strong>Contact:</strong> bmpoadeerlake@gmail.com for recreation pass information.</p>
+        <div style="background: linear-gradient(135deg, #ebf8ff 0%, #bee3f8 100%); padding: 1.5rem; border-radius: 12px; border-left: 6px solid var(--secondary-blue); margin-top: 2rem;">
+            <div style="display: flex; align-items: center;">
+                <div style="width: 40px; height: 40px; background: var(--secondary-blue); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-right: 1rem;">
+                    <span style="color: white; font-weight: bold;">@</span>
+                </div>
+                <div>
+                    <strong style="color: var(--primary-blue); display: block;">Recreation Pass Information</strong>
+                    <span style="font-family: 'Montserrat', sans-serif; font-weight: 600; color: var(--secondary-blue);">bmpoadeerlake@gmail.com</span>
+                </div>
+            </div>
+        </div>
         
         <div class="page-footer">Blue Mountain Property Owners Association • Page 10</div>
     </div>
