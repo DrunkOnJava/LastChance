@@ -7,8 +7,11 @@ import { fileURLToPath } from 'url';
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
+// File to test (default: bmpoa-print-optimized.html)
+const testFile = process.argv[2] || 'bmpoa-print-optimized.html';
+
 // Read the HTML file
-const htmlPath = path.join(__dirname, 'bmpoa-print-optimized.html');
+const htmlPath = path.join(__dirname, testFile);
 const htmlContent = fs.readFileSync(htmlPath, 'utf8');
 
 console.log('=== BMPOA Document Test Results ===\n');
