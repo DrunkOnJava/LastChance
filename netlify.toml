@@ -1,6 +1,7 @@
 [build]
-  command = "npm run build"
-  publish = "dist"
+  # Skip the build command - just deploy files as-is
+  command = "echo 'No build needed'"
+  publish = "."
 
 [[redirects]]
   from = "/"
