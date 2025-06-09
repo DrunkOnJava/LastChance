@@ -5,18 +5,25 @@
 
 /* Enhanced Page Break Control */
 @media print {
-    /* Prevent orphaned headers */
+    /* Prevent orphaned headers - CRITICAL */
     h2, h3, h4, h5, h6 {
-        page-break-after: avoid;
-        break-after: avoid;
-        page-break-inside: avoid;
-        break-inside: avoid;
+        page-break-after: avoid !important;
+        break-after: avoid !important;
+        page-break-inside: avoid !important;
+        break-inside: avoid !important;
     }
     
-    /* Ensure content follows headers */
+    /* Ensure content follows headers - keep at least 4 lines */
     h2 + *, h3 + *, h4 + * {
-        page-break-before: avoid;
-        break-before: avoid;
+        page-break-before: avoid !important;
+        break-before: avoid !important;
+        min-height: 3em;
+    }
+    
+    /* Keep header with its following content block */
+    h2:has(+ *), h3:has(+ *), h4:has(+ *) {
+        display: table;
+        width: 100%;
     }
     
     /* Keep related content together */

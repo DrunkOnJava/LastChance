@@ -1,0 +1,426 @@
+/**
+ * Fire Safety Infographic Styles for BMPOA Document
+ * Based on verified fire safety regulations from source materials
+ */
+
+/* Fire Safety Zone Container */
+.fire-safety-infographic {
+    background: linear-gradient(135deg, #fff5f5 0%, white 100%);
+    border: 3px solid #c0392b;
+    border-radius: 16px;
+    padding: 2rem;
+    margin: 2rem 0;
+    page-break-inside: avoid;
+    position: relative;
+    overflow: hidden;
+}
+
+.fire-safety-infographic::before {
+    content: '🔥';
+    position: absolute;
+    top: -20px;
+    right: -20px;
+    font-size: 8rem;
+    opacity: 0.05;
+    transform: rotate(-15deg);
+}
+
+/* Infographic Header */
+.infographic-header {
+    text-align: center;
+    margin-bottom: 2rem;
+    position: relative;
+    z-index: 1;
+}
+
+.infographic-title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2rem;
+    font-weight: 800;
+    color: #c0392b;
+    margin: 0 0 0.5rem 0;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.infographic-subtitle {
+    font-size: 1.1rem;
+    color: #7e4a00;
+    font-weight: 600;
+}
+
+/* Fire Ban Visual */
+.fire-ban-visual {
+    background: #c0392b;
+    color: white;
+    border-radius: 50%;
+    width: 200px;
+    height: 200px;
+    margin: 2rem auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    box-shadow: 0 8px 32px rgba(192, 57, 43, 0.3);
+}
+
+.fire-ban-visual::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: -10%;
+    right: -10%;
+    height: 20px;
+    background: white;
+    transform: rotate(-45deg);
+}
+
+.ban-icon {
+    font-size: 4rem;
+    margin-bottom: 0.5rem;
+    position: relative;
+    z-index: 1;
+}
+
+.ban-text {
+    font-size: 1.2rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    position: relative;
+    z-index: 1;
+}
+
+/* Zone Grid */
+.fire-zones-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin: 2rem 0;
+}
+
+.fire-zone {
+    background: white;
+    border: 2px solid #e0e0e0;
+    border-radius: 12px;
+    padding: 1.5rem;
+    text-align: center;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.fire-zone:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+}
+
+/* Zone Types */
+.zone-prohibited {
+    border-color: #c0392b;
+    background: linear-gradient(to bottom, #fff5f5, white);
+}
+
+.zone-prohibited .zone-icon {
+    color: #c0392b;
+}
+
+.zone-restricted {
+    border-color: #d35400;
+    background: linear-gradient(to bottom, #fef9e7, white);
+}
+
+.zone-restricted .zone-icon {
+    color: #d35400;
+}
+
+.zone-allowed {
+    border-color: #27ae60;
+    background: linear-gradient(to bottom, #f0fff4, white);
+}
+
+.zone-allowed .zone-icon {
+    color: #27ae60;
+}
+
+.zone-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.zone-title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin: 0 0 0.5rem 0;
+    color: #1e3a5f;
+}
+
+.zone-description {
+    font-size: 0.9rem;
+    color: #5d6d7e;
+    line-height: 1.5;
+}
+
+/* Fire Safety Rules */
+.fire-rules-section {
+    background: #1e3a5f;
+    color: white;
+    border-radius: 12px;
+    padding: 2rem;
+    margin: 2rem 0;
+}
+
+.fire-rules-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.fire-rules-icon {
+    font-size: 2rem;
+}
+
+.fire-rules-title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin: 0;
+}
+
+.fire-rules-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1rem;
+}
+
+.fire-rule-item {
+    background: rgba(255,255,255,0.1);
+    padding: 1rem;
+    border-radius: 8px;
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+}
+
+.rule-icon {
+    font-size: 1.2rem;
+    flex-shrink: 0;
+}
+
+.rule-text {
+    font-size: 0.95rem;
+    line-height: 1.4;
+}
+
+/* Penalty Box */
+.penalty-box {
+    background: linear-gradient(135deg, #fee, #fdd);
+    border: 3px solid #c0392b;
+    border-radius: 12px;
+    padding: 1.5rem;
+    margin: 2rem 0;
+    text-align: center;
+    position: relative;
+}
+
+.penalty-box::before {
+    content: '⚖️';
+    position: absolute;
+    top: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: white;
+    padding: 0 1rem;
+    font-size: 2rem;
+}
+
+.penalty-title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: #c0392b;
+    margin: 0.5rem 0 1rem 0;
+}
+
+.penalty-details {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.penalty-item {
+    background: white;
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.penalty-label {
+    font-size: 0.85rem;
+    color: #7e4a00;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.penalty-value {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: #c0392b;
+    margin-top: 0.25rem;
+}
+
+/* Fire Safety Tips */
+.fire-tips-carousel {
+    background: linear-gradient(to right, #f8f9fa, white);
+    border-radius: 12px;
+    padding: 2rem;
+    margin: 2rem 0;
+    position: relative;
+}
+
+.fire-tips-header {
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+.fire-tips-title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #1e3a5f;
+    margin: 0;
+}
+
+.fire-tips-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+}
+
+.fire-tip {
+    background: white;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 1.5rem;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.fire-tip:hover {
+    border-color: #4a90e2;
+    transform: translateY(-2px);
+}
+
+.tip-icon {
+    font-size: 2.5rem;
+    margin-bottom: 0.75rem;
+}
+
+.tip-text {
+    font-size: 0.9rem;
+    color: #2c3e50;
+    line-height: 1.4;
+}
+
+/* Visual Fire Containment Requirements */
+.containment-visual {
+    background: white;
+    border: 2px solid #4a90e2;
+    border-radius: 12px;
+    padding: 2rem;
+    margin: 2rem 0;
+    text-align: center;
+}
+
+.containment-diagram {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 2rem 0;
+    position: relative;
+}
+
+.fire-center {
+    width: 80px;
+    height: 80px;
+    background: #ff6b6b;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    position: relative;
+    z-index: 3;
+}
+
+.containment-ring {
+    position: absolute;
+    border: 3px dashed #4a90e2;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.ring-15ft {
+    width: 200px;
+    height: 200px;
+    z-index: 2;
+}
+
+.ring-label {
+    position: absolute;
+    top: -25px;
+    background: white;
+    padding: 0.25rem 0.75rem;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #4a90e2;
+    border: 2px solid #4a90e2;
+}
+
+/* Print Optimization */
+@media print {
+    .fire-safety-infographic {
+        page-break-inside: avoid;
+        border-width: 2px;
+        background: white !important;
+    }
+    
+    .fire-ban-visual {
+        background: white !important;
+        color: #c0392b !important;
+        border: 3px solid #c0392b;
+    }
+    
+    .fire-ban-visual::before {
+        background: #c0392b !important;
+    }
+    
+    .fire-rules-section {
+        background: #f8f9fa !important;
+        color: #1e3a5f !important;
+        border: 2px solid #1e3a5f;
+    }
+    
+    .fire-zones-grid {
+        display: block;
+    }
+    
+    .fire-zone {
+        margin-bottom: 1rem;
+        page-break-inside: avoid;
+    }
+    
+    .penalty-box {
+        background: white !important;
+        border-width: 2px;
+    }
+}

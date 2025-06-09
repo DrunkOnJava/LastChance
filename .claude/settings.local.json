@@ -12,7 +12,11 @@
       "WebFetch(domain:bmpoa.org)",
       "WebFetch(domain:pandoc.org)",
       "Bash(git add:*)",
-      "Bash(git init:*)"
+      "Bash(git init:*)",
+      "Bash(chmod:*)",
+      "Bash(node:*)",
+      "Bash(npm install)",
+      "Bash(rm:*)"
     ],
     "deny": []
   }

@@ -1,0 +1,419 @@
+/**
+ * Professional Emergency Visual Hierarchy Styles
+ * Based on verified BMPOA emergency contacts and procedures
+ */
+
+/* Emergency Section Header */
+.emergency-section-header {
+    background: linear-gradient(135deg, #c0392b 0%, #e74c3c 100%);
+    color: white;
+    padding: 2rem;
+    margin: -1.5rem -1.5rem 2rem -1.5rem;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.emergency-section-header::before {
+    content: '🚨';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 10rem;
+    opacity: 0.1;
+}
+
+.emergency-section-header h1 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2.5rem;
+    font-weight: 800;
+    margin: 0;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+    position: relative;
+    z-index: 1;
+}
+
+.emergency-section-header .subtitle {
+    font-size: 1.2rem;
+    margin-top: 0.5rem;
+    opacity: 0.95;
+    position: relative;
+    z-index: 1;
+}
+
+/* Primary Emergency Number Display */
+.primary-emergency {
+    background: white;
+    border: 5px solid #c0392b;
+    border-radius: 20px;
+    padding: 3rem;
+    text-align: center;
+    margin: 2rem 0;
+    box-shadow: 0 8px 32px rgba(192, 57, 43, 0.2);
+    position: relative;
+}
+
+.primary-emergency::before {
+    content: '';
+    position: absolute;
+    top: -5px;
+    left: -5px;
+    right: -5px;
+    bottom: -5px;
+    background: linear-gradient(45deg, #c0392b, #e74c3c, #c0392b);
+    border-radius: 20px;
+    opacity: 0.3;
+    animation: pulse 2s ease-in-out infinite;
+    z-index: -1;
+}
+
+@keyframes pulse {
+    0%, 100% { transform: scale(1); opacity: 0.3; }
+    50% { transform: scale(1.02); opacity: 0.5; }
+}
+
+.primary-emergency .emergency-label {
+    font-size: 1.5rem;
+    color: #c0392b;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 1rem;
+}
+
+.primary-emergency .emergency-number {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 6rem;
+    font-weight: 900;
+    color: #c0392b;
+    line-height: 1;
+    letter-spacing: 5px;
+}
+
+.primary-emergency .emergency-instruction {
+    font-size: 1.2rem;
+    color: #7e4a00;
+    margin-top: 1rem;
+    font-weight: 500;
+}
+
+/* Emergency Categories Grid */
+.emergency-categories {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    margin: 2rem 0;
+}
+
+.emergency-category {
+    background: white;
+    border: 2px solid #e0e0e0;
+    border-radius: 12px;
+    padding: 1.5rem;
+    transition: all 0.3s ease;
+}
+
+.emergency-category:hover {
+    border-color: #c0392b;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+}
+
+.emergency-category-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+    padding-bottom: 1rem;
+    border-bottom: 2px solid #f0f0f0;
+}
+
+.emergency-category-icon {
+    font-size: 2.5rem;
+    line-height: 1;
+}
+
+.emergency-category-title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: #1e3a5f;
+    margin: 0;
+}
+
+.emergency-contact-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.emergency-contact-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.75rem 0;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.emergency-contact-item:last-child {
+    border-bottom: none;
+}
+
+.emergency-contact-name {
+    font-weight: 600;
+    color: #2c3e50;
+    font-size: 0.95rem;
+}
+
+.emergency-contact-number {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    color: #c0392b;
+    font-size: 1.1rem;
+    white-space: nowrap;
+}
+
+/* Emergency Procedures */
+.emergency-procedures {
+    background: linear-gradient(to bottom, #fff5f5, white);
+    border: 2px solid #e74c3c;
+    border-radius: 12px;
+    padding: 2rem;
+    margin: 2rem 0;
+}
+
+.emergency-procedures-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.emergency-procedures-icon {
+    font-size: 2rem;
+    color: #c0392b;
+}
+
+.emergency-procedures-title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #c0392b;
+    margin: 0;
+}
+
+.emergency-steps {
+    counter-reset: step-counter;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.emergency-step {
+    counter-increment: step-counter;
+    position: relative;
+    padding-left: 3rem;
+    margin-bottom: 1.5rem;
+}
+
+.emergency-step::before {
+    content: counter(step-counter);
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 2rem;
+    height: 2rem;
+    background: #c0392b;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+.emergency-step-title {
+    font-weight: 700;
+    color: #1e3a5f;
+    margin-bottom: 0.5rem;
+    font-size: 1.1rem;
+}
+
+.emergency-step-description {
+    color: #5d6d7e;
+    line-height: 1.6;
+}
+
+/* Critical Warning Box */
+.critical-warning {
+    background: #c0392b;
+    color: white;
+    padding: 2rem;
+    border-radius: 12px;
+    margin: 2rem 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.critical-warning::before {
+    content: '⚠️';
+    position: absolute;
+    top: 50%;
+    right: 2rem;
+    transform: translateY(-50%);
+    font-size: 4rem;
+    opacity: 0.2;
+}
+
+.critical-warning-title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.8rem;
+    font-weight: 800;
+    margin: 0 0 1rem 0;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.critical-warning-content {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    position: relative;
+    z-index: 1;
+}
+
+.critical-warning-content strong {
+    color: #ffe0e0;
+    font-weight: 700;
+}
+
+/* Emergency Map Container */
+.emergency-map-container {
+    background: white;
+    border: 2px solid #e0e0e0;
+    border-radius: 12px;
+    padding: 1.5rem;
+    margin: 2rem 0;
+}
+
+.emergency-map-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+}
+
+.emergency-map-title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: #1e3a5f;
+    margin: 0;
+}
+
+.emergency-map-legend {
+    display: flex;
+    gap: 1.5rem;
+    font-size: 0.85rem;
+}
+
+.legend-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.legend-color {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: 2px solid #ddd;
+}
+
+.legend-color.evacuation { background: #e74c3c; }
+.legend-color.shelter { background: #3498db; }
+.legend-color.medical { background: #2ecc71; }
+
+/* Emergency Contact Footer */
+.emergency-footer {
+    background: #1e3a5f;
+    color: white;
+    padding: 2rem;
+    border-radius: 12px;
+    margin-top: 3rem;
+    text-align: center;
+}
+
+.emergency-footer-title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin: 0 0 1rem 0;
+}
+
+.emergency-footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+.emergency-footer-item {
+    padding: 1rem;
+    background: rgba(255,255,255,0.1);
+    border-radius: 8px;
+}
+
+.emergency-footer-label {
+    font-size: 0.85rem;
+    opacity: 0.8;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 0.5rem;
+}
+
+.emergency-footer-value {
+    font-size: 1.2rem;
+    font-weight: 700;
+}
+
+/* Print Optimization */
+@media print {
+    .emergency-section-header {
+        background: none !important;
+        color: #c0392b !important;
+        border: 3px solid #c0392b;
+    }
+    
+    .primary-emergency {
+        page-break-inside: avoid;
+        border-width: 3px;
+    }
+    
+    .primary-emergency::before {
+        display: none;
+    }
+    
+    .emergency-categories {
+        display: block;
+    }
+    
+    .emergency-category {
+        page-break-inside: avoid;
+        margin-bottom: 1rem;
+        border-width: 2px;
+    }
+    
+    .critical-warning {
+        background: none !important;
+        color: #c0392b !important;
+        border: 3px solid #c0392b;
+    }
+    
+    .emergency-footer {
+        background: #f8f9fa !important;
+        color: #1e3a5f !important;
+        border: 2px solid #1e3a5f;
+    }
+}

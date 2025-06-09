@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BMPOA Guide Development</title>
+    <style>
+        body {
+            font-family: system-ui, -apple-system, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem;
+            background: #f5f5f5;
+        }
+        h1 {
+            color: #1e3a5f;
+            border-bottom: 3px solid #4a90e2;
+            padding-bottom: 1rem;
+        }
+        .links {
+            display: grid;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+        .link-card {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            text-decoration: none;
+            color: inherit;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .link-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+        }
+        .link-card h2 {
+            color: #1e3a5f;
+            margin-top: 0;
+        }
+        .link-card p {
+            color: #666;
+            margin-bottom: 0;
+        }
+    </style>
+</head>
+<body>
+    <h1>BMPOA Guide Development</h1>
+    
+    <div class="links">
+        <a href="bmpoa-print-optimized.html" class="link-card">
+            <h2>📄 Main Document</h2>
+            <p>The current BMPOA print-optimized guide with professional styling</p>
+        </a>
+        
+        <a href="archives/5th-Attempt-With-Pictures.html" class="link-card">
+            <h2>📁 Archive Version</h2>
+            <p>Previous version for reference and comparison</p>
+        </a>
+        
+        <a href="print-test-pages.html" class="link-card">
+            <h2>🖨️ Print Test Pages</h2>
+            <p>Test pages for print alignment and quality</p>
+        </a>
+        
+        <a href="apply-pagination-fixes.html" class="link-card">
+            <h2>🔧 Pagination Tools</h2>
+            <p>Tools for fixing pagination issues</p>
+        </a>
+    </div>
+    
+    <script type="module">
+        // Add live reload functionality
+        if (import.meta.hot) {
+            import.meta.hot.accept()
+        }
+    </script>
+</body>
+</html>
