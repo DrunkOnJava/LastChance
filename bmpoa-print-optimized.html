@@ -203,6 +203,9 @@
             margin: 0;
             padding: 1in 0;
             counter-reset: page-counter;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
         
         /* Page Container Template System */
@@ -210,7 +213,7 @@
             width: var(--page-width);
             min-height: var(--page-height);
             height: var(--page-height);
-            margin: 0 auto 0.5in auto;
+            margin: 0 0 0.5in 0;
             background: var(--color-background);
             box-shadow: 0 0 20px rgba(0,0,0,0.1);
             position: relative;
