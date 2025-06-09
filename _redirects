@@ -1,0 +1,4 @@
+# Redirects for Netlify
+
+# Default to index.html
+/    /index.html    200

@@ -865,7 +865,7 @@ class PaginationTestSuite {
             if (printColorAdjust !== 'exact') {
                 this.logResult('warning', 'Important colored elements may not print with colors');
                 issues++;
-                break;
+                return; // Use return instead of break in forEach
             }
         });
         

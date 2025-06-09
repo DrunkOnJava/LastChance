@@ -547,6 +547,26 @@ class ProfessionalComponents {
         amenitiesScript.src = 'professional-amenities.js';
         document.head.appendChild(amenitiesScript);
         
+        // Load org chart script
+        const orgChartScript = document.createElement('script');
+        orgChartScript.src = 'committee-org-chart.js';
+        document.head.appendChild(orgChartScript);
+        
+        // Load event calendar script
+        const calendarScript = document.createElement('script');
+        calendarScript.src = 'professional-event-calendar.js';
+        document.head.appendChild(calendarScript);
+        
+        // Load photo treatments script
+        const photoScript = document.createElement('script');
+        photoScript.src = 'professional-photo-treatments.js';
+        document.head.appendChild(photoScript);
+        
+        // Load checklist script
+        const checklistScript = document.createElement('script');
+        checklistScript.src = 'professional-checklist.js';
+        document.head.appendChild(checklistScript);
+        
         // Apply enhancements
         // this.createProfessionalCoverPage(); // Keeping original cover page
         this.improveTOC();
@@ -569,6 +589,34 @@ class ProfessionalComponents {
             if (typeof professionalAmenities !== 'undefined') {
                 professionalAmenities.createAmenitiesSection();
                 professionalAmenities.addIconsToExistingContent();
+            }
+        };
+        
+        // Apply org chart after script loads
+        orgChartScript.onload = () => {
+            if (typeof committeeOrgChart !== 'undefined') {
+                committeeOrgChart.createOrgChart();
+            }
+        };
+        
+        // Apply event calendar after script loads
+        calendarScript.onload = () => {
+            if (typeof eventCalendar !== 'undefined') {
+                eventCalendar.createEventCalendar();
+            }
+        };
+        
+        // Apply photo treatments after script loads
+        photoScript.onload = () => {
+            if (typeof photoTreatments !== 'undefined') {
+                photoTreatments.applyPhotoTreatments();
+            }
+        };
+        
+        // Apply checklists after script loads
+        checklistScript.onload = () => {
+            if (typeof professionalChecklists !== 'undefined') {
+                professionalChecklists.createChecklists();
             }
         };
         
